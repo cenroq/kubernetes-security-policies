@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Startupprobe Httpget Host"
     security.kubeapt.io/description: "ValidatingAdmissionPolicy for startupprobe-httpget-host/containers."
     security.kubeapt.io/resource: "Containers"
-    security.kubeapt.io/severity: "3"
+    security.kubeapt.io/severity: "Low"
     security.kubeapt.io/remediation: "Adjust workloads to satisfy the startupprobe-httpget-host/containers policy."
     security.kubeapt.io/product: "Kubernetes"
 spec:

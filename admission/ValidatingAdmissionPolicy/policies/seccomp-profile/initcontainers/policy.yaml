@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Seccomp Profile"
     security.kubeapt.io/description: "ValidatingAdmissionPolicy for seccomp-profile/initcontainers."
     security.kubeapt.io/resource: "Initcontainers"
-    security.kubeapt.io/severity: "5"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Adjust workloads to satisfy the seccomp-profile/initcontainers policy."
     security.kubeapt.io/product: "Kubernetes"
 spec:

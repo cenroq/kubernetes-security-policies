@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Privileged"
     security.kubeapt.io/description: "ValidatingAdmissionPolicy for privileged/initcontainers."
     security.kubeapt.io/resource: "Initcontainers"
-    security.kubeapt.io/severity: "10"
+    security.kubeapt.io/severity: "Critical"
     security.kubeapt.io/remediation: "Adjust workloads to satisfy the privileged/initcontainers policy."
     security.kubeapt.io/product: "Kubernetes"
 spec:

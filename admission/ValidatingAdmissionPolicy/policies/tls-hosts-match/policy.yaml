@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Tls Hosts Match"
     security.kubeapt.io/description: "Every host in spec.rules[*].host must appear in some spec.tls[*].hosts."
     security.kubeapt.io/resource: "Ingresses"
-    security.kubeapt.io/severity: "7"
+    security.kubeapt.io/severity: "High"
     security.kubeapt.io/remediation: "Ensure every spec.rules[*].host appears in spec.tls[*].hosts. Fields: spec.rules[].host, spec.tls[].hosts."
     security.kubeapt.io/product: "Kubernetes"
 spec:

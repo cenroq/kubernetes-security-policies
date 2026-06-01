@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Fsgroup"
     security.kubeapt.io/description: "spec.securityContext.fsGroup must be undefined or a non-zero value (> 0)."
     security.kubeapt.io/resource: "Pods"
-    security.kubeapt.io/severity: "3"
+    security.kubeapt.io/severity: "Low"
     security.kubeapt.io/remediation: "Set spec.securityContext.fsGroup to >0 or omit it. Fields: spec.securityContext.fsGroup."
     security.kubeapt.io/product: "Kubernetes"
 spec:

@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Read Only Root Filesystem"
     security.kubeapt.io/description: "spec.ephemeralContainers[*].securityContext.readOnlyRootFilesystem must be set to true."
     security.kubeapt.io/resource: "Ephemeralcontainers"
-    security.kubeapt.io/severity: "5"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Set readOnlyRootFilesystem=true for ephemeralContainers. Fields: spec.ephemeralContainers[*].securityContext.readOnlyRootFilesystem."
     security.kubeapt.io/product: "Kubernetes"
 spec:

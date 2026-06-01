@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Capabilities Add"
     security.kubeapt.io/description: "ValidatingAdmissionPolicy for capabilities-add/ephemeralcontainers."
     security.kubeapt.io/resource: "Ephemeralcontainers"
-    security.kubeapt.io/severity: "5"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Adjust workloads to satisfy the capabilities-add/ephemeralcontainers policy."
     security.kubeapt.io/product: "Kubernetes"
 spec:

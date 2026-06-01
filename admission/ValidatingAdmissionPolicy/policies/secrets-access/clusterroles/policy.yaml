@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Secrets Access"
     security.kubeapt.io/description: "ClusterRoles must not grant broad read/write access to Secrets without tight scoping."
     security.kubeapt.io/resource: "ClusterRoles"
-    security.kubeapt.io/severity: "9"
+    security.kubeapt.io/severity: "Critical"
     security.kubeapt.io/remediation: "Remove read/write on secrets. Fields: rules[*].resources, rules[*].verbs."
     security.kubeapt.io/product: "Kubernetes"
 spec:

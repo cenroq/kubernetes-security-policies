@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Imagepullsecrets Scope"
     security.kubeapt.io/description: "Limit imagePullSecrets on ServiceAccounts; avoid sharing powerful registry creds broadly."
     security.kubeapt.io/resource: "ServiceAccounts"
-    security.kubeapt.io/severity: "7"
+    security.kubeapt.io/severity: "High"
     security.kubeapt.io/remediation: "Limit ServiceAccount imagePullSecrets to at most one. Fields: imagePullSecrets."
     security.kubeapt.io/product: "Kubernetes"
 spec:

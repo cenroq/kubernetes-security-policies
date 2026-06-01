@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "No Token Secrets"
     security.kubeapt.io/description: "Avoid explicit long-lived token Secrets on ServiceAccounts."
     security.kubeapt.io/resource: "ServiceAccounts"
-    security.kubeapt.io/severity: "7"
+    security.kubeapt.io/severity: "High"
     security.kubeapt.io/remediation: "Remove ServiceAccount secrets references; rely on projected tokens. Fields: secrets."
     security.kubeapt.io/product: "Kubernetes"
 spec:

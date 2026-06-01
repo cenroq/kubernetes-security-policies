@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Read Only Root Filesystem"
     security.kubeapt.io/description: "spec.initContainers[*].securityContext.readOnlyRootFilesystem must be set to true."
     security.kubeapt.io/resource: "Initcontainers"
-    security.kubeapt.io/severity: "5"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Set readOnlyRootFilesystem=true for initContainers. Fields: spec.initContainers[*].securityContext.readOnlyRootFilesystem."
     security.kubeapt.io/product: "Kubernetes"
 spec:

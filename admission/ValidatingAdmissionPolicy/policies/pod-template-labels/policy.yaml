@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Pod Template Labels"
     security.kubeapt.io/description: "Pods must set metadata.labels (non-empty) for policy targeting."
     security.kubeapt.io/resource: "Pods"
-    security.kubeapt.io/severity: "3"
+    security.kubeapt.io/severity: "Low"
     security.kubeapt.io/remediation: "Add at least one label to metadata.labels. Fields: metadata.labels."
     security.kubeapt.io/product: "Kubernetes"
 spec:

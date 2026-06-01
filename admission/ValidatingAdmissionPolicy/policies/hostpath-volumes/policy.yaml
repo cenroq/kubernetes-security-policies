@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Hostpath Volumes"
     security.kubeapt.io/description: "ValidatingAdmissionPolicy for hostpath-volumes."
     security.kubeapt.io/resource: "Pods"
-    security.kubeapt.io/severity: "10"
+    security.kubeapt.io/severity: "Critical"
     security.kubeapt.io/remediation: "Adjust workloads to satisfy the hostpath-volumes policy."
     security.kubeapt.io/product: "Kubernetes"
 spec:

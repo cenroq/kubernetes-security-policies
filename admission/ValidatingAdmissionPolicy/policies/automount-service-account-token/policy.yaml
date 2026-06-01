@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Automount Service Account Token"
     security.kubeapt.io/description: "spec.automountServiceAccountToken must be explicitly set to false."
     security.kubeapt.io/resource: "Pods"
-    security.kubeapt.io/severity: "3"
+    security.kubeapt.io/severity: "Low"
     security.kubeapt.io/remediation: "Set spec.automountServiceAccountToken=false. Fields: spec.automountServiceAccountToken."
     security.kubeapt.io/product: "Kubernetes"
 spec:

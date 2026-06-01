@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Hostports"
     security.kubeapt.io/description: "ValidatingAdmissionPolicy for hostports/containers."
     security.kubeapt.io/resource: "Containers"
-    security.kubeapt.io/severity: "10"
+    security.kubeapt.io/severity: "Critical"
     security.kubeapt.io/remediation: "Adjust workloads to satisfy the hostports/containers policy."
     security.kubeapt.io/product: "Kubernetes"
 spec:

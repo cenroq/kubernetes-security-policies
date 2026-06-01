@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Apparmor Profile"
     security.kubeapt.io/description: "ValidatingAdmissionPolicy for apparmor-profile/initcontainers."
     security.kubeapt.io/resource: "Initcontainers"
-    security.kubeapt.io/severity: "5"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Adjust workloads to satisfy the apparmor-profile/initcontainers policy."
     security.kubeapt.io/product: "Kubernetes"
 spec:

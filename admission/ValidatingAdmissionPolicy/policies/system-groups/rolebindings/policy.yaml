@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "System Groups"
     security.kubeapt.io/description: "RoleBindings must not bind powerful roles to broad system groups (authenticated/unauthenticated/serviceaccounts)."
     security.kubeapt.io/resource: "RoleBindings"
-    security.kubeapt.io/severity: "3"
+    security.kubeapt.io/severity: "Low"
     security.kubeapt.io/remediation: "Avoid binding broad system groups; use specific groups. Fields: subjects[*].kind, subjects[*].name."
     security.kubeapt.io/product: "Kubernetes"
 spec:

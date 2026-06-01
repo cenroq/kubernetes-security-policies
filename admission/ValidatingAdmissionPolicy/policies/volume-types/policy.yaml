@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Volume Types"
     security.kubeapt.io/description: "ValidatingAdmissionPolicy for volume-types."
     security.kubeapt.io/resource: "Pods"
-    security.kubeapt.io/severity: "5"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Adjust workloads to satisfy the volume-types policy."
     security.kubeapt.io/product: "Kubernetes"
 spec:

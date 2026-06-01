@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "External Ips"
     security.kubeapt.io/description: "spec.externalIPs must not be set."
     security.kubeapt.io/resource: "Services"
-    security.kubeapt.io/severity: "7"
+    security.kubeapt.io/severity: "High"
     security.kubeapt.io/remediation: "Remove spec.externalIPs. Fields: spec.externalIPs."
     security.kubeapt.io/product: "Kubernetes"
 spec:

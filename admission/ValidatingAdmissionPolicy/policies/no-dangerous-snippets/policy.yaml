@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "No Dangerous Snippets"
     security.kubeapt.io/description: "Dangerous Ingress annotations (config/server/location/auth/proxy snippets) are disallowed"
     security.kubeapt.io/resource: "Ingresses"
-    security.kubeapt.io/severity: "3"
+    security.kubeapt.io/severity: "Low"
     security.kubeapt.io/remediation: "Remove dangerous ingress snippet annotations. Fields: metadata.annotations."
     security.kubeapt.io/product: "Kubernetes"
 spec:

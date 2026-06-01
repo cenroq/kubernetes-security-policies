@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Serviceaccount Token Projection"
     security.kubeapt.io/description: "Pods using a serviceAccountName must include a projected serviceAccountToken volume."
     security.kubeapt.io/resource: "Pods"
-    security.kubeapt.io/severity: "3"
+    security.kubeapt.io/severity: "Low"
     security.kubeapt.io/remediation: "Add projected serviceAccountToken volume when using serviceAccountName. Fields: spec.serviceAccountName, spec.volumes[].projected.sources[].serviceAccountToken."
     security.kubeapt.io/product: "Kubernetes"
 spec:

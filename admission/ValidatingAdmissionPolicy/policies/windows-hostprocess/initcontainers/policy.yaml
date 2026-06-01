@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Windows Hostprocess"
     security.kubeapt.io/description: "ValidatingAdmissionPolicy for windows-hostprocess/initcontainers."
     security.kubeapt.io/resource: "Initcontainers"
-    security.kubeapt.io/severity: "10"
+    security.kubeapt.io/severity: "Critical"
     security.kubeapt.io/remediation: "Adjust workloads to satisfy the windows-hostprocess/initcontainers policy."
     security.kubeapt.io/product: "Kubernetes"
 spec:

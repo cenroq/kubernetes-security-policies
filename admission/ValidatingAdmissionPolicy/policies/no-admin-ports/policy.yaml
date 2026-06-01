@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "No Admin Ports"
     security.kubeapt.io/description: "Externally reachable Services (type LoadBalancer/NodePort) must not expose admin/debug/metrics"
     security.kubeapt.io/resource: "Services"
-    security.kubeapt.io/severity: "3"
+    security.kubeapt.io/severity: "Low"
     security.kubeapt.io/remediation: "Remove admin/debug/metrics ports from external Services or split into an internal Service. Fields: spec.type, spec.ports[].name."
     security.kubeapt.io/product: "Kubernetes"
 spec:

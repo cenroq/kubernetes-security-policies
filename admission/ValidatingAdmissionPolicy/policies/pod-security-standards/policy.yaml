@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Pod Security Standards"
     security.kubeapt.io/description: "Namespace must set pod-security.kubernetes.io/{enforce,audit,warn} to baseline or restricted."
     security.kubeapt.io/resource: "Namespaces"
-    security.kubeapt.io/severity: "3"
+    security.kubeapt.io/severity: "Low"
     security.kubeapt.io/remediation: "Set pod-security.kubernetes.io labels to baseline or restricted. Fields: metadata.labels['pod-security.kubernetes.io/enforce'], metadata.labels['pod-security.kubernetes.io/audit'], metadata.labels['pod-security.kubernetes.io/warn']."
     security.kubeapt.io/product: "Kubernetes"
 spec:

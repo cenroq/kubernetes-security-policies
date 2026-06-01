@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Control Plane Schedulable"
     security.kubeapt.io/description: "Control-plane nodes must carry a NoSchedule/NoExecute taint to prevent workload scheduling."
     security.kubeapt.io/resource: "Nodes"
-    security.kubeapt.io/severity: "3"
+    security.kubeapt.io/severity: "Low"
     security.kubeapt.io/remediation: "Add NoSchedule/NoExecute taint for control-plane nodes. Fields: spec.taints."
     security.kubeapt.io/product: "Kubernetes"
 spec:

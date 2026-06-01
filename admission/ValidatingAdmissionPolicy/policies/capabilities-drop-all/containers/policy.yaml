@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Capabilities Drop All"
     security.kubeapt.io/description: "ValidatingAdmissionPolicy for capabilities-drop-all/containers."
     security.kubeapt.io/resource: "Containers"
-    security.kubeapt.io/severity: "5"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Adjust workloads to satisfy the capabilities-drop-all/containers policy."
     security.kubeapt.io/product: "Kubernetes"
 spec:

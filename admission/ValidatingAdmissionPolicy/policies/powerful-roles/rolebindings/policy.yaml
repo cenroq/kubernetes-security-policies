@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Powerful Roles"
     security.kubeapt.io/description: "RoleBindings must not reference powerful roles such as cluster-admin/admin/edit."
     security.kubeapt.io/resource: "RoleBindings"
-    security.kubeapt.io/severity: "9"
+    security.kubeapt.io/severity: "Critical"
     security.kubeapt.io/remediation: "Change roleRef to a non-privileged role. Fields: roleRef.kind, roleRef.name."
     security.kubeapt.io/product: "Kubernetes"
 spec:

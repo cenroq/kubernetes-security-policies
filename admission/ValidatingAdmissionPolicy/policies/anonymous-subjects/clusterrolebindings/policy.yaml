@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Anonymous Subjects"
     security.kubeapt.io/description: "ClusterRoleBindings must not bind roles to anonymous or broadly shared user identities."
     security.kubeapt.io/resource: "ClusterRoleBindings"
-    security.kubeapt.io/severity: "3"
+    security.kubeapt.io/severity: "Low"
     security.kubeapt.io/remediation: "Remove anonymous/broad user subjects from ClusterRoleBinding. Fields: subjects[*].kind, subjects[*].name."
     security.kubeapt.io/product: "Kubernetes"
 spec:

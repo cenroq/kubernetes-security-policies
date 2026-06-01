@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Run As Group"
     security.kubeapt.io/description: "spec.initContainers[*].securityContext.runAsGroup must be undefined or a non-zero value"
     security.kubeapt.io/resource: "Initcontainers"
-    security.kubeapt.io/severity: "5"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Set spec.initContainers[*].securityContext.runAsGroup to >0 or omit it. Fields: spec.initContainers[*].securityContext.runAsGroup."
     security.kubeapt.io/product: "Kubernetes"
 spec:

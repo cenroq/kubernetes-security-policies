@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Hostipc"
     security.kubeapt.io/description: "ValidatingAdmissionPolicy for hostipc."
     security.kubeapt.io/resource: "Pods"
-    security.kubeapt.io/severity: "10"
+    security.kubeapt.io/severity: "Critical"
     security.kubeapt.io/remediation: "Adjust workloads to satisfy the hostipc policy."
     security.kubeapt.io/product: "Kubernetes"
 spec:

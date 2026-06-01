@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Nodeport"
     security.kubeapt.io/description: "Service type NodePort is disallowed; use ClusterIP/LoadBalancer with proper controls."
     security.kubeapt.io/resource: "Services"
-    security.kubeapt.io/severity: "7"
+    security.kubeapt.io/severity: "High"
     security.kubeapt.io/remediation: "Use ClusterIP or LoadBalancer instead of NodePort. Fields: spec.type."
     security.kubeapt.io/product: "Kubernetes"
 spec:

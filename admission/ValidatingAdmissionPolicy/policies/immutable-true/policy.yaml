@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Immutable True"
     security.kubeapt.io/description: "immutable must be set to true to prevent runtime tampering."
     security.kubeapt.io/resource: "ConfigMaps"
-    security.kubeapt.io/severity: "5"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Set immutable=true. Fields: immutable."
     security.kubeapt.io/product: "Kubernetes"
 spec:

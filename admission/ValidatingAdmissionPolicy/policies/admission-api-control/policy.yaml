@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Admission Api Control"
     security.kubeapt.io/description: "ClusterRoles must not grant write access to ValidatingWebhookConfiguration/MutatingWebhookConfiguration."
     security.kubeapt.io/resource: "ClusterRoles"
-    security.kubeapt.io/severity: "10"
+    security.kubeapt.io/severity: "Critical"
     security.kubeapt.io/remediation: "Remove write verbs for ValidatingWebhookConfiguration and MutatingWebhookConfiguration. Fields: rules[*].apiGroups, rules[*].resources, rules[*].verbs."
     security.kubeapt.io/product: "Kubernetes"
 spec:

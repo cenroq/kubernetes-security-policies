@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Nonresource Urls"
     security.kubeapt.io/description: "ClusterRoles must not grant broad nonResourceURL access to API server endpoints (/, /api,"
     security.kubeapt.io/resource: "ClusterRoles"
-    security.kubeapt.io/severity: "10"
+    security.kubeapt.io/severity: "Critical"
     security.kubeapt.io/remediation: "Remove broad nonResourceURL access or scope to specific paths/verbs. Fields: rules[*].nonResourceURLs, rules[*].verbs."
     security.kubeapt.io/product: "Kubernetes"
 spec:

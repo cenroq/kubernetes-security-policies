@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Image No Latest"
     security.kubeapt.io/description: "spec.ephemeralContainers[*].image must use an immutable digest or a non-latest tag."
     security.kubeapt.io/resource: "Ephemeralcontainers"
-    security.kubeapt.io/severity: "5"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Use an immutable digest or a non-latest tag for ephemeral container images. Fields: spec.ephemeralContainers[*].image."
     security.kubeapt.io/product: "Kubernetes"
 spec:

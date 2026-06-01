@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Networkpolicy Allow All"
     security.kubeapt.io/description: "Wildcard NetworkPolicies that allow all ingress and egress traffic for all pods are not"
     security.kubeapt.io/resource: "NetworkPolicies"
-    security.kubeapt.io/severity: "3"
+    security.kubeapt.io/severity: "Low"
     security.kubeapt.io/remediation: "Scope podSelector and restrict ingress/egress peers and ports. Fields: spec.podSelector, spec.ingress[].from, spec.ingress[].ports, spec.egress[].to, spec.egress[].ports."
     security.kubeapt.io/product: "Kubernetes"
 spec:

@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Readinessprobe Tcpsocket Host"
     security.kubeapt.io/description: "ValidatingAdmissionPolicy for readinessprobe-tcpsocket-host/initcontainers."
     security.kubeapt.io/resource: "Initcontainers"
-    security.kubeapt.io/severity: "3"
+    security.kubeapt.io/severity: "Low"
     security.kubeapt.io/remediation: "Adjust workloads to satisfy the readinessprobe-tcpsocket-host/initcontainers policy."
     security.kubeapt.io/product: "Kubernetes"
 spec:

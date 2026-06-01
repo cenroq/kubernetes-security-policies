@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "No Executable Code"
     security.kubeapt.io/description: "Do not store executable code or scripts in ConfigMaps that applications run."
     security.kubeapt.io/resource: "ConfigMaps"
-    security.kubeapt.io/severity: "3"
+    security.kubeapt.io/severity: "Low"
     security.kubeapt.io/remediation: "Remove executable code/scripts from ConfigMap data; bake into image or volume. Fields: data."
     security.kubeapt.io/product: "Kubernetes"
 spec:

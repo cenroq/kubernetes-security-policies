@@ -8,9 +8,11 @@
     },
     {
         "name": "pod-security-admission",
-        "latest-version": "v1.34.0",
+        "latest-version": "v1.36.0",
         "versions": [
+            "v1.36.0",
+            "v1.35.0",
             "v1.34.0"
         ]
-    }
+    },
 ]

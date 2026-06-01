@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Automount Token False"
     security.kubeapt.io/description: "automountServiceAccountToken must be set to false by default on ServiceAccounts."
     security.kubeapt.io/resource: "ServiceAccounts"
-    security.kubeapt.io/severity: "3"
+    security.kubeapt.io/severity: "Low"
     security.kubeapt.io/remediation: "Set automountServiceAccountToken=false on ServiceAccounts. Fields: automountServiceAccountToken."
     security.kubeapt.io/product: "Kubernetes"
 spec:

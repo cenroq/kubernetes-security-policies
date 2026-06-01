@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Capabilities Add Netbindservice"
     security.kubeapt.io/description: "ValidatingAdmissionPolicy for capabilities-add-netbindservice/containers."
     security.kubeapt.io/resource: "Containers"
-    security.kubeapt.io/severity: "5"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Adjust workloads to satisfy the capabilities-add-netbindservice/containers policy."
     security.kubeapt.io/product: "Kubernetes"
 spec:

@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Default Serviceaccount"
     security.kubeapt.io/description: "Do not bind powerful roles to the default ServiceAccount."
     security.kubeapt.io/resource: "ClusterRoleBindings"
-    security.kubeapt.io/severity: "3"
+    security.kubeapt.io/severity: "Low"
     security.kubeapt.io/remediation: "Avoid binding the default ServiceAccount; use a named ServiceAccount. Fields: subjects[*].kind, subjects[*].name, subjects[*].namespace."
     security.kubeapt.io/product: "Kubernetes"
 spec:

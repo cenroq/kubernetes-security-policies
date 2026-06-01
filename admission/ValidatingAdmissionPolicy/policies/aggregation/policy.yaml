@@ -6,7 +6,7 @@ metadata:
     security.kubeapt.io/displayName: "Aggregation"
     security.kubeapt.io/description: "ClusterRoles must not use aggregationRule; avoid implicit privilege aggregation."
     security.kubeapt.io/resource: "ClusterRoles"
-    security.kubeapt.io/severity: "10"
+    security.kubeapt.io/severity: "Critical"
     security.kubeapt.io/remediation: "Remove aggregationRule or clusterRoleSelectors from ClusterRole. Fields: aggregationRule.clusterRoleSelectors."
     security.kubeapt.io/product: "Kubernetes"
 spec:
