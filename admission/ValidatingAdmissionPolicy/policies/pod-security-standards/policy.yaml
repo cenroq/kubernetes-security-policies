@@ -24,9 +24,8 @@ spec:
       - namespaces
   validations:
   - expression: |
-      has(object.metadata.labels) &&
-      object.metadata.labels["pod-security.kubernetes.io/enforce"] in ["baseline", "restricted"] ||
-      object.metadata.labels["pod-security.kubernetes.io/audit"] in ["baseline", "restricted"] ||
-      object.metadata.labels["pod-security.kubernetes.io/warn"] in ["baseline", "restricted"]
+      (has(object.metadata.labels) && "pod-security.kubernetes.io/enforce" in object.metadata.labels && object.metadata.labels["pod-security.kubernetes.io/enforce"] in ["baseline", "restricted"]) ||
+      (has(object.metadata.labels) && "pod-security.kubernetes.io/audit" in object.metadata.labels && object.metadata.labels["pod-security.kubernetes.io/audit"] in ["baseline", "restricted"]) ||
+      (has(object.metadata.labels) && "pod-security.kubernetes.io/warn" in object.metadata.labels && object.metadata.labels["pod-security.kubernetes.io/warn"] in ["baseline", "restricted"])
     message: |
       Namespace must set one of pod-security.kubernetes.io/{enforce,audit,warn} to baseline or restricted.

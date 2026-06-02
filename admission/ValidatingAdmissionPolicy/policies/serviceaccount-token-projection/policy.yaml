@@ -24,11 +24,13 @@ spec:
       - pods
   validations:
   - expression: |
-      !has(object.spec.serviceAccountName) || (has(object.spec.volumes) &&
+      !has(object.spec.serviceAccountName) ||
+      (has(object.spec.automountServiceAccountToken) && object.spec.automountServiceAccountToken == false) ||
+      (has(object.spec.volumes) &&
        object.spec.volumes.exists(v,
          has(v.projected) &&
          has(v.projected.sources) &&
          v.projected.sources.exists(s, has(s.serviceAccountToken))
        ))
     message: |
-      Pods using a serviceAccountName must include a projected serviceAccountToken volume.
+      Pods using a serviceAccountName must include a projected serviceAccountToken volume, or set spec.automountServiceAccountToken=false.

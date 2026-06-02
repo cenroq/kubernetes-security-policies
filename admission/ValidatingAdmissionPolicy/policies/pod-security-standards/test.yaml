@@ -2,3 +2,10 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: violating-pod-security-standards
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: violating-pod-security-standards-other-labels
+  labels:
+    team: platform
