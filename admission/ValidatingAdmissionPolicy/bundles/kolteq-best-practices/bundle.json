@@ -1,8 +1,8 @@
 {
     "name": "KolTEQ Best Practices",
     "description": "Best practice validating admission bundle that enforces pod hardening, safer runtime defaults, and broader cluster guardrails (RBAC, secrets, exposure, and risky config restrictions) for a strong security baseline.",
-    "version": "v0.1.0",
-    "deployment": "mkdir -p /tmp/kolteq && curl -L https://github.com/kolteq/kubernetes-security-policies/releases/download/vap_kolteq-best-practices%40v0.1.0/kolteq-best-practices_v0.1.0.tar.gz | tar -xz -C /tmp/kolteq && kubectl apply -f /tmp/kolteq/kolteq-best-practices --recursive",
+    "version": "v0.1.1",
+    "deployment": "mkdir -p /tmp/kolteq && curl -L https://github.com/kolteq/kubernetes-security-policies/releases/download/vap_kolteq-best-practices%40v0.1.1/kolteq-best-practices_v0.1.1.tar.gz | tar -xz -C /tmp/kolteq && kubectl apply -f /tmp/kolteq/kolteq-best-practices --recursive",
     "labels":  {
         "warn": "security.kolteq.com/warn",
         "audit": "security.kolteq.com/audit",
@@ -158,7 +158,7 @@
         "selinux-type-containers"
     ],
     "sources": [
-        "https://github.com/kolteq/kubernetes-security-policies/releases/download/vap_kolteq-best-practices%40v0.1.0/kolteq-best-practices_v0.1.0.tar.gz",
-        "https://github.com/kolteq/kubernetes-security-policies/releases/download/vap_kolteq-best-practices%40v0.1.0/kolteq-best-practices_v0.1.0.zip"
+        "https://github.com/kolteq/kubernetes-security-policies/releases/download/vap_kolteq-best-practices%40v0.1.1/kolteq-best-practices_v0.1.1.tar.gz",
+        "https://github.com/kolteq/kubernetes-security-policies/releases/download/vap_kolteq-best-practices%40v0.1.1/kolteq-best-practices_v0.1.1.zip"
     ]
 }
