@@ -1,0 +1,35 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: image-digest-containers
+  annotations:
+    security.kubeapt.io/displayName: "Image Digest"
+    security.kubeapt.io/description: "spec.containers[*].image must be pinned by an immutable @sha256 digest."
+    security.kubeapt.io/resource: "Containers"
+    security.kubeapt.io/severity: "Moderate"
+    security.kubeapt.io/remediation: "Pin container images by an immutable @sha256 digest. Fields: spec.containers[*].image."
+    security.kubeapt.io/product: "Kubernetes"
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+    - apiGroups:
+      - ''
+      apiVersions:
+      - v1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - pods
+  variables:
+  - name: isWindows
+    expression: |
+      has(object.spec.os) && has(object.spec.os.name) && object.spec.os.name.lowerAscii() == "windows"
+  validations:
+  - expression: |
+      variables.isWindows || object.spec.containers.all(c,
+        c.image.matches(".*@sha256:[0-9A-Fa-f]{64}")
+      )
+    message: |
+      spec.containers[*].image must be pinned by an immutable @sha256 digest.

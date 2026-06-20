@@ -1,0 +1,35 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: istio-peerauthentication-mtls
+  annotations:
+    security.kubeapt.io/displayName: "Istio PeerAuthentication mTLS"
+    security.kubeapt.io/description: "Istio PeerAuthentications must not disable or weaken mTLS (mode DISABLE or PERMISSIVE)."
+    security.kubeapt.io/resource: "PeerAuthentications"
+    security.kubeapt.io/severity: "High"
+    security.kubeapt.io/remediation: "Set mtls.mode to STRICT (and avoid DISABLE/PERMISSIVE at the port level). Fields: spec.mtls.mode, spec.portLevelMtls[*].mode."
+    security.kubeapt.io/product: "Istio"
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+    - apiGroups:
+      - security.istio.io
+      apiVersions:
+      - v1
+      - v1beta1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - peerauthentications
+  validations:
+  - expression: |
+      !(object.spec.?mtls.mode.orValue('') in ['DISABLE', 'PERMISSIVE']) &&
+      (!has(object.spec) || !has(object.spec.portLevelMtls) ||
+        object.spec.portLevelMtls.all(p,
+          !(object.spec.portLevelMtls[p].?mode.orValue('') in ['DISABLE', 'PERMISSIVE'])
+        )
+      )
+    message: |
+      Istio PeerAuthentications must not disable or weaken mTLS (mode DISABLE or PERMISSIVE).

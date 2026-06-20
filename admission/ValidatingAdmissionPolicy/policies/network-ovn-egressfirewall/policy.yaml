@@ -1,0 +1,32 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: egressfirewall-allow-all
+  annotations:
+    security.kubeapt.io/displayName: "OVN EgressFirewall Allow-All"
+    security.kubeapt.io/description: "OVN-Kubernetes EgressFirewalls must not Allow egress to 0.0.0.0/0."
+    security.kubeapt.io/resource: "EgressFirewalls"
+    security.kubeapt.io/severity: "High"
+    security.kubeapt.io/remediation: "Scope Allow rules to specific CIDRs instead of 0.0.0.0/0. Field: spec.egress[*].to.cidrSelector."
+    security.kubeapt.io/product: "OVN-Kubernetes"
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+    - apiGroups:
+      - k8s.ovn.org
+      apiVersions:
+      - v1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - egressfirewalls
+  validations:
+  - expression: |
+      !object.spec.?egress.orValue([]).exists(e,
+        e.?type.orValue('') == 'Allow' &&
+        e.?to.cidrSelector.orValue('') == '0.0.0.0/0'
+      )
+    message: |
+      OVN-Kubernetes EgressFirewalls must not Allow egress to 0.0.0.0/0.

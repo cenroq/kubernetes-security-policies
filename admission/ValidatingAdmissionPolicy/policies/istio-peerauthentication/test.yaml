@@ -1,0 +1,8 @@
+# RequiresCRD: peerauthentications.security.istio.io
+apiVersion: security.istio.io/v1
+kind: PeerAuthentication
+metadata:
+  name: violating-istio-peerauthentication-mtls
+spec:
+  mtls:
+    mode: DISABLE

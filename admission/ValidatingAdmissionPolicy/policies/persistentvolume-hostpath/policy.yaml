@@ -1,0 +1,29 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: persistentvolume-hostpath
+  annotations:
+    security.kubeapt.io/displayName: "PersistentVolume HostPath"
+    security.kubeapt.io/description: "PersistentVolumes must not be backed by a node-local hostPath or local volume."
+    security.kubeapt.io/resource: "PersistentVolumes"
+    security.kubeapt.io/severity: "High"
+    security.kubeapt.io/remediation: "Use a networked or CSI-backed volume source instead of hostPath/local. Fields: spec.hostPath, spec.local."
+    security.kubeapt.io/product: "Kubernetes"
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+    - apiGroups:
+      - ''
+      apiVersions:
+      - v1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - persistentvolumes
+  validations:
+  - expression: |
+      !has(object.spec.hostPath) && !has(object.spec.local)
+    message: |
+      PersistentVolumes must not be backed by a node-local hostPath or local volume.

@@ -1,0 +1,32 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: ciliumclusterwidenetworkpolicy-egress-world
+  annotations:
+    security.kubeapt.io/displayName: "Cilium Clusterwide NetworkPolicy World Entity"
+    security.kubeapt.io/description: "CiliumClusterwideNetworkPolicies must not allow ingress from or egress to the 'world' entity."
+    security.kubeapt.io/resource: "CiliumClusterwideNetworkPolicies"
+    security.kubeapt.io/severity: "High"
+    security.kubeapt.io/remediation: "Remove the 'world' entity from toEntities/fromEntities and scope rules to specific CIDRs or selectors. Fields: spec.egress[*].toEntities, spec.ingress[*].fromEntities."
+    security.kubeapt.io/product: "Cilium"
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+    - apiGroups:
+      - cilium.io
+      apiVersions:
+      - v2
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - ciliumclusterwidenetworkpolicies
+  validations:
+  - expression: |
+      !has(object.spec) || (
+        !object.spec.?egress.orValue([]).exists(e, e.?toEntities.orValue([]).exists(x, x == 'world')) &&
+        !object.spec.?ingress.orValue([]).exists(i, i.?fromEntities.orValue([]).exists(x, x == 'world'))
+      )
+    message: |
+      CiliumClusterwideNetworkPolicies must not allow ingress from or egress to the 'world' entity.

@@ -1,0 +1,12 @@
+# RequiresCRD: networkpolicies.crd.projectcalico.org
+apiVersion: crd.projectcalico.org/v1
+kind: NetworkPolicy
+metadata:
+  name: violating-calico-networkpolicy-egress-cidr
+spec:
+  selector: all()
+  egress:
+  - action: Allow
+    destination:
+      nets:
+      - 0.0.0.0/0

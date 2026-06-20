@@ -1,0 +1,31 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: storageclass-encryption-longhorn
+  annotations:
+    security.kubeapt.io/displayName: "StorageClass Encryption (Longhorn)"
+    security.kubeapt.io/description: "Longhorn StorageClasses must enable volume encryption (parameters.encrypted: \"true\")."
+    security.kubeapt.io/resource: "StorageClasses"
+    security.kubeapt.io/severity: "Low"
+    security.kubeapt.io/remediation: "Set parameters.encrypted to \"true\" on driver.longhorn.io StorageClasses (with the required CSI secret references). Field: parameters.encrypted."
+    security.kubeapt.io/product: "Kubernetes"
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+    - apiGroups:
+      - storage.k8s.io
+      apiVersions:
+      - v1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - storageclasses
+  validations:
+  - expression: |
+      object.provisioner != 'driver.longhorn.io' ||
+      (has(object.parameters) && 'encrypted' in object.parameters &&
+       object.parameters['encrypted'] == 'true')
+    message: |
+      Longhorn StorageClasses must enable volume encryption (parameters.encrypted: "true").

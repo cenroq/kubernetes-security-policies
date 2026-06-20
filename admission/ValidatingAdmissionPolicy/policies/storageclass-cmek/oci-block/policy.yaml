@@ -1,0 +1,31 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: storageclass-cmek-oci-block
+  annotations:
+    security.kubeapt.io/displayName: "StorageClass CMEK (OCI Block)"
+    security.kubeapt.io/description: "Oracle OCI Block Volume StorageClasses must use a customer-managed encryption key (parameters.\"kms-key-id\")."
+    security.kubeapt.io/resource: "StorageClasses"
+    security.kubeapt.io/severity: "Low"
+    security.kubeapt.io/remediation: "Set parameters.\"kms-key-id\" to an OCI Vault master key OCID on blockvolume.csi.oraclecloud.com StorageClasses. OCI block volumes are always encrypted at rest; this enforces customer-managed keys (CMEK). Field: parameters."
+    security.kubeapt.io/product: "Kubernetes"
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+    - apiGroups:
+      - storage.k8s.io
+      apiVersions:
+      - v1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - storageclasses
+  validations:
+  - expression: |
+      object.provisioner != 'blockvolume.csi.oraclecloud.com' ||
+      (has(object.parameters) && 'kms-key-id' in object.parameters &&
+       object.parameters['kms-key-id'] != '')
+    message: |
+      Oracle OCI Block Volume StorageClasses must use a customer-managed encryption key (parameters."kms-key-id").

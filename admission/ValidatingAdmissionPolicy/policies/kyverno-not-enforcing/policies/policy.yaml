@@ -1,0 +1,32 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: kyverno-policy-not-enforcing
+  annotations:
+    security.kubeapt.io/displayName: "Kyverno Policy Not Enforcing"
+    security.kubeapt.io/description: "Kyverno Policies must enforce (not Audit) validation failures."
+    security.kubeapt.io/resource: "Policies"
+    security.kubeapt.io/severity: "Moderate"
+    security.kubeapt.io/remediation: "Set validationFailureAction (or rule-level validate.failureAction) to Enforce. Fields: spec.validationFailureAction, spec.rules[*].validate.failureAction."
+    security.kubeapt.io/product: "Kyverno"
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+    - apiGroups:
+      - kyverno.io
+      apiVersions:
+      - v1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - policies
+  validations:
+  - expression: |
+      !(object.spec.?validationFailureAction.orValue('Enforce') in ['Audit', 'audit']) &&
+      !object.spec.?rules.orValue([]).exists(r,
+        r.?validate.failureAction.orValue('Enforce') in ['Audit', 'audit']
+      )
+    message: |
+      Kyverno Policies must enforce (not Audit) validation failures.

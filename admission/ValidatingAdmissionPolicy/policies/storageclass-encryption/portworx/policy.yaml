@@ -1,0 +1,31 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: storageclass-encryption-portworx
+  annotations:
+    security.kubeapt.io/displayName: "StorageClass Encryption (Portworx)"
+    security.kubeapt.io/description: "Portworx StorageClasses must enable volume encryption (parameters.secure: \"true\")."
+    security.kubeapt.io/resource: "StorageClasses"
+    security.kubeapt.io/severity: "Low"
+    security.kubeapt.io/remediation: "Set parameters.secure to \"true\" on pxd.portworx.com StorageClasses. Field: parameters.secure."
+    security.kubeapt.io/product: "Kubernetes"
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+    - apiGroups:
+      - storage.k8s.io
+      apiVersions:
+      - v1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - storageclasses
+  validations:
+  - expression: |
+      object.provisioner != 'pxd.portworx.com' ||
+      (has(object.parameters) && 'secure' in object.parameters &&
+       object.parameters['secure'] == 'true')
+    message: |
+      Portworx StorageClasses must enable volume encryption (parameters.secure: "true").

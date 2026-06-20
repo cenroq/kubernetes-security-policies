@@ -1,0 +1,38 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: clusterrole-rbac-impersonate
+  annotations:
+    security.kubeapt.io/displayName: "Rbac Impersonate"
+    security.kubeapt.io/description: "ClusterRoles must not grant the impersonate verb on users, groups or serviceaccounts."
+    security.kubeapt.io/resource: "ClusterRoles"
+    security.kubeapt.io/severity: "High"
+    security.kubeapt.io/remediation: "Remove the impersonate verb on users/groups/serviceaccounts. Fields: rules[*].resources, rules[*].verbs."
+    security.kubeapt.io/product: "Kubernetes"
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+    - apiGroups:
+      - rbac.authorization.k8s.io
+      apiVersions:
+      - v1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - clusterroles
+  variables:
+  - name: impersonateResources
+    expression: |
+      ["users","groups","serviceaccounts","uids","userextras","*"]
+  validations:
+  - expression: |
+      !has(object.rules) || object.rules.all(r,
+        !(has(r.verbs) && has(r.resources) &&
+          r.verbs.exists(v, v == "impersonate" || v == "*") &&
+          r.resources.exists(res, variables.impersonateResources.exists(ir, ir == res))
+        )
+      )
+    message: |
+      ClusterRoles must not grant the impersonate verb on users, groups or serviceaccounts.

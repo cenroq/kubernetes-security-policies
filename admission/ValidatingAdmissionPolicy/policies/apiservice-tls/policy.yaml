@@ -1,0 +1,30 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: apiservice-tls
+  annotations:
+    security.kubeapt.io/displayName: "APIService TLS"
+    security.kubeapt.io/description: "Aggregated (service-backed) APIServices must not set insecureSkipTLSVerify to true."
+    security.kubeapt.io/resource: "APIServices"
+    security.kubeapt.io/severity: "High"
+    security.kubeapt.io/remediation: "Remove insecureSkipTLSVerify and provide a valid caBundle for the aggregated API server. Field: spec.insecureSkipTLSVerify."
+    security.kubeapt.io/product: "Kubernetes"
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+    - apiGroups:
+      - apiregistration.k8s.io
+      apiVersions:
+      - v1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - apiservices
+  validations:
+  - expression: |
+      !has(object.spec.service) ||
+      object.spec.?insecureSkipTLSVerify.orValue(false) != true
+    message: |
+      Aggregated (service-backed) APIServices must not set insecureSkipTLSVerify to true.

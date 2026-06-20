@@ -1,0 +1,31 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: storageclass-cmek-gcp-pd
+  annotations:
+    security.kubeapt.io/displayName: "StorageClass CMEK (GCP PD)"
+    security.kubeapt.io/description: "GCP Persistent Disk StorageClasses must use customer-managed encryption keys (parameters.\"disk-encryption-kms-key\")."
+    security.kubeapt.io/resource: "StorageClasses"
+    security.kubeapt.io/severity: "Low"
+    security.kubeapt.io/remediation: "Set parameters.\"disk-encryption-kms-key\" to a Cloud KMS key resource path on pd.csi.storage.gke.io StorageClasses. GCP PD is always encrypted at rest; this enforces customer-managed keys (CMEK). Field: parameters."
+    security.kubeapt.io/product: "Kubernetes"
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+    - apiGroups:
+      - storage.k8s.io
+      apiVersions:
+      - v1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - storageclasses
+  validations:
+  - expression: |
+      object.provisioner != 'pd.csi.storage.gke.io' ||
+      (has(object.parameters) && 'disk-encryption-kms-key' in object.parameters &&
+       object.parameters['disk-encryption-kms-key'] != '')
+    message: |
+      GCP Persistent Disk StorageClasses must use customer-managed encryption keys (parameters."disk-encryption-kms-key").

@@ -1,0 +1,31 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: storageclass-encryption-ceph-rbd
+  annotations:
+    security.kubeapt.io/displayName: "StorageClass Encryption (Ceph RBD)"
+    security.kubeapt.io/description: "Ceph RBD StorageClasses must enable at-rest encryption (parameters.encrypted: \"true\")."
+    security.kubeapt.io/resource: "StorageClasses"
+    security.kubeapt.io/severity: "Low"
+    security.kubeapt.io/remediation: "Set parameters.encrypted to \"true\" on rbd.csi.ceph.com StorageClasses (configure encryptionKMSID as needed). Field: parameters.encrypted."
+    security.kubeapt.io/product: "Kubernetes"
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+    - apiGroups:
+      - storage.k8s.io
+      apiVersions:
+      - v1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - storageclasses
+  validations:
+  - expression: |
+      object.provisioner != 'rbd.csi.ceph.com' ||
+      (has(object.parameters) && 'encrypted' in object.parameters &&
+       object.parameters['encrypted'] == 'true')
+    message: |
+      Ceph RBD StorageClasses must enable at-rest encryption (parameters.encrypted: "true").

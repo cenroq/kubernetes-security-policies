@@ -1,0 +1,31 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: storageclass-cmek-azure-disk
+  annotations:
+    security.kubeapt.io/displayName: "StorageClass CMEK (Azure Disk)"
+    security.kubeapt.io/description: "Azure Disk StorageClasses must use a customer-managed Disk Encryption Set (parameters.diskEncryptionSetID)."
+    security.kubeapt.io/resource: "StorageClasses"
+    security.kubeapt.io/severity: "Low"
+    security.kubeapt.io/remediation: "Set parameters.diskEncryptionSetID to a Disk Encryption Set resource ID on disk.csi.azure.com StorageClasses. Azure managed disks are always encrypted at rest; this enforces customer-managed keys (CMEK). Field: parameters.diskEncryptionSetID."
+    security.kubeapt.io/product: "Kubernetes"
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+    - apiGroups:
+      - storage.k8s.io
+      apiVersions:
+      - v1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - storageclasses
+  validations:
+  - expression: |
+      object.provisioner != 'disk.csi.azure.com' ||
+      (has(object.parameters) && 'diskEncryptionSetID' in object.parameters &&
+       object.parameters['diskEncryptionSetID'] != '')
+    message: |
+      Azure Disk StorageClasses must use a customer-managed Disk Encryption Set (parameters.diskEncryptionSetID).

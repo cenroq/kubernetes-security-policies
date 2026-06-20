@@ -1,0 +1,31 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: image-digest-ephemeralcontainers
+  annotations:
+    security.kubeapt.io/displayName: "Image Digest"
+    security.kubeapt.io/description: "spec.ephemeralContainers[*].image must be pinned by an immutable @sha256 digest."
+    security.kubeapt.io/resource: "Ephemeralcontainers"
+    security.kubeapt.io/severity: "Moderate"
+    security.kubeapt.io/remediation: "Pin ephemeral container images by an immutable @sha256 digest. Fields: spec.ephemeralContainers[*].image."
+    security.kubeapt.io/product: "Kubernetes"
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+    - apiGroups:
+      - ''
+      apiVersions:
+      - v1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - pods/ephemeralcontainers
+  validations:
+  - expression: |
+      !has(object.spec.ephemeralContainers) || object.spec.ephemeralContainers.all(ec,
+        ec.image.matches(".*@sha256:[0-9A-Fa-f]{64}")
+      )
+    message: |
+      spec.ephemeralContainers[*].image must be pinned by an immutable @sha256 digest.
