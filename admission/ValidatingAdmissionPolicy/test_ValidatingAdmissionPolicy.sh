@@ -10,6 +10,7 @@ TEST_LABEL_VALUE="enabled"
 CLUSTER_RESOURCES_FILE="$(mktemp)"
 PASSED=0
 FAILED=0
+SKIPPED=0
 
 echo "Applying ValidatingAdmissionPolicies and testing examples..."
 
@@ -176,6 +177,28 @@ while IFS= read -r policy; do
   echo "Policy:  ${policy}"
   echo "Example: ${use_example}"
 
+  # Skip CRD-targeted policies when their CRD is not installed (e.g. vanilla CI
+  # cluster). Tests declare requirements via a "# RequiresCRD: <name>[,<name>...]"
+  # comment in test.yaml; <name> is the full CRD name (e.g. ciliumnetworkpolicies.cilium.io).
+  requires_crd="$(awk -F'RequiresCRD: ' '/^# RequiresCRD: /{print $2; exit}' "$use_example")"
+  if [[ -n "${requires_crd}" ]]; then
+    missing_crd=""
+    IFS=',' read -ra _crds <<<"${requires_crd}"
+    for _crd in "${_crds[@]}"; do
+      _crd="$(echo "${_crd}" | xargs)"  # trim whitespace
+      [[ -z "${_crd}" ]] && continue
+      if ! kubectl get crd "${_crd}" >/dev/null 2>&1; then
+        missing_crd="${_crd}"
+        break
+      fi
+    done
+    if [[ -n "${missing_crd}" ]]; then
+      echo "⏭️  Skipped (required CRD not installed: ${missing_crd})"
+      SKIPPED=$((SKIPPED + 1))
+      continue
+    fi
+  fi
+
   command_line="$(awk -F'Command: ' '/^# Command: /{print $2; exit}' "$use_example")"
   if [[ -z "${command_line}" ]]; then
     # First, ensure the manifest would be accepted without the policy (basic validity)
@@ -240,7 +263,7 @@ while IFS= read -r policy; do
 done < <(find "$POLICY_ROOT" -name "policy.yaml" | sort)
 
 echo "-------------------------------"
-echo "Passed: ${PASSED}  Failed: ${FAILED}"
+echo "Passed: ${PASSED}  Failed: ${FAILED}  Skipped: ${SKIPPED}"
 
 if [[ $FAILED -ne 0 ]]; then
   exit 1
