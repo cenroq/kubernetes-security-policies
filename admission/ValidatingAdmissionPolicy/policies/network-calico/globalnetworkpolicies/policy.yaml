@@ -1,0 +1,32 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: calico-globalnetworkpolicy-egress-cidr
+  annotations:
+    security.kubeapt.io/displayName: "Calico GlobalNetworkPolicy Allow-All Egress"
+    security.kubeapt.io/description: "Calico GlobalNetworkPolicies must not Allow egress to 0.0.0.0/0 or ::/0."
+    security.kubeapt.io/resource: "GlobalNetworkPolicies"
+    security.kubeapt.io/severity: "High"
+    security.kubeapt.io/remediation: "Scope Allow egress rules to specific CIDRs instead of 0.0.0.0/0 or ::/0. Field: spec.egress[*].destination.nets."
+    security.kubeapt.io/product: "Calico"
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+    - apiGroups:
+      - crd.projectcalico.org
+      apiVersions:
+      - v1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - globalnetworkpolicies
+  validations:
+  - expression: |
+      !object.spec.?egress.orValue([]).exists(r,
+        r.?action.orValue('') == 'Allow' &&
+        r.?destination.nets.orValue([]).exists(n, n == '0.0.0.0/0' || n == '::/0')
+      )
+    message: |
+      Calico GlobalNetworkPolicies must not Allow egress to 0.0.0.0/0 or ::/0.

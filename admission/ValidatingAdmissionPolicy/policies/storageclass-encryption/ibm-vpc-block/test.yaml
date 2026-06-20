@@ -1,0 +1,7 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: violating-storageclass-encryption-ibm-vpc-block
+provisioner: vpc.block.csi.ibm.io
+parameters:
+  profile: general-purpose

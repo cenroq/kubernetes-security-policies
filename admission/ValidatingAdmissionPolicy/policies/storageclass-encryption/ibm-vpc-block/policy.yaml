@@ -1,0 +1,31 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: storageclass-encryption-ibm-vpc-block
+  annotations:
+    security.kubeapt.io/displayName: "StorageClass Encryption (IBM VPC Block)"
+    security.kubeapt.io/description: "IBM VPC Block StorageClasses must enable customer-managed encryption (parameters.encrypted: \"true\")."
+    security.kubeapt.io/resource: "StorageClasses"
+    security.kubeapt.io/severity: "Low"
+    security.kubeapt.io/remediation: "Set parameters.encrypted to \"true\" on vpc.block.csi.ibm.io StorageClasses (with parameters.encryptionKey set to the root key CRN). Field: parameters.encrypted."
+    security.kubeapt.io/product: "Kubernetes"
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+    - apiGroups:
+      - storage.k8s.io
+      apiVersions:
+      - v1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - storageclasses
+  validations:
+  - expression: |
+      object.provisioner != 'vpc.block.csi.ibm.io' ||
+      (has(object.parameters) && 'encrypted' in object.parameters &&
+       object.parameters['encrypted'] == 'true')
+    message: |
+      IBM VPC Block StorageClasses must enable customer-managed encryption (parameters.encrypted: "true").

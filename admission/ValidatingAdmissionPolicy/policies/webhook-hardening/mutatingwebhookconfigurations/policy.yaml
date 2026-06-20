@@ -1,0 +1,37 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: mutatingwebhookconfiguration-hardening
+  annotations:
+    security.kubeapt.io/displayName: "Webhook Hardening"
+    security.kubeapt.io/description: "MutatingWebhookConfigurations must not use failurePolicy Ignore or an external clientConfig.url."
+    security.kubeapt.io/resource: "MutatingWebhookConfigurations"
+    security.kubeapt.io/severity: "Moderate"
+    security.kubeapt.io/remediation: "Set failurePolicy to Fail and back each webhook with an in-cluster service (clientConfig.service) instead of an external url. Fields: webhooks[*].failurePolicy, webhooks[*].clientConfig.url."
+    security.kubeapt.io/product: "Kubernetes"
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+    - apiGroups:
+      - admissionregistration.k8s.io
+      apiVersions:
+      - v1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - mutatingwebhookconfigurations
+  validations:
+  - expression: |
+      !has(object.webhooks) || object.webhooks.all(w,
+        w.?failurePolicy.orValue('Fail') != 'Ignore'
+      )
+    message: |
+      MutatingWebhookConfigurations must not set failurePolicy to Ignore.
+  - expression: |
+      !has(object.webhooks) || object.webhooks.all(w,
+        !has(w.clientConfig.url)
+      )
+    message: |
+      MutatingWebhookConfigurations must not use an external clientConfig.url; back the webhook with an in-cluster service.

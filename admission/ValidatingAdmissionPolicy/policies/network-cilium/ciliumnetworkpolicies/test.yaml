@@ -1,0 +1,12 @@
+# RequiresCRD: ciliumnetworkpolicies.cilium.io
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: violating-ciliumnetworkpolicy-egress-world
+spec:
+  endpointSelector:
+    matchLabels:
+      app: test
+  egress:
+  - toEntities:
+    - world

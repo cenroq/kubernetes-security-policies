@@ -1,0 +1,31 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: storageclass-encryption-linode
+  annotations:
+    security.kubeapt.io/displayName: "StorageClass Encryption (Linode)"
+    security.kubeapt.io/description: "Linode Block Storage StorageClasses must enable LUKS encryption (parameters.\"linodebs.csi.linode.com/luks-encrypted\": \"true\")."
+    security.kubeapt.io/resource: "StorageClasses"
+    security.kubeapt.io/severity: "Low"
+    security.kubeapt.io/remediation: "Set parameters.\"linodebs.csi.linode.com/luks-encrypted\" to \"true\" on linodebs.csi.linode.com StorageClasses (with the required node-stage secret). Field: parameters."
+    security.kubeapt.io/product: "Kubernetes"
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+    - apiGroups:
+      - storage.k8s.io
+      apiVersions:
+      - v1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - storageclasses
+  validations:
+  - expression: |
+      object.provisioner != 'linodebs.csi.linode.com' ||
+      (has(object.parameters) && 'linodebs.csi.linode.com/luks-encrypted' in object.parameters &&
+       object.parameters['linodebs.csi.linode.com/luks-encrypted'] == 'true')
+    message: |
+      Linode Block Storage StorageClasses must enable LUKS encryption (parameters."linodebs.csi.linode.com/luks-encrypted": "true").

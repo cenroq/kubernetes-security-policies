@@ -1,0 +1,33 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: istio-authorizationpolicy-allow-all
+  annotations:
+    security.kubeapt.io/displayName: "Istio AuthorizationPolicy Allow-All"
+    security.kubeapt.io/description: "Istio ALLOW AuthorizationPolicies must not contain a rule with no from/to/when (effectively allow-all)."
+    security.kubeapt.io/resource: "AuthorizationPolicies"
+    security.kubeapt.io/severity: "High"
+    security.kubeapt.io/remediation: "Constrain each ALLOW rule with from/to/when conditions instead of an empty (match-all) rule. Field: spec.rules."
+    security.kubeapt.io/product: "Istio"
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+    - apiGroups:
+      - security.istio.io
+      apiVersions:
+      - v1
+      - v1beta1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - authorizationpolicies
+  validations:
+  - expression: |
+      object.spec.?action.orValue('ALLOW') != 'ALLOW' ||
+      !object.spec.?rules.orValue([]).exists(r,
+        !has(r.from) && !has(r.to) && !has(r.when)
+      )
+    message: |
+      Istio ALLOW AuthorizationPolicies must not contain a rule with no from/to/when (effectively allow-all).

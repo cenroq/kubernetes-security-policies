@@ -1,0 +1,31 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: storageclass-encryption-aws-ebs
+  annotations:
+    security.kubeapt.io/displayName: "StorageClass Encryption (AWS EBS)"
+    security.kubeapt.io/description: "AWS EBS StorageClasses must enable at-rest encryption (parameters.encrypted: \"true\")."
+    security.kubeapt.io/resource: "StorageClasses"
+    security.kubeapt.io/severity: "Low"
+    security.kubeapt.io/remediation: "Set parameters.encrypted to \"true\" on ebs.csi.aws.com StorageClasses. Field: parameters.encrypted."
+    security.kubeapt.io/product: "Kubernetes"
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+    - apiGroups:
+      - storage.k8s.io
+      apiVersions:
+      - v1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - storageclasses
+  validations:
+  - expression: |
+      object.provisioner != 'ebs.csi.aws.com' ||
+      (has(object.parameters) && 'encrypted' in object.parameters &&
+       object.parameters['encrypted'] == 'true')
+    message: |
+      AWS EBS StorageClasses must enable at-rest encryption (parameters.encrypted: "true").

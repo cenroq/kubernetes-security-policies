@@ -1,0 +1,20 @@
+# RequiresCRD: clusterpolicies.kyverno.io
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: violating-kyverno-clusterpolicy-not-enforcing
+spec:
+  validationFailureAction: Audit
+  rules:
+  - name: require-labels
+    match:
+      any:
+      - resources:
+          kinds:
+          - Pod
+    validate:
+      message: "label required"
+      pattern:
+        metadata:
+          labels:
+            app: "?*"

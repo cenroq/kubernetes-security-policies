@@ -1,0 +1,32 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: egressnetworkpolicy-allow-all
+  annotations:
+    security.kubeapt.io/displayName: "OpenShift EgressNetworkPolicy Allow-All"
+    security.kubeapt.io/description: "OpenShift EgressNetworkPolicies must not Allow egress to 0.0.0.0/0."
+    security.kubeapt.io/resource: "EgressNetworkPolicies"
+    security.kubeapt.io/severity: "High"
+    security.kubeapt.io/remediation: "Scope Allow rules to specific CIDRs instead of 0.0.0.0/0. Field: spec.egress[*].to.cidrSelector."
+    security.kubeapt.io/product: "OpenShift"
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+    - apiGroups:
+      - network.openshift.io
+      apiVersions:
+      - v1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - egressnetworkpolicies
+  validations:
+  - expression: |
+      !object.spec.?egress.orValue([]).exists(e,
+        e.?type.orValue('') == 'Allow' &&
+        e.?to.cidrSelector.orValue('') == '0.0.0.0/0'
+      )
+    message: |
+      OpenShift EgressNetworkPolicies must not Allow egress to 0.0.0.0/0.

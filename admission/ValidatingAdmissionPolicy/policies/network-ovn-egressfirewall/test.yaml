@@ -1,0 +1,10 @@
+# RequiresCRD: egressfirewalls.k8s.ovn.org
+apiVersion: k8s.ovn.org/v1
+kind: EgressFirewall
+metadata:
+  name: default
+spec:
+  egress:
+  - type: Allow
+    to:
+      cidrSelector: 0.0.0.0/0

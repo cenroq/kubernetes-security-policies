@@ -1,0 +1,29 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: route-no-tls
+  annotations:
+    security.kubeapt.io/displayName: "OpenShift Route No TLS"
+    security.kubeapt.io/description: "OpenShift Routes must define TLS termination."
+    security.kubeapt.io/resource: "Routes"
+    security.kubeapt.io/severity: "High"
+    security.kubeapt.io/remediation: "Configure spec.tls (e.g. edge, reencrypt or passthrough termination) so the route is not served over cleartext HTTP. Field: spec.tls."
+    security.kubeapt.io/product: "OpenShift"
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+    - apiGroups:
+      - route.openshift.io
+      apiVersions:
+      - v1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - routes
+  validations:
+  - expression: |
+      has(object.spec.tls)
+    message: |
+      OpenShift Routes must define TLS termination (spec.tls).

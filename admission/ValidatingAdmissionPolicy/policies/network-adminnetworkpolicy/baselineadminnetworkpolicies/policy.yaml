@@ -1,0 +1,38 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: baselineadminnetworkpolicy-allow-all
+  annotations:
+    security.kubeapt.io/displayName: "BaselineAdminNetworkPolicy Allow-All"
+    security.kubeapt.io/description: "BaselineAdminNetworkPolicies must not Allow traffic to/from all namespaces (empty namespace selector)."
+    security.kubeapt.io/resource: "BaselineAdminNetworkPolicies"
+    security.kubeapt.io/severity: "High"
+    security.kubeapt.io/remediation: "Scope Allow rules to specific namespaces/pods instead of an empty (match-all) namespaces selector. Fields: spec.ingress[*].from[*].namespaces, spec.egress[*].to[*].namespaces."
+    security.kubeapt.io/product: "Kubernetes"
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+    - apiGroups:
+      - policy.networking.k8s.io
+      apiVersions:
+      - v1alpha1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - baselineadminnetworkpolicies
+  validations:
+  - expression: |
+      !has(object.spec) || (
+        !object.spec.?ingress.orValue([]).exists(r,
+          r.?action.orValue('') == 'Allow' &&
+          r.?from.orValue([]).exists(p, has(p.namespaces) && size(p.namespaces) == 0)
+        ) &&
+        !object.spec.?egress.orValue([]).exists(r,
+          r.?action.orValue('') == 'Allow' &&
+          r.?to.orValue([]).exists(p, has(p.namespaces) && size(p.namespaces) == 0)
+        )
+      )
+    message: |
+      BaselineAdminNetworkPolicies must not Allow traffic to/from all namespaces (empty namespace selector).

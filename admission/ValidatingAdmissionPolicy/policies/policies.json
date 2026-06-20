@@ -6,6 +6,10 @@
     ],
     "policies": [
         {
+            "name": "adminnetworkpolicy-allow-all",
+            "file": "network-adminnetworkpolicy/adminnetworkpolicies/policy.yaml"
+        },
+        {
             "name": "allow-privilege-escalation-containers",
             "file": "privilege-escalation/containers/policy.yaml"
         },
@@ -50,6 +54,10 @@
             "file": "volume-types/policy.yaml"
         },
         {
+            "name": "apiservice-tls",
+            "file": "apiservice-tls/policy.yaml"
+        },
+        {
             "name": "apparmor-annotation-values",
             "file": "apparmor-annotation-values/policy.yaml"
         },
@@ -74,6 +82,18 @@
             "file": "automount-service-account-token/policy.yaml"
         },
         {
+            "name": "baselineadminnetworkpolicy-allow-all",
+            "file": "network-adminnetworkpolicy/baselineadminnetworkpolicies/policy.yaml"
+        },
+        {
+            "name": "calico-globalnetworkpolicy-egress-cidr",
+            "file": "network-calico/globalnetworkpolicies/policy.yaml"
+        },
+        {
+            "name": "calico-networkpolicy-egress-cidr",
+            "file": "network-calico/networkpolicies/policy.yaml"
+        },
+        {
             "name": "capabilities-add-netbindservice-containers",
             "file": "capabilities-add-netbindservice/containers/policy.yaml"
         },
@@ -96,6 +116,14 @@
         {
             "name": "capabilities-drop-all-initcontainers",
             "file": "capabilities-drop-all/initcontainers/policy.yaml"
+        },
+        {
+            "name": "ciliumclusterwidenetworkpolicy-egress-world",
+            "file": "network-cilium/ciliumclusterwidenetworkpolicies/policy.yaml"
+        },
+        {
+            "name": "ciliumnetworkpolicy-egress-world",
+            "file": "network-cilium/ciliumnetworkpolicies/policy.yaml"
         },
         {
             "name": "clusterrole-admission-api-control",
@@ -128,6 +156,10 @@
         {
             "name": "clusterrole-pvc-write",
             "file": "pvc-write/clusterroles/policy.yaml"
+        },
+        {
+            "name": "clusterrole-rbac-impersonate",
+            "file": "rbac-impersonate/clusterroles/policy.yaml"
         },
         {
             "name": "clusterrole-rbac-write",
@@ -190,6 +222,14 @@
             "file": "dns-policy/policy.yaml"
         },
         {
+            "name": "egressfirewall-allow-all",
+            "file": "network-ovn-egressfirewall/policy.yaml"
+        },
+        {
+            "name": "egressnetworkpolicy-allow-all",
+            "file": "network-openshift-egressnetworkpolicy/policy.yaml"
+        },
+        {
             "name": "fsgroup-pod",
             "file": "fsgroup/policy.yaml"
         },
@@ -212,6 +252,18 @@
         {
             "name": "hostusers",
             "file": "hostusers/policy.yaml"
+        },
+        {
+            "name": "image-digest-containers",
+            "file": "image-digest/containers/policy.yaml"
+        },
+        {
+            "name": "image-digest-ephemeralcontainers",
+            "file": "image-digest/ephemeralcontainers/policy.yaml"
+        },
+        {
+            "name": "image-digest-initcontainers",
+            "file": "image-digest/initcontainers/policy.yaml"
         },
         {
             "name": "image-no-latest-containers",
@@ -238,6 +290,22 @@
             "file": "tls-required/policy.yaml"
         },
         {
+            "name": "istio-authorizationpolicy-allow-all",
+            "file": "istio-authorizationpolicy/policy.yaml"
+        },
+        {
+            "name": "istio-peerauthentication-mtls",
+            "file": "istio-peerauthentication/policy.yaml"
+        },
+        {
+            "name": "kyverno-clusterpolicy-not-enforcing",
+            "file": "kyverno-not-enforcing/clusterpolicies/policy.yaml"
+        },
+        {
+            "name": "kyverno-policy-not-enforcing",
+            "file": "kyverno-not-enforcing/policies/policy.yaml"
+        },
+        {
             "name": "livenessprobe-httpget-host",
             "file": "livenessprobe-httpget-host/containers/policy.yaml"
         },
@@ -254,12 +322,20 @@
             "file": "livenessprobe-tcpsocket-host/initcontainers/policy.yaml"
         },
         {
+            "name": "mutatingwebhookconfiguration-hardening",
+            "file": "webhook-hardening/mutatingwebhookconfigurations/policy.yaml"
+        },
+        {
             "name": "namespace-pod-security-standards",
             "file": "pod-security-standards/policy.yaml"
         },
         {
             "name": "networkpolicy-allow-all",
             "file": "networkpolicy-allow-all/policy.yaml"
+        },
+        {
+            "name": "persistentvolume-hostpath",
+            "file": "persistentvolume-hostpath/policy.yaml"
         },
         {
             "name": "pod-template-labels",
@@ -358,6 +434,10 @@
             "file": "pvc-write/roles/policy.yaml"
         },
         {
+            "name": "role-rbac-impersonate",
+            "file": "rbac-impersonate/roles/policy.yaml"
+        },
+        {
             "name": "role-rbac-write",
             "file": "rbac-write/roles/policy.yaml"
         },
@@ -396,6 +476,10 @@
         {
             "name": "rolebinding-system-groups",
             "file": "system-groups/rolebindings/policy.yaml"
+        },
+        {
+            "name": "route-no-tls",
+            "file": "network-openshift-route/policy.yaml"
         },
         {
             "name": "run-as-group-containers",
@@ -576,6 +660,46 @@
         {
             "name": "startupprobe-tcpsocket-host-initcontainers",
             "file": "startupprobe-tcpsocket-host/initcontainers/policy.yaml"
+        },
+        {
+            "name": "storageclass-cmek-azure-disk",
+            "file": "storageclass-cmek/azure-disk/policy.yaml"
+        },
+        {
+            "name": "storageclass-cmek-gcp-pd",
+            "file": "storageclass-cmek/gcp-pd/policy.yaml"
+        },
+        {
+            "name": "storageclass-cmek-oci-block",
+            "file": "storageclass-cmek/oci-block/policy.yaml"
+        },
+        {
+            "name": "storageclass-encryption-aws-ebs",
+            "file": "storageclass-encryption/aws-ebs/policy.yaml"
+        },
+        {
+            "name": "storageclass-encryption-ceph-rbd",
+            "file": "storageclass-encryption/ceph-rbd/policy.yaml"
+        },
+        {
+            "name": "storageclass-encryption-ibm-vpc-block",
+            "file": "storageclass-encryption/ibm-vpc-block/policy.yaml"
+        },
+        {
+            "name": "storageclass-encryption-linode",
+            "file": "storageclass-encryption/linode/policy.yaml"
+        },
+        {
+            "name": "storageclass-encryption-longhorn",
+            "file": "storageclass-encryption/longhorn/policy.yaml"
+        },
+        {
+            "name": "storageclass-encryption-portworx",
+            "file": "storageclass-encryption/portworx/policy.yaml"
+        },
+        {
+            "name": "validatingwebhookconfiguration-hardening",
+            "file": "webhook-hardening/validatingwebhookconfigurations/policy.yaml"
         },
         {
             "name": "windows-hostprocess",

@@ -7618,3 +7618,723 @@ spec:
         operator: NotIn
         values:
         - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: image-digest-containers-namespace-warn
+spec:
+  policyName: image-digest-containers
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/warn
+        operator: In
+        values:
+        - enabled
+      - key: image-digest-containers.security.kolteq.com/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: image-digest-containers-namespace-audit
+spec:
+  policyName: image-digest-containers
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/audit
+        operator: In
+        values:
+        - enabled
+      - key: image-digest-containers.security.kolteq.com/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: image-digest-containers-namespace-enforce
+spec:
+  policyName: image-digest-containers
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/enforce
+        operator: In
+        values:
+        - enabled
+      - key: image-digest-containers.security.kolteq.com/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: image-digest-initcontainers-namespace-warn
+spec:
+  policyName: image-digest-initcontainers
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/warn
+        operator: In
+        values:
+        - enabled
+      - key: image-digest-initcontainers.security.kolteq.com/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: image-digest-initcontainers-namespace-audit
+spec:
+  policyName: image-digest-initcontainers
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/audit
+        operator: In
+        values:
+        - enabled
+      - key: image-digest-initcontainers.security.kolteq.com/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: image-digest-initcontainers-namespace-enforce
+spec:
+  policyName: image-digest-initcontainers
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/enforce
+        operator: In
+        values:
+        - enabled
+      - key: image-digest-initcontainers.security.kolteq.com/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: image-digest-ephemeralcontainers-namespace-warn
+spec:
+  policyName: image-digest-ephemeralcontainers
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/warn
+        operator: In
+        values:
+        - enabled
+      - key: image-digest-ephemeralcontainers.security.kolteq.com/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: image-digest-ephemeralcontainers-namespace-audit
+spec:
+  policyName: image-digest-ephemeralcontainers
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/audit
+        operator: In
+        values:
+        - enabled
+      - key: image-digest-ephemeralcontainers.security.kolteq.com/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: image-digest-ephemeralcontainers-namespace-enforce
+spec:
+  policyName: image-digest-ephemeralcontainers
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/enforce
+        operator: In
+        values:
+        - enabled
+      - key: image-digest-ephemeralcontainers.security.kolteq.com/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: role-rbac-impersonate-namespace-warn
+spec:
+  policyName: role-rbac-impersonate
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/warn
+        operator: In
+        values:
+        - enabled
+      - key: role-rbac-impersonate.security.kolteq.com/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: role-rbac-impersonate-namespace-audit
+spec:
+  policyName: role-rbac-impersonate
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/audit
+        operator: In
+        values:
+        - enabled
+      - key: role-rbac-impersonate.security.kolteq.com/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: role-rbac-impersonate-namespace-enforce
+spec:
+  policyName: role-rbac-impersonate
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/enforce
+        operator: In
+        values:
+        - enabled
+      - key: role-rbac-impersonate.security.kolteq.com/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ciliumnetworkpolicy-egress-world-namespace-warn
+spec:
+  policyName: ciliumnetworkpolicy-egress-world
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/warn
+        operator: In
+        values:
+        - enabled
+      - key: ciliumnetworkpolicy-egress-world.security.kolteq.com/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ciliumnetworkpolicy-egress-world-namespace-audit
+spec:
+  policyName: ciliumnetworkpolicy-egress-world
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/audit
+        operator: In
+        values:
+        - enabled
+      - key: ciliumnetworkpolicy-egress-world.security.kolteq.com/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ciliumnetworkpolicy-egress-world-namespace-enforce
+spec:
+  policyName: ciliumnetworkpolicy-egress-world
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/enforce
+        operator: In
+        values:
+        - enabled
+      - key: ciliumnetworkpolicy-egress-world.security.kolteq.com/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: calico-networkpolicy-egress-cidr-namespace-warn
+spec:
+  policyName: calico-networkpolicy-egress-cidr
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/warn
+        operator: In
+        values:
+        - enabled
+      - key: calico-networkpolicy-egress-cidr.security.kolteq.com/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: calico-networkpolicy-egress-cidr-namespace-audit
+spec:
+  policyName: calico-networkpolicy-egress-cidr
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/audit
+        operator: In
+        values:
+        - enabled
+      - key: calico-networkpolicy-egress-cidr.security.kolteq.com/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: calico-networkpolicy-egress-cidr-namespace-enforce
+spec:
+  policyName: calico-networkpolicy-egress-cidr
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/enforce
+        operator: In
+        values:
+        - enabled
+      - key: calico-networkpolicy-egress-cidr.security.kolteq.com/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: egressfirewall-allow-all-namespace-warn
+spec:
+  policyName: egressfirewall-allow-all
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/warn
+        operator: In
+        values:
+        - enabled
+      - key: egressfirewall-allow-all.security.kolteq.com/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: egressfirewall-allow-all-namespace-audit
+spec:
+  policyName: egressfirewall-allow-all
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/audit
+        operator: In
+        values:
+        - enabled
+      - key: egressfirewall-allow-all.security.kolteq.com/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: egressfirewall-allow-all-namespace-enforce
+spec:
+  policyName: egressfirewall-allow-all
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/enforce
+        operator: In
+        values:
+        - enabled
+      - key: egressfirewall-allow-all.security.kolteq.com/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: egressnetworkpolicy-allow-all-namespace-warn
+spec:
+  policyName: egressnetworkpolicy-allow-all
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/warn
+        operator: In
+        values:
+        - enabled
+      - key: egressnetworkpolicy-allow-all.security.kolteq.com/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: egressnetworkpolicy-allow-all-namespace-audit
+spec:
+  policyName: egressnetworkpolicy-allow-all
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/audit
+        operator: In
+        values:
+        - enabled
+      - key: egressnetworkpolicy-allow-all.security.kolteq.com/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: egressnetworkpolicy-allow-all-namespace-enforce
+spec:
+  policyName: egressnetworkpolicy-allow-all
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/enforce
+        operator: In
+        values:
+        - enabled
+      - key: egressnetworkpolicy-allow-all.security.kolteq.com/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: route-no-tls-namespace-warn
+spec:
+  policyName: route-no-tls
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/warn
+        operator: In
+        values:
+        - enabled
+      - key: route-no-tls.security.kolteq.com/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: route-no-tls-namespace-audit
+spec:
+  policyName: route-no-tls
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/audit
+        operator: In
+        values:
+        - enabled
+      - key: route-no-tls.security.kolteq.com/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: route-no-tls-namespace-enforce
+spec:
+  policyName: route-no-tls
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/enforce
+        operator: In
+        values:
+        - enabled
+      - key: route-no-tls.security.kolteq.com/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: istio-peerauthentication-mtls-namespace-warn
+spec:
+  policyName: istio-peerauthentication-mtls
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/warn
+        operator: In
+        values:
+        - enabled
+      - key: istio-peerauthentication-mtls.security.kolteq.com/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: istio-peerauthentication-mtls-namespace-audit
+spec:
+  policyName: istio-peerauthentication-mtls
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/audit
+        operator: In
+        values:
+        - enabled
+      - key: istio-peerauthentication-mtls.security.kolteq.com/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: istio-peerauthentication-mtls-namespace-enforce
+spec:
+  policyName: istio-peerauthentication-mtls
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/enforce
+        operator: In
+        values:
+        - enabled
+      - key: istio-peerauthentication-mtls.security.kolteq.com/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: istio-authorizationpolicy-allow-all-namespace-warn
+spec:
+  policyName: istio-authorizationpolicy-allow-all
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/warn
+        operator: In
+        values:
+        - enabled
+      - key: istio-authorizationpolicy-allow-all.security.kolteq.com/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: istio-authorizationpolicy-allow-all-namespace-audit
+spec:
+  policyName: istio-authorizationpolicy-allow-all
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/audit
+        operator: In
+        values:
+        - enabled
+      - key: istio-authorizationpolicy-allow-all.security.kolteq.com/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: istio-authorizationpolicy-allow-all-namespace-enforce
+spec:
+  policyName: istio-authorizationpolicy-allow-all
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/enforce
+        operator: In
+        values:
+        - enabled
+      - key: istio-authorizationpolicy-allow-all.security.kolteq.com/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: kyverno-policy-not-enforcing-namespace-warn
+spec:
+  policyName: kyverno-policy-not-enforcing
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/warn
+        operator: In
+        values:
+        - enabled
+      - key: kyverno-policy-not-enforcing.security.kolteq.com/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: kyverno-policy-not-enforcing-namespace-audit
+spec:
+  policyName: kyverno-policy-not-enforcing
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/audit
+        operator: In
+        values:
+        - enabled
+      - key: kyverno-policy-not-enforcing.security.kolteq.com/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: kyverno-policy-not-enforcing-namespace-enforce
+spec:
+  policyName: kyverno-policy-not-enforcing
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.kolteq.com/enforce
+        operator: In
+        values:
+        - enabled
+      - key: kyverno-policy-not-enforcing.security.kolteq.com/enforce
+        operator: NotIn
+        values:
+        - disabled

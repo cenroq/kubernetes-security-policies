@@ -1,0 +1,9 @@
+# RequiresCRD: authorizationpolicies.security.istio.io
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata:
+  name: violating-istio-authorizationpolicy-allow-all
+spec:
+  action: ALLOW
+  rules:
+  - {}

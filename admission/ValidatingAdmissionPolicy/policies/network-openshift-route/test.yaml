@@ -1,0 +1,10 @@
+# RequiresCRD: routes.route.openshift.io
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: violating-route-no-tls
+spec:
+  host: app.example.com
+  to:
+    kind: Service
+    name: app
