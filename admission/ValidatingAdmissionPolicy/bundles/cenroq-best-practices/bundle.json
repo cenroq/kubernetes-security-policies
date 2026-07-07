@@ -1,12 +1,12 @@
 {
-    "name": "KolTEQ Best Practices",
+    "name": "cenroq Best Practices",
     "description": "Best practice validating admission bundle that enforces pod hardening, safer runtime defaults, and broader cluster guardrails (RBAC, secrets, exposure, and risky config restrictions) for a strong security baseline.",
     "version": "v0.1.1",
-    "deployment": "mkdir -p /tmp/kolteq && curl -L https://github.com/kolteq/kubernetes-security-policies/releases/download/vap_kolteq-best-practices%40v0.1.1/kolteq-best-practices_v0.1.1.tar.gz | tar -xz -C /tmp/kolteq && kubectl apply -f /tmp/kolteq/kolteq-best-practices --recursive",
+    "deployment": "mkdir -p /tmp/cenroq && curl -L https://github.com/cenroq/kubernetes-security-policies/releases/download/vap_cenroq-best-practices%40v0.1.1/cenroq-best-practices_v0.1.1.tar.gz | tar -xz -C /tmp/cenroq && kubectl apply -f /tmp/cenroq/cenroq-best-practices --recursive",
     "labels":  {
-        "warn": "security.kolteq.com/warn",
-        "audit": "security.kolteq.com/audit",
-        "enforce": "security.kolteq.com/enforce"
+        "warn": "security.cenroq.io/warn",
+        "audit": "security.cenroq.io/audit",
+        "enforce": "security.cenroq.io/enforce"
     },
     "policies": [
         "configmap-no-secrets",
@@ -189,7 +189,7 @@
         "kyverno-policy-not-enforcing"
     ],
     "sources": [
-        "https://github.com/kolteq/kubernetes-security-policies/releases/download/vap_kolteq-best-practices%40v0.1.1/kolteq-best-practices_v0.1.1.tar.gz",
-        "https://github.com/kolteq/kubernetes-security-policies/releases/download/vap_kolteq-best-practices%40v0.1.1/kolteq-best-practices_v0.1.1.zip"
+        "https://github.com/cenroq/kubernetes-security-policies/releases/download/vap_cenroq-best-practices%40v0.1.1/cenroq-best-practices_v0.1.1.tar.gz",
+        "https://github.com/cenroq/kubernetes-security-policies/releases/download/vap_cenroq-best-practices%40v0.1.1/cenroq-best-practices_v0.1.1.zip"
     ]
 }

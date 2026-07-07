@@ -2,11 +2,11 @@
     "name": "Pod Security Admission",
     "description": "Pod Security Standards implemented as Validating Admission Policies, with the same levels (baseline and restricted).",
     "version": "v1.36.0",
-    "deployment": "mkdir -p /tmp/kolteq && curl -L https://github.com/kolteq/kubernetes-security-policies/releases/download/vap_pod-security-admission%40v1.36.0/pod-security-admission_v1.36.0.tar.gz | tar -xz -C /tmp/kolteq && kubectl apply -f /tmp/kolteq/pod-security-admission",
+    "deployment": "mkdir -p /tmp/cenroq && curl -L https://github.com/cenroq/kubernetes-security-policies/releases/download/vap_pod-security-admission%40v1.36.0/pod-security-admission_v1.36.0.tar.gz | tar -xz -C /tmp/cenroq && kubectl apply -f /tmp/cenroq/pod-security-admission",
     "labels":  {
-        "warn": "pss.security.kolteq.com/warn",
-        "audit": "pss.security.kolteq.com/audit",
-        "enforce": "pss.security.kolteq.com/enforce"
+        "warn": "pss.security.cenroq.io/warn",
+        "audit": "pss.security.cenroq.io/audit",
+        "enforce": "pss.security.cenroq.io/enforce"
     },
     "policies": [
         "run-as-user-pod",
@@ -95,7 +95,7 @@
         "selinux-type-containers"
     ],
     "sources": [
-        "https://github.com/kolteq/kubernetes-security-policies/releases/download/vap_pod-security-admission%40v1.36.0/pod-security-admission_v1.36.0.tar.gz",
-        "https://github.com/kolteq/kubernetes-security-policies/releases/download/vap_pod-security-admission%40v1.36.0/pod-security-admission_v1.36.0.zip"
+        "https://github.com/cenroq/kubernetes-security-policies/releases/download/vap_pod-security-admission%40v1.36.0/pod-security-admission_v1.36.0.tar.gz",
+        "https://github.com/cenroq/kubernetes-security-policies/releases/download/vap_pod-security-admission%40v1.36.0/pod-security-admission_v1.36.0.zip"
     ]
 }
