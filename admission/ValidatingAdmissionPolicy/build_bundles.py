@@ -33,10 +33,10 @@ def write_readme(bundle_dir: Path, name: str, description: str, bundle_slug: str
             "```",
             "",
             "View online:",
-            f"https://kolteq.com/policies/bundles/{bundle_slug}",
+            f"https://cenroq.com/policies/bundles/{bundle_slug}",
             "",
             "Contact us:",
-            "https://kolteq.com",
+            "https://cenroq.com",
             "",
         ]
     )
@@ -133,8 +133,8 @@ def build_bundle(root: Path, bundle_dir: Path, policy_index: dict[str, Path]):
                 labels = metadata.setdefault("labels", {})
                 labels["bundle"] = bundle_slug
                 annotations = metadata.setdefault("annotations", {})
-                annotations["policy-bundle.kolteq.com/name"] = bundle_slug
-                annotations["policy-bundle.kolteq.com/version"] = version
+                annotations["policy-bundle.cenroq.io/name"] = bundle_slug
+                annotations["policy-bundle.cenroq.io/version"] = version
                 bindings_docs.append(doc)
             (bundle_dir / "bindings.yaml").write_text(
                 yaml.safe_dump_all(bindings_docs, sort_keys=False, explicit_start=True)
