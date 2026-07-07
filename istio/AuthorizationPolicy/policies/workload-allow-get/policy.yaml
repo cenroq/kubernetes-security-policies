@@ -4,8 +4,8 @@ metadata:
   name: allow-get-only
   namespace: default
   annotations:
-    kubedrill.io/displayName: "Allow GET Only"
-    kubedrill.io/description: "Allow only HTTP GET requests to the api-gateway workload on port 8080."
+    cenroq.io/displayName: "Allow GET Only"
+    cenroq.io/description: "Allow only HTTP GET requests to the api-gateway workload on port 8080."
 spec:
   selector:
     matchLabels:

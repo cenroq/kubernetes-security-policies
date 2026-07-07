@@ -4,8 +4,8 @@ metadata:
   name: allow-serviceaccount
   namespace: default
   annotations:
-    kubedrill.io/displayName: "Allow ServiceAccount"
-    kubedrill.io/description: "Allow requests to the payments workload only from the specified service account principal."
+    cenroq.io/displayName: "Allow ServiceAccount"
+    cenroq.io/description: "Allow requests to the payments workload only from the specified service account principal."
 spec:
   selector:
     matchLabels:

@@ -3,8 +3,8 @@ kind: NetworkPolicy
 metadata:
   name: allow-traffic-inside-application-namespace
   annotations:
-    kubedrill.io/displayName: "Allow Intra-Namespace Traffic"
-    kubedrill.io/description: "Allow all ingress and egress traffic between pods in the same namespace."
+    cenroq.io/displayName: "Allow Intra-Namespace Traffic"
+    cenroq.io/description: "Allow all ingress and egress traffic between pods in the same namespace."
 spec:
   podSelector: {}
   policyTypes:

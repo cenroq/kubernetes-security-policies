@@ -3,8 +3,8 @@ kind: NetworkPolicy
 metadata:
   name: allow-traffic-to-cloud-metadata-service
   annotations:
-    kubedrill.io/displayName: "Allow Egress to Cloud Metadata Service"
-    kubedrill.io/description: "Allow egress traffic to the cloud metadata service at 169.254.169.254 on ports 80 and 443."
+    cenroq.io/displayName: "Allow Egress to Cloud Metadata Service"
+    cenroq.io/description: "Allow egress traffic to the cloud metadata service at 169.254.169.254 on ports 80 and 443."
 spec:
   podSelector: {}
   policyTypes:

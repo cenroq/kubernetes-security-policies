@@ -4,8 +4,8 @@ metadata:
   name: app-port-exception
   namespace: default
   annotations:
-    kubedrill.io/displayName: "mTLS Port Exception"
-    kubedrill.io/description: "Enforce STRICT mTLS for the api-gateway workload except disable mTLS on port 8080."
+    cenroq.io/displayName: "mTLS Port Exception"
+    cenroq.io/description: "Enforce STRICT mTLS for the api-gateway workload except disable mTLS on port 8080."
 spec:
   selector:
     matchLabels:

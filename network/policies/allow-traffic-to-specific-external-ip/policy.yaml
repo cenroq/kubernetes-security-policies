@@ -3,8 +3,8 @@ kind: NetworkPolicy
 metadata:
   name: allow-traffic-to-specific-external-ip
   annotations:
-    kubedrill.io/displayName: "Allow Egress to Specific External IP"
-    kubedrill.io/description: "Allow egress traffic to the external IP 203.0.113.10/32."
+    cenroq.io/displayName: "Allow Egress to Specific External IP"
+    cenroq.io/description: "Allow egress traffic to the external IP 203.0.113.10/32."
 spec:
   podSelector: {}
   policyTypes:

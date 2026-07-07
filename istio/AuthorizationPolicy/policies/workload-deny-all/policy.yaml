@@ -4,8 +4,8 @@ metadata:
   name: deny-all
   namespace: default
   annotations:
-    kubedrill.io/displayName: "Deny All Traffic"
-    kubedrill.io/description: "Deny all requests to the blocked workload."
+    cenroq.io/displayName: "Deny All Traffic"
+    cenroq.io/description: "Deny all requests to the blocked workload."
 spec:
   selector:
     matchLabels:
