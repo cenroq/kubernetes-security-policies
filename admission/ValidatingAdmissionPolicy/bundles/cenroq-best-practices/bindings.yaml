@@ -10,11 +10,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: service-external-ips.security.kolteq.com/warn
+      - key: service-external-ips.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -30,11 +30,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: service-external-ips.security.kolteq.com/audit
+      - key: service-external-ips.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -50,11 +50,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: service-external-ips.security.kolteq.com/enforce
+      - key: service-external-ips.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -70,11 +70,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: ingress-tls-hosts-match.security.kolteq.com/warn
+      - key: ingress-tls-hosts-match.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -90,11 +90,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: ingress-tls-hosts-match.security.kolteq.com/audit
+      - key: ingress-tls-hosts-match.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -110,11 +110,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: ingress-tls-hosts-match.security.kolteq.com/enforce
+      - key: ingress-tls-hosts-match.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -130,11 +130,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: ingress-no-dangerous-snippets.security.kolteq.com/warn
+      - key: ingress-no-dangerous-snippets.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -150,11 +150,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: ingress-no-dangerous-snippets.security.kolteq.com/audit
+      - key: ingress-no-dangerous-snippets.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -170,11 +170,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: ingress-no-dangerous-snippets.security.kolteq.com/enforce
+      - key: ingress-no-dangerous-snippets.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -190,11 +190,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: run-as-user-pod.security.kolteq.com/warn
+      - key: run-as-user-pod.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -210,11 +210,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: run-as-user-pod.security.kolteq.com/audit
+      - key: run-as-user-pod.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -230,11 +230,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: run-as-user-pod.security.kolteq.com/enforce
+      - key: run-as-user-pod.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -250,11 +250,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: run-as-user-initcontainers.security.kolteq.com/warn
+      - key: run-as-user-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -270,11 +270,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: run-as-user-initcontainers.security.kolteq.com/audit
+      - key: run-as-user-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -290,11 +290,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: run-as-user-initcontainers.security.kolteq.com/enforce
+      - key: run-as-user-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -310,11 +310,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: run-as-user-ephemeralcontainers.security.kolteq.com/warn
+      - key: run-as-user-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -330,11 +330,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: run-as-user-ephemeralcontainers.security.kolteq.com/audit
+      - key: run-as-user-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -350,11 +350,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: run-as-user-ephemeralcontainers.security.kolteq.com/enforce
+      - key: run-as-user-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -370,11 +370,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: run-as-user-containers.security.kolteq.com/warn
+      - key: run-as-user-containers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -390,11 +390,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: run-as-user-containers.security.kolteq.com/audit
+      - key: run-as-user-containers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -410,11 +410,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: run-as-user-containers.security.kolteq.com/enforce
+      - key: run-as-user-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -430,11 +430,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: seccomp-profile-pod-restricted.security.kolteq.com/warn
+      - key: seccomp-profile-pod-restricted.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -450,11 +450,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: seccomp-profile-pod-restricted.security.kolteq.com/audit
+      - key: seccomp-profile-pod-restricted.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -470,11 +470,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: seccomp-profile-pod-restricted.security.kolteq.com/enforce
+      - key: seccomp-profile-pod-restricted.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -490,11 +490,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: seccomp-profile-initcontainers-restricted.security.kolteq.com/warn
+      - key: seccomp-profile-initcontainers-restricted.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -510,11 +510,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: seccomp-profile-initcontainers-restricted.security.kolteq.com/audit
+      - key: seccomp-profile-initcontainers-restricted.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -530,11 +530,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: seccomp-profile-initcontainers-restricted.security.kolteq.com/enforce
+      - key: seccomp-profile-initcontainers-restricted.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -550,11 +550,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: seccomp-profile-ephemeralcontainers-restricted.security.kolteq.com/warn
+      - key: seccomp-profile-ephemeralcontainers-restricted.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -570,11 +570,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: seccomp-profile-ephemeralcontainers-restricted.security.kolteq.com/audit
+      - key: seccomp-profile-ephemeralcontainers-restricted.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -590,11 +590,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: seccomp-profile-ephemeralcontainers-restricted.security.kolteq.com/enforce
+      - key: seccomp-profile-ephemeralcontainers-restricted.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -610,11 +610,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: seccomp-profile-containers-restricted.security.kolteq.com/warn
+      - key: seccomp-profile-containers-restricted.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -630,11 +630,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: seccomp-profile-containers-restricted.security.kolteq.com/audit
+      - key: seccomp-profile-containers-restricted.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -650,11 +650,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: seccomp-profile-containers-restricted.security.kolteq.com/enforce
+      - key: seccomp-profile-containers-restricted.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -670,11 +670,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: role-pod-exec-create.security.kolteq.com/warn
+      - key: role-pod-exec-create.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -690,11 +690,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: role-pod-exec-create.security.kolteq.com/audit
+      - key: role-pod-exec-create.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -710,11 +710,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: role-pod-exec-create.security.kolteq.com/enforce
+      - key: role-pod-exec-create.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -730,11 +730,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: serviceaccount-automount-token-false.security.kolteq.com/warn
+      - key: serviceaccount-automount-token-false.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -750,11 +750,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: serviceaccount-automount-token-false.security.kolteq.com/audit
+      - key: serviceaccount-automount-token-false.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -770,11 +770,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: serviceaccount-automount-token-false.security.kolteq.com/enforce
+      - key: serviceaccount-automount-token-false.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -790,11 +790,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: selinux-role.security.kolteq.com/warn
+      - key: selinux-role.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -810,11 +810,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: selinux-role.security.kolteq.com/audit
+      - key: selinux-role.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -830,11 +830,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: selinux-role.security.kolteq.com/enforce
+      - key: selinux-role.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -850,11 +850,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: selinux-role-initcontainers.security.kolteq.com/warn
+      - key: selinux-role-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -870,11 +870,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: selinux-role-initcontainers.security.kolteq.com/audit
+      - key: selinux-role-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -890,11 +890,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: selinux-role-initcontainers.security.kolteq.com/enforce
+      - key: selinux-role-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -910,11 +910,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: selinux-role-ephemeralcontainers.security.kolteq.com/warn
+      - key: selinux-role-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -930,11 +930,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: selinux-role-ephemeralcontainers.security.kolteq.com/audit
+      - key: selinux-role-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -950,11 +950,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: selinux-role-ephemeralcontainers.security.kolteq.com/enforce
+      - key: selinux-role-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -970,11 +970,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: selinux-role-containers.security.kolteq.com/warn
+      - key: selinux-role-containers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -990,11 +990,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: selinux-role-containers.security.kolteq.com/audit
+      - key: selinux-role-containers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1010,11 +1010,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: selinux-role-containers.security.kolteq.com/enforce
+      - key: selinux-role-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1030,11 +1030,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: configmap-no-secrets.security.kolteq.com/warn
+      - key: configmap-no-secrets.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1050,11 +1050,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: configmap-no-secrets.security.kolteq.com/audit
+      - key: configmap-no-secrets.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1070,11 +1070,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: configmap-no-secrets.security.kolteq.com/enforce
+      - key: configmap-no-secrets.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1090,11 +1090,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: allowed-sysctls.security.kolteq.com/warn
+      - key: allowed-sysctls.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1110,11 +1110,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: allowed-sysctls.security.kolteq.com/audit
+      - key: allowed-sysctls.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1130,11 +1130,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: allowed-sysctls.security.kolteq.com/enforce
+      - key: allowed-sysctls.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1150,11 +1150,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: dns-policy.security.kolteq.com/warn
+      - key: dns-policy.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1170,11 +1170,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: dns-policy.security.kolteq.com/audit
+      - key: dns-policy.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1190,11 +1190,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: dns-policy.security.kolteq.com/enforce
+      - key: dns-policy.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1210,11 +1210,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: poststart-tcpsocket-host-initcontainers.security.kolteq.com/warn
+      - key: poststart-tcpsocket-host-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1230,11 +1230,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: poststart-tcpsocket-host-initcontainers.security.kolteq.com/audit
+      - key: poststart-tcpsocket-host-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1250,11 +1250,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: poststart-tcpsocket-host-initcontainers.security.kolteq.com/enforce
+      - key: poststart-tcpsocket-host-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1270,11 +1270,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: poststart-tcpsocket-host-containers.security.kolteq.com/warn
+      - key: poststart-tcpsocket-host-containers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1290,11 +1290,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: poststart-tcpsocket-host-containers.security.kolteq.com/audit
+      - key: poststart-tcpsocket-host-containers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1310,11 +1310,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: poststart-tcpsocket-host-containers.security.kolteq.com/enforce
+      - key: poststart-tcpsocket-host-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1330,11 +1330,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: startupprobe-httpget-host-initcontainers.security.kolteq.com/warn
+      - key: startupprobe-httpget-host-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1350,11 +1350,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: startupprobe-httpget-host-initcontainers.security.kolteq.com/audit
+      - key: startupprobe-httpget-host-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1370,11 +1370,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: startupprobe-httpget-host-initcontainers.security.kolteq.com/enforce
+      - key: startupprobe-httpget-host-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1390,11 +1390,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: startupprobe-httpget-host-containers.security.kolteq.com/warn
+      - key: startupprobe-httpget-host-containers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1410,11 +1410,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: startupprobe-httpget-host-containers.security.kolteq.com/audit
+      - key: startupprobe-httpget-host-containers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1430,11 +1430,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: startupprobe-httpget-host-containers.security.kolteq.com/enforce
+      - key: startupprobe-httpget-host-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1450,11 +1450,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: apparmor-annotation-values.security.kolteq.com/warn
+      - key: apparmor-annotation-values.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1470,11 +1470,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: apparmor-annotation-values.security.kolteq.com/audit
+      - key: apparmor-annotation-values.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1490,11 +1490,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: apparmor-annotation-values.security.kolteq.com/enforce
+      - key: apparmor-annotation-values.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1510,11 +1510,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: hostipc.security.kolteq.com/warn
+      - key: hostipc.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1530,11 +1530,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: hostipc.security.kolteq.com/audit
+      - key: hostipc.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1550,11 +1550,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: hostipc.security.kolteq.com/enforce
+      - key: hostipc.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1570,11 +1570,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: role-rbac-write.security.kolteq.com/warn
+      - key: role-rbac-write.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1590,11 +1590,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: role-rbac-write.security.kolteq.com/audit
+      - key: role-rbac-write.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1610,11 +1610,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: role-rbac-write.security.kolteq.com/enforce
+      - key: role-rbac-write.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1630,11 +1630,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: service-no-admin-ports.security.kolteq.com/warn
+      - key: service-no-admin-ports.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1650,11 +1650,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: service-no-admin-ports.security.kolteq.com/audit
+      - key: service-no-admin-ports.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1670,11 +1670,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: service-no-admin-ports.security.kolteq.com/enforce
+      - key: service-no-admin-ports.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1690,11 +1690,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: privileged-initcontainers.security.kolteq.com/warn
+      - key: privileged-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1710,11 +1710,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: privileged-initcontainers.security.kolteq.com/audit
+      - key: privileged-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1730,11 +1730,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: privileged-initcontainers.security.kolteq.com/enforce
+      - key: privileged-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1750,11 +1750,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: privileged-ephemeralcontainers.security.kolteq.com/warn
+      - key: privileged-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1770,11 +1770,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: privileged-ephemeralcontainers.security.kolteq.com/audit
+      - key: privileged-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1790,11 +1790,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: privileged-ephemeralcontainers.security.kolteq.com/enforce
+      - key: privileged-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1810,11 +1810,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: privileged-containers.security.kolteq.com/warn
+      - key: privileged-containers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1830,11 +1830,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: privileged-containers.security.kolteq.com/audit
+      - key: privileged-containers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1850,11 +1850,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: privileged-containers.security.kolteq.com/enforce
+      - key: privileged-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1870,11 +1870,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: image-no-latest-initcontainers.security.kolteq.com/warn
+      - key: image-no-latest-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1890,11 +1890,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: image-no-latest-initcontainers.security.kolteq.com/audit
+      - key: image-no-latest-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1910,11 +1910,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: image-no-latest-initcontainers.security.kolteq.com/enforce
+      - key: image-no-latest-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1930,11 +1930,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: image-no-latest-ephemeralcontainers.security.kolteq.com/warn
+      - key: image-no-latest-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1950,11 +1950,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: image-no-latest-ephemeralcontainers.security.kolteq.com/audit
+      - key: image-no-latest-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1970,11 +1970,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: image-no-latest-ephemeralcontainers.security.kolteq.com/enforce
+      - key: image-no-latest-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1990,11 +1990,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: image-no-latest-containers.security.kolteq.com/warn
+      - key: image-no-latest-containers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2010,11 +2010,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: image-no-latest-containers.security.kolteq.com/audit
+      - key: image-no-latest-containers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2030,11 +2030,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: image-no-latest-containers.security.kolteq.com/enforce
+      - key: image-no-latest-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2050,11 +2050,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: role-pvc-write.security.kolteq.com/warn
+      - key: role-pvc-write.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2070,11 +2070,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: role-pvc-write.security.kolteq.com/audit
+      - key: role-pvc-write.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2090,11 +2090,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: role-pvc-write.security.kolteq.com/enforce
+      - key: role-pvc-write.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2110,11 +2110,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: rolebinding-powerful-roles.security.kolteq.com/warn
+      - key: rolebinding-powerful-roles.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2130,11 +2130,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: rolebinding-powerful-roles.security.kolteq.com/audit
+      - key: rolebinding-powerful-roles.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2150,11 +2150,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: rolebinding-powerful-roles.security.kolteq.com/enforce
+      - key: rolebinding-powerful-roles.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2170,11 +2170,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: apparmor-profile-pod.security.kolteq.com/warn
+      - key: apparmor-profile-pod.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2190,11 +2190,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: apparmor-profile-pod.security.kolteq.com/audit
+      - key: apparmor-profile-pod.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2210,11 +2210,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: apparmor-profile-pod.security.kolteq.com/enforce
+      - key: apparmor-profile-pod.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2230,11 +2230,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: apparmor-profile-initcontainers.security.kolteq.com/warn
+      - key: apparmor-profile-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2250,11 +2250,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: apparmor-profile-initcontainers.security.kolteq.com/audit
+      - key: apparmor-profile-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2270,11 +2270,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: apparmor-profile-initcontainers.security.kolteq.com/enforce
+      - key: apparmor-profile-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2290,11 +2290,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: apparmor-profile-ephemeralcontainers.security.kolteq.com/warn
+      - key: apparmor-profile-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2310,11 +2310,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: apparmor-profile-ephemeralcontainers.security.kolteq.com/audit
+      - key: apparmor-profile-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2330,11 +2330,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: apparmor-profile-ephemeralcontainers.security.kolteq.com/enforce
+      - key: apparmor-profile-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2350,11 +2350,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: apparmor-profile-containers.security.kolteq.com/warn
+      - key: apparmor-profile-containers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2370,11 +2370,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: apparmor-profile-containers.security.kolteq.com/audit
+      - key: apparmor-profile-containers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2390,11 +2390,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: apparmor-profile-containers.security.kolteq.com/enforce
+      - key: apparmor-profile-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2410,11 +2410,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: prestop-httpget-host-initcontainers.security.kolteq.com/warn
+      - key: prestop-httpget-host-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2430,11 +2430,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: prestop-httpget-host-initcontainers.security.kolteq.com/audit
+      - key: prestop-httpget-host-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2450,11 +2450,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: prestop-httpget-host-initcontainers.security.kolteq.com/enforce
+      - key: prestop-httpget-host-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2470,11 +2470,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: prestop-httpget-host-containers.security.kolteq.com/warn
+      - key: prestop-httpget-host-containers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2490,11 +2490,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: prestop-httpget-host-containers.security.kolteq.com/audit
+      - key: prestop-httpget-host-containers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2510,11 +2510,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: prestop-httpget-host-containers.security.kolteq.com/enforce
+      - key: prestop-httpget-host-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2530,11 +2530,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: hostusers.security.kolteq.com/warn
+      - key: hostusers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2550,11 +2550,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: hostusers.security.kolteq.com/audit
+      - key: hostusers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2570,11 +2570,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: hostusers.security.kolteq.com/enforce
+      - key: hostusers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2590,11 +2590,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: procmount-initcontainers.security.kolteq.com/warn
+      - key: procmount-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2610,11 +2610,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: procmount-initcontainers.security.kolteq.com/audit
+      - key: procmount-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2630,11 +2630,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: procmount-initcontainers.security.kolteq.com/enforce
+      - key: procmount-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2650,11 +2650,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: procmount-ephemeralcontainers.security.kolteq.com/warn
+      - key: procmount-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2670,11 +2670,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: procmount-ephemeralcontainers.security.kolteq.com/audit
+      - key: procmount-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2690,11 +2690,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: procmount-ephemeralcontainers.security.kolteq.com/enforce
+      - key: procmount-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2710,11 +2710,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: procmount-containers.security.kolteq.com/warn
+      - key: procmount-containers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2730,11 +2730,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: procmount-containers.security.kolteq.com/audit
+      - key: procmount-containers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2750,11 +2750,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: procmount-containers.security.kolteq.com/enforce
+      - key: procmount-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2770,11 +2770,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: serviceaccount-token-projection.security.kolteq.com/warn
+      - key: serviceaccount-token-projection.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2790,11 +2790,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: serviceaccount-token-projection.security.kolteq.com/audit
+      - key: serviceaccount-token-projection.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2810,11 +2810,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: serviceaccount-token-projection.security.kolteq.com/enforce
+      - key: serviceaccount-token-projection.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2830,11 +2830,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: configmap-no-executable-code.security.kolteq.com/warn
+      - key: configmap-no-executable-code.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2850,11 +2850,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: configmap-no-executable-code.security.kolteq.com/audit
+      - key: configmap-no-executable-code.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2870,11 +2870,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: configmap-no-executable-code.security.kolteq.com/enforce
+      - key: configmap-no-executable-code.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2890,11 +2890,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: selinux-user.security.kolteq.com/warn
+      - key: selinux-user.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2910,11 +2910,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: selinux-user.security.kolteq.com/audit
+      - key: selinux-user.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2930,11 +2930,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: selinux-user.security.kolteq.com/enforce
+      - key: selinux-user.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2950,11 +2950,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: selinux-user-initcontainers.security.kolteq.com/warn
+      - key: selinux-user-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2970,11 +2970,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: selinux-user-initcontainers.security.kolteq.com/audit
+      - key: selinux-user-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2990,11 +2990,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: selinux-user-initcontainers.security.kolteq.com/enforce
+      - key: selinux-user-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -3010,11 +3010,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: selinux-user-ephemeralcontainers.security.kolteq.com/warn
+      - key: selinux-user-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -3030,11 +3030,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: selinux-user-ephemeralcontainers.security.kolteq.com/audit
+      - key: selinux-user-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -3050,11 +3050,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: selinux-user-ephemeralcontainers.security.kolteq.com/enforce
+      - key: selinux-user-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -3070,11 +3070,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: selinux-user-containers.security.kolteq.com/warn
+      - key: selinux-user-containers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -3090,11 +3090,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: selinux-user-containers.security.kolteq.com/audit
+      - key: selinux-user-containers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -3110,11 +3110,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: selinux-user-containers.security.kolteq.com/enforce
+      - key: selinux-user-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -3130,11 +3130,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: ingress-tls-required.security.kolteq.com/warn
+      - key: ingress-tls-required.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -3150,11 +3150,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: ingress-tls-required.security.kolteq.com/audit
+      - key: ingress-tls-required.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -3170,11 +3170,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: ingress-tls-required.security.kolteq.com/enforce
+      - key: ingress-tls-required.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -3190,11 +3190,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: prestop-tcpsocket-host-initcontainers.security.kolteq.com/warn
+      - key: prestop-tcpsocket-host-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -3210,11 +3210,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: prestop-tcpsocket-host-initcontainers.security.kolteq.com/audit
+      - key: prestop-tcpsocket-host-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -3230,11 +3230,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: prestop-tcpsocket-host-initcontainers.security.kolteq.com/enforce
+      - key: prestop-tcpsocket-host-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -3250,11 +3250,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: prestop-tcpsocket-host-containers.security.kolteq.com/warn
+      - key: prestop-tcpsocket-host-containers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -3270,11 +3270,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: prestop-tcpsocket-host-containers.security.kolteq.com/audit
+      - key: prestop-tcpsocket-host-containers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -3290,11 +3290,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: prestop-tcpsocket-host-containers.security.kolteq.com/enforce
+      - key: prestop-tcpsocket-host-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -3310,11 +3310,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: rolebinding-default-serviceaccount.security.kolteq.com/warn
+      - key: rolebinding-default-serviceaccount.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -3330,11 +3330,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: rolebinding-default-serviceaccount.security.kolteq.com/audit
+      - key: rolebinding-default-serviceaccount.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -3350,11 +3350,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: rolebinding-default-serviceaccount.security.kolteq.com/enforce
+      - key: rolebinding-default-serviceaccount.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -3370,11 +3370,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: run-as-group-pod.security.kolteq.com/warn
+      - key: run-as-group-pod.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -3390,11 +3390,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: run-as-group-pod.security.kolteq.com/audit
+      - key: run-as-group-pod.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -3410,11 +3410,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: run-as-group-pod.security.kolteq.com/enforce
+      - key: run-as-group-pod.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -3430,11 +3430,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: run-as-group-initcontainers.security.kolteq.com/warn
+      - key: run-as-group-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -3450,11 +3450,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: run-as-group-initcontainers.security.kolteq.com/audit
+      - key: run-as-group-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -3470,11 +3470,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: run-as-group-initcontainers.security.kolteq.com/enforce
+      - key: run-as-group-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -3490,11 +3490,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: run-as-group-ephemeralcontainers.security.kolteq.com/warn
+      - key: run-as-group-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -3510,11 +3510,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: run-as-group-ephemeralcontainers.security.kolteq.com/audit
+      - key: run-as-group-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -3530,11 +3530,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: run-as-group-ephemeralcontainers.security.kolteq.com/enforce
+      - key: run-as-group-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -3550,11 +3550,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: run-as-group-containers.security.kolteq.com/warn
+      - key: run-as-group-containers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -3570,11 +3570,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: run-as-group-containers.security.kolteq.com/audit
+      - key: run-as-group-containers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -3590,11 +3590,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: run-as-group-containers.security.kolteq.com/enforce
+      - key: run-as-group-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -3610,11 +3610,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: service-account-name.security.kolteq.com/warn
+      - key: service-account-name.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -3630,11 +3630,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: service-account-name.security.kolteq.com/audit
+      - key: service-account-name.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -3650,11 +3650,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: service-account-name.security.kolteq.com/enforce
+      - key: service-account-name.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -3670,11 +3670,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: rolebinding-anonymous-subjects.security.kolteq.com/warn
+      - key: rolebinding-anonymous-subjects.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -3690,11 +3690,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: rolebinding-anonymous-subjects.security.kolteq.com/audit
+      - key: rolebinding-anonymous-subjects.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -3710,11 +3710,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: rolebinding-anonymous-subjects.security.kolteq.com/enforce
+      - key: rolebinding-anonymous-subjects.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -3730,11 +3730,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: selinux-type.security.kolteq.com/warn
+      - key: selinux-type.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -3750,11 +3750,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: selinux-type.security.kolteq.com/audit
+      - key: selinux-type.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -3770,11 +3770,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: selinux-type.security.kolteq.com/enforce
+      - key: selinux-type.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -3790,11 +3790,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: selinux-type-initcontainers.security.kolteq.com/warn
+      - key: selinux-type-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -3810,11 +3810,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: selinux-type-initcontainers.security.kolteq.com/audit
+      - key: selinux-type-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -3830,11 +3830,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: selinux-type-initcontainers.security.kolteq.com/enforce
+      - key: selinux-type-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -3850,11 +3850,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: selinux-type-ephemeralcontainers.security.kolteq.com/warn
+      - key: selinux-type-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -3870,11 +3870,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: selinux-type-ephemeralcontainers.security.kolteq.com/audit
+      - key: selinux-type-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -3890,11 +3890,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: selinux-type-ephemeralcontainers.security.kolteq.com/enforce
+      - key: selinux-type-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -3910,11 +3910,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: selinux-type-containers.security.kolteq.com/warn
+      - key: selinux-type-containers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -3930,11 +3930,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: selinux-type-containers.security.kolteq.com/audit
+      - key: selinux-type-containers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -3950,11 +3950,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: selinux-type-containers.security.kolteq.com/enforce
+      - key: selinux-type-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -3970,11 +3970,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: role-wildcard-rules.security.kolteq.com/warn
+      - key: role-wildcard-rules.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -3990,11 +3990,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: role-wildcard-rules.security.kolteq.com/audit
+      - key: role-wildcard-rules.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -4010,11 +4010,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: role-wildcard-rules.security.kolteq.com/enforce
+      - key: role-wildcard-rules.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -4030,11 +4030,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: readinessprobe-httpget-host-initcontainers.security.kolteq.com/warn
+      - key: readinessprobe-httpget-host-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -4050,11 +4050,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: readinessprobe-httpget-host-initcontainers.security.kolteq.com/audit
+      - key: readinessprobe-httpget-host-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -4070,11 +4070,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: readinessprobe-httpget-host-initcontainers.security.kolteq.com/enforce
+      - key: readinessprobe-httpget-host-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -4090,11 +4090,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: readinessprobe-httpget-host-containers.security.kolteq.com/warn
+      - key: readinessprobe-httpget-host-containers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -4110,11 +4110,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: readinessprobe-httpget-host-containers.security.kolteq.com/audit
+      - key: readinessprobe-httpget-host-containers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -4130,11 +4130,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: readinessprobe-httpget-host-containers.security.kolteq.com/enforce
+      - key: readinessprobe-httpget-host-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -4150,11 +4150,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: role-serviceaccount-tokens.security.kolteq.com/warn
+      - key: role-serviceaccount-tokens.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -4170,11 +4170,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: role-serviceaccount-tokens.security.kolteq.com/audit
+      - key: role-serviceaccount-tokens.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -4190,11 +4190,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: role-serviceaccount-tokens.security.kolteq.com/enforce
+      - key: role-serviceaccount-tokens.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -4210,11 +4210,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: hostpid.security.kolteq.com/warn
+      - key: hostpid.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -4230,11 +4230,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: hostpid.security.kolteq.com/audit
+      - key: hostpid.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -4250,11 +4250,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: hostpid.security.kolteq.com/enforce
+      - key: hostpid.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -4270,11 +4270,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: pod-template-labels.security.kolteq.com/warn
+      - key: pod-template-labels.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -4290,11 +4290,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: pod-template-labels.security.kolteq.com/audit
+      - key: pod-template-labels.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -4310,11 +4310,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: pod-template-labels.security.kolteq.com/enforce
+      - key: pod-template-labels.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -4330,11 +4330,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: rolebinding-system-groups.security.kolteq.com/warn
+      - key: rolebinding-system-groups.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -4350,11 +4350,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: rolebinding-system-groups.security.kolteq.com/audit
+      - key: rolebinding-system-groups.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -4370,11 +4370,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: rolebinding-system-groups.security.kolteq.com/enforce
+      - key: rolebinding-system-groups.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -4390,11 +4390,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: readinessprobe-tcpsocket-host-initcontainers.security.kolteq.com/warn
+      - key: readinessprobe-tcpsocket-host-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -4410,11 +4410,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: readinessprobe-tcpsocket-host-initcontainers.security.kolteq.com/audit
+      - key: readinessprobe-tcpsocket-host-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -4430,11 +4430,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: readinessprobe-tcpsocket-host-initcontainers.security.kolteq.com/enforce
+      - key: readinessprobe-tcpsocket-host-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -4450,11 +4450,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: readinessprobe-tcpsocket-host-containers.security.kolteq.com/warn
+      - key: readinessprobe-tcpsocket-host-containers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -4470,11 +4470,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: readinessprobe-tcpsocket-host-containers.security.kolteq.com/audit
+      - key: readinessprobe-tcpsocket-host-containers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -4490,11 +4490,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: readinessprobe-tcpsocket-host-containers.security.kolteq.com/enforce
+      - key: readinessprobe-tcpsocket-host-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -4510,11 +4510,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: allow-privilege-escalation-initcontainers.security.kolteq.com/warn
+      - key: allow-privilege-escalation-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -4530,11 +4530,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: allow-privilege-escalation-initcontainers.security.kolteq.com/audit
+      - key: allow-privilege-escalation-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -4550,11 +4550,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: allow-privilege-escalation-initcontainers.security.kolteq.com/enforce
+      - key: allow-privilege-escalation-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -4570,11 +4570,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: allow-privilege-escalation-ephemeralcontainers.security.kolteq.com/warn
+      - key: allow-privilege-escalation-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -4590,11 +4590,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: allow-privilege-escalation-ephemeralcontainers.security.kolteq.com/audit
+      - key: allow-privilege-escalation-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -4610,11 +4610,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: allow-privilege-escalation-ephemeralcontainers.security.kolteq.com/enforce
+      - key: allow-privilege-escalation-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -4630,11 +4630,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: allow-privilege-escalation-containers.security.kolteq.com/warn
+      - key: allow-privilege-escalation-containers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -4650,11 +4650,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: allow-privilege-escalation-containers.security.kolteq.com/audit
+      - key: allow-privilege-escalation-containers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -4670,11 +4670,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: allow-privilege-escalation-containers.security.kolteq.com/enforce
+      - key: allow-privilege-escalation-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -4690,11 +4690,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: role-secrets-access.security.kolteq.com/warn
+      - key: role-secrets-access.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -4710,11 +4710,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: role-secrets-access.security.kolteq.com/audit
+      - key: role-secrets-access.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -4730,11 +4730,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: role-secrets-access.security.kolteq.com/enforce
+      - key: role-secrets-access.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -4750,11 +4750,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: networkpolicy-allow-all.security.kolteq.com/warn
+      - key: networkpolicy-allow-all.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -4770,11 +4770,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: networkpolicy-allow-all.security.kolteq.com/audit
+      - key: networkpolicy-allow-all.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -4790,11 +4790,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: networkpolicy-allow-all.security.kolteq.com/enforce
+      - key: networkpolicy-allow-all.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -4810,11 +4810,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: capabilities-add-netbindservice-initcontainers.security.kolteq.com/warn
+      - key: capabilities-add-netbindservice-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -4830,11 +4830,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: capabilities-add-netbindservice-initcontainers.security.kolteq.com/audit
+      - key: capabilities-add-netbindservice-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -4850,11 +4850,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: capabilities-add-netbindservice-initcontainers.security.kolteq.com/enforce
+      - key: capabilities-add-netbindservice-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -4870,11 +4870,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: capabilities-add-netbindservice-ephemeralcontainers.security.kolteq.com/warn
+      - key: capabilities-add-netbindservice-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -4890,11 +4890,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: capabilities-add-netbindservice-ephemeralcontainers.security.kolteq.com/audit
+      - key: capabilities-add-netbindservice-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -4910,11 +4910,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: capabilities-add-netbindservice-ephemeralcontainers.security.kolteq.com/enforce
+      - key: capabilities-add-netbindservice-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -4930,11 +4930,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: capabilities-add-netbindservice-containers.security.kolteq.com/warn
+      - key: capabilities-add-netbindservice-containers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -4950,11 +4950,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: capabilities-add-netbindservice-containers.security.kolteq.com/audit
+      - key: capabilities-add-netbindservice-containers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -4970,11 +4970,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: capabilities-add-netbindservice-containers.security.kolteq.com/enforce
+      - key: capabilities-add-netbindservice-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -4990,11 +4990,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: capabilities-drop-all-initcontainers.security.kolteq.com/warn
+      - key: capabilities-drop-all-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -5010,11 +5010,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: capabilities-drop-all-initcontainers.security.kolteq.com/audit
+      - key: capabilities-drop-all-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -5030,11 +5030,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: capabilities-drop-all-initcontainers.security.kolteq.com/enforce
+      - key: capabilities-drop-all-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -5050,11 +5050,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: capabilities-drop-all-ephemeralcontainers.security.kolteq.com/warn
+      - key: capabilities-drop-all-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -5070,11 +5070,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: capabilities-drop-all-ephemeralcontainers.security.kolteq.com/audit
+      - key: capabilities-drop-all-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -5090,11 +5090,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: capabilities-drop-all-ephemeralcontainers.security.kolteq.com/enforce
+      - key: capabilities-drop-all-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -5110,11 +5110,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: capabilities-drop-all-containers.security.kolteq.com/warn
+      - key: capabilities-drop-all-containers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -5130,11 +5130,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: capabilities-drop-all-containers.security.kolteq.com/audit
+      - key: capabilities-drop-all-containers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -5150,11 +5150,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: capabilities-drop-all-containers.security.kolteq.com/enforce
+      - key: capabilities-drop-all-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -5170,11 +5170,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: hostpath-volumes.security.kolteq.com/warn
+      - key: hostpath-volumes.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -5190,11 +5190,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: hostpath-volumes.security.kolteq.com/audit
+      - key: hostpath-volumes.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -5210,11 +5210,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: hostpath-volumes.security.kolteq.com/enforce
+      - key: hostpath-volumes.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -5230,11 +5230,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: fsgroup-pod.security.kolteq.com/warn
+      - key: fsgroup-pod.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -5250,11 +5250,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: fsgroup-pod.security.kolteq.com/audit
+      - key: fsgroup-pod.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -5270,11 +5270,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: fsgroup-pod.security.kolteq.com/enforce
+      - key: fsgroup-pod.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -5290,11 +5290,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: automount-service-account-token.security.kolteq.com/warn
+      - key: automount-service-account-token.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -5310,11 +5310,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: automount-service-account-token.security.kolteq.com/audit
+      - key: automount-service-account-token.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -5330,11 +5330,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: automount-service-account-token.security.kolteq.com/enforce
+      - key: automount-service-account-token.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -5350,11 +5350,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: run-as-nonroot-pod.security.kolteq.com/warn
+      - key: run-as-nonroot-pod.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -5370,11 +5370,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: run-as-nonroot-pod.security.kolteq.com/audit
+      - key: run-as-nonroot-pod.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -5390,11 +5390,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: run-as-nonroot-pod.security.kolteq.com/enforce
+      - key: run-as-nonroot-pod.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -5410,11 +5410,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: run-as-nonroot-initcontainers.security.kolteq.com/warn
+      - key: run-as-nonroot-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -5430,11 +5430,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: run-as-nonroot-initcontainers.security.kolteq.com/audit
+      - key: run-as-nonroot-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -5450,11 +5450,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: run-as-nonroot-initcontainers.security.kolteq.com/enforce
+      - key: run-as-nonroot-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -5470,11 +5470,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: run-as-nonroot-ephemeralcontainers.security.kolteq.com/warn
+      - key: run-as-nonroot-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -5490,11 +5490,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: run-as-nonroot-ephemeralcontainers.security.kolteq.com/audit
+      - key: run-as-nonroot-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -5510,11 +5510,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: run-as-nonroot-ephemeralcontainers.security.kolteq.com/enforce
+      - key: run-as-nonroot-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -5530,11 +5530,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: run-as-nonroot-containers.security.kolteq.com/warn
+      - key: run-as-nonroot-containers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -5550,11 +5550,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: run-as-nonroot-containers.security.kolteq.com/audit
+      - key: run-as-nonroot-containers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -5570,11 +5570,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: run-as-nonroot-containers.security.kolteq.com/enforce
+      - key: run-as-nonroot-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -5590,11 +5590,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: livenessprobe-httpget-host-initcontainers.security.kolteq.com/warn
+      - key: livenessprobe-httpget-host-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -5610,11 +5610,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: livenessprobe-httpget-host-initcontainers.security.kolteq.com/audit
+      - key: livenessprobe-httpget-host-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -5630,11 +5630,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: livenessprobe-httpget-host-initcontainers.security.kolteq.com/enforce
+      - key: livenessprobe-httpget-host-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -5650,11 +5650,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: livenessprobe-httpget-host.security.kolteq.com/warn
+      - key: livenessprobe-httpget-host.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -5670,11 +5670,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: livenessprobe-httpget-host.security.kolteq.com/audit
+      - key: livenessprobe-httpget-host.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -5690,11 +5690,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: livenessprobe-httpget-host.security.kolteq.com/enforce
+      - key: livenessprobe-httpget-host.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -5710,11 +5710,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: allowed-capabilities-add-initcontainers.security.kolteq.com/warn
+      - key: allowed-capabilities-add-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -5730,11 +5730,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: allowed-capabilities-add-initcontainers.security.kolteq.com/audit
+      - key: allowed-capabilities-add-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -5750,11 +5750,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: allowed-capabilities-add-initcontainers.security.kolteq.com/enforce
+      - key: allowed-capabilities-add-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -5770,11 +5770,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: allowed-capabilities-add-ephemeralcontainers.security.kolteq.com/warn
+      - key: allowed-capabilities-add-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -5790,11 +5790,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: allowed-capabilities-add-ephemeralcontainers.security.kolteq.com/audit
+      - key: allowed-capabilities-add-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -5810,11 +5810,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: allowed-capabilities-add-ephemeralcontainers.security.kolteq.com/enforce
+      - key: allowed-capabilities-add-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -5830,11 +5830,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: allowed-capabilities-add-containers.security.kolteq.com/warn
+      - key: allowed-capabilities-add-containers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -5850,11 +5850,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: allowed-capabilities-add-containers.security.kolteq.com/audit
+      - key: allowed-capabilities-add-containers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -5870,11 +5870,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: allowed-capabilities-add-containers.security.kolteq.com/enforce
+      - key: allowed-capabilities-add-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -5890,11 +5890,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: service-nodeport.security.kolteq.com/warn
+      - key: service-nodeport.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -5910,11 +5910,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: service-nodeport.security.kolteq.com/audit
+      - key: service-nodeport.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -5930,11 +5930,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: service-nodeport.security.kolteq.com/enforce
+      - key: service-nodeport.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -5950,11 +5950,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: seccomp-profile-pod.security.kolteq.com/warn
+      - key: seccomp-profile-pod.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -5970,11 +5970,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: seccomp-profile-pod.security.kolteq.com/audit
+      - key: seccomp-profile-pod.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -5990,11 +5990,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: seccomp-profile-pod.security.kolteq.com/enforce
+      - key: seccomp-profile-pod.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -6010,11 +6010,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: seccomp-profile-initcontainers.security.kolteq.com/warn
+      - key: seccomp-profile-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -6030,11 +6030,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: seccomp-profile-initcontainers.security.kolteq.com/audit
+      - key: seccomp-profile-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -6050,11 +6050,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: seccomp-profile-initcontainers.security.kolteq.com/enforce
+      - key: seccomp-profile-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -6070,11 +6070,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: seccomp-profile-ephemeralcontainers.security.kolteq.com/warn
+      - key: seccomp-profile-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -6090,11 +6090,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: seccomp-profile-ephemeralcontainers.security.kolteq.com/audit
+      - key: seccomp-profile-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -6110,11 +6110,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: seccomp-profile-ephemeralcontainers.security.kolteq.com/enforce
+      - key: seccomp-profile-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -6130,11 +6130,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: seccomp-profile-containers.security.kolteq.com/warn
+      - key: seccomp-profile-containers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -6150,11 +6150,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: seccomp-profile-containers.security.kolteq.com/audit
+      - key: seccomp-profile-containers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -6170,11 +6170,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: seccomp-profile-containers.security.kolteq.com/enforce
+      - key: seccomp-profile-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -6190,11 +6190,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: windows-hostprocess.security.kolteq.com/warn
+      - key: windows-hostprocess.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -6210,11 +6210,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: windows-hostprocess.security.kolteq.com/audit
+      - key: windows-hostprocess.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -6230,11 +6230,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: windows-hostprocess.security.kolteq.com/enforce
+      - key: windows-hostprocess.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -6250,11 +6250,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: windows-hostprocess-initcontainers.security.kolteq.com/warn
+      - key: windows-hostprocess-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -6270,11 +6270,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: windows-hostprocess-initcontainers.security.kolteq.com/audit
+      - key: windows-hostprocess-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -6290,11 +6290,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: windows-hostprocess-initcontainers.security.kolteq.com/enforce
+      - key: windows-hostprocess-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -6310,11 +6310,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: windows-hostprocess-ephemeralcontainers.security.kolteq.com/warn
+      - key: windows-hostprocess-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -6330,11 +6330,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: windows-hostprocess-ephemeralcontainers.security.kolteq.com/audit
+      - key: windows-hostprocess-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -6350,11 +6350,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: windows-hostprocess-ephemeralcontainers.security.kolteq.com/enforce
+      - key: windows-hostprocess-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -6370,11 +6370,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: windows-hostprocess-containers.security.kolteq.com/warn
+      - key: windows-hostprocess-containers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -6390,11 +6390,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: windows-hostprocess-containers.security.kolteq.com/audit
+      - key: windows-hostprocess-containers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -6410,11 +6410,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: windows-hostprocess-containers.security.kolteq.com/enforce
+      - key: windows-hostprocess-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -6430,11 +6430,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: hostnetwork.security.kolteq.com/warn
+      - key: hostnetwork.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -6450,11 +6450,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: hostnetwork.security.kolteq.com/audit
+      - key: hostnetwork.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -6470,11 +6470,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: hostnetwork.security.kolteq.com/enforce
+      - key: hostnetwork.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -6490,11 +6490,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: role-workloads-write.security.kolteq.com/warn
+      - key: role-workloads-write.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -6510,11 +6510,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: role-workloads-write.security.kolteq.com/audit
+      - key: role-workloads-write.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -6530,11 +6530,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: role-workloads-write.security.kolteq.com/enforce
+      - key: role-workloads-write.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -6550,11 +6550,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: livenessprobe-tcpsocket-host-initcontainers.security.kolteq.com/warn
+      - key: livenessprobe-tcpsocket-host-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -6570,11 +6570,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: livenessprobe-tcpsocket-host-initcontainers.security.kolteq.com/audit
+      - key: livenessprobe-tcpsocket-host-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -6590,11 +6590,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: livenessprobe-tcpsocket-host-initcontainers.security.kolteq.com/enforce
+      - key: livenessprobe-tcpsocket-host-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -6610,11 +6610,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: livenessprobe-tcpsocket-host-containers.security.kolteq.com/warn
+      - key: livenessprobe-tcpsocket-host-containers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -6630,11 +6630,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: livenessprobe-tcpsocket-host-containers.security.kolteq.com/audit
+      - key: livenessprobe-tcpsocket-host-containers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -6650,11 +6650,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: livenessprobe-tcpsocket-host-containers.security.kolteq.com/enforce
+      - key: livenessprobe-tcpsocket-host-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -6670,11 +6670,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: share-process-namespace.security.kolteq.com/warn
+      - key: share-process-namespace.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -6690,11 +6690,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: share-process-namespace.security.kolteq.com/audit
+      - key: share-process-namespace.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -6710,11 +6710,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: share-process-namespace.security.kolteq.com/enforce
+      - key: share-process-namespace.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -6730,11 +6730,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: allowed-hostports-initcontainers.security.kolteq.com/warn
+      - key: allowed-hostports-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -6750,11 +6750,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: allowed-hostports-initcontainers.security.kolteq.com/audit
+      - key: allowed-hostports-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -6770,11 +6770,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: allowed-hostports-initcontainers.security.kolteq.com/enforce
+      - key: allowed-hostports-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -6790,11 +6790,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: allowed-hostports-ephemeralcontainers.security.kolteq.com/warn
+      - key: allowed-hostports-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -6810,11 +6810,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: allowed-hostports-ephemeralcontainers.security.kolteq.com/audit
+      - key: allowed-hostports-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -6830,11 +6830,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: allowed-hostports-ephemeralcontainers.security.kolteq.com/enforce
+      - key: allowed-hostports-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -6850,11 +6850,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: allowed-hostports-containers.security.kolteq.com/warn
+      - key: allowed-hostports-containers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -6870,11 +6870,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: allowed-hostports-containers.security.kolteq.com/audit
+      - key: allowed-hostports-containers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -6890,11 +6890,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: allowed-hostports-containers.security.kolteq.com/enforce
+      - key: allowed-hostports-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -6910,11 +6910,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: configmap-immutable-true.security.kolteq.com/warn
+      - key: configmap-immutable-true.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -6930,11 +6930,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: configmap-immutable-true.security.kolteq.com/audit
+      - key: configmap-immutable-true.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -6950,11 +6950,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: configmap-immutable-true.security.kolteq.com/enforce
+      - key: configmap-immutable-true.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -6970,11 +6970,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: read-only-root-filesystem-initcontainers.security.kolteq.com/warn
+      - key: read-only-root-filesystem-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -6990,11 +6990,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: read-only-root-filesystem-initcontainers.security.kolteq.com/audit
+      - key: read-only-root-filesystem-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -7010,11 +7010,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: read-only-root-filesystem-initcontainers.security.kolteq.com/enforce
+      - key: read-only-root-filesystem-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -7030,11 +7030,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: read-only-root-filesystem-ephemeralcontainers.security.kolteq.com/warn
+      - key: read-only-root-filesystem-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -7050,11 +7050,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: read-only-root-filesystem-ephemeralcontainers.security.kolteq.com/audit
+      - key: read-only-root-filesystem-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -7070,11 +7070,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: read-only-root-filesystem-ephemeralcontainers.security.kolteq.com/enforce
+      - key: read-only-root-filesystem-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -7090,11 +7090,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: read-only-root-filesystem-containers.security.kolteq.com/warn
+      - key: read-only-root-filesystem-containers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -7110,11 +7110,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: read-only-root-filesystem-containers.security.kolteq.com/audit
+      - key: read-only-root-filesystem-containers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -7130,11 +7130,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: read-only-root-filesystem-containers.security.kolteq.com/enforce
+      - key: read-only-root-filesystem-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -7150,11 +7150,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: poststart-httpget-host-initcontainers.security.kolteq.com/warn
+      - key: poststart-httpget-host-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -7170,11 +7170,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: poststart-httpget-host-initcontainers.security.kolteq.com/audit
+      - key: poststart-httpget-host-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -7190,11 +7190,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: poststart-httpget-host-initcontainers.security.kolteq.com/enforce
+      - key: poststart-httpget-host-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -7210,11 +7210,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: poststart-httpget-host-containers.security.kolteq.com/warn
+      - key: poststart-httpget-host-containers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -7230,11 +7230,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: poststart-httpget-host-containers.security.kolteq.com/audit
+      - key: poststart-httpget-host-containers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -7250,11 +7250,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: poststart-httpget-host-containers.security.kolteq.com/enforce
+      - key: poststart-httpget-host-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -7270,11 +7270,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: startupprobe-tcpsocket-host-initcontainers.security.kolteq.com/warn
+      - key: startupprobe-tcpsocket-host-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -7290,11 +7290,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: startupprobe-tcpsocket-host-initcontainers.security.kolteq.com/audit
+      - key: startupprobe-tcpsocket-host-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -7310,11 +7310,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: startupprobe-tcpsocket-host-initcontainers.security.kolteq.com/enforce
+      - key: startupprobe-tcpsocket-host-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -7330,11 +7330,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: startupprobe-tcpsocket-host-containers.security.kolteq.com/warn
+      - key: startupprobe-tcpsocket-host-containers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -7350,11 +7350,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: startupprobe-tcpsocket-host-containers.security.kolteq.com/audit
+      - key: startupprobe-tcpsocket-host-containers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -7370,11 +7370,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: startupprobe-tcpsocket-host-containers.security.kolteq.com/enforce
+      - key: startupprobe-tcpsocket-host-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -7390,11 +7390,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: role-serviceaccounts-write.security.kolteq.com/warn
+      - key: role-serviceaccounts-write.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -7410,11 +7410,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: role-serviceaccounts-write.security.kolteq.com/audit
+      - key: role-serviceaccounts-write.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -7430,11 +7430,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: role-serviceaccounts-write.security.kolteq.com/enforce
+      - key: role-serviceaccounts-write.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -7450,11 +7450,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: serviceaccount-no-token-secrets.security.kolteq.com/warn
+      - key: serviceaccount-no-token-secrets.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -7470,11 +7470,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: serviceaccount-no-token-secrets.security.kolteq.com/audit
+      - key: serviceaccount-no-token-secrets.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -7490,11 +7490,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: serviceaccount-no-token-secrets.security.kolteq.com/enforce
+      - key: serviceaccount-no-token-secrets.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -7510,11 +7510,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: allowed-volume-types.security.kolteq.com/warn
+      - key: allowed-volume-types.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -7530,11 +7530,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: allowed-volume-types.security.kolteq.com/audit
+      - key: allowed-volume-types.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -7550,11 +7550,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: allowed-volume-types.security.kolteq.com/enforce
+      - key: allowed-volume-types.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -7570,11 +7570,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: serviceaccount-imagepullsecrets-scope.security.kolteq.com/warn
+      - key: serviceaccount-imagepullsecrets-scope.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -7590,11 +7590,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: serviceaccount-imagepullsecrets-scope.security.kolteq.com/audit
+      - key: serviceaccount-imagepullsecrets-scope.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -7610,11 +7610,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: serviceaccount-imagepullsecrets-scope.security.kolteq.com/enforce
+      - key: serviceaccount-imagepullsecrets-scope.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -7630,11 +7630,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: image-digest-containers.security.kolteq.com/warn
+      - key: image-digest-containers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -7650,11 +7650,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: image-digest-containers.security.kolteq.com/audit
+      - key: image-digest-containers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -7670,11 +7670,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: image-digest-containers.security.kolteq.com/enforce
+      - key: image-digest-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -7690,11 +7690,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: image-digest-initcontainers.security.kolteq.com/warn
+      - key: image-digest-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -7710,11 +7710,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: image-digest-initcontainers.security.kolteq.com/audit
+      - key: image-digest-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -7730,11 +7730,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: image-digest-initcontainers.security.kolteq.com/enforce
+      - key: image-digest-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -7750,11 +7750,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: image-digest-ephemeralcontainers.security.kolteq.com/warn
+      - key: image-digest-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -7770,11 +7770,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: image-digest-ephemeralcontainers.security.kolteq.com/audit
+      - key: image-digest-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -7790,11 +7790,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: image-digest-ephemeralcontainers.security.kolteq.com/enforce
+      - key: image-digest-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -7810,11 +7810,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: role-rbac-impersonate.security.kolteq.com/warn
+      - key: role-rbac-impersonate.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -7830,11 +7830,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: role-rbac-impersonate.security.kolteq.com/audit
+      - key: role-rbac-impersonate.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -7850,11 +7850,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: role-rbac-impersonate.security.kolteq.com/enforce
+      - key: role-rbac-impersonate.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -7870,11 +7870,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: ciliumnetworkpolicy-egress-world.security.kolteq.com/warn
+      - key: ciliumnetworkpolicy-egress-world.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -7890,11 +7890,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: ciliumnetworkpolicy-egress-world.security.kolteq.com/audit
+      - key: ciliumnetworkpolicy-egress-world.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -7910,11 +7910,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: ciliumnetworkpolicy-egress-world.security.kolteq.com/enforce
+      - key: ciliumnetworkpolicy-egress-world.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -7930,11 +7930,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: calico-networkpolicy-egress-cidr.security.kolteq.com/warn
+      - key: calico-networkpolicy-egress-cidr.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -7950,11 +7950,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: calico-networkpolicy-egress-cidr.security.kolteq.com/audit
+      - key: calico-networkpolicy-egress-cidr.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -7970,11 +7970,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: calico-networkpolicy-egress-cidr.security.kolteq.com/enforce
+      - key: calico-networkpolicy-egress-cidr.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -7990,11 +7990,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: egressfirewall-allow-all.security.kolteq.com/warn
+      - key: egressfirewall-allow-all.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -8010,11 +8010,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: egressfirewall-allow-all.security.kolteq.com/audit
+      - key: egressfirewall-allow-all.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -8030,11 +8030,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: egressfirewall-allow-all.security.kolteq.com/enforce
+      - key: egressfirewall-allow-all.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -8050,11 +8050,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: egressnetworkpolicy-allow-all.security.kolteq.com/warn
+      - key: egressnetworkpolicy-allow-all.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -8070,11 +8070,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: egressnetworkpolicy-allow-all.security.kolteq.com/audit
+      - key: egressnetworkpolicy-allow-all.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -8090,11 +8090,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: egressnetworkpolicy-allow-all.security.kolteq.com/enforce
+      - key: egressnetworkpolicy-allow-all.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -8110,11 +8110,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: route-no-tls.security.kolteq.com/warn
+      - key: route-no-tls.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -8130,11 +8130,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: route-no-tls.security.kolteq.com/audit
+      - key: route-no-tls.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -8150,11 +8150,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: route-no-tls.security.kolteq.com/enforce
+      - key: route-no-tls.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -8170,11 +8170,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: istio-peerauthentication-mtls.security.kolteq.com/warn
+      - key: istio-peerauthentication-mtls.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -8190,11 +8190,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: istio-peerauthentication-mtls.security.kolteq.com/audit
+      - key: istio-peerauthentication-mtls.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -8210,11 +8210,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: istio-peerauthentication-mtls.security.kolteq.com/enforce
+      - key: istio-peerauthentication-mtls.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -8230,11 +8230,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: istio-authorizationpolicy-allow-all.security.kolteq.com/warn
+      - key: istio-authorizationpolicy-allow-all.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -8250,11 +8250,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: istio-authorizationpolicy-allow-all.security.kolteq.com/audit
+      - key: istio-authorizationpolicy-allow-all.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -8270,11 +8270,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: istio-authorizationpolicy-allow-all.security.kolteq.com/enforce
+      - key: istio-authorizationpolicy-allow-all.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -8290,11 +8290,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/warn
+      - key: security.cenroq.io/warn
         operator: In
         values:
         - enabled
-      - key: kyverno-policy-not-enforcing.security.kolteq.com/warn
+      - key: kyverno-policy-not-enforcing.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -8310,11 +8310,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/audit
+      - key: security.cenroq.io/audit
         operator: In
         values:
         - enabled
-      - key: kyverno-policy-not-enforcing.security.kolteq.com/audit
+      - key: kyverno-policy-not-enforcing.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -8330,11 +8330,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: security.kolteq.com/enforce
+      - key: security.cenroq.io/enforce
         operator: In
         values:
         - enabled
-      - key: kyverno-policy-not-enforcing.security.kolteq.com/enforce
+      - key: kyverno-policy-not-enforcing.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
