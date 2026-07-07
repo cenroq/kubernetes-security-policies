@@ -3,8 +3,8 @@ kind: NetworkPolicy
 metadata:
   name: allow-traffic-to-kubelet
   annotations:
-    kubedrill.io/displayName: "Allow Egress to Kubelet"
-    kubedrill.io/description: "Allow egress traffic to kubelet on port 10250 within 10.0.0.0/8."
+    cenroq.io/displayName: "Allow Egress to Kubelet"
+    cenroq.io/description: "Allow egress traffic to kubelet on port 10250 within 10.0.0.0/8."
 spec:
   podSelector: {}
   policyTypes:

@@ -4,8 +4,8 @@ metadata:
   name: allow-same-namespace
   namespace: default
   annotations:
-    kubedrill.io/displayName: "Allow Same Namespace"
-    kubedrill.io/description: "Allow requests to the public workload only from the same namespace."
+    cenroq.io/displayName: "Allow Same Namespace"
+    cenroq.io/description: "Allow requests to the public workload only from the same namespace."
 spec:
   selector:
     matchLabels:

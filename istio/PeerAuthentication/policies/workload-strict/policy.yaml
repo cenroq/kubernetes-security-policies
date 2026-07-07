@@ -4,8 +4,8 @@ metadata:
   name: app-strict
   namespace: default
   annotations:
-    kubedrill.io/displayName: "Workload mTLS Strict"
-    kubedrill.io/description: "Enforce STRICT mTLS for the payments workload."
+    cenroq.io/displayName: "Workload mTLS Strict"
+    cenroq.io/description: "Enforce STRICT mTLS for the payments workload."
 spec:
   selector:
     matchLabels:

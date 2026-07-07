@@ -4,8 +4,8 @@ metadata:
   name: jwt-validate
   namespace: default
   annotations:
-    kubedrill.io/displayName: "JWT Validation"
-    kubedrill.io/description: "Validate JWTs for the public workload using the configured issuer and JWKS."
+    cenroq.io/displayName: "JWT Validation"
+    cenroq.io/description: "Validate JWTs for the public workload using the configured issuer and JWKS."
 spec:
   selector:
     matchLabels:

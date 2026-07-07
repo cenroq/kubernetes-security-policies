@@ -3,8 +3,8 @@ kind: NetworkPolicy
 metadata:
   name: allow-traffic-to-kube-dns
   annotations:
-    kubedrill.io/displayName: "Allow Egress to Kube DNS"
-    kubedrill.io/description: "Allow DNS egress (TCP/UDP 53) to kube-dns/coredns in kube-system."
+    cenroq.io/displayName: "Allow Egress to Kube DNS"
+    cenroq.io/description: "Allow DNS egress (TCP/UDP 53) to kube-dns/coredns in kube-system."
 spec:
   podSelector: {}
   policyTypes:

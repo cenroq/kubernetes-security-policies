@@ -4,8 +4,8 @@ metadata:
   name: jwt-audience
   namespace: default
   annotations:
-    kubedrill.io/displayName: "JWT Audience Validation"
-    kubedrill.io/description: "Validate JWT issuer and required audience for the api-gateway workload."
+    cenroq.io/displayName: "JWT Audience Validation"
+    cenroq.io/description: "Validate JWT issuer and required audience for the api-gateway workload."
 spec:
   selector:
     matchLabels:

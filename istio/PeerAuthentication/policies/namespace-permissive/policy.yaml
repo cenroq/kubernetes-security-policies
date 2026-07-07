@@ -4,8 +4,8 @@ metadata:
   name: default
   namespace: permissive-namespace
   annotations:
-    kubedrill.io/displayName: "Namespace mTLS Permissive"
-    kubedrill.io/description: "Allow both plaintext and mTLS traffic within the permissive namespace."
+    cenroq.io/displayName: "Namespace mTLS Permissive"
+    cenroq.io/description: "Allow both plaintext and mTLS traffic within the permissive namespace."
 spec:
   mtls:
     mode: PERMISSIVE
