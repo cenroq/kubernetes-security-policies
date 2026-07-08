@@ -3,6 +3,21 @@
         "name": "cenroq-best-practices",
         "latest-version": "v0.1.1",
         "versions": [
+            "v0.1.1"
+        ]
+    },
+    {
+        "name": "pod-security-admission",
+        "latest-version": "v1.36.0-cenroq",
+        "versions": [
+            "v1.36.0-cenroq",
+        ]
+    },
+    {
+        "name": "kolteq-best-practices",
+        "latest-version": "v0.1.1",
+        "deprecated": 1782856800,
+        "versions": [
             "v0.1.1",
             "v0.1.0"
         ]
@@ -10,10 +25,11 @@
     {
         "name": "pod-security-admission",
         "latest-version": "v1.36.0",
+        "deprecated": 1782856800,
         "versions": [
             "v1.36.0",
             "v1.35.0",
             "v1.34.0"
         ]
-    }
+    },
 ]
