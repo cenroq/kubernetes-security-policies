@@ -1,6 +1,7 @@
 {
-    "latest-version": "v0.2.0",
+    "latest-version": "v0.2.0-cenroq",
     "versions": [
+        "v0.2.0-cenroq",
         "v0.2.0",
         "v0.1.0"
     ],
