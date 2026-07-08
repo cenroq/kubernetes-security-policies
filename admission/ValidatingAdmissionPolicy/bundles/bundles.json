@@ -10,7 +10,7 @@
         "name": "pod-security-admission",
         "latest-version": "v1.36.0-cenroq",
         "versions": [
-            "v1.36.0-cenroq",
+            "v1.36.0-cenroq"
         ]
     },
     {
