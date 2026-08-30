@@ -4,10 +4,10 @@ metadata:
   name: networkpolicy-allow-all
   annotations:
     security.kubeapt.io/displayName: "Networkpolicy Allow All"
-    security.kubeapt.io/description: "Wildcard NetworkPolicies that allow all ingress and egress traffic for all pods are not"
+    security.kubeapt.io/description: "Selecting every pod with rules that name no peers and no ports unions an allow-all permission across the namespace, which cancels the effect of tighter policies and leaves lateral movement and outbound traffic unconstrained."
     security.kubeapt.io/resource: "NetworkPolicies"
     security.kubeapt.io/severity: "Low"
-    security.kubeapt.io/remediation: "Scope podSelector and restrict ingress/egress peers and ports. Fields: spec.podSelector, spec.ingress[].from, spec.ingress[].ports, spec.egress[].to, spec.egress[].ports."
+    security.kubeapt.io/remediation: "Narrow spec.podSelector to the pods that genuinely need the exemption and give each rule explicit peers and ports. Fields: spec.podSelector, spec.ingress[*].from, spec.ingress[*].ports, spec.egress[*].to, spec.egress[*].ports."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

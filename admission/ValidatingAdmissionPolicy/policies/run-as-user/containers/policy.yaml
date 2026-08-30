@@ -4,10 +4,10 @@ metadata:
   name: run-as-user-containers
   annotations:
     security.kubeapt.io/displayName: "Run As User"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for run-as-user/containers."
+    security.kubeapt.io/description: "Running a container as UID 0 gives every process the in-container root identity, so writable host mounts, setuid binaries and isolation weaknesses become exploitable with root file ownership and the full capability set."
     security.kubeapt.io/resource: "Containers"
     security.kubeapt.io/severity: "Moderate"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the run-as-user/containers policy."
+    security.kubeapt.io/remediation: "Set runAsUser to a non-zero UID such as 1000, or leave it unset so the image user applies. Field: spec.containers[*].securityContext.runAsUser."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

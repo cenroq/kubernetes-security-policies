@@ -4,10 +4,10 @@ metadata:
   name: role-pod-exec-create
   annotations:
     security.kubeapt.io/displayName: "Pod Exec Create"
-    security.kubeapt.io/description: "Roles must not allow pod creation/modification or exec/attach/portforward/ephemeralcontainers"
+    security.kubeapt.io/description: "Pod write lets the holder run arbitrary images with any service account token in the namespace mounted, while exec, attach, port-forward and ephemeral container access opens a shell into running workloads and their credentials."
     security.kubeapt.io/resource: "Roles"
     security.kubeapt.io/severity: "Critical"
-    security.kubeapt.io/remediation: "Remove pod write verbs and exec/attach/portforward/ephemeralcontainers create permissions. Fields: rules[*].apiGroups, rules[*].resources, rules[*].verbs."
+    security.kubeapt.io/remediation: "Remove create, update, patch and delete on pods, and the create verb on the pods/exec, pods/attach, pods/portforward and pods/ephemeralcontainers subresources. Fields: rules[*].apiGroups, rules[*].resources, rules[*].verbs."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

@@ -4,10 +4,10 @@ metadata:
   name: serviceaccount-automount-token-false
   annotations:
     security.kubeapt.io/displayName: "Automount Token False"
-    security.kubeapt.io/description: "automountServiceAccountToken must be set to false by default on ServiceAccounts."
+    security.kubeapt.io/description: "A ServiceAccount that automounts by default puts its API token into every pod that references it, so any one compromised container yields a credential usable against the API server."
     security.kubeapt.io/resource: "ServiceAccounts"
     security.kubeapt.io/severity: "Low"
-    security.kubeapt.io/remediation: "Set automountServiceAccountToken=false on ServiceAccounts. Fields: automountServiceAccountToken."
+    security.kubeapt.io/remediation: "Set automountServiceAccountToken to false on the ServiceAccount and opt individual pods back in only where API access is required. Field: automountServiceAccountToken."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

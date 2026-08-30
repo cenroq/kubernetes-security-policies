@@ -1,8 +1,8 @@
 {
     "name": "cenroq Best Practices",
     "description": "Best practice validating admission bundle that enforces pod hardening, safer runtime defaults, and broader cluster guardrails (RBAC, secrets, exposure, and risky config restrictions) for a strong security baseline.",
-    "version": "v0.1.1",
-    "deployment": "mkdir -p /tmp/cenroq && curl -L https://github.com/cenroq/kubernetes-security-policies/releases/download/vap_cenroq-best-practices%40v0.1.1/cenroq-best-practices_v0.1.1.tar.gz | tar -xz -C /tmp/cenroq && kubectl apply -f /tmp/cenroq/cenroq-best-practices --recursive",
+    "version": "v0.2.0",
+    "deployment": "mkdir -p /tmp/cenroq && curl -L https://github.com/cenroq/kubernetes-security-policies/releases/download/vap_cenroq-best-practices%40v0.2.0/cenroq-best-practices_v0.2.0.tar.gz | tar -xz -C /tmp/cenroq && kubectl apply -f /tmp/cenroq/cenroq-best-practices --recursive",
     "labels":  {
         "warn": "security.cenroq.io/warn",
         "audit": "security.cenroq.io/audit",
@@ -189,7 +189,7 @@
         "kyverno-policy-not-enforcing"
     ],
     "sources": [
-        "https://github.com/cenroq/kubernetes-security-policies/releases/download/vap_cenroq-best-practices%40v0.1.1/cenroq-best-practices_v0.1.1.tar.gz",
-        "https://github.com/cenroq/kubernetes-security-policies/releases/download/vap_cenroq-best-practices%40v0.1.1/cenroq-best-practices_v0.1.1.zip"
+        "https://github.com/cenroq/kubernetes-security-policies/releases/download/vap_cenroq-best-practices%40v0.2.0/cenroq-best-practices_v0.2.0.tar.gz",
+        "https://github.com/cenroq/kubernetes-security-policies/releases/download/vap_cenroq-best-practices%40v0.2.0/cenroq-best-practices_v0.2.0.zip"
     ]
 }

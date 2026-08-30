@@ -4,10 +4,10 @@ metadata:
   name: namespace-pod-security-standards
   annotations:
     security.kubeapt.io/displayName: "Pod Security Standards"
-    security.kubeapt.io/description: "Namespace must set pod-security.kubernetes.io/{enforce,audit,warn} to baseline or restricted."
+    security.kubeapt.io/description: "A namespace that is not held to at least the baseline Pod Security Standard lets anyone able to create pods there run privileged, host-networked or hostPath workloads and break out to the node unchallenged."
     security.kubeapt.io/resource: "Namespaces"
     security.kubeapt.io/severity: "Low"
-    security.kubeapt.io/remediation: "Set pod-security.kubernetes.io labels to baseline or restricted. Fields: metadata.labels['pod-security.kubernetes.io/enforce'], metadata.labels['pod-security.kubernetes.io/audit'], metadata.labels['pod-security.kubernetes.io/warn']."
+    security.kubeapt.io/remediation: "Label the namespace with pod-security.kubernetes.io/enforce set to baseline or restricted; an audit or warn label at those levels also satisfies the check but does not block workloads. Fields: metadata.labels[\"pod-security.kubernetes.io/enforce\"], metadata.labels[\"pod-security.kubernetes.io/audit\"], metadata.labels[\"pod-security.kubernetes.io/warn\"]."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

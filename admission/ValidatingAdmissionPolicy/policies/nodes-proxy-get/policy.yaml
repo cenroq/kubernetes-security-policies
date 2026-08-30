@@ -4,10 +4,10 @@ metadata:
   name: clusterrole-nodes-proxy-get
   annotations:
     security.kubeapt.io/displayName: "Nodes Proxy Get"
-    security.kubeapt.io/description: "ClusterRoles must not grant get access to nodes/proxy."
+    security.kubeapt.io/description: "Get on the node proxy subresource forwards requests straight to the kubelet API, exposing the pod inventory, container logs and runtime detail of every workload scheduled on that node."
     security.kubeapt.io/resource: "ClusterRoles"
     security.kubeapt.io/severity: "Low"
-    security.kubeapt.io/remediation: "Remove get on nodes/proxy. Fields: rules[*].apiGroups, rules[*].resources, rules[*].verbs."
+    security.kubeapt.io/remediation: "Remove the get verb for nodes/proxy in the core API group and read workload data through the pods and pods/log APIs instead. Fields: rules[*].apiGroups, rules[*].resources, rules[*].verbs."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

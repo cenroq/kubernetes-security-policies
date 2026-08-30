@@ -4,10 +4,10 @@ metadata:
   name: control-plane-schedulable
   annotations:
     security.kubeapt.io/displayName: "Control Plane Schedulable"
-    security.kubeapt.io/description: "Control-plane nodes must carry a NoSchedule/NoExecute taint to prevent workload scheduling."
+    security.kubeapt.io/description: "An untainted control-plane node accepts ordinary workloads alongside etcd and the API server, putting tenant containers on the one host where control-plane certificates and static pod manifests sit on disk."
     security.kubeapt.io/resource: "Nodes"
     security.kubeapt.io/severity: "Low"
-    security.kubeapt.io/remediation: "Add NoSchedule/NoExecute taint for control-plane nodes. Fields: spec.taints."
+    security.kubeapt.io/remediation: "Add a taint with key node-role.kubernetes.io/control-plane (or node-role.kubernetes.io/master) and effect NoSchedule or NoExecute to the node. Field: spec.taints."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

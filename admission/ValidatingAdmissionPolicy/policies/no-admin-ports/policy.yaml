@@ -4,10 +4,10 @@ metadata:
   name: service-no-admin-ports
   annotations:
     security.kubeapt.io/displayName: "No Admin Ports"
-    security.kubeapt.io/description: "Externally reachable Services (type LoadBalancer/NodePort) must not expose admin/debug/metrics"
+    security.kubeapt.io/description: "Admin, debug, metrics and management listeners are usually unauthenticated, so publishing them on a LoadBalancer or NodePort hands outside callers internal telemetry, profiling and heap dumps, and sometimes live control over the workload."
     security.kubeapt.io/resource: "Services"
     security.kubeapt.io/severity: "Low"
-    security.kubeapt.io/remediation: "Remove admin/debug/metrics ports from external Services or split into an internal Service. Fields: spec.type, spec.ports[].name."
+    security.kubeapt.io/remediation: "Move the admin, debug, metrics and management ports to a separate ClusterIP Service and leave only application ports on the externally reachable one. Fields: spec.type, spec.ports[*].name."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

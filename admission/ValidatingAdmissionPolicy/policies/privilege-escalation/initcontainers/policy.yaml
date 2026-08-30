@@ -4,10 +4,10 @@ metadata:
   name: allow-privilege-escalation-initcontainers
   annotations:
     security.kubeapt.io/displayName: "Privilege Escalation"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for privilege-escalation/initcontainers."
+    security.kubeapt.io/description: "Leaving privilege escalation enabled lets a process in the init container gain more privileges than its parent through setuid binaries or file capabilities, turning a compromised unprivileged process into root inside the container."
     security.kubeapt.io/resource: "Initcontainers"
     security.kubeapt.io/severity: "Critical"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the privilege-escalation/initcontainers policy."
+    security.kubeapt.io/remediation: "Set allowPrivilegeEscalation to false in the security context of every init container. The field must be present explicitly, since omitting it also fails. Field: spec.initContainers[*].securityContext.allowPrivilegeEscalation."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

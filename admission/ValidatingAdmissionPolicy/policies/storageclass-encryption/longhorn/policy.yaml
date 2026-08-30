@@ -4,10 +4,10 @@ metadata:
   name: storageclass-encryption-longhorn
   annotations:
     security.kubeapt.io/displayName: "StorageClass Encryption (Longhorn)"
-    security.kubeapt.io/description: "Longhorn StorageClasses must enable volume encryption (parameters.encrypted: \"true\")."
+    security.kubeapt.io/description: "Volumes provisioned from this class keep their replicas in plaintext on node disks, so anyone who can read a replica directory, a backup target or a removed disk recovers the data without any Kubernetes access."
     security.kubeapt.io/resource: "StorageClasses"
     security.kubeapt.io/severity: "Low"
-    security.kubeapt.io/remediation: "Set parameters.encrypted to \"true\" on driver.longhorn.io StorageClasses (with the required CSI secret references). Field: parameters.encrypted."
+    security.kubeapt.io/remediation: "Set parameters.encrypted to true on driver.longhorn.io StorageClasses and add the CSI node-publish and provisioner secret references that hold the passphrase. Field: parameters.encrypted."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

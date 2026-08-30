@@ -4,10 +4,10 @@ metadata:
   name: allowed-sysctls
   annotations:
     security.kubeapt.io/displayName: "Sysctls"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for sysctls."
+    security.kubeapt.io/description: "A sysctl outside the approved list reaches kernel tunables shared with the node, letting a pod weaken host network and memory protections for every workload on that node and destabilise the kubelet itself."
     security.kubeapt.io/resource: "Pods"
     security.kubeapt.io/severity: "Critical"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the sysctls policy."
+    security.kubeapt.io/remediation: "Remove the unapproved sysctl entries and keep only allowed names such as net.ipv4.ip_local_port_range, net.ipv4.tcp_syncookies or kernel.shm_rmid_forced. Field: spec.securityContext.sysctls[*].name."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

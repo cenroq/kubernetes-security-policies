@@ -4,10 +4,10 @@ metadata:
   name: clusterrolebinding-anonymous-subjects
   annotations:
     security.kubeapt.io/displayName: "Anonymous Subjects"
-    security.kubeapt.io/description: "ClusterRoleBindings must not bind roles to anonymous or broadly shared user identities."
+    security.kubeapt.io/description: "Binding a ClusterRole to system:anonymous grants it cluster-wide to every unauthenticated caller that reaches the API server, and catch-all names like everyone or all-users leave nobody accountable for who exercises it."
     security.kubeapt.io/resource: "ClusterRoleBindings"
     security.kubeapt.io/severity: "Low"
-    security.kubeapt.io/remediation: "Remove anonymous/broad user subjects from ClusterRoleBinding. Fields: subjects[*].kind, subjects[*].name."
+    security.kubeapt.io/remediation: "Replace the anonymous or shared user subject with the specific named users, groups or ServiceAccounts that need the role. Fields: subjects[*].kind, subjects[*].name."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

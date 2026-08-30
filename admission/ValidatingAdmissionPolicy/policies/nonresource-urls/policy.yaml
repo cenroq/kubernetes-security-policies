@@ -4,10 +4,10 @@ metadata:
   name: clusterrole-nonresource-urls
   annotations:
     security.kubeapt.io/displayName: "Nonresource Urls"
-    security.kubeapt.io/description: "ClusterRoles must not grant broad nonResourceURL access to API server endpoints (/, /api,"
+    security.kubeapt.io/description: "Wildcard or root non-resource paths grant every API server endpoint outside the resource model, so /logs serves node file contents and /debug/pprof heap dumps that carry in-flight credentials straight to the role holder."
     security.kubeapt.io/resource: "ClusterRoles"
     security.kubeapt.io/severity: "Critical"
-    security.kubeapt.io/remediation: "Remove broad nonResourceURL access or scope to specific paths/verbs. Fields: rules[*].nonResourceURLs, rules[*].verbs."
+    security.kubeapt.io/remediation: "Replace the wildcard or root paths with the specific endpoints the caller needs, such as /healthz or /version, and limit the verbs to get. Fields: rules[*].nonResourceURLs, rules[*].verbs."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

@@ -4,10 +4,10 @@ metadata:
   name: allowed-volume-types
   annotations:
     security.kubeapt.io/displayName: "Volume Types"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for volume-types."
+    security.kubeapt.io/description: "Volume sources outside the allowed set, such as hostPath, gitRepo or flexVolume, mount node filesystem paths or run driver code on the node, opening a route to kubelet credentials and the container runtime socket."
     security.kubeapt.io/resource: "Pods"
     security.kubeapt.io/severity: "Moderate"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the volume-types policy."
+    security.kubeapt.io/remediation: "Replace the volume with an allowed source (configMap, csi, downwardAPI, emptyDir, ephemeral, persistentVolumeClaim, projected or secret) and expose node-local data through a PersistentVolumeClaim instead. Field: spec.volumes[*]."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

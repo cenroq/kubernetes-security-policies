@@ -4,10 +4,10 @@ metadata:
   name: startupprobe-httpget-host-initcontainers
   annotations:
     security.kubeapt.io/displayName: "Startupprobe Httpget Host"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for startupprobe-httpget-host/initcontainers."
+    security.kubeapt.io/description: "Redirecting the startup HTTP probe to another host makes the kubelet fetch an arbitrary URL from the node, reaching metadata and node-local endpoints closed to pods, and a hung init container passes its startup gate."
     security.kubeapt.io/resource: "Initcontainers"
     security.kubeapt.io/severity: "Low"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the startupprobe-httpget-host/initcontainers policy."
+    security.kubeapt.io/remediation: "Remove the host field so the probe targets the pod IP, or set it to an empty string. Field: spec.initContainers[*].startupProbe.httpGet.host."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

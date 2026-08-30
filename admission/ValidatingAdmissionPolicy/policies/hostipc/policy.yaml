@@ -4,10 +4,10 @@ metadata:
   name: hostipc
   annotations:
     security.kubeapt.io/displayName: "Hostipc"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for hostipc."
+    security.kubeapt.io/description: "Sharing the host IPC namespace exposes the node shared memory segments, semaphores and message queues to the container, letting it read in-memory data and tamper with host processes and other pods that share it."
     security.kubeapt.io/resource: "Pods"
     security.kubeapt.io/severity: "Critical"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the hostipc policy."
+    security.kubeapt.io/remediation: "Remove spec.hostIPC or set it to false. Field: spec.hostIPC."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

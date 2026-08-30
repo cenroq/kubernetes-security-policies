@@ -4,10 +4,10 @@ metadata:
   name: image-no-latest-initcontainers
   annotations:
     security.kubeapt.io/displayName: "Image No Latest"
-    security.kubeapt.io/description: "spec.initContainers[*].image must use an immutable digest or a non-latest tag."
+    security.kubeapt.io/description: "Untagged and latest references float to whatever was pushed to the registry most recently, so a restart or reschedule can pull unreviewed or poisoned code into the init container without any spec change."
     security.kubeapt.io/resource: "Initcontainers"
     security.kubeapt.io/severity: "Moderate"
-    security.kubeapt.io/remediation: "Use an immutable digest or a non-latest tag for init container images. Fields: spec.initContainers[*].image."
+    security.kubeapt.io/remediation: "Pin the image to a specific released version tag or to an immutable @sha256 digest instead of latest or a bare repository name. Field: spec.initContainers[*].image."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

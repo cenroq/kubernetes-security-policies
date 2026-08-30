@@ -4,10 +4,10 @@ metadata:
   name: clusterrole-workloads-write
   annotations:
     security.kubeapt.io/displayName: "Workloads Write"
-    security.kubeapt.io/description: "ClusterRoles must not grant create/update/patch/delete on workload controllers (apps/batch)."
+    security.kubeapt.io/description: "Write access to workload controllers becomes arbitrary pod creation through the controller, letting the holder run any image under any service account in the cluster and, with DaemonSets, land that container on every node."
     security.kubeapt.io/resource: "ClusterRoles"
     security.kubeapt.io/severity: "Critical"
-    security.kubeapt.io/remediation: "Remove create/update/patch/delete on workload controllers. Fields: rules[*].apiGroups, rules[*].resources, rules[*].verbs."
+    security.kubeapt.io/remediation: "Remove create, update, patch and delete from rules covering deployments, daemonsets, statefulsets and replicasets in the apps group and jobs and cronjobs in the batch group. Fields: rules[*].apiGroups, rules[*].resources, rules[*].verbs."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

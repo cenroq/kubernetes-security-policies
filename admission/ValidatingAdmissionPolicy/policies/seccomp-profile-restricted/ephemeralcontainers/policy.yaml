@@ -4,10 +4,10 @@ metadata:
   name: seccomp-profile-ephemeralcontainers-restricted
   annotations:
     security.kubeapt.io/displayName: "Seccomp Profile Restricted"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for seccomp-profile-restricted/ephemeralcontainers."
+    security.kubeapt.io/description: "An ephemeral container with no seccomp profile enforced at pod or ephemeral container level runs with no syscall filter, leaving the full kernel syscall surface reachable for container escape and privilege escalation."
     security.kubeapt.io/resource: "Ephemeralcontainers"
     security.kubeapt.io/severity: "Moderate"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the seccomp-profile-restricted/ephemeralcontainers policy."
+    security.kubeapt.io/remediation: "Set the seccomp type to RuntimeDefault, or to Localhost naming a profile loaded on the node, on each ephemeral container or once at pod level. Fields: spec.ephemeralContainers[*].securityContext.seccompProfile.type, spec.securityContext.seccompProfile.type."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

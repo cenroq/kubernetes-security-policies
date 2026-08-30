@@ -4,10 +4,10 @@ metadata:
   name: prestop-httpget-host-containers
   annotations:
     security.kubeapt.io/displayName: "Prestop Httpget Host"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for prestop-httpget-host/containers."
+    security.kubeapt.io/description: "A preStop HTTP hook aimed at another host makes the kubelet call an arbitrary URL from the node whenever a container shuts down, reaching internal endpoints closed to pods and triggering side effects there."
     security.kubeapt.io/resource: "Containers"
     security.kubeapt.io/severity: "Low"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the prestop-httpget-host/containers policy."
+    security.kubeapt.io/remediation: "Remove the host field so the hook targets the pod IP, or set it to an empty string. Field: spec.containers[*].lifecycle.preStop.httpGet.host."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

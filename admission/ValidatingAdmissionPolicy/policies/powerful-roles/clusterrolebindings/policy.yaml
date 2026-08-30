@@ -4,10 +4,10 @@ metadata:
   name: clusterrolebinding-powerful-roles
   annotations:
     security.kubeapt.io/displayName: "Powerful Roles"
-    security.kubeapt.io/description: "ClusterRoleBindings must not reference powerful roles such as cluster-admin/admin/edit."
+    security.kubeapt.io/description: "Roles like cluster-admin, admin and edit carry sweeping verbs across nearly every API resource, so one compromised subject in the binding gains full control of the cluster and every secret in it."
     security.kubeapt.io/resource: "ClusterRoleBindings"
     security.kubeapt.io/severity: "Critical"
-    security.kubeapt.io/remediation: "Change roleRef to a non-privileged role. Fields: roleRef.kind, roleRef.name."
+    security.kubeapt.io/remediation: "Point roleRef at a purpose-built role that lists only the resources and verbs the subject needs. Fields: roleRef.kind, roleRef.name."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

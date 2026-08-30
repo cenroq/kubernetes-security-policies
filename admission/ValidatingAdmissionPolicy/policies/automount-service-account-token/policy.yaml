@@ -4,10 +4,10 @@ metadata:
   name: automount-service-account-token
   annotations:
     security.kubeapt.io/displayName: "Automount Service Account Token"
-    security.kubeapt.io/description: "spec.automountServiceAccountToken must be explicitly set to false."
+    security.kubeapt.io/description: "An automounted service account token lands in every container filesystem, so any code execution or path traversal bug hands an attacker a live API credential for enumerating and acting on cluster resources."
     security.kubeapt.io/resource: "Pods"
     security.kubeapt.io/severity: "Low"
-    security.kubeapt.io/remediation: "Set spec.automountServiceAccountToken=false. Fields: spec.automountServiceAccountToken."
+    security.kubeapt.io/remediation: "Set spec.automountServiceAccountToken to false on pods that do not call the Kubernetes API, and mount a token only where it is actually needed. Field: spec.automountServiceAccountToken."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

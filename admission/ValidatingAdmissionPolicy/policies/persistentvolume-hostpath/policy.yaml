@@ -4,10 +4,10 @@ metadata:
   name: persistentvolume-hostpath
   annotations:
     security.kubeapt.io/displayName: "PersistentVolume HostPath"
-    security.kubeapt.io/description: "PersistentVolumes must not be backed by a node-local hostPath or local volume."
+    security.kubeapt.io/description: "A hostPath or local PersistentVolume hands pods a path on the node filesystem, so any workload that binds the claim can read or tamper with kubelet credentials and other tenants' data."
     security.kubeapt.io/resource: "PersistentVolumes"
     security.kubeapt.io/severity: "High"
-    security.kubeapt.io/remediation: "Use a networked or CSI-backed volume source instead of hostPath/local. Fields: spec.hostPath, spec.local."
+    security.kubeapt.io/remediation: "Back the volume with a CSI or network storage source and remove the node-local source. Fields: spec.hostPath, spec.local."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

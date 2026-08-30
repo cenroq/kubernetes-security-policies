@@ -4,10 +4,10 @@ metadata:
   name: dns-policy
   annotations:
     security.kubeapt.io/displayName: "Dns Policy"
-    security.kubeapt.io/description: "spec.dnsPolicy must not be set to ClusterFirstWithHostNet."
+    security.kubeapt.io/description: "ClusterFirstWithHostNet pairs cluster DNS with host networking, so a workload that already bypasses pod network isolation can still resolve and reach every internal cluster service by name."
     security.kubeapt.io/resource: "Pods"
     security.kubeapt.io/severity: "Low"
-    security.kubeapt.io/remediation: "Set spec.dnsPolicy to ClusterFirst or Default (not ClusterFirstWithHostNet). Fields: spec.dnsPolicy."
+    security.kubeapt.io/remediation: "Set spec.dnsPolicy to ClusterFirst or Default and run the workload on the pod network. Field: spec.dnsPolicy."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

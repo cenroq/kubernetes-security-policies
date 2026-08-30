@@ -4,10 +4,10 @@ metadata:
   name: run-as-group-ephemeralcontainers
   annotations:
     security.kubeapt.io/displayName: "Run As Group"
-    security.kubeapt.io/description: "spec.ephemeralContainers[*].securityContext.runAsGroup must be undefined or a non-zero"
+    security.kubeapt.io/description: "An ephemeral debug container running with GID 0 places its processes in the root group, which owns or can write many files in images and mounted host volumes, widening what a compromised process reaches."
     security.kubeapt.io/resource: "Ephemeralcontainers"
     security.kubeapt.io/severity: "Moderate"
-    security.kubeapt.io/remediation: "Set spec.ephemeralContainers[*].securityContext.runAsGroup to >0 or omit it. Fields: spec.ephemeralContainers[*].securityContext.runAsGroup."
+    security.kubeapt.io/remediation: "Set runAsGroup to a non-zero GID such as 1000 on the debug container, or leave it unset. Field: spec.ephemeralContainers[*].securityContext.runAsGroup."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

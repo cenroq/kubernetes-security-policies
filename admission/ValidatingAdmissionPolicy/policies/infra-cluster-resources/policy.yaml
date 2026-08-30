@@ -4,10 +4,10 @@ metadata:
   name: clusterrole-infra-cluster-resources
   annotations:
     security.kubeapt.io/displayName: "Infra Cluster Resources"
-    security.kubeapt.io/description: "ClusterRoles must not grant broad access to nodes (read/proxy), persistent volumes, storageclasses,"
+    security.kubeapt.io/description: "Reading or proxying nodes exposes kubelet endpoints and every workload placed on them, while write access to persistent volumes, storage classes and namespaces lets a caller mount host paths and stage pods outside guarded namespaces."
     security.kubeapt.io/resource: "ClusterRoles"
     security.kubeapt.io/severity: "Critical"
-    security.kubeapt.io/remediation: "Remove broad access to nodes, PVs, storageclasses, and namespace write verbs. Fields: rules[*].apiGroups, rules[*].resources, rules[*].verbs."
+    security.kubeapt.io/remediation: "Drop get, list, watch and proxy on nodes and its proxy, log and metrics subresources, and drop create, update, patch, delete and proxy on persistentvolumes, storageclasses and namespaces. Fields: rules[*].apiGroups, rules[*].resources, rules[*].verbs."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

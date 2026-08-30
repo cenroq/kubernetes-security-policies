@@ -4,10 +4,10 @@ metadata:
   name: pod-template-labels
   annotations:
     security.kubeapt.io/displayName: "Pod Template Labels"
-    security.kubeapt.io/description: "Pods must set metadata.labels (non-empty) for policy targeting."
+    security.kubeapt.io/description: "A pod with no labels cannot be selected by label, so NetworkPolicies and other selector-driven controls written for it never apply, and the workload runs unisolated and unattributable to any owner."
     security.kubeapt.io/resource: "Pods"
     security.kubeapt.io/severity: "Low"
-    security.kubeapt.io/remediation: "Add at least one label to metadata.labels. Fields: metadata.labels."
+    security.kubeapt.io/remediation: "Add at least one identifying label, such as app.kubernetes.io/name, to the pod. Field: metadata.labels."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

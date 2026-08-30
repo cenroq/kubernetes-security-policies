@@ -4,10 +4,10 @@ metadata:
   name: clusterrole-admission-api-control
   annotations:
     security.kubeapt.io/displayName: "Admission Api Control"
-    security.kubeapt.io/description: "ClusterRoles must not grant write access to ValidatingWebhookConfiguration/MutatingWebhookConfiguration."
+    security.kubeapt.io/description: "Write access to webhook configurations lets the holder delete or rewrite admission control itself, disabling every policy that guards the cluster and mutating arbitrary objects as they are admitted."
     security.kubeapt.io/resource: "ClusterRoles"
     security.kubeapt.io/severity: "Critical"
-    security.kubeapt.io/remediation: "Remove write verbs for ValidatingWebhookConfiguration and MutatingWebhookConfiguration. Fields: rules[*].apiGroups, rules[*].resources, rules[*].verbs."
+    security.kubeapt.io/remediation: "Drop create, update, patch and delete on validatingwebhookconfigurations and mutatingwebhookconfigurations in the admissionregistration.k8s.io group, leaving at most get, list and watch. Fields: rules[*].apiGroups, rules[*].resources, rules[*].verbs."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

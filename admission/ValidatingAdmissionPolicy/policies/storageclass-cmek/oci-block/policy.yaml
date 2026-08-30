@@ -4,10 +4,10 @@ metadata:
   name: storageclass-cmek-oci-block
   annotations:
     security.kubeapt.io/displayName: "StorageClass CMEK (OCI Block)"
-    security.kubeapt.io/description: "Oracle OCI Block Volume StorageClasses must use a customer-managed encryption key (parameters.\"kms-key-id\")."
+    security.kubeapt.io/description: "Without a Vault master key, volumes provisioned from this class fall back to Oracle-managed keys that you cannot rotate, audit or revoke, so backups and volume clones stay readable to anyone with tenancy-level access."
     security.kubeapt.io/resource: "StorageClasses"
     security.kubeapt.io/severity: "Low"
-    security.kubeapt.io/remediation: "Set parameters.\"kms-key-id\" to an OCI Vault master key OCID on blockvolume.csi.oraclecloud.com StorageClasses. OCI block volumes are always encrypted at rest; this enforces customer-managed keys (CMEK). Field: parameters."
+    security.kubeapt.io/remediation: "Set the kms-key-id parameter to an OCI Vault master key OCID on blockvolume.csi.oraclecloud.com StorageClasses. Field: parameters['kms-key-id']."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

@@ -4,10 +4,10 @@ metadata:
   name: clusterrole-aggregation
   annotations:
     security.kubeapt.io/displayName: "Aggregation"
-    security.kubeapt.io/description: "ClusterRoles must not use aggregationRule; avoid implicit privilege aggregation."
+    security.kubeapt.io/description: "An aggregated ClusterRole silently absorbs the rules of every ClusterRole carrying a matching label, so anyone able to create a labeled role grows its permissions with no review of the binding."
     security.kubeapt.io/resource: "ClusterRoles"
     security.kubeapt.io/severity: "Critical"
-    security.kubeapt.io/remediation: "Remove aggregationRule or clusterRoleSelectors from ClusterRole. Fields: aggregationRule.clusterRoleSelectors."
+    security.kubeapt.io/remediation: "Remove the aggregation block and list the required rules explicitly on the ClusterRole instead. Field: aggregationRule.clusterRoleSelectors."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

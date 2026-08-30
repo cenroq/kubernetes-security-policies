@@ -4,10 +4,10 @@ metadata:
   name: hostusers
   annotations:
     security.kubeapt.io/displayName: "Hostusers"
-    security.kubeapt.io/description: "Using hostUsers is disallowed. spec.hostUsers must be undefined or set to false."
+    security.kubeapt.io/description: "Running in the host user namespace removes UID remapping, so container root is real root on the node and any escape or shared host resource is entered with full node privileges."
     security.kubeapt.io/resource: "Pods"
     security.kubeapt.io/severity: "Critical"
-    security.kubeapt.io/remediation: "Set spec.hostUsers=false or omit it. Fields: spec.hostUsers."
+    security.kubeapt.io/remediation: "Set spec.hostUsers to false so the pod runs in its own user namespace with container UIDs remapped away from node root. Field: spec.hostUsers."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

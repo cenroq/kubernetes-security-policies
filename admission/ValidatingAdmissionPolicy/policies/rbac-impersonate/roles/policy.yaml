@@ -4,10 +4,10 @@ metadata:
   name: role-rbac-impersonate
   annotations:
     security.kubeapt.io/displayName: "Rbac Impersonate"
-    security.kubeapt.io/description: "Roles must not grant the impersonate verb on users, groups or serviceaccounts."
+    security.kubeapt.io/description: "Impersonation lets the holder send requests as any other user, group or service account, borrowing the permissions of far more privileged identities without ever being granted those permissions in its own bindings."
     security.kubeapt.io/resource: "Roles"
     security.kubeapt.io/severity: "High"
-    security.kubeapt.io/remediation: "Remove the impersonate verb on users/groups/serviceaccounts. Fields: rules[*].resources, rules[*].verbs."
+    security.kubeapt.io/remediation: "Remove the impersonate verb, and any wildcard verb, from every rule covering users, groups, serviceaccounts, uids or userextras. Fields: rules[*].resources, rules[*].verbs."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

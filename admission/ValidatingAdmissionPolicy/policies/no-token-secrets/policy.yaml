@@ -4,10 +4,10 @@ metadata:
   name: serviceaccount-no-token-secrets
   annotations:
     security.kubeapt.io/displayName: "No Token Secrets"
-    security.kubeapt.io/description: "Avoid explicit long-lived token Secrets on ServiceAccounts."
+    security.kubeapt.io/description: "A long-lived token Secret bound to a ServiceAccount never expires and is tied to no pod lifetime, so a single leaked value grants that identity permanent API access until someone notices and rotates it."
     security.kubeapt.io/resource: "ServiceAccounts"
     security.kubeapt.io/severity: "High"
-    security.kubeapt.io/remediation: "Remove ServiceAccount secrets references; rely on projected tokens. Fields: secrets."
+    security.kubeapt.io/remediation: "Empty the ServiceAccount secrets list and delete the associated token Secrets, letting workloads use short-lived projected tokens instead. Field: secrets."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

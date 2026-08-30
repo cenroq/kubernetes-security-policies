@@ -4,10 +4,10 @@ metadata:
   name: service-external-ips
   annotations:
     security.kubeapt.io/displayName: "External Ips"
-    security.kubeapt.io/description: "spec.externalIPs must not be set."
+    security.kubeapt.io/description: "externalIPs make every node claim the listed addresses and steer matching traffic into the selected pods, so any namespace able to create a Service can hijack and man-in-the-middle traffic destined for those IPs."
     security.kubeapt.io/resource: "Services"
     security.kubeapt.io/severity: "High"
-    security.kubeapt.io/remediation: "Remove spec.externalIPs. Fields: spec.externalIPs."
+    security.kubeapt.io/remediation: "Remove spec.externalIPs and publish the Service through an Ingress or a LoadBalancer address assigned by the platform. Field: spec.externalIPs."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

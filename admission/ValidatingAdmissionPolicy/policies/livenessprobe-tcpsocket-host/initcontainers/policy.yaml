@@ -4,10 +4,10 @@ metadata:
   name: livenessprobe-tcpsocket-host-initcontainers
   annotations:
     security.kubeapt.io/displayName: "Livenessprobe Tcpsocket Host"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for livenessprobe-tcpsocket-host/initcontainers."
+    security.kubeapt.io/description: "Pointing the liveness TCP probe at another host makes the kubelet open connections from the node to an arbitrary address, probing endpoints closed to pods, while a hung init container is never restarted."
     security.kubeapt.io/resource: "Initcontainers"
     security.kubeapt.io/severity: "Low"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the livenessprobe-tcpsocket-host/initcontainers policy."
+    security.kubeapt.io/remediation: "Remove the host field so the probe targets the pod IP, or set it to an empty string. Field: spec.initContainers[*].livenessProbe.tcpSocket.host."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

@@ -4,10 +4,10 @@ metadata:
   name: allowed-hostports-initcontainers
   annotations:
     security.kubeapt.io/displayName: "Hostports"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for hostports/initcontainers."
+    security.kubeapt.io/description: "A hostPort binds the init container port onto the node network interfaces, exposing it to anything that can reach the node, bypassing Service and NetworkPolicy controls and squatting on node component ports."
     security.kubeapt.io/resource: "Initcontainers"
     security.kubeapt.io/severity: "Critical"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the hostports/initcontainers policy."
+    security.kubeapt.io/remediation: "Remove the hostPort field or set it to 0 and publish the workload through a Service instead. Field: spec.initContainers[*].ports[*].hostPort."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

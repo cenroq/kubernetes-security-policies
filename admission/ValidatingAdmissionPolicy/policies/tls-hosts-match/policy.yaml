@@ -4,10 +4,10 @@ metadata:
   name: ingress-tls-hosts-match
   annotations:
     security.kubeapt.io/displayName: "Tls Hosts Match"
-    security.kubeapt.io/description: "Every host in spec.rules[*].host must appear in some spec.tls[*].hosts."
+    security.kubeapt.io/description: "A routed host missing from every TLS block is served over cleartext HTTP or with a default certificate that does not match it, exposing session cookies and credentials to anyone on the network path."
     security.kubeapt.io/resource: "Ingresses"
     security.kubeapt.io/severity: "High"
-    security.kubeapt.io/remediation: "Ensure every spec.rules[*].host appears in spec.tls[*].hosts. Fields: spec.rules[].host, spec.tls[].hosts."
+    security.kubeapt.io/remediation: "Add each hostname from the rules to the hosts list of a spec.tls entry backed by a certificate valid for it. Fields: spec.rules[*].host, spec.tls[*].hosts."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

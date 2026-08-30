@@ -4,10 +4,10 @@ metadata:
   name: clusterrole-serviceaccount-tokens
   annotations:
     security.kubeapt.io/displayName: "Serviceaccount Tokens"
-    security.kubeapt.io/description: "ClusterRoles must not allow creating serviceaccount/token subresource."
+    security.kubeapt.io/description: "Creating the token subresource mints a working bearer token for any service account in the cluster, letting the holder act as the most privileged one and reuse that token from outside the cluster."
     security.kubeapt.io/resource: "ClusterRoles"
     security.kubeapt.io/severity: "Critical"
-    security.kubeapt.io/remediation: "Remove create on serviceaccounts/token. Fields: rules[*].resources, rules[*].verbs."
+    security.kubeapt.io/remediation: "Remove the create verb from every rule covering the serviceaccounts/token subresource, and let the kubelet project tokens into pods instead. Fields: rules[*].apiGroups, rules[*].resources, rules[*].verbs."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail
