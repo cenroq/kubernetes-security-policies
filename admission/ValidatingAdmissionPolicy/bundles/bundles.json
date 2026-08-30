@@ -1,8 +1,9 @@
 [
     {
         "name": "cenroq-best-practices",
-        "latest-version": "v0.1.1",
+        "latest-version": "v0.2.0",
         "versions": [
+            "v0.2.0",
             "v0.1.1"
         ]
     },

@@ -8338,3 +8338,2343 @@ spec:
         operator: NotIn
         values:
         - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-workloads-write-cluster-warn
+spec:
+  policyName: clusterrole-workloads-write
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-workloads-write.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-workloads-write-cluster-audit
+spec:
+  policyName: clusterrole-workloads-write
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-workloads-write.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-workloads-write-cluster-enforce
+spec:
+  policyName: clusterrole-workloads-write
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-workloads-write.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrolebinding-anonymous-subjects-cluster-warn
+spec:
+  policyName: clusterrolebinding-anonymous-subjects
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: clusterrolebinding-anonymous-subjects.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrolebinding-anonymous-subjects-cluster-audit
+spec:
+  policyName: clusterrolebinding-anonymous-subjects
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: clusterrolebinding-anonymous-subjects.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrolebinding-anonymous-subjects-cluster-enforce
+spec:
+  policyName: clusterrolebinding-anonymous-subjects
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: clusterrolebinding-anonymous-subjects.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrolebinding-powerful-roles-cluster-warn
+spec:
+  policyName: clusterrolebinding-powerful-roles
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: clusterrolebinding-powerful-roles.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrolebinding-powerful-roles-cluster-audit
+spec:
+  policyName: clusterrolebinding-powerful-roles
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: clusterrolebinding-powerful-roles.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrolebinding-powerful-roles-cluster-enforce
+spec:
+  policyName: clusterrolebinding-powerful-roles
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: clusterrolebinding-powerful-roles.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-admission-api-control-cluster-warn
+spec:
+  policyName: clusterrole-admission-api-control
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-admission-api-control.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-admission-api-control-cluster-audit
+spec:
+  policyName: clusterrole-admission-api-control
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-admission-api-control.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-admission-api-control-cluster-enforce
+spec:
+  policyName: clusterrole-admission-api-control
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-admission-api-control.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: namespace-pod-security-standards-namespace-warn
+spec:
+  policyName: namespace-pod-security-standards
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: namespace-pod-security-standards.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: namespace-pod-security-standards-namespace-audit
+spec:
+  policyName: namespace-pod-security-standards
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: namespace-pod-security-standards.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: namespace-pod-security-standards-namespace-enforce
+spec:
+  policyName: namespace-pod-security-standards
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: namespace-pod-security-standards.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: control-plane-schedulable-cluster-warn
+spec:
+  policyName: control-plane-schedulable
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: control-plane-schedulable.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: control-plane-schedulable-cluster-audit
+spec:
+  policyName: control-plane-schedulable
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: control-plane-schedulable.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: control-plane-schedulable-cluster-enforce
+spec:
+  policyName: control-plane-schedulable
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: control-plane-schedulable.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-pod-exec-create-cluster-warn
+spec:
+  policyName: clusterrole-pod-exec-create
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-pod-exec-create.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-pod-exec-create-cluster-audit
+spec:
+  policyName: clusterrole-pod-exec-create
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-pod-exec-create.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-pod-exec-create-cluster-enforce
+spec:
+  policyName: clusterrole-pod-exec-create
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-pod-exec-create.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-nodes-proxy-get-cluster-warn
+spec:
+  policyName: clusterrole-nodes-proxy-get
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-nodes-proxy-get.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-nodes-proxy-get-cluster-audit
+spec:
+  policyName: clusterrole-nodes-proxy-get
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-nodes-proxy-get.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-nodes-proxy-get-cluster-enforce
+spec:
+  policyName: clusterrole-nodes-proxy-get
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-nodes-proxy-get.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-secrets-access-cluster-warn
+spec:
+  policyName: clusterrole-secrets-access
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-secrets-access.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-secrets-access-cluster-audit
+spec:
+  policyName: clusterrole-secrets-access
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-secrets-access.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-secrets-access-cluster-enforce
+spec:
+  policyName: clusterrole-secrets-access
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-secrets-access.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrolebinding-default-serviceaccount-cluster-warn
+spec:
+  policyName: clusterrolebinding-default-serviceaccount
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: clusterrolebinding-default-serviceaccount.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrolebinding-default-serviceaccount-cluster-audit
+spec:
+  policyName: clusterrolebinding-default-serviceaccount
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: clusterrolebinding-default-serviceaccount.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrolebinding-default-serviceaccount-cluster-enforce
+spec:
+  policyName: clusterrolebinding-default-serviceaccount
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: clusterrolebinding-default-serviceaccount.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-serviceaccount-tokens-cluster-warn
+spec:
+  policyName: clusterrole-serviceaccount-tokens
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-serviceaccount-tokens.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-serviceaccount-tokens-cluster-audit
+spec:
+  policyName: clusterrole-serviceaccount-tokens
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-serviceaccount-tokens.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-serviceaccount-tokens-cluster-enforce
+spec:
+  policyName: clusterrole-serviceaccount-tokens
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-serviceaccount-tokens.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-nonresource-urls-cluster-warn
+spec:
+  policyName: clusterrole-nonresource-urls
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-nonresource-urls.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-nonresource-urls-cluster-audit
+spec:
+  policyName: clusterrole-nonresource-urls
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-nonresource-urls.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-nonresource-urls-cluster-enforce
+spec:
+  policyName: clusterrole-nonresource-urls
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-nonresource-urls.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-pvc-write-cluster-warn
+spec:
+  policyName: clusterrole-pvc-write
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-pvc-write.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-pvc-write-cluster-audit
+spec:
+  policyName: clusterrole-pvc-write
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-pvc-write.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-pvc-write-cluster-enforce
+spec:
+  policyName: clusterrole-pvc-write
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-pvc-write.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-rbac-write-cluster-warn
+spec:
+  policyName: clusterrole-rbac-write
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-rbac-write.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-rbac-write-cluster-audit
+spec:
+  policyName: clusterrole-rbac-write
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-rbac-write.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-rbac-write-cluster-enforce
+spec:
+  policyName: clusterrole-rbac-write
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-rbac-write.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-cert-auth-review-cluster-warn
+spec:
+  policyName: clusterrole-cert-auth-review
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-cert-auth-review.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-cert-auth-review-cluster-audit
+spec:
+  policyName: clusterrole-cert-auth-review
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-cert-auth-review.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-cert-auth-review-cluster-enforce
+spec:
+  policyName: clusterrole-cert-auth-review
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-cert-auth-review.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-infra-cluster-resources-cluster-warn
+spec:
+  policyName: clusterrole-infra-cluster-resources
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-infra-cluster-resources.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-infra-cluster-resources-cluster-audit
+spec:
+  policyName: clusterrole-infra-cluster-resources
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-infra-cluster-resources.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-infra-cluster-resources-cluster-enforce
+spec:
+  policyName: clusterrole-infra-cluster-resources
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-infra-cluster-resources.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrolebinding-system-groups-cluster-warn
+spec:
+  policyName: clusterrolebinding-system-groups
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: clusterrolebinding-system-groups.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrolebinding-system-groups-cluster-audit
+spec:
+  policyName: clusterrolebinding-system-groups
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: clusterrolebinding-system-groups.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrolebinding-system-groups-cluster-enforce
+spec:
+  policyName: clusterrolebinding-system-groups
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: clusterrolebinding-system-groups.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-serviceaccounts-write-cluster-warn
+spec:
+  policyName: clusterrole-serviceaccounts-write
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-serviceaccounts-write.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-serviceaccounts-write-cluster-audit
+spec:
+  policyName: clusterrole-serviceaccounts-write
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-serviceaccounts-write.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-serviceaccounts-write-cluster-enforce
+spec:
+  policyName: clusterrole-serviceaccounts-write
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-serviceaccounts-write.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-wildcard-rules-cluster-warn
+spec:
+  policyName: clusterrole-wildcard-rules
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-wildcard-rules.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-wildcard-rules-cluster-audit
+spec:
+  policyName: clusterrole-wildcard-rules
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-wildcard-rules.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-wildcard-rules-cluster-enforce
+spec:
+  policyName: clusterrole-wildcard-rules
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-wildcard-rules.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-aggregation-cluster-warn
+spec:
+  policyName: clusterrole-aggregation
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-aggregation.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-aggregation-cluster-audit
+spec:
+  policyName: clusterrole-aggregation
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-aggregation.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-aggregation-cluster-enforce
+spec:
+  policyName: clusterrole-aggregation
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-aggregation.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-rbac-impersonate-cluster-warn
+spec:
+  policyName: clusterrole-rbac-impersonate
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-rbac-impersonate.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-rbac-impersonate-cluster-audit
+spec:
+  policyName: clusterrole-rbac-impersonate
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-rbac-impersonate.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-rbac-impersonate-cluster-enforce
+spec:
+  policyName: clusterrole-rbac-impersonate
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-rbac-impersonate.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: storageclass-encryption-aws-ebs-cluster-warn
+spec:
+  policyName: storageclass-encryption-aws-ebs
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: storageclass-encryption-aws-ebs.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: storageclass-encryption-aws-ebs-cluster-audit
+spec:
+  policyName: storageclass-encryption-aws-ebs
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: storageclass-encryption-aws-ebs.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: storageclass-encryption-aws-ebs-cluster-enforce
+spec:
+  policyName: storageclass-encryption-aws-ebs
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: storageclass-encryption-aws-ebs.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: storageclass-encryption-ceph-rbd-cluster-warn
+spec:
+  policyName: storageclass-encryption-ceph-rbd
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: storageclass-encryption-ceph-rbd.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: storageclass-encryption-ceph-rbd-cluster-audit
+spec:
+  policyName: storageclass-encryption-ceph-rbd
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: storageclass-encryption-ceph-rbd.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: storageclass-encryption-ceph-rbd-cluster-enforce
+spec:
+  policyName: storageclass-encryption-ceph-rbd
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: storageclass-encryption-ceph-rbd.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: storageclass-encryption-portworx-cluster-warn
+spec:
+  policyName: storageclass-encryption-portworx
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: storageclass-encryption-portworx.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: storageclass-encryption-portworx-cluster-audit
+spec:
+  policyName: storageclass-encryption-portworx
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: storageclass-encryption-portworx.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: storageclass-encryption-portworx-cluster-enforce
+spec:
+  policyName: storageclass-encryption-portworx
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: storageclass-encryption-portworx.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: storageclass-encryption-longhorn-cluster-warn
+spec:
+  policyName: storageclass-encryption-longhorn
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: storageclass-encryption-longhorn.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: storageclass-encryption-longhorn-cluster-audit
+spec:
+  policyName: storageclass-encryption-longhorn
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: storageclass-encryption-longhorn.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: storageclass-encryption-longhorn-cluster-enforce
+spec:
+  policyName: storageclass-encryption-longhorn
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: storageclass-encryption-longhorn.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: storageclass-encryption-linode-cluster-warn
+spec:
+  policyName: storageclass-encryption-linode
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: storageclass-encryption-linode.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: storageclass-encryption-linode-cluster-audit
+spec:
+  policyName: storageclass-encryption-linode
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: storageclass-encryption-linode.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: storageclass-encryption-linode-cluster-enforce
+spec:
+  policyName: storageclass-encryption-linode
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: storageclass-encryption-linode.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: storageclass-encryption-ibm-vpc-block-cluster-warn
+spec:
+  policyName: storageclass-encryption-ibm-vpc-block
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: storageclass-encryption-ibm-vpc-block.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: storageclass-encryption-ibm-vpc-block-cluster-audit
+spec:
+  policyName: storageclass-encryption-ibm-vpc-block
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: storageclass-encryption-ibm-vpc-block.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: storageclass-encryption-ibm-vpc-block-cluster-enforce
+spec:
+  policyName: storageclass-encryption-ibm-vpc-block
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: storageclass-encryption-ibm-vpc-block.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: storageclass-cmek-gcp-pd-cluster-warn
+spec:
+  policyName: storageclass-cmek-gcp-pd
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: storageclass-cmek-gcp-pd.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: storageclass-cmek-gcp-pd-cluster-audit
+spec:
+  policyName: storageclass-cmek-gcp-pd
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: storageclass-cmek-gcp-pd.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: storageclass-cmek-gcp-pd-cluster-enforce
+spec:
+  policyName: storageclass-cmek-gcp-pd
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: storageclass-cmek-gcp-pd.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: storageclass-cmek-azure-disk-cluster-warn
+spec:
+  policyName: storageclass-cmek-azure-disk
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: storageclass-cmek-azure-disk.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: storageclass-cmek-azure-disk-cluster-audit
+spec:
+  policyName: storageclass-cmek-azure-disk
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: storageclass-cmek-azure-disk.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: storageclass-cmek-azure-disk-cluster-enforce
+spec:
+  policyName: storageclass-cmek-azure-disk
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: storageclass-cmek-azure-disk.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: storageclass-cmek-oci-block-cluster-warn
+spec:
+  policyName: storageclass-cmek-oci-block
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: storageclass-cmek-oci-block.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: storageclass-cmek-oci-block-cluster-audit
+spec:
+  policyName: storageclass-cmek-oci-block
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: storageclass-cmek-oci-block.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: storageclass-cmek-oci-block-cluster-enforce
+spec:
+  policyName: storageclass-cmek-oci-block
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: storageclass-cmek-oci-block.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: persistentvolume-hostpath-cluster-warn
+spec:
+  policyName: persistentvolume-hostpath
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: persistentvolume-hostpath.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: persistentvolume-hostpath-cluster-audit
+spec:
+  policyName: persistentvolume-hostpath
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: persistentvolume-hostpath.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: persistentvolume-hostpath-cluster-enforce
+spec:
+  policyName: persistentvolume-hostpath
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: persistentvolume-hostpath.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: validatingwebhookconfiguration-hardening-cluster-warn
+spec:
+  policyName: validatingwebhookconfiguration-hardening
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: validatingwebhookconfiguration-hardening.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: validatingwebhookconfiguration-hardening-cluster-audit
+spec:
+  policyName: validatingwebhookconfiguration-hardening
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: validatingwebhookconfiguration-hardening.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: validatingwebhookconfiguration-hardening-cluster-enforce
+spec:
+  policyName: validatingwebhookconfiguration-hardening
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: validatingwebhookconfiguration-hardening.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: mutatingwebhookconfiguration-hardening-cluster-warn
+spec:
+  policyName: mutatingwebhookconfiguration-hardening
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: mutatingwebhookconfiguration-hardening.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: mutatingwebhookconfiguration-hardening-cluster-audit
+spec:
+  policyName: mutatingwebhookconfiguration-hardening
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: mutatingwebhookconfiguration-hardening.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: mutatingwebhookconfiguration-hardening-cluster-enforce
+spec:
+  policyName: mutatingwebhookconfiguration-hardening
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: mutatingwebhookconfiguration-hardening.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: apiservice-tls-cluster-warn
+spec:
+  policyName: apiservice-tls
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: apiservice-tls.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: apiservice-tls-cluster-audit
+spec:
+  policyName: apiservice-tls
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: apiservice-tls.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: apiservice-tls-cluster-enforce
+spec:
+  policyName: apiservice-tls
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: apiservice-tls.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ciliumclusterwidenetworkpolicy-egress-world-cluster-warn
+spec:
+  policyName: ciliumclusterwidenetworkpolicy-egress-world
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: ciliumclusterwidenetworkpolicy-egress-world.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ciliumclusterwidenetworkpolicy-egress-world-cluster-audit
+spec:
+  policyName: ciliumclusterwidenetworkpolicy-egress-world
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: ciliumclusterwidenetworkpolicy-egress-world.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ciliumclusterwidenetworkpolicy-egress-world-cluster-enforce
+spec:
+  policyName: ciliumclusterwidenetworkpolicy-egress-world
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: ciliumclusterwidenetworkpolicy-egress-world.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: calico-globalnetworkpolicy-egress-cidr-cluster-warn
+spec:
+  policyName: calico-globalnetworkpolicy-egress-cidr
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: calico-globalnetworkpolicy-egress-cidr.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: calico-globalnetworkpolicy-egress-cidr-cluster-audit
+spec:
+  policyName: calico-globalnetworkpolicy-egress-cidr
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: calico-globalnetworkpolicy-egress-cidr.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: calico-globalnetworkpolicy-egress-cidr-cluster-enforce
+spec:
+  policyName: calico-globalnetworkpolicy-egress-cidr
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: calico-globalnetworkpolicy-egress-cidr.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: adminnetworkpolicy-allow-all-cluster-warn
+spec:
+  policyName: adminnetworkpolicy-allow-all
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: adminnetworkpolicy-allow-all.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: adminnetworkpolicy-allow-all-cluster-audit
+spec:
+  policyName: adminnetworkpolicy-allow-all
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: adminnetworkpolicy-allow-all.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: adminnetworkpolicy-allow-all-cluster-enforce
+spec:
+  policyName: adminnetworkpolicy-allow-all
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: adminnetworkpolicy-allow-all.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: baselineadminnetworkpolicy-allow-all-cluster-warn
+spec:
+  policyName: baselineadminnetworkpolicy-allow-all
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: baselineadminnetworkpolicy-allow-all.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: baselineadminnetworkpolicy-allow-all-cluster-audit
+spec:
+  policyName: baselineadminnetworkpolicy-allow-all
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: baselineadminnetworkpolicy-allow-all.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: baselineadminnetworkpolicy-allow-all-cluster-enforce
+spec:
+  policyName: baselineadminnetworkpolicy-allow-all
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: baselineadminnetworkpolicy-allow-all.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: kyverno-clusterpolicy-not-enforcing-cluster-warn
+spec:
+  policyName: kyverno-clusterpolicy-not-enforcing
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/warn
+        operator: In
+        values:
+        - enabled
+      - key: kyverno-clusterpolicy-not-enforcing.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: kyverno-clusterpolicy-not-enforcing-cluster-audit
+spec:
+  policyName: kyverno-clusterpolicy-not-enforcing
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/audit
+        operator: In
+        values:
+        - enabled
+      - key: kyverno-clusterpolicy-not-enforcing.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: kyverno-clusterpolicy-not-enforcing-cluster-enforce
+spec:
+  policyName: kyverno-clusterpolicy-not-enforcing
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: security.cenroq.io/enforce
+        operator: In
+        values:
+        - enabled
+      - key: kyverno-clusterpolicy-not-enforcing.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
