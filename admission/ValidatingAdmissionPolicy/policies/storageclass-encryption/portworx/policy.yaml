@@ -4,10 +4,10 @@ metadata:
   name: storageclass-encryption-portworx
   annotations:
     security.kubeapt.io/displayName: "StorageClass Encryption (Portworx)"
-    security.kubeapt.io/description: "Portworx StorageClasses must enable volume encryption (parameters.secure: \"true\")."
+    security.kubeapt.io/description: "Volumes provisioned from this class are stored unencrypted across the Portworx cluster, so anyone with access to a backing node disk, a cloud snapshot or the storage fabric reads the data without any Kubernetes access."
     security.kubeapt.io/resource: "StorageClasses"
     security.kubeapt.io/severity: "Low"
-    security.kubeapt.io/remediation: "Set parameters.secure to \"true\" on pxd.portworx.com StorageClasses. Field: parameters.secure."
+    security.kubeapt.io/remediation: "Set parameters.secure to true on pxd.portworx.com StorageClasses with a configured Portworx key management endpoint. Field: parameters.secure."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

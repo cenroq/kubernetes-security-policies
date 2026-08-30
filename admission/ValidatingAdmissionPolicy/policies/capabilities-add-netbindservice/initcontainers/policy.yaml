@@ -4,10 +4,10 @@ metadata:
   name: capabilities-add-netbindservice-initcontainers
   annotations:
     security.kubeapt.io/displayName: "Capabilities Add Netbindservice"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for capabilities-add-netbindservice/initcontainers."
+    security.kubeapt.io/description: "Added capabilities other than NET_BIND_SERVICE give an init container kernel privileges such as raw socket access, process tracing and filesystem mounting, extending its reach past its namespace onto the node."
     security.kubeapt.io/resource: "Initcontainers"
     security.kubeapt.io/severity: "Moderate"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the capabilities-add-netbindservice/initcontainers policy."
+    security.kubeapt.io/remediation: "Remove every entry from the added capability list except NET_BIND_SERVICE, or drop the list entirely. Field: spec.initContainers[*].securityContext.capabilities.add."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

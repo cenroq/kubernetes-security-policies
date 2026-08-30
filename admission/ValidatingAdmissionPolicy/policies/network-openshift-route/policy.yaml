@@ -4,10 +4,10 @@ metadata:
   name: route-no-tls
   annotations:
     security.kubeapt.io/displayName: "OpenShift Route No TLS"
-    security.kubeapt.io/description: "OpenShift Routes must define TLS termination."
+    security.kubeapt.io/description: "A Route without a TLS section is published over plain HTTP at the router, so session cookies and credentials cross the network in cleartext and can be read or rewritten in transit."
     security.kubeapt.io/resource: "Routes"
     security.kubeapt.io/severity: "High"
-    security.kubeapt.io/remediation: "Configure spec.tls (e.g. edge, reencrypt or passthrough termination) so the route is not served over cleartext HTTP. Field: spec.tls."
+    security.kubeapt.io/remediation: "Add a spec.tls block using edge, reencrypt or passthrough termination so the router serves the host over HTTPS. Field: spec.tls."
     security.kubeapt.io/product: "OpenShift"
 spec:
   failurePolicy: Fail

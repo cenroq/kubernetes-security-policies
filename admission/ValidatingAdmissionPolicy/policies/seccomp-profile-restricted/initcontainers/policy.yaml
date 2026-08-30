@@ -4,10 +4,10 @@ metadata:
   name: seccomp-profile-initcontainers-restricted
   annotations:
     security.kubeapt.io/displayName: "Seccomp Profile Restricted"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for seccomp-profile-restricted/initcontainers."
+    security.kubeapt.io/description: "An init container with no seccomp profile enforced at pod or init container level runs with no syscall filter, leaving the full kernel syscall surface reachable for container escape and privilege escalation."
     security.kubeapt.io/resource: "Initcontainers"
     security.kubeapt.io/severity: "Moderate"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the seccomp-profile-restricted/initcontainers policy."
+    security.kubeapt.io/remediation: "Set the seccomp type to RuntimeDefault, or to Localhost naming a profile loaded on the node, on each init container or once at pod level. Fields: spec.initContainers[*].securityContext.seccompProfile.type, spec.securityContext.seccompProfile.type."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

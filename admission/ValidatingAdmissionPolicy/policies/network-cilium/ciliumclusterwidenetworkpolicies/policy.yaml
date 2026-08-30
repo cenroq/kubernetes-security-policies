@@ -4,10 +4,10 @@ metadata:
   name: ciliumclusterwidenetworkpolicy-egress-world
   annotations:
     security.kubeapt.io/displayName: "Cilium Clusterwide NetworkPolicy World Entity"
-    security.kubeapt.io/description: "CiliumClusterwideNetworkPolicies must not allow ingress from or egress to the 'world' entity."
+    security.kubeapt.io/description: "The world entity covers every address outside the cluster, so a cluster-wide rule using it hands the selected pods unrestricted internet egress for exfiltration and command-and-control, or exposes them to any off-cluster source."
     security.kubeapt.io/resource: "CiliumClusterwideNetworkPolicies"
     security.kubeapt.io/severity: "High"
-    security.kubeapt.io/remediation: "Remove the 'world' entity from toEntities/fromEntities and scope rules to specific CIDRs or selectors. Fields: spec.egress[*].toEntities, spec.ingress[*].fromEntities."
+    security.kubeapt.io/remediation: "Drop world from the entity lists and match specific CIDRs, FQDNs or endpoint selectors instead. Fields: spec.egress[*].toEntities, spec.ingress[*].fromEntities."
     security.kubeapt.io/product: "Cilium"
 spec:
   failurePolicy: Fail

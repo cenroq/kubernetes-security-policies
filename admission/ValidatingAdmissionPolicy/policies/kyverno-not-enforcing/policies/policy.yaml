@@ -4,10 +4,10 @@ metadata:
   name: kyverno-policy-not-enforcing
   annotations:
     security.kubeapt.io/displayName: "Kyverno Policy Not Enforcing"
-    security.kubeapt.io/description: "Kyverno Policies must enforce (not Audit) validation failures."
+    security.kubeapt.io/description: "A Policy left on Audit only records violations in a report, so the workloads it was written to block are still admitted into its namespace and the protection exists only as a log entry."
     security.kubeapt.io/resource: "Policies"
     security.kubeapt.io/severity: "Moderate"
-    security.kubeapt.io/remediation: "Set validationFailureAction (or rule-level validate.failureAction) to Enforce. Fields: spec.validationFailureAction, spec.rules[*].validate.failureAction."
+    security.kubeapt.io/remediation: "Set the policy-level validationFailureAction to Enforce and change any rule that overrides it with Audit. Fields: spec.validationFailureAction, spec.rules[*].validate.failureAction."
     security.kubeapt.io/product: "Kyverno"
 spec:
   failurePolicy: Fail

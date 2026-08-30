@@ -4,10 +4,10 @@ metadata:
   name: procmount-containers
   annotations:
     security.kubeapt.io/displayName: "Procmount"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for procmount/containers."
+    security.kubeapt.io/description: "An unmasked /proc strips the default masks and read-only paths the runtime applies, exposing kernel memory and tunables such as /proc/kcore and /proc/sys to the container and easing container escape."
     security.kubeapt.io/resource: "Containers"
     security.kubeapt.io/severity: "Critical"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the procmount/containers policy."
+    security.kubeapt.io/remediation: "Remove securityContext.procMount from every container or set it back to Default instead of Unmasked. Field: spec.containers[*].securityContext.procMount."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

@@ -4,10 +4,10 @@ metadata:
   name: prestop-tcpsocket-host-containers
   annotations:
     security.kubeapt.io/displayName: "Prestop Tcpsocket Host"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for prestop-tcpsocket-host/containers."
+    security.kubeapt.io/description: "Naming another host in a preStop TCP hook points container shutdown at an off-pod address through a handler the kubelet does not support, so the hook fails and cleanup never runs."
     security.kubeapt.io/resource: "Containers"
     security.kubeapt.io/severity: "Low"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the prestop-tcpsocket-host/containers policy."
+    security.kubeapt.io/remediation: "Remove the host field or set it to an empty string, and prefer an exec or httpGet handler since tcpSocket hooks are unsupported. Field: spec.containers[*].lifecycle.preStop.tcpSocket.host."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

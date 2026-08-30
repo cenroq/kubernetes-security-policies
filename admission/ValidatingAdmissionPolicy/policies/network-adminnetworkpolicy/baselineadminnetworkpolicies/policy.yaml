@@ -4,10 +4,10 @@ metadata:
   name: baselineadminnetworkpolicy-allow-all
   annotations:
     security.kubeapt.io/displayName: "BaselineAdminNetworkPolicy Allow-All"
-    security.kubeapt.io/description: "BaselineAdminNetworkPolicies must not Allow traffic to/from all namespaces (empty namespace selector)."
+    security.kubeapt.io/description: "An Allow rule with an empty namespaces selector matches every namespace in the cluster, so any traffic that no NetworkPolicy or AdminNetworkPolicy decides falls back to being permitted rather than dropped."
     security.kubeapt.io/resource: "BaselineAdminNetworkPolicies"
     security.kubeapt.io/severity: "High"
-    security.kubeapt.io/remediation: "Scope Allow rules to specific namespaces/pods instead of an empty (match-all) namespaces selector. Fields: spec.ingress[*].from[*].namespaces, spec.egress[*].to[*].namespaces."
+    security.kubeapt.io/remediation: "Give each Allow rule a namespaces selector that names the specific namespaces it should cover instead of an empty match-all selector. Fields: spec.ingress[*].from[*].namespaces, spec.egress[*].to[*].namespaces."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

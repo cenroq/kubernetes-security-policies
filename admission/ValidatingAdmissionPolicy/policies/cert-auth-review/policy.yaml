@@ -4,10 +4,10 @@ metadata:
   name: clusterrole-cert-auth-review
   annotations:
     security.kubeapt.io/displayName: "Cert Auth Review"
-    security.kubeapt.io/description: "ClusterRoles must not grant write/approve access to CSRs, authz/authn review APIs."
+    security.kubeapt.io/description: "Write access to certificate signing requests and to the authorization and authentication review APIs lets the holder issue client certificates and use the API server to test which permissions a stolen credential carries."
     security.kubeapt.io/resource: "ClusterRoles"
     security.kubeapt.io/severity: "Low"
-    security.kubeapt.io/remediation: "Remove write/approve verbs for CSR and auth review resources. Fields: rules[*].apiGroups, rules[*].resources, rules[*].verbs."
+    security.kubeapt.io/remediation: "Drop create, update, patch and approve on certificatesigningrequests and its approval and status subresources, and on subjectaccessreviews, selfsubjectaccessreviews and tokenreviews. Fields: rules[*].apiGroups, rules[*].resources, rules[*].verbs."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

@@ -4,10 +4,10 @@ metadata:
   name: storageclass-cmek-azure-disk
   annotations:
     security.kubeapt.io/displayName: "StorageClass CMEK (Azure Disk)"
-    security.kubeapt.io/description: "Azure Disk StorageClasses must use a customer-managed Disk Encryption Set (parameters.diskEncryptionSetID)."
+    security.kubeapt.io/description: "Without a Disk Encryption Set, disks provisioned from this class fall back to platform-managed keys that you cannot rotate, audit or revoke, so snapshots and disk copies stay readable to anyone with subscription-level access."
     security.kubeapt.io/resource: "StorageClasses"
     security.kubeapt.io/severity: "Low"
-    security.kubeapt.io/remediation: "Set parameters.diskEncryptionSetID to a Disk Encryption Set resource ID on disk.csi.azure.com StorageClasses. Azure managed disks are always encrypted at rest; this enforces customer-managed keys (CMEK). Field: parameters.diskEncryptionSetID."
+    security.kubeapt.io/remediation: "Set parameters.diskEncryptionSetID to the resource ID of a Disk Encryption Set backed by your own key vault key on disk.csi.azure.com StorageClasses. Field: parameters.diskEncryptionSetID."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

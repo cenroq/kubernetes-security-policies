@@ -4,10 +4,10 @@ metadata:
   name: fsgroup-pod
   annotations:
     security.kubeapt.io/displayName: "Fsgroup"
-    security.kubeapt.io/description: "spec.securityContext.fsGroup must be undefined or a non-zero value (> 0)."
+    security.kubeapt.io/description: "An fsGroup of 0 chowns every attached volume to the root group and gives pod processes root group membership, so volume contents and other root-group-owned files become writable by a compromised process."
     security.kubeapt.io/resource: "Pods"
     security.kubeapt.io/severity: "Low"
-    security.kubeapt.io/remediation: "Set spec.securityContext.fsGroup to >0 or omit it. Fields: spec.securityContext.fsGroup."
+    security.kubeapt.io/remediation: "Set fsGroup to a non-zero GID such as 2000, or omit it and manage volume ownership in the image. Field: spec.securityContext.fsGroup."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

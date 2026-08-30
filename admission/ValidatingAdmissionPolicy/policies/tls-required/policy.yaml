@@ -4,10 +4,10 @@ metadata:
   name: ingress-tls-required
   annotations:
     security.kubeapt.io/displayName: "Tls Required"
-    security.kubeapt.io/description: "Ingress must include a TLS entry covering every host in spec.rules[*].host."
+    security.kubeapt.io/description: "An Ingress with no TLS entry covering its hosts is published over plain HTTP, so credentials, session cookies and API tokens travel unencrypted and any device on the path can read or modify the traffic."
     security.kubeapt.io/resource: "Ingresses"
     security.kubeapt.io/severity: "High"
-    security.kubeapt.io/remediation: "Add spec.tls entries covering all spec.rules[*].host values. Fields: spec.rules[].host, spec.tls[].hosts."
+    security.kubeapt.io/remediation: "Add a spec.tls entry whose hosts list contains every hostname used by the rules, backed by a certificate Secret for those names. Fields: spec.rules[*].host, spec.tls[*].hosts."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

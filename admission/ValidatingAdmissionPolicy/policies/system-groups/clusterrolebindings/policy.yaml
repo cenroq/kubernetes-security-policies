@@ -4,10 +4,10 @@ metadata:
   name: clusterrolebinding-system-groups
   annotations:
     security.kubeapt.io/displayName: "System Groups"
-    security.kubeapt.io/description: "ClusterRoleBindings must not bind powerful roles to broad system groups (authenticated/unauthenticated/serviceaccounts)."
+    security.kubeapt.io/description: "Binding a ClusterRole to a system group grants it cluster-wide to a whole population at once, and groups like system:authenticated or system:serviceaccounts cover every account in the cluster including ones an attacker controls."
     security.kubeapt.io/resource: "ClusterRoleBindings"
     security.kubeapt.io/severity: "Low"
-    security.kubeapt.io/remediation: "Avoid binding broad system groups; use specific groups. Fields: subjects[*].kind, subjects[*].name."
+    security.kubeapt.io/remediation: "Replace the system group subject with the specific users, groups or ServiceAccounts that need the role. Fields: subjects[*].kind, subjects[*].name."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

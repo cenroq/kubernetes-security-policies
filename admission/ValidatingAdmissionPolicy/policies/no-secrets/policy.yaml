@@ -4,10 +4,10 @@ metadata:
   name: configmap-no-secrets
   annotations:
     security.kubeapt.io/displayName: "No Secrets"
-    security.kubeapt.io/description: "ConfigMaps must not contain secrets, tokens, or private keys. Use Secrets instead."
+    security.kubeapt.io/description: "Credentials in a ConfigMap are stored unencrypted and readable by anyone holding the broad ConfigMap read permission most roles grant, and they leak further through logs, backups and manifests in source control."
     security.kubeapt.io/resource: "ConfigMaps"
     security.kubeapt.io/severity: "High"
-    security.kubeapt.io/remediation: "Move sensitive values into Secrets and remove from ConfigMap. Fields: data, binaryData."
+    security.kubeapt.io/remediation: "Move passwords, tokens, private keys and cloud credentials into Secrets referenced by the workload, then delete those entries from the ConfigMap. Fields: data, binaryData."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

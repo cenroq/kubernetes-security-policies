@@ -4,10 +4,10 @@ metadata:
   name: configmap-no-executable-code
   annotations:
     security.kubeapt.io/displayName: "No Executable Code"
-    security.kubeapt.io/description: "Do not store executable code or scripts in ConfigMaps that applications run."
+    security.kubeapt.io/description: "Scripts stored in a ConfigMap and executed by a pod turn ConfigMap write access into code execution inside the container, bypassing image scanning, image signing and any review of what actually runs."
     security.kubeapt.io/resource: "ConfigMaps"
     security.kubeapt.io/severity: "Low"
-    security.kubeapt.io/remediation: "Remove executable code/scripts from ConfigMap data; bake into image or volume. Fields: data."
+    security.kubeapt.io/remediation: "Move scripts, shebang files and other executable content into the container image or a signed artifact, keeping only inert configuration values in the ConfigMap. Field: data."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

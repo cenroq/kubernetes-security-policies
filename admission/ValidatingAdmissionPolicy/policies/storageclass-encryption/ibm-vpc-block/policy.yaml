@@ -4,10 +4,10 @@ metadata:
   name: storageclass-encryption-ibm-vpc-block
   annotations:
     security.kubeapt.io/displayName: "StorageClass Encryption (IBM VPC Block)"
-    security.kubeapt.io/description: "IBM VPC Block StorageClasses must enable customer-managed encryption (parameters.encrypted: \"true\")."
+    security.kubeapt.io/description: "Volumes provisioned from this class rely on provider-held keys that you cannot rotate or revoke, so the data on the underlying block storage and its snapshots stays readable outside your control."
     security.kubeapt.io/resource: "StorageClasses"
     security.kubeapt.io/severity: "Low"
-    security.kubeapt.io/remediation: "Set parameters.encrypted to \"true\" on vpc.block.csi.ibm.io StorageClasses (with parameters.encryptionKey set to the root key CRN). Field: parameters.encrypted."
+    security.kubeapt.io/remediation: "Set parameters.encrypted to true on vpc.block.csi.ibm.io StorageClasses and set parameters.encryptionKey to the CRN of your Key Protect or Hyper Protect root key. Field: parameters.encrypted."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

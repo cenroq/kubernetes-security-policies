@@ -4,10 +4,10 @@ metadata:
   name: read-only-root-filesystem-containers
   annotations:
     security.kubeapt.io/displayName: "Read Only Root Filesystem"
-    security.kubeapt.io/description: "spec.containers[*].securityContext.readOnlyRootFilesystem must be set to true."
+    security.kubeapt.io/description: "A writable container root filesystem lets an intruder drop tooling, overwrite application binaries, and rewrite configuration in place, leaving a foothold in the running pod that nothing in the image would reveal."
     security.kubeapt.io/resource: "Containers"
     security.kubeapt.io/severity: "Moderate"
-    security.kubeapt.io/remediation: "Set readOnlyRootFilesystem=true for containers. Fields: spec.containers[*].securityContext.readOnlyRootFilesystem."
+    security.kubeapt.io/remediation: "Set readOnlyRootFilesystem to true on every container and mount an emptyDir volume over each path the process genuinely needs to write. Field: spec.containers[*].securityContext.readOnlyRootFilesystem."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

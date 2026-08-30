@@ -4,10 +4,10 @@ metadata:
   name: apparmor-profile-containers
   annotations:
     security.kubeapt.io/displayName: "Apparmor Profile"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for apparmor-profile/containers."
+    security.kubeapt.io/description: "An Unconfined AppArmor profile strips the mandatory access controls over file, capability and mount operations in the container, widening what a compromised process can reach on the host."
     security.kubeapt.io/resource: "Containers"
     security.kubeapt.io/severity: "Moderate"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the apparmor-profile/containers policy."
+    security.kubeapt.io/remediation: "Replace Unconfined with RuntimeDefault, or with Localhost naming a profile loaded on the node. Field: spec.containers[*].securityContext.appArmorProfile.type."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

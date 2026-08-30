@@ -4,10 +4,10 @@ metadata:
   name: apparmor-annotation-values
   annotations:
     security.kubeapt.io/displayName: "Apparmor Annotation Values"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for apparmor-annotation-values."
+    security.kubeapt.io/description: "A legacy AppArmor annotation set to unconfined leaves the named container with no mandatory access control profile, so its file, capability and mount operations run unrestricted against the host kernel."
     security.kubeapt.io/resource: "Pods"
     security.kubeapt.io/severity: "Moderate"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the apparmor-annotation-values policy."
+    security.kubeapt.io/remediation: "Set the annotation value to runtime/default, or to localhost/ followed by a profile loaded on the node. Field: metadata.annotations[container.apparmor.security.beta.kubernetes.io/<container-name>]."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

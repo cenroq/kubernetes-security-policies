@@ -4,10 +4,10 @@ metadata:
   name: privileged-initcontainers
   annotations:
     security.kubeapt.io/displayName: "Privileged"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for privileged/initcontainers."
+    security.kubeapt.io/description: "A privileged init container disables almost all container isolation and gets full root access to the node devices, kernel interfaces and filesystem, which is a direct path to node and cluster takeover."
     security.kubeapt.io/resource: "Initcontainers"
     security.kubeapt.io/severity: "Critical"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the privileged/initcontainers policy."
+    security.kubeapt.io/remediation: "Remove securityContext.privileged from every init container or set it to false. Field: spec.initContainers[*].securityContext.privileged."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

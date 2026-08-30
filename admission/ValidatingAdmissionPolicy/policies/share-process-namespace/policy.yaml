@@ -4,10 +4,10 @@ metadata:
   name: share-process-namespace
   annotations:
     security.kubeapt.io/displayName: "Share Process Namespace"
-    security.kubeapt.io/description: "Sharing a process namespace is disallowed. spec.shareProcessNamespace must be undefined"
+    security.kubeapt.io/description: "A shared process namespace lets every container in the pod inspect and signal the others, reading secrets from sibling command lines and /proc environment files, so compromising one sidecar reaches them all."
     security.kubeapt.io/resource: "Pods"
     security.kubeapt.io/severity: "Low"
-    security.kubeapt.io/remediation: "Set spec.shareProcessNamespace=false or omit it. Fields: spec.shareProcessNamespace."
+    security.kubeapt.io/remediation: "Remove spec.shareProcessNamespace or set it to false. Field: spec.shareProcessNamespace."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

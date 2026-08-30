@@ -4,10 +4,10 @@ metadata:
   name: read-only-root-filesystem-ephemeralcontainers
   annotations:
     security.kubeapt.io/displayName: "Read Only Root Filesystem"
-    security.kubeapt.io/description: "spec.ephemeralContainers[*].securityContext.readOnlyRootFilesystem must be set to true."
+    security.kubeapt.io/description: "A writable ephemeral container root filesystem lets an intruder drop tooling, overwrite application binaries, and rewrite configuration in place, leaving a foothold in the running pod that nothing in the image would reveal."
     security.kubeapt.io/resource: "Ephemeralcontainers"
     security.kubeapt.io/severity: "Moderate"
-    security.kubeapt.io/remediation: "Set readOnlyRootFilesystem=true for ephemeralContainers. Fields: spec.ephemeralContainers[*].securityContext.readOnlyRootFilesystem."
+    security.kubeapt.io/remediation: "Set readOnlyRootFilesystem to true on every ephemeral container and mount an existing pod volume over any path the debug tooling must write, since a running pod cannot gain new volumes. Field: spec.ephemeralContainers[*].securityContext.readOnlyRootFilesystem."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

@@ -4,10 +4,10 @@ metadata:
   name: capabilities-drop-all-initcontainers
   annotations:
     security.kubeapt.io/displayName: "Capabilities Drop All"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for capabilities-drop-all/initcontainers."
+    security.kubeapt.io/description: "An init container that never drops ALL keeps the default runtime capability set, so code execution inside it inherits DAC_OVERRIDE, SETUID and NET_RAW for bypassing file permissions, regaining root and spoofing traffic."
     security.kubeapt.io/resource: "Initcontainers"
     security.kubeapt.io/severity: "Moderate"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the capabilities-drop-all/initcontainers policy."
+    security.kubeapt.io/remediation: "Add ALL to the dropped capability list and re-add only the specific capabilities the workload actually needs. Field: spec.initContainers[*].securityContext.capabilities.drop."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

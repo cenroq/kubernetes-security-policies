@@ -4,10 +4,10 @@ metadata:
   name: seccomp-profile-ephemeralcontainers
   annotations:
     security.kubeapt.io/displayName: "Seccomp Profile"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for seccomp-profile/ephemeralcontainers."
+    security.kubeapt.io/description: "An Unconfined seccomp profile removes the syscall filter from the ephemeral container, typically attached with kubectl debug, exposing the full kernel syscall surface including the obscure calls that container escape and privilege-escalation exploits depend on."
     security.kubeapt.io/resource: "Ephemeralcontainers"
     security.kubeapt.io/severity: "Moderate"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the seccomp-profile/ephemeralcontainers policy."
+    security.kubeapt.io/remediation: "Replace Unconfined with RuntimeDefault, or with Localhost naming a profile loaded on the node. Field: spec.ephemeralContainers[*].securityContext.seccompProfile.type."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

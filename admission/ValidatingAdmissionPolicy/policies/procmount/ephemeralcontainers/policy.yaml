@@ -4,10 +4,10 @@ metadata:
   name: procmount-ephemeralcontainers
   annotations:
     security.kubeapt.io/displayName: "Procmount"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for procmount/ephemeralcontainers."
+    security.kubeapt.io/description: "An unmasked /proc strips the default masks and read-only paths the runtime applies, exposing kernel memory and tunables such as /proc/kcore and /proc/sys to the ephemeral container and easing container escape."
     security.kubeapt.io/resource: "Ephemeralcontainers"
     security.kubeapt.io/severity: "Critical"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the procmount/ephemeralcontainers policy."
+    security.kubeapt.io/remediation: "Remove securityContext.procMount from every ephemeral container or set it back to Default instead of Unmasked. Field: spec.ephemeralContainers[*].securityContext.procMount."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

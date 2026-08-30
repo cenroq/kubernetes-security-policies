@@ -4,10 +4,10 @@ metadata:
   name: hostnetwork
   annotations:
     security.kubeapt.io/displayName: "Hostnetwork"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for hostnetwork."
+    security.kubeapt.io/description: "Host networking removes network namespace isolation, letting the workload sniff all node traffic, bind directly to node ports and reach loopback-bound node services such as the kubelet and local metadata proxies."
     security.kubeapt.io/resource: "Pods"
     security.kubeapt.io/severity: "Critical"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the hostnetwork policy."
+    security.kubeapt.io/remediation: "Remove spec.hostNetwork or set it to false and expose the workload through a Service instead. Field: spec.hostNetwork."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

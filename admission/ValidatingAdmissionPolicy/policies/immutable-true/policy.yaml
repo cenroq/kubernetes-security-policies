@@ -4,10 +4,10 @@ metadata:
   name: configmap-immutable-true
   annotations:
     security.kubeapt.io/displayName: "Immutable True"
-    security.kubeapt.io/description: "immutable must be set to true to prevent runtime tampering."
+    security.kubeapt.io/description: "A mutable ConfigMap can be rewritten by anyone with update access, silently changing application configuration, feature flags or trusted endpoints inside running pods with no new image and no deployment."
     security.kubeapt.io/resource: "ConfigMaps"
     security.kubeapt.io/severity: "Moderate"
-    security.kubeapt.io/remediation: "Set immutable=true. Fields: immutable."
+    security.kubeapt.io/remediation: "Set immutable to true on the ConfigMap and ship changes by creating a new versioned ConfigMap that the workload is repointed to. Field: immutable."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

@@ -4,10 +4,10 @@ metadata:
   name: image-digest-initcontainers
   annotations:
     security.kubeapt.io/displayName: "Image Digest"
-    security.kubeapt.io/description: "spec.initContainers[*].image must be pinned by an immutable @sha256 digest."
+    security.kubeapt.io/description: "An image reference without a digest resolves through a mutable tag, so registry content can be replaced between pulls and the init container silently starts running attacker-supplied code on the next restart or reschedule."
     security.kubeapt.io/resource: "Initcontainers"
     security.kubeapt.io/severity: "Moderate"
-    security.kubeapt.io/remediation: "Pin init container images by an immutable @sha256 digest. Fields: spec.initContainers[*].image."
+    security.kubeapt.io/remediation: "Replace the mutable tag with an immutable digest reference of the form registry/image@sha256:<64-hex-digest>. Field: spec.initContainers[*].image."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

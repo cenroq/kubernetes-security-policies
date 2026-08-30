@@ -4,10 +4,10 @@ metadata:
   name: calico-networkpolicy-egress-cidr
   annotations:
     security.kubeapt.io/displayName: "Calico NetworkPolicy Allow-All Egress"
-    security.kubeapt.io/description: "Calico NetworkPolicies must not Allow egress to 0.0.0.0/0 or ::/0."
+    security.kubeapt.io/description: "An Allow to 0.0.0.0/0 or ::/0 gives the selected endpoints unrestricted outbound reach, the channel a compromised workload uses to contact command-and-control hosts, pull further tooling and exfiltrate data."
     security.kubeapt.io/resource: "NetworkPolicies"
     security.kubeapt.io/severity: "High"
-    security.kubeapt.io/remediation: "Scope Allow egress rules to specific CIDRs instead of 0.0.0.0/0 or ::/0. Field: spec.egress[*].destination.nets."
+    security.kubeapt.io/remediation: "Replace 0.0.0.0/0 and ::/0 in Allow egress rules with the specific destination CIDRs the selected endpoints actually need. Field: spec.egress[*].destination.nets."
     security.kubeapt.io/product: "Calico"
 spec:
   failurePolicy: Fail

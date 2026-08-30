@@ -4,10 +4,10 @@ metadata:
   name: storageclass-encryption-linode
   annotations:
     security.kubeapt.io/displayName: "StorageClass Encryption (Linode)"
-    security.kubeapt.io/description: "Linode Block Storage StorageClasses must enable LUKS encryption (parameters.\"linodebs.csi.linode.com/luks-encrypted\": \"true\")."
+    security.kubeapt.io/description: "Volumes provisioned from this class are stored without LUKS encryption, so data sits in plaintext on the Linode block storage backend and is readable from a detached volume, a clone or the underlying host."
     security.kubeapt.io/resource: "StorageClasses"
     security.kubeapt.io/severity: "Low"
-    security.kubeapt.io/remediation: "Set parameters.\"linodebs.csi.linode.com/luks-encrypted\" to \"true\" on linodebs.csi.linode.com StorageClasses (with the required node-stage secret). Field: parameters."
+    security.kubeapt.io/remediation: "Set the linodebs.csi.linode.com/luks-encrypted parameter to true on linodebs.csi.linode.com StorageClasses and add the required node-stage secret parameters. Field: parameters['linodebs.csi.linode.com/luks-encrypted']."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

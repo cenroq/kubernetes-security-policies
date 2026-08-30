@@ -4,10 +4,10 @@ metadata:
   name: ingress-no-dangerous-snippets
   annotations:
     security.kubeapt.io/displayName: "No Dangerous Snippets"
-    security.kubeapt.io/description: "Dangerous Ingress annotations (config/server/location/auth/proxy snippets) are disallowed"
+    security.kubeapt.io/description: "Snippet and router-override annotations are folded straight into the shared ingress controller configuration, so anyone able to create an Ingress can hijack hosts from other namespaces, strip authentication, or run code inside the controller."
     security.kubeapt.io/resource: "Ingresses"
     security.kubeapt.io/severity: "Low"
-    security.kubeapt.io/remediation: "Remove dangerous ingress snippet annotations. Fields: metadata.annotations."
+    security.kubeapt.io/remediation: "Delete the nginx, haproxy and traefik snippet and router-override annotations and make the routing or authentication change through supported Ingress fields or controller configuration owned by the platform team. Field: metadata.annotations."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

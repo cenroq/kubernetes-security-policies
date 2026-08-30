@@ -4,10 +4,10 @@ metadata:
   name: validatingwebhookconfiguration-hardening
   annotations:
     security.kubeapt.io/displayName: "Webhook Hardening"
-    security.kubeapt.io/description: "ValidatingWebhookConfigurations must not use failurePolicy Ignore or an external clientConfig.url."
+    security.kubeapt.io/description: "A webhook that fails open is bypassed by anyone who can make it unreachable, and an external URL endpoint sends every reviewed object off-cluster and lets whoever runs it decide what admission accepts."
     security.kubeapt.io/resource: "ValidatingWebhookConfigurations"
     security.kubeapt.io/severity: "Moderate"
-    security.kubeapt.io/remediation: "Set failurePolicy to Fail and back each webhook with an in-cluster service (clientConfig.service) instead of an external url. Fields: webhooks[*].failurePolicy, webhooks[*].clientConfig.url."
+    security.kubeapt.io/remediation: "Set failurePolicy to Fail on every webhook and point clientConfig at an in-cluster service rather than a url. Fields: webhooks[*].failurePolicy, webhooks[*].clientConfig.url."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

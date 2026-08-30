@@ -4,10 +4,10 @@ metadata:
   name: selinux-type-initcontainers
   annotations:
     security.kubeapt.io/displayName: "Selinux Type"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for selinux-type/initcontainers."
+    security.kubeapt.io/description: "An SELinux type outside the container domains, such as spc_t or unconfined_t, drops the kernel confinement that stops an init container process from reading host files and reaching devices it does not own."
     security.kubeapt.io/resource: "Initcontainers"
     security.kubeapt.io/severity: "Moderate"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the selinux-type/initcontainers policy."
+    security.kubeapt.io/remediation: "Remove the seLinuxOptions.type setting from every init container, or replace it with one of container_t, container_init_t, container_kvm_t or container_engine_t. Field: spec.initContainers[*].securityContext.seLinuxOptions.type."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

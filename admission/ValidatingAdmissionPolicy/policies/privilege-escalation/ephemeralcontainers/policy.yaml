@@ -4,10 +4,10 @@ metadata:
   name: allow-privilege-escalation-ephemeralcontainers
   annotations:
     security.kubeapt.io/displayName: "Privilege Escalation"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for privilege-escalation/ephemeralcontainers."
+    security.kubeapt.io/description: "Leaving privilege escalation enabled lets a process in the ephemeral container gain more privileges than its parent through setuid binaries or file capabilities, turning a compromised unprivileged process into root inside the container."
     security.kubeapt.io/resource: "Ephemeralcontainers"
     security.kubeapt.io/severity: "Critical"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the privilege-escalation/ephemeralcontainers policy."
+    security.kubeapt.io/remediation: "Set allowPrivilegeEscalation to false in the security context of every ephemeral container. The field must be present explicitly, since omitting it also fails. Field: spec.ephemeralContainers[*].securityContext.allowPrivilegeEscalation."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

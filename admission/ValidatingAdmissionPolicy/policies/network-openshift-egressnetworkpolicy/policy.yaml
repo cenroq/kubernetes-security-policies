@@ -4,10 +4,10 @@ metadata:
   name: egressnetworkpolicy-allow-all
   annotations:
     security.kubeapt.io/displayName: "OpenShift EgressNetworkPolicy Allow-All"
-    security.kubeapt.io/description: "OpenShift EgressNetworkPolicies must not Allow egress to 0.0.0.0/0."
+    security.kubeapt.io/description: "An Allow entry for 0.0.0.0/0 makes the namespace OpenShift SDN egress firewall permit every pod in it to reach any off-cluster address, so a compromised workload can stage tooling and exfiltrate data freely."
     security.kubeapt.io/resource: "EgressNetworkPolicies"
     security.kubeapt.io/severity: "High"
-    security.kubeapt.io/remediation: "Scope Allow rules to specific CIDRs instead of 0.0.0.0/0. Field: spec.egress[*].to.cidrSelector."
+    security.kubeapt.io/remediation: "Replace 0.0.0.0/0 with the specific destination CIDRs the namespace needs and keep a trailing Deny rule for everything else. Field: spec.egress[*].to.cidrSelector."
     security.kubeapt.io/product: "OpenShift"
 spec:
   failurePolicy: Fail

@@ -4,10 +4,10 @@ metadata:
   name: allowed-capabilities-add-containers
   annotations:
     security.kubeapt.io/displayName: "Capabilities Add"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for capabilities-add/containers."
+    security.kubeapt.io/description: "Linux capabilities beyond the baseline set, such as SYS_ADMIN, SYS_MODULE, SYS_PTRACE or NET_RAW, hand a container kernel level privileges it can use to mount filesystems, load modules and break out onto the node."
     security.kubeapt.io/resource: "Containers"
     security.kubeapt.io/severity: "Moderate"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the capabilities-add/containers policy."
+    security.kubeapt.io/remediation: "Drop the non-baseline entries from the added capability list and keep only baseline names such as CHOWN, KILL, SETGID, SETUID and NET_BIND_SERVICE. Field: spec.containers[*].securityContext.capabilities.add."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

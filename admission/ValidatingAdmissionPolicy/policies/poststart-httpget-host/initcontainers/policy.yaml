@@ -4,10 +4,10 @@ metadata:
   name: poststart-httpget-host-initcontainers
   annotations:
     security.kubeapt.io/displayName: "Poststart Httpget Host"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for poststart-httpget-host/initcontainers."
+    security.kubeapt.io/description: "A postStart HTTP hook aimed at another host makes the kubelet call an arbitrary URL from the node each time an init container starts, reaching internal endpoints closed to pods and triggering side effects there."
     security.kubeapt.io/resource: "Initcontainers"
     security.kubeapt.io/severity: "Low"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the poststart-httpget-host/initcontainers policy."
+    security.kubeapt.io/remediation: "Remove the host field so the hook targets the pod IP, or set it to an empty string. Field: spec.initContainers[*].lifecycle.postStart.httpGet.host."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

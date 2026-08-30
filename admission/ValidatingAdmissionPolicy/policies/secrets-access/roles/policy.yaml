@@ -4,10 +4,10 @@ metadata:
   name: role-secrets-access
   annotations:
     security.kubeapt.io/displayName: "Secrets Access"
-    security.kubeapt.io/description: "Roles must not grant read or write access to Secrets without tight scoping."
+    security.kubeapt.io/description: "Reading Secrets exposes the credentials they hold in the namespace, including service account tokens, TLS private keys and registry passwords, and the write verbs let those values be replaced with attacker-controlled ones."
     security.kubeapt.io/resource: "Roles"
     security.kubeapt.io/severity: "Critical"
-    security.kubeapt.io/remediation: "Remove read/write on secrets. Fields: rules[*].resources, rules[*].verbs."
+    security.kubeapt.io/remediation: "Remove get, list, watch, create, update, patch and delete from every rule covering secrets in the core API group, and deliver credentials through a projected volume or an external secret store instead. Fields: rules[*].apiGroups, rules[*].resources, rules[*].verbs."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

@@ -4,10 +4,10 @@ metadata:
   name: hostpath-volumes
   annotations:
     security.kubeapt.io/displayName: "Hostpath Volumes"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for hostpath-volumes."
+    security.kubeapt.io/description: "A hostPath volume mounts node filesystem paths into the pod, exposing kubelet credentials, container runtime sockets and other workload data, and a writable mount lets an attacker alter node files to take over the node."
     security.kubeapt.io/resource: "Pods"
     security.kubeapt.io/severity: "Critical"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the hostpath-volumes policy."
+    security.kubeapt.io/remediation: "Remove the hostPath volume and use an emptyDir, ConfigMap or PersistentVolumeClaim instead. Field: spec.volumes[*].hostPath."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

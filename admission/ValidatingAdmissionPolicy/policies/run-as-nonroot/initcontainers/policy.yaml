@@ -4,10 +4,10 @@ metadata:
   name: run-as-nonroot-initcontainers
   annotations:
     security.kubeapt.io/displayName: "Run As Nonroot"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for run-as-nonroot/initcontainers."
+    security.kubeapt.io/description: "With runAsNonRoot unset, the kubelet never rejects an image whose user is UID 0, so the init container silently runs as root and any compromise gains root file ownership and the full capability set."
     security.kubeapt.io/resource: "Initcontainers"
     security.kubeapt.io/severity: "Moderate"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the run-as-nonroot/initcontainers policy."
+    security.kubeapt.io/remediation: "Set runAsNonRoot to true on every init container, or set it once at pod level and let the init containers inherit it. Fields: spec.initContainers[*].securityContext.runAsNonRoot, spec.securityContext.runAsNonRoot."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

@@ -4,10 +4,10 @@ metadata:
   name: windows-hostprocess-containers
   annotations:
     security.kubeapt.io/displayName: "Windows Hostprocess"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for windows-hostprocess/containers."
+    security.kubeapt.io/description: "A Windows HostProcess container runs directly on the node in the host namespaces under a system account, exposing the host filesystem, registry and services and making node compromise trivial."
     security.kubeapt.io/resource: "Containers"
     security.kubeapt.io/severity: "Critical"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the windows-hostprocess/containers policy."
+    security.kubeapt.io/remediation: "Remove windowsOptions.hostProcess from every container security context or set it to false. Field: spec.containers[*].securityContext.windowsOptions.hostProcess."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

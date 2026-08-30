@@ -4,10 +4,10 @@ metadata:
   name: clusterrole-wildcard-rules
   annotations:
     security.kubeapt.io/displayName: "Wildcard Rules"
-    security.kubeapt.io/description: "Wildcard rules (apiGroups/resources/verbs with \"*\") are disallowed."
+    security.kubeapt.io/description: "A wildcard in apiGroups, resources or verbs hands over an entire API group, every resource type or every operation on them across the cluster, and silently widens to each CRD installed later."
     security.kubeapt.io/resource: "ClusterRoles"
     security.kubeapt.io/severity: "Critical"
-    security.kubeapt.io/remediation: "Replace wildcard apiGroups/resources/verbs with explicit values. Fields: rules[*].apiGroups, rules[*].resources, rules[*].verbs."
+    security.kubeapt.io/remediation: "Replace each wildcard entry with the explicit API groups, resources and verbs the workload actually calls. Fields: rules[*].apiGroups, rules[*].resources, rules[*].verbs."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

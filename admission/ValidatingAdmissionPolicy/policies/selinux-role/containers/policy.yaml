@@ -4,10 +4,10 @@ metadata:
   name: selinux-role-containers
   annotations:
     security.kubeapt.io/displayName: "Selinux Role"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for selinux-role/containers."
+    security.kubeapt.io/description: "A custom SELinux role label lets the container transition into domains outside the confined container role, weakening the mandatory access control that keeps a compromised process away from host files and devices."
     security.kubeapt.io/resource: "Containers"
     security.kubeapt.io/severity: "Moderate"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the selinux-role/containers policy."
+    security.kubeapt.io/remediation: "Remove the seLinuxOptions.role setting from every container or leave it as an empty string so the runtime assigns its default container role. Field: spec.containers[*].securityContext.seLinuxOptions.role."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

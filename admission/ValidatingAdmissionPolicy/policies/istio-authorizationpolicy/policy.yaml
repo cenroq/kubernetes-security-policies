@@ -4,10 +4,10 @@ metadata:
   name: istio-authorizationpolicy-allow-all
   annotations:
     security.kubeapt.io/displayName: "Istio AuthorizationPolicy Allow-All"
-    security.kubeapt.io/description: "Istio ALLOW AuthorizationPolicies must not contain a rule with no from/to/when (effectively allow-all)."
+    security.kubeapt.io/description: "An ALLOW rule with no from, to or when matches every request, so the workload accepts any caller inside or outside the mesh while still appearing to be under authorization control."
     security.kubeapt.io/resource: "AuthorizationPolicies"
     security.kubeapt.io/severity: "High"
-    security.kubeapt.io/remediation: "Constrain each ALLOW rule with from/to/when conditions instead of an empty (match-all) rule. Field: spec.rules."
+    security.kubeapt.io/remediation: "Add from, to or when conditions naming the permitted principals, namespaces, paths or methods to every ALLOW rule instead of leaving one unconditioned. Fields: spec.rules[*].from, spec.rules[*].to, spec.rules[*].when."
     security.kubeapt.io/product: "Istio"
 spec:
   failurePolicy: Fail

@@ -4,10 +4,10 @@ metadata:
   name: selinux-type-containers
   annotations:
     security.kubeapt.io/displayName: "Selinux Type"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for selinux-type/containers."
+    security.kubeapt.io/description: "An SELinux type outside the container domains, such as spc_t or unconfined_t, drops the kernel confinement that stops a container process from reading host files and reaching devices it does not own."
     security.kubeapt.io/resource: "Containers"
     security.kubeapt.io/severity: "Moderate"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the selinux-type/containers policy."
+    security.kubeapt.io/remediation: "Remove the seLinuxOptions.type setting from every container, or replace it with one of container_t, container_init_t, container_kvm_t or container_engine_t. Field: spec.containers[*].securityContext.seLinuxOptions.type."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

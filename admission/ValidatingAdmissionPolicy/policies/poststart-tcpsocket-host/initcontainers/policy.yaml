@@ -4,10 +4,10 @@ metadata:
   name: poststart-tcpsocket-host-initcontainers
   annotations:
     security.kubeapt.io/displayName: "Poststart Tcpsocket Host"
-    security.kubeapt.io/description: "ValidatingAdmissionPolicy for poststart-tcpsocket-host/initcontainers."
+    security.kubeapt.io/description: "Naming another host in a postStart TCP hook points init container start at an off-pod address through a handler the kubelet does not support, so the hook fails and the container is killed."
     security.kubeapt.io/resource: "Initcontainers"
     security.kubeapt.io/severity: "Low"
-    security.kubeapt.io/remediation: "Adjust workloads to satisfy the poststart-tcpsocket-host/initcontainers policy."
+    security.kubeapt.io/remediation: "Remove the host field or set it to an empty string, and prefer an exec or httpGet handler since tcpSocket hooks are unsupported. Field: spec.initContainers[*].lifecycle.postStart.tcpSocket.host."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail

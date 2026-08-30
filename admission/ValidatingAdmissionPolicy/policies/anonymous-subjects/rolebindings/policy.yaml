@@ -4,10 +4,10 @@ metadata:
   name: rolebinding-anonymous-subjects
   annotations:
     security.kubeapt.io/displayName: "Anonymous Subjects"
-    security.kubeapt.io/description: "RoleBindings must not bind roles to anonymous or broadly shared user identities."
+    security.kubeapt.io/description: "Binding a role to system:anonymous hands its namespace permissions to every unauthenticated caller that reaches the API server, and catch-all names like everyone or all-users leave nobody accountable for who exercises them."
     security.kubeapt.io/resource: "RoleBindings"
     security.kubeapt.io/severity: "Low"
-    security.kubeapt.io/remediation: "Remove anonymous/broad user subjects from RoleBinding. Fields: subjects[*].kind, subjects[*].name."
+    security.kubeapt.io/remediation: "Replace the anonymous or shared user subject with the specific named users, groups or ServiceAccounts that need the role. Fields: subjects[*].kind, subjects[*].name."
     security.kubeapt.io/product: "Kubernetes"
 spec:
   failurePolicy: Fail
