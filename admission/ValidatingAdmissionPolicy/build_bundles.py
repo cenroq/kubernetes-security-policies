@@ -33,9 +33,13 @@ def write_readme(bundle_dir: Path, name: str, description: str, bundle_slug: str
             "kubectl apply -f policies.yaml -f bindings.yaml",
             "```",
             "",
-            "Apply only these two files. Do not apply the bundle directory: `probes/` holds",
-            "deliberately non-compliant manifests used to verify that each policy denies what",
-            "it should, and applying them is never intended.",
+            "Apply only these two files. Do not apply the bundle directory: `probes/deny.yaml`",
+            "holds deliberately non-compliant manifests, one per policy, used to verify that each",
+            "policy rejects what it should. Applying them is never intended.",
+            "",
+            "Policies whose violation needs an ephemeral container cannot be a single manifest;",
+            "they ship as `probes/<policy>.yaml` (a compliant Pod) plus `probes/<policy>.debug.yaml`,",
+            "reproduced with the `# Command:` line inside the Pod manifest.",
             "",
             "View online:",
             f"https://cenroq.com/policies/bundles/{bundle_slug}",
@@ -48,37 +52,85 @@ def write_readme(bundle_dir: Path, name: str, description: str, bundle_slug: str
     (bundle_dir / "README.md").write_text("\n".join(lines))
 
 
-def write_probes(bundle_dir: Path, policy_names: list[str], policy_index: dict[str, Path]):
-    """Copy each policy's deny-case manifests into <bundle>/probes/ as plain YAML.
+DENY_BANNER = """\
+# Deliberately non-compliant manifests, one per policy in this bundle.
+#
+# Every document here is expected to be REJECTED by the policies in policies.yaml.
+# Do not apply this file to a cluster you care about: without an enforcing binding
+# in scope the objects are created, and they include cluster-scoped RBAC grants.
+#
+# Some documents target CRDs (Cilium, Calico, Istio, Kyverno, OpenShift, OVN); a
+# wholesale apply fails for those unless the CRD is installed.
+#
+# Policies whose violation needs an ephemeral container cannot be expressed as a
+# single manifest. They ship beside this file as <policy>.yaml (a compliant Pod)
+# plus <policy>.debug.yaml, and are reproduced with the '# Command:' line in the
+# Pod manifest.
+"""
 
-    kubeapt installs a bundle from a hard-coded two-filename allowlist
-    (policies.yaml, bindings.yaml) and never scans the directory, so probes are
-    inert on that path by construction. The kubectl fallback in bundle.json and
-    README.md names those same two files for the same reason.
+
+def write_probes(bundle_dir: Path, policy_names: list[str], policy_index: dict[str, Path]):
+    """Emit <bundle>/probes/: one merged deny.yaml plus the ephemeral-container cases.
+
+    Self-contained violations are concatenated into probes/deny.yaml so the corpus is
+    a single artefact. Policies whose violation requires 'kubectl debug' keep their
+    Pod manifest and EphemeralContainer fragment as separate files, because the
+    fragment is not a standalone document and the Pod on its own is compliant.
+
+    probes/ is a subdirectory on purpose: kubeapt installs from a hard-coded
+    (policies.yaml, bindings.yaml) allowlist and never scans, and a non-recursive
+    'kubectl apply -f <dir>' skips subdirectories, so neither path can apply these.
     """
     probes_dir = bundle_dir / "probes"
     written: dict[str, Path] = {}
+    merged: list[str] = []
+    seen: dict[tuple, str] = {}
 
     for policy_name in policy_names:
         src_dir = policy_index[policy_name].parent
         uuid = read_policy_uuid(policy_index[policy_name])
+        deny = src_dir / "deny.yaml"
+        if not deny.exists():
+            continue
+        header = [f"# policy: {policy_name}"] + ([f"# uuid: {uuid}"] if uuid else [])
+
+        if "# Command: " not in deny.read_text():
+            body = deny.read_text().strip()
+            if body.startswith("---"):
+                body = "\n".join(body.splitlines()[1:]).strip()
+            for doc in yaml.safe_load_all(body):
+                if not isinstance(doc, dict):
+                    continue
+                key = (doc.get("kind"), doc.get("metadata", {}).get("name"))
+                if key in seen:
+                    raise SystemExit(
+                        f"deny.yaml document collision {key}: {seen[key]} and {policy_name}"
+                    )
+                seen[key] = policy_name
+            merged.append("\n".join(header) + "\n" + body)
+            continue
+
+        # Ephemeral-container case: Pod manifest + its --custom fragment, kept apart.
         for src in sorted(src_dir.glob("deny*.yaml")):
             if src.name == "deny.yaml":
                 dest_name = f"{policy_name}.yaml"
             elif src.name.startswith("deny-"):
-                suffix = src.name[len("deny-") : -len(".yaml")]
-                dest_name = f"{policy_name}.{suffix}.yaml"
+                dest_name = f"{policy_name}.debug.yaml"
             else:
                 continue
             if dest_name in written:
                 raise SystemExit(f"probe filename collision: {dest_name}")
-            header = [f"# policy: {policy_name}"]
-            if uuid:
-                header.append(f"# uuid: {uuid}")
             body = rewrite_probe_commands(src.read_text(), policy_name)
             probes_dir.mkdir(parents=True, exist_ok=True)
             (probes_dir / dest_name).write_text("\n".join(header) + "\n" + body)
             written[dest_name] = src
+
+    if merged:
+        probes_dir.mkdir(parents=True, exist_ok=True)
+        (probes_dir / "deny.yaml").write_text(
+            DENY_BANNER + "---\n" + "\n---\n".join(merged).rstrip() + "\n"
+        )
+        written["deny.yaml"] = bundle_dir
 
     return written
 
@@ -100,8 +152,8 @@ def rewrite_probe_commands(text: str, policy_name: str) -> str:
     for line in text.split("\n"):
         if line.startswith("# Command: "):
             line = re.sub(
-                r"--custom=\S*/deny-([A-Za-z0-9._-]+)\.yaml",
-                lambda m: f"--custom=probes/{policy_name}.{m.group(1)}.yaml",
+                r"--custom=\S*/deny-[A-Za-z0-9._-]+\.yaml",
+                f"--custom=probes/{policy_name}.debug.yaml",
                 line,
             )
         out.append(line)
