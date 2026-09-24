@@ -19,9 +19,20 @@ def build_archives(root: Path):
     if not policies_dir.exists():
         raise SystemExit(f"policies directory not found: {policies_dir}")
 
+    # The archives are written into the directory they archive, so a rebuild would
+    # otherwise swallow the previous build's output and grow on every run.
+    generated = {
+        "policies.json",
+        "policies.tar.gz",
+        "policies.tar.gz.sha256",
+        "policies.zip",
+        "policies.zip.sha256",
+    }
+
     tar_path = policies_dir / "policies.tar.gz"
     def tar_filter(tarinfo: tarfile.TarInfo) -> tarfile.TarInfo | None:
-        if Path(tarinfo.name) == Path("policies/policies.json"):
+        name = Path(tarinfo.name)
+        if name.parent == Path("policies") and name.name in generated:
             return None
         return tarinfo
 
@@ -33,7 +44,7 @@ def build_archives(root: Path):
     with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as zf:
         for file_path in policies_dir.rglob("*"):
             if file_path.is_file():
-                if file_path == policies_dir / "policies.json":
+                if file_path.parent == policies_dir and file_path.name in generated:
                     continue
                 zf.write(file_path, file_path.relative_to(policies_dir))
     write_checksum(zip_path)

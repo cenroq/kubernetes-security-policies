@@ -1,0 +1,3300 @@
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: container-privileged-namespace-warn
+spec:
+  policyName: container-privileged
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: container-privileged.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: container-privileged-namespace-audit
+spec:
+  policyName: container-privileged
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: container-privileged.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: container-privileged-namespace-enforce
+spec:
+  policyName: container-privileged
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: container-privileged.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ephemeralcontainer-privileged-namespace-warn
+spec:
+  policyName: ephemeralcontainer-privileged
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: ephemeralcontainer-privileged.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ephemeralcontainer-privileged-namespace-audit
+spec:
+  policyName: ephemeralcontainer-privileged
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: ephemeralcontainer-privileged.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ephemeralcontainer-privileged-namespace-enforce
+spec:
+  policyName: ephemeralcontainer-privileged
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: ephemeralcontainer-privileged.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: initcontainer-privileged-namespace-warn
+spec:
+  policyName: initcontainer-privileged
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: initcontainer-privileged.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: initcontainer-privileged-namespace-audit
+spec:
+  policyName: initcontainer-privileged
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: initcontainer-privileged.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: initcontainer-privileged-namespace-enforce
+spec:
+  policyName: initcontainer-privileged
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: initcontainer-privileged.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: container-privilege-escalation-namespace-warn
+spec:
+  policyName: container-privilege-escalation
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: container-privilege-escalation.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: container-privilege-escalation-namespace-audit
+spec:
+  policyName: container-privilege-escalation
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: container-privilege-escalation.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: container-privilege-escalation-namespace-enforce
+spec:
+  policyName: container-privilege-escalation
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: container-privilege-escalation.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ephemeralcontainer-privilege-escalation-namespace-warn
+spec:
+  policyName: ephemeralcontainer-privilege-escalation
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: ephemeralcontainer-privilege-escalation.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ephemeralcontainer-privilege-escalation-namespace-audit
+spec:
+  policyName: ephemeralcontainer-privilege-escalation
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: ephemeralcontainer-privilege-escalation.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ephemeralcontainer-privilege-escalation-namespace-enforce
+spec:
+  policyName: ephemeralcontainer-privilege-escalation
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: ephemeralcontainer-privilege-escalation.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: initcontainer-privilege-escalation-namespace-warn
+spec:
+  policyName: initcontainer-privilege-escalation
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: initcontainer-privilege-escalation.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: initcontainer-privilege-escalation-namespace-audit
+spec:
+  policyName: initcontainer-privilege-escalation
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: initcontainer-privilege-escalation.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: initcontainer-privilege-escalation-namespace-enforce
+spec:
+  policyName: initcontainer-privilege-escalation
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: initcontainer-privilege-escalation.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: container-capabilities-drop-all-namespace-warn
+spec:
+  policyName: container-capabilities-drop-all
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: container-capabilities-drop-all.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: container-capabilities-drop-all-namespace-audit
+spec:
+  policyName: container-capabilities-drop-all
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: container-capabilities-drop-all.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: container-capabilities-drop-all-namespace-enforce
+spec:
+  policyName: container-capabilities-drop-all
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: container-capabilities-drop-all.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ephemeralcontainer-capabilities-drop-all-namespace-warn
+spec:
+  policyName: ephemeralcontainer-capabilities-drop-all
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: ephemeralcontainer-capabilities-drop-all.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ephemeralcontainer-capabilities-drop-all-namespace-audit
+spec:
+  policyName: ephemeralcontainer-capabilities-drop-all
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: ephemeralcontainer-capabilities-drop-all.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ephemeralcontainer-capabilities-drop-all-namespace-enforce
+spec:
+  policyName: ephemeralcontainer-capabilities-drop-all
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: ephemeralcontainer-capabilities-drop-all.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: initcontainer-capabilities-drop-all-namespace-warn
+spec:
+  policyName: initcontainer-capabilities-drop-all
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: initcontainer-capabilities-drop-all.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: initcontainer-capabilities-drop-all-namespace-audit
+spec:
+  policyName: initcontainer-capabilities-drop-all
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: initcontainer-capabilities-drop-all.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: initcontainer-capabilities-drop-all-namespace-enforce
+spec:
+  policyName: initcontainer-capabilities-drop-all
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: initcontainer-capabilities-drop-all.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: container-read-only-root-filesystem-namespace-warn
+spec:
+  policyName: container-read-only-root-filesystem
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: container-read-only-root-filesystem.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: container-read-only-root-filesystem-namespace-audit
+spec:
+  policyName: container-read-only-root-filesystem
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: container-read-only-root-filesystem.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: container-read-only-root-filesystem-namespace-enforce
+spec:
+  policyName: container-read-only-root-filesystem
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: container-read-only-root-filesystem.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ephemeralcontainer-read-only-root-filesystem-namespace-warn
+spec:
+  policyName: ephemeralcontainer-read-only-root-filesystem
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: ephemeralcontainer-read-only-root-filesystem.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ephemeralcontainer-read-only-root-filesystem-namespace-audit
+spec:
+  policyName: ephemeralcontainer-read-only-root-filesystem
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: ephemeralcontainer-read-only-root-filesystem.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ephemeralcontainer-read-only-root-filesystem-namespace-enforce
+spec:
+  policyName: ephemeralcontainer-read-only-root-filesystem
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: ephemeralcontainer-read-only-root-filesystem.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: initcontainer-read-only-root-filesystem-namespace-warn
+spec:
+  policyName: initcontainer-read-only-root-filesystem
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: initcontainer-read-only-root-filesystem.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: initcontainer-read-only-root-filesystem-namespace-audit
+spec:
+  policyName: initcontainer-read-only-root-filesystem
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: initcontainer-read-only-root-filesystem.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: initcontainer-read-only-root-filesystem-namespace-enforce
+spec:
+  policyName: initcontainer-read-only-root-filesystem
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: initcontainer-read-only-root-filesystem.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: container-run-as-user-namespace-warn
+spec:
+  policyName: container-run-as-user
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: container-run-as-user.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: container-run-as-user-namespace-audit
+spec:
+  policyName: container-run-as-user
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: container-run-as-user.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: container-run-as-user-namespace-enforce
+spec:
+  policyName: container-run-as-user
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: container-run-as-user.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ephemeralcontainer-run-as-user-namespace-warn
+spec:
+  policyName: ephemeralcontainer-run-as-user
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: ephemeralcontainer-run-as-user.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ephemeralcontainer-run-as-user-namespace-audit
+spec:
+  policyName: ephemeralcontainer-run-as-user
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: ephemeralcontainer-run-as-user.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ephemeralcontainer-run-as-user-namespace-enforce
+spec:
+  policyName: ephemeralcontainer-run-as-user
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: ephemeralcontainer-run-as-user.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: initcontainer-run-as-user-namespace-warn
+spec:
+  policyName: initcontainer-run-as-user
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: initcontainer-run-as-user.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: initcontainer-run-as-user-namespace-audit
+spec:
+  policyName: initcontainer-run-as-user
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: initcontainer-run-as-user.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: initcontainer-run-as-user-namespace-enforce
+spec:
+  policyName: initcontainer-run-as-user
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: initcontainer-run-as-user.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pod-run-as-user-namespace-warn
+spec:
+  policyName: pod-run-as-user
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: pod-run-as-user.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pod-run-as-user-namespace-audit
+spec:
+  policyName: pod-run-as-user
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: pod-run-as-user.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pod-run-as-user-namespace-enforce
+spec:
+  policyName: pod-run-as-user
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: pod-run-as-user.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: container-run-as-group-namespace-warn
+spec:
+  policyName: container-run-as-group
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: container-run-as-group.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: container-run-as-group-namespace-audit
+spec:
+  policyName: container-run-as-group
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: container-run-as-group.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: container-run-as-group-namespace-enforce
+spec:
+  policyName: container-run-as-group
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: container-run-as-group.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ephemeralcontainer-run-as-group-namespace-warn
+spec:
+  policyName: ephemeralcontainer-run-as-group
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: ephemeralcontainer-run-as-group.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ephemeralcontainer-run-as-group-namespace-audit
+spec:
+  policyName: ephemeralcontainer-run-as-group
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: ephemeralcontainer-run-as-group.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ephemeralcontainer-run-as-group-namespace-enforce
+spec:
+  policyName: ephemeralcontainer-run-as-group
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: ephemeralcontainer-run-as-group.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: initcontainer-run-as-group-namespace-warn
+spec:
+  policyName: initcontainer-run-as-group
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: initcontainer-run-as-group.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: initcontainer-run-as-group-namespace-audit
+spec:
+  policyName: initcontainer-run-as-group
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: initcontainer-run-as-group.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: initcontainer-run-as-group-namespace-enforce
+spec:
+  policyName: initcontainer-run-as-group
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: initcontainer-run-as-group.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pod-run-as-group-namespace-warn
+spec:
+  policyName: pod-run-as-group
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: pod-run-as-group.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pod-run-as-group-namespace-audit
+spec:
+  policyName: pod-run-as-group
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: pod-run-as-group.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pod-run-as-group-namespace-enforce
+spec:
+  policyName: pod-run-as-group
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: pod-run-as-group.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: container-run-as-nonroot-namespace-warn
+spec:
+  policyName: container-run-as-nonroot
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: container-run-as-nonroot.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: container-run-as-nonroot-namespace-audit
+spec:
+  policyName: container-run-as-nonroot
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: container-run-as-nonroot.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: container-run-as-nonroot-namespace-enforce
+spec:
+  policyName: container-run-as-nonroot
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: container-run-as-nonroot.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ephemeralcontainer-run-as-nonroot-namespace-warn
+spec:
+  policyName: ephemeralcontainer-run-as-nonroot
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: ephemeralcontainer-run-as-nonroot.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ephemeralcontainer-run-as-nonroot-namespace-audit
+spec:
+  policyName: ephemeralcontainer-run-as-nonroot
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: ephemeralcontainer-run-as-nonroot.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ephemeralcontainer-run-as-nonroot-namespace-enforce
+spec:
+  policyName: ephemeralcontainer-run-as-nonroot
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: ephemeralcontainer-run-as-nonroot.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: initcontainer-run-as-nonroot-namespace-warn
+spec:
+  policyName: initcontainer-run-as-nonroot
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: initcontainer-run-as-nonroot.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: initcontainer-run-as-nonroot-namespace-audit
+spec:
+  policyName: initcontainer-run-as-nonroot
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: initcontainer-run-as-nonroot.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: initcontainer-run-as-nonroot-namespace-enforce
+spec:
+  policyName: initcontainer-run-as-nonroot
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: initcontainer-run-as-nonroot.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pod-run-as-nonroot-namespace-warn
+spec:
+  policyName: pod-run-as-nonroot
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: pod-run-as-nonroot.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pod-run-as-nonroot-namespace-audit
+spec:
+  policyName: pod-run-as-nonroot
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: pod-run-as-nonroot.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pod-run-as-nonroot-namespace-enforce
+spec:
+  policyName: pod-run-as-nonroot
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: pod-run-as-nonroot.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: container-seccomp-profile-namespace-warn
+spec:
+  policyName: container-seccomp-profile
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: container-seccomp-profile.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: container-seccomp-profile-namespace-audit
+spec:
+  policyName: container-seccomp-profile
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: container-seccomp-profile.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: container-seccomp-profile-namespace-enforce
+spec:
+  policyName: container-seccomp-profile
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: container-seccomp-profile.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ephemeralcontainer-seccomp-profile-namespace-warn
+spec:
+  policyName: ephemeralcontainer-seccomp-profile
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: ephemeralcontainer-seccomp-profile.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ephemeralcontainer-seccomp-profile-namespace-audit
+spec:
+  policyName: ephemeralcontainer-seccomp-profile
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: ephemeralcontainer-seccomp-profile.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: ephemeralcontainer-seccomp-profile-namespace-enforce
+spec:
+  policyName: ephemeralcontainer-seccomp-profile
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: ephemeralcontainer-seccomp-profile.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: initcontainer-seccomp-profile-namespace-warn
+spec:
+  policyName: initcontainer-seccomp-profile
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: initcontainer-seccomp-profile.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: initcontainer-seccomp-profile-namespace-audit
+spec:
+  policyName: initcontainer-seccomp-profile
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: initcontainer-seccomp-profile.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: initcontainer-seccomp-profile-namespace-enforce
+spec:
+  policyName: initcontainer-seccomp-profile
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: initcontainer-seccomp-profile.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pod-seccomp-profile-namespace-warn
+spec:
+  policyName: pod-seccomp-profile
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: pod-seccomp-profile.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pod-seccomp-profile-namespace-audit
+spec:
+  policyName: pod-seccomp-profile
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: pod-seccomp-profile.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pod-seccomp-profile-namespace-enforce
+spec:
+  policyName: pod-seccomp-profile
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: pod-seccomp-profile.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pod-hostusers-namespace-warn
+spec:
+  policyName: pod-hostusers
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: pod-hostusers.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pod-hostusers-namespace-audit
+spec:
+  policyName: pod-hostusers
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: pod-hostusers.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pod-hostusers-namespace-enforce
+spec:
+  policyName: pod-hostusers
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: pod-hostusers.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pod-hostpid-namespace-warn
+spec:
+  policyName: pod-hostpid
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: pod-hostpid.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pod-hostpid-namespace-audit
+spec:
+  policyName: pod-hostpid
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: pod-hostpid.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pod-hostpid-namespace-enforce
+spec:
+  policyName: pod-hostpid
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: pod-hostpid.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pod-hostipc-namespace-warn
+spec:
+  policyName: pod-hostipc
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: pod-hostipc.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pod-hostipc-namespace-audit
+spec:
+  policyName: pod-hostipc
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: pod-hostipc.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pod-hostipc-namespace-enforce
+spec:
+  policyName: pod-hostipc
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: pod-hostipc.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pod-automount-serviceaccount-token-namespace-warn
+spec:
+  policyName: pod-automount-serviceaccount-token
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: pod-automount-serviceaccount-token.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pod-automount-serviceaccount-token-namespace-audit
+spec:
+  policyName: pod-automount-serviceaccount-token
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: pod-automount-serviceaccount-token.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pod-automount-serviceaccount-token-namespace-enforce
+spec:
+  policyName: pod-automount-serviceaccount-token
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: pod-automount-serviceaccount-token.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrolebinding-powerful-roles-cluster-warn
+spec:
+  policyName: clusterrolebinding-powerful-roles
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: clusterrolebinding-powerful-roles.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrolebinding-powerful-roles-cluster-audit
+spec:
+  policyName: clusterrolebinding-powerful-roles
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: clusterrolebinding-powerful-roles.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrolebinding-powerful-roles-cluster-enforce
+spec:
+  policyName: clusterrolebinding-powerful-roles
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: clusterrolebinding-powerful-roles.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: rolebinding-powerful-roles-namespace-warn
+spec:
+  policyName: rolebinding-powerful-roles
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: rolebinding-powerful-roles.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: rolebinding-powerful-roles-namespace-audit
+spec:
+  policyName: rolebinding-powerful-roles
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: rolebinding-powerful-roles.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: rolebinding-powerful-roles-namespace-enforce
+spec:
+  policyName: rolebinding-powerful-roles
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: rolebinding-powerful-roles.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-secrets-access-cluster-warn
+spec:
+  policyName: clusterrole-secrets-access
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-secrets-access.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-secrets-access-cluster-audit
+spec:
+  policyName: clusterrole-secrets-access
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-secrets-access.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-secrets-access-cluster-enforce
+spec:
+  policyName: clusterrole-secrets-access
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-secrets-access.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: role-secrets-access-namespace-warn
+spec:
+  policyName: role-secrets-access
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: role-secrets-access.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: role-secrets-access-namespace-audit
+spec:
+  policyName: role-secrets-access
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: role-secrets-access.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: role-secrets-access-namespace-enforce
+spec:
+  policyName: role-secrets-access
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: role-secrets-access.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-nodes-proxy-get-cluster-warn
+spec:
+  policyName: clusterrole-nodes-proxy-get
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-nodes-proxy-get.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-nodes-proxy-get-cluster-audit
+spec:
+  policyName: clusterrole-nodes-proxy-get
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-nodes-proxy-get.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-nodes-proxy-get-cluster-enforce
+spec:
+  policyName: clusterrole-nodes-proxy-get
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-nodes-proxy-get.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-rbac-write-cluster-warn
+spec:
+  policyName: clusterrole-rbac-write
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-rbac-write.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-rbac-write-cluster-audit
+spec:
+  policyName: clusterrole-rbac-write
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-rbac-write.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-rbac-write-cluster-enforce
+spec:
+  policyName: clusterrole-rbac-write
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-rbac-write.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: role-rbac-write-namespace-warn
+spec:
+  policyName: role-rbac-write
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: role-rbac-write.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: role-rbac-write-namespace-audit
+spec:
+  policyName: role-rbac-write
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: role-rbac-write.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: role-rbac-write-namespace-enforce
+spec:
+  policyName: role-rbac-write
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: role-rbac-write.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-rbac-impersonate-cluster-warn
+spec:
+  policyName: clusterrole-rbac-impersonate
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-rbac-impersonate.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-rbac-impersonate-cluster-audit
+spec:
+  policyName: clusterrole-rbac-impersonate
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-rbac-impersonate.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-rbac-impersonate-cluster-enforce
+spec:
+  policyName: clusterrole-rbac-impersonate
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-rbac-impersonate.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: role-rbac-impersonate-namespace-warn
+spec:
+  policyName: role-rbac-impersonate
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: role-rbac-impersonate.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: role-rbac-impersonate-namespace-audit
+spec:
+  policyName: role-rbac-impersonate
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: role-rbac-impersonate.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: role-rbac-impersonate-namespace-enforce
+spec:
+  policyName: role-rbac-impersonate
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: role-rbac-impersonate.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-infra-cluster-resources-cluster-warn
+spec:
+  policyName: clusterrole-infra-cluster-resources
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-infra-cluster-resources.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-infra-cluster-resources-cluster-audit
+spec:
+  policyName: clusterrole-infra-cluster-resources
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-infra-cluster-resources.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-infra-cluster-resources-cluster-enforce
+spec:
+  policyName: clusterrole-infra-cluster-resources
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-infra-cluster-resources.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-aggregation-cluster-warn
+spec:
+  policyName: clusterrole-aggregation
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-aggregation.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-aggregation-cluster-audit
+spec:
+  policyName: clusterrole-aggregation
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-aggregation.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-aggregation-cluster-enforce
+spec:
+  policyName: clusterrole-aggregation
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-aggregation.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-wildcard-rules-cluster-warn
+spec:
+  policyName: clusterrole-wildcard-rules
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-wildcard-rules.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-wildcard-rules-cluster-audit
+spec:
+  policyName: clusterrole-wildcard-rules
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-wildcard-rules.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-wildcard-rules-cluster-enforce
+spec:
+  policyName: clusterrole-wildcard-rules
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-wildcard-rules.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: role-wildcard-rules-namespace-warn
+spec:
+  policyName: role-wildcard-rules
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: role-wildcard-rules.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: role-wildcard-rules-namespace-audit
+spec:
+  policyName: role-wildcard-rules
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: role-wildcard-rules.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: role-wildcard-rules-namespace-enforce
+spec:
+  policyName: role-wildcard-rules
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: role-wildcard-rules.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: configmap-secrets-namespace-warn
+spec:
+  policyName: configmap-secrets
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: configmap-secrets.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: configmap-secrets-namespace-audit
+spec:
+  policyName: configmap-secrets
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: configmap-secrets.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: configmap-secrets-namespace-enforce
+spec:
+  policyName: configmap-secrets
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: configmap-secrets.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: serviceaccount-token-secrets-namespace-warn
+spec:
+  policyName: serviceaccount-token-secrets
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: serviceaccount-token-secrets.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: serviceaccount-token-secrets-namespace-audit
+spec:
+  policyName: serviceaccount-token-secrets
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: serviceaccount-token-secrets.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: serviceaccount-token-secrets-namespace-enforce
+spec:
+  policyName: serviceaccount-token-secrets
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: serviceaccount-token-secrets.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: namespace-pod-security-standards-namespace-warn
+spec:
+  policyName: namespace-pod-security-standards
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: namespace-pod-security-standards.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: namespace-pod-security-standards-namespace-audit
+spec:
+  policyName: namespace-pod-security-standards
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: namespace-pod-security-standards.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: namespace-pod-security-standards-namespace-enforce
+spec:
+  policyName: namespace-pod-security-standards
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: namespace-pod-security-standards.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: mutatingwebhookconfiguration-hardening-cluster-warn
+spec:
+  policyName: mutatingwebhookconfiguration-hardening
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: mutatingwebhookconfiguration-hardening.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: mutatingwebhookconfiguration-hardening-cluster-audit
+spec:
+  policyName: mutatingwebhookconfiguration-hardening
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: mutatingwebhookconfiguration-hardening.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: mutatingwebhookconfiguration-hardening-cluster-enforce
+spec:
+  policyName: mutatingwebhookconfiguration-hardening
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: mutatingwebhookconfiguration-hardening.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: validatingwebhookconfiguration-hardening-cluster-warn
+spec:
+  policyName: validatingwebhookconfiguration-hardening
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: validatingwebhookconfiguration-hardening.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: validatingwebhookconfiguration-hardening-cluster-audit
+spec:
+  policyName: validatingwebhookconfiguration-hardening
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: validatingwebhookconfiguration-hardening.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: validatingwebhookconfiguration-hardening-cluster-enforce
+spec:
+  policyName: validatingwebhookconfiguration-hardening
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: validatingwebhookconfiguration-hardening.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterpolicy-kyverno-not-enforcing-cluster-warn
+spec:
+  policyName: clusterpolicy-kyverno-not-enforcing
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: clusterpolicy-kyverno-not-enforcing.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterpolicy-kyverno-not-enforcing-cluster-audit
+spec:
+  policyName: clusterpolicy-kyverno-not-enforcing
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: clusterpolicy-kyverno-not-enforcing.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterpolicy-kyverno-not-enforcing-cluster-enforce
+spec:
+  policyName: clusterpolicy-kyverno-not-enforcing
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: clusterpolicy-kyverno-not-enforcing.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: policy-kyverno-not-enforcing-namespace-warn
+spec:
+  policyName: policy-kyverno-not-enforcing
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: policy-kyverno-not-enforcing.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: policy-kyverno-not-enforcing-namespace-audit
+spec:
+  policyName: policy-kyverno-not-enforcing
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: policy-kyverno-not-enforcing.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: policy-kyverno-not-enforcing-namespace-enforce
+spec:
+  policyName: policy-kyverno-not-enforcing
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: policy-kyverno-not-enforcing.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: networkpolicy-allow-all-namespace-warn
+spec:
+  policyName: networkpolicy-allow-all
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: networkpolicy-allow-all.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: networkpolicy-allow-all-namespace-audit
+spec:
+  policyName: networkpolicy-allow-all
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: networkpolicy-allow-all.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: networkpolicy-allow-all-namespace-enforce
+spec:
+  policyName: networkpolicy-allow-all
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: networkpolicy-allow-all.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pod-hostnetwork-namespace-warn
+spec:
+  policyName: pod-hostnetwork
+  validationActions:
+  - Warn
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: pod-hostnetwork.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pod-hostnetwork-namespace-audit
+spec:
+  policyName: pod-hostnetwork
+  validationActions:
+  - Audit
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: pod-hostnetwork.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pod-hostnetwork-namespace-enforce
+spec:
+  policyName: pod-hostnetwork
+  validationActions:
+  - Deny
+  matchResources:
+    namespaceSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: pod-hostnetwork.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-cert-auth-review-cluster-warn
+spec:
+  policyName: clusterrole-cert-auth-review
+  validationActions:
+  - Warn
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/warn
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-cert-auth-review.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-cert-auth-review-cluster-audit
+spec:
+  policyName: clusterrole-cert-auth-review
+  validationActions:
+  - Audit
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/audit
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-cert-auth-review.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: clusterrole-cert-auth-review-cluster-enforce
+spec:
+  policyName: clusterrole-cert-auth-review
+  validationActions:
+  - Deny
+  matchResources:
+    objectSelector:
+      matchExpressions:
+      - key: owasp.org/enforce
+        operator: In
+        values:
+        - enabled
+      - key: clusterrole-cert-auth-review.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
