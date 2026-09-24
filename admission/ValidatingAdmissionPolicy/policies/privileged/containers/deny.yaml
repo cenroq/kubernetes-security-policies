@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: privileged-containers
+  annotations:
+    kubeapt.io/uuid: "2873ca8e-c322-4e60-8bb2-aebf881490f9"
 spec:
   containers:
   - name: main

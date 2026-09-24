@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: procmount-containers
+  annotations:
+    kubeapt.io/uuid: "0ceb2a31-3447-4a3c-9e67-ea7fbb65f581"
 spec:
   hostUsers: false
   containers:

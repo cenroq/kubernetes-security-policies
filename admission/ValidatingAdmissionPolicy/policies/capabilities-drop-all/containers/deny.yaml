@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: capabilities-drop-all-containers
+  annotations:
+    kubeapt.io/uuid: "744e7415-e0dd-4f4c-89ad-4594f734b8b9"
 spec:
   containers:
   - name: main

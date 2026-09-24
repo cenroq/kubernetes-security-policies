@@ -2,6 +2,8 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: violating-role-pvc-write
+  annotations:
+    kubeapt.io/uuid: "ae1a5db5-99a9-46bc-84b6-aa2d175767ef"
 rules:
 - apiGroups: [""]
   resources: ["persistentvolumeclaims"]

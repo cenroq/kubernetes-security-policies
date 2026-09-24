@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: prestop-tcpsocket-host-initcontainers
+  annotations:
+    kubeapt.io/uuid: "31b0e769-6283-4498-938f-f8d355d53586"
 spec:
   containers:
   - name: main

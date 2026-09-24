@@ -3,6 +3,8 @@ apiVersion: kyverno.io/v1
 kind: ClusterPolicy
 metadata:
   name: violating-kyverno-clusterpolicy-not-enforcing
+  annotations:
+    kubeapt.io/uuid: "5a1658e9-655f-44ce-a2d3-7d4fb70857e2"
 spec:
   validationFailureAction: Audit
   rules:

@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: readinessprobe-httpget-host-containers
+  annotations:
+    kubeapt.io/uuid: "c897bc90-9389-46c2-a431-78fe5037fe21"
 spec:
   containers:
   - name: main

@@ -2,6 +2,8 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   name: violating-clusterrole-workloads-write
+  annotations:
+    kubeapt.io/uuid: "e70577c8-f503-4e79-8f7d-6c334183b9d6"
 rules:
 - apiGroups: ["apps"]
   resources: ["deployments"]

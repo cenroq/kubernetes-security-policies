@@ -2,6 +2,8 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: violating-rolebinding-powerful-role
+  annotations:
+    kubeapt.io/uuid: "c0fb63ca-f7fc-4f04-b552-83c54f503fef"
 subjects:
 - kind: User
   name: alice

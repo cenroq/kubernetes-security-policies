@@ -2,6 +2,8 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: violating-persistentvolume-hostpath
+  annotations:
+    kubeapt.io/uuid: "fbbade48-edc3-4fc9-9285-32924d2c5e4b"
 spec:
   capacity:
     storage: 1Gi

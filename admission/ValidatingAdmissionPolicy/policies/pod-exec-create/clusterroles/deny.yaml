@@ -2,6 +2,8 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   name: violating-clusterrole-pod-exec
+  annotations:
+    kubeapt.io/uuid: "2c6c1af9-6e01-45bf-8d23-a17811b4dae0"
 rules:
 - apiGroups: [""]
   resources: ["pods/exec"]

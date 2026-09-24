@@ -2,6 +2,8 @@ apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: violating-storageclass-cmek-oci-block
+  annotations:
+    kubeapt.io/uuid: "9f793a96-20bc-4d2e-9210-c41dfa1ec932"
 provisioner: blockvolume.csi.oraclecloud.com
 parameters:
   vpusPerGB: "10"

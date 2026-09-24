@@ -2,6 +2,8 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: violating-role-wildcard
+  annotations:
+    kubeapt.io/uuid: "104d53d3-4e2d-4c44-b14a-4a95b7dba910"
 rules:
 - apiGroups: [""]
   resources: ["pods"]

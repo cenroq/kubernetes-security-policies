@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: apparmor-annotation-values-pod
   annotations:
+    kubeapt.io/uuid: "79f6f10f-1013-45a8-bd05-cd509c20383a"
     container.apparmor.security.beta.kubernetes.io/main: unconfined
 spec:
   containers:

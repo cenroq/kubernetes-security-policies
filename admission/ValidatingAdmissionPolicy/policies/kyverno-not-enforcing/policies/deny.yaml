@@ -3,6 +3,8 @@ apiVersion: kyverno.io/v1
 kind: Policy
 metadata:
   name: violating-kyverno-policy-not-enforcing
+  annotations:
+    kubeapt.io/uuid: "83a82437-a78c-4d85-b43e-b57739382e7e"
 spec:
   validationFailureAction: Audit
   rules:

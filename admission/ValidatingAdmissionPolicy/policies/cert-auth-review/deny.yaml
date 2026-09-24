@@ -2,6 +2,8 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   name: violating-clusterrole-cert-auth-review
+  annotations:
+    kubeapt.io/uuid: "09b595b5-1df6-4303-9adb-447f7183a174"
 rules:
 - apiGroups: ["authentication.k8s.io"]
   resources: ["tokenreviews"]

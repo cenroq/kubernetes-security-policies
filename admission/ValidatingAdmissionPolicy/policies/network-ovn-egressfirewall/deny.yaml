@@ -3,6 +3,8 @@ apiVersion: k8s.ovn.org/v1
 kind: EgressFirewall
 metadata:
   name: default
+  annotations:
+    kubeapt.io/uuid: "c4eec6b4-7132-4295-9672-ca1573bd0189"
 spec:
   egress:
   - type: Allow

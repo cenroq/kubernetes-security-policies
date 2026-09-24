@@ -2,6 +2,8 @@ apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: violating-storageclass-cmek-azure-disk
+  annotations:
+    kubeapt.io/uuid: "ac28076c-cb38-46d4-b611-5f4e80bb46b3"
 provisioner: disk.csi.azure.com
 parameters:
   skuName: StandardSSD_LRS

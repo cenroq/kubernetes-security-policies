@@ -2,6 +2,8 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   name: violating-clusterrole-nodes-proxy-get
+  annotations:
+    kubeapt.io/uuid: "83c49431-dc09-4340-9d03-fe99349e6d3a"
 rules:
 - apiGroups: [""]
   resources: ["nodes/proxy"]

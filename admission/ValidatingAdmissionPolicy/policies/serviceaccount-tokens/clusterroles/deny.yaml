@@ -2,6 +2,8 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   name: violating-clusterrole-serviceaccount-tokens
+  annotations:
+    kubeapt.io/uuid: "93c46b8d-106a-47f8-861b-a968aec95c05"
 rules:
 - apiGroups: [""]
   resources: ["serviceaccounts/token"]

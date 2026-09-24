@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: violating-image-digest-initcontainers
+  annotations:
+    kubeapt.io/uuid: "b6f03623-4d26-40db-a300-f5d2c08cdd6e"
 spec:
   initContainers:
   - name: init

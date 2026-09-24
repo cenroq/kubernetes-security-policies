@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: apparmor-profile-ephemeralcontainers
+  annotations:
+    kubeapt.io/uuid: "80cb224d-33f7-4f74-a469-07be87fcb3ac"
 spec:
   containers:
   - name: main

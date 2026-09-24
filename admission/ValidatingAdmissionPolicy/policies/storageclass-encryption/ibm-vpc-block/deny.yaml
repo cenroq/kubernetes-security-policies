@@ -2,6 +2,8 @@ apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: violating-storageclass-encryption-ibm-vpc-block
+  annotations:
+    kubeapt.io/uuid: "70aa28c5-3cfe-45d0-a52d-66d2ad804696"
 provisioner: vpc.block.csi.ibm.io
 parameters:
   profile: general-purpose

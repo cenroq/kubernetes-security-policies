@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: violating-dns-policy
+  annotations:
+    kubeapt.io/uuid: "cfbd76cd-b41a-4146-a2dd-1d08e125f7a4"
 spec:
   dnsPolicy: ClusterFirstWithHostNet
   containers:

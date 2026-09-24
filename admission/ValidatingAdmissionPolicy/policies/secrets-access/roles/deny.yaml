@@ -2,6 +2,8 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: violating-role-secrets-access
+  annotations:
+    kubeapt.io/uuid: "f2cdf998-1fbc-40e6-9602-1a721388f40f"
 rules:
 - apiGroups: [""]
   resources: ["secrets"]

@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: violating-read-only-root-filesystem-initcontainers
+  annotations:
+    kubeapt.io/uuid: "67aa9a32-8729-4511-b824-61f891c4e41b"
 spec:
   securityContext:
     seccompProfile:

@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: hostnetwork-pod
+  annotations:
+    kubeapt.io/uuid: "0905d194-7177-43ee-a9cd-49a5d3e10e79"
 spec:
   containers:
   - name: main

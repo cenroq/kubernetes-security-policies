@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: capabilities-add-netbindservice-containers
+  annotations:
+    kubeapt.io/uuid: "46b6c2c4-40fc-4dcc-b25e-1b442ad97de7"
 spec:
   containers:
   - name: main

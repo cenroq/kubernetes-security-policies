@@ -2,6 +2,8 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: violating-role-rbac-write
+  annotations:
+    kubeapt.io/uuid: "2b67fb51-a58c-4a4e-8888-bb4eb1a00ef6"
 rules:
 - apiGroups: ["rbac.authorization.k8s.io"]
   resources: ["rolebindings"]

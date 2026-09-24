@@ -2,6 +2,8 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   name: violating-crb-system-group
+  annotations:
+    kubeapt.io/uuid: "48b8600b-24d9-49f1-b74c-e2f6d9f55659"
 subjects:
 - kind: Group
   name: system:authenticated

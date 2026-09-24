@@ -3,6 +3,8 @@ apiVersion: crd.projectcalico.org/v1
 kind: NetworkPolicy
 metadata:
   name: violating-calico-networkpolicy-egress-cidr
+  annotations:
+    kubeapt.io/uuid: "35df4c68-7c63-4650-8fd2-abd7c1a3cc36"
 spec:
   selector: all()
   egress:

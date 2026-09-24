@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: read-only-root-filesystem-containers
+  annotations:
+    kubeapt.io/uuid: "4ed91688-4092-4429-b68d-a29c21f1267e"
 spec:
   containers:
   - name: main

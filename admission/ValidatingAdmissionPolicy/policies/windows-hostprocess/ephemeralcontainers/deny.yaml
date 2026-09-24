@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: windows-hostprocess-ephemeralcontainers
+  annotations:
+    kubeapt.io/uuid: "c89b27c2-91e3-4523-9e00-6b0e498f6b94"
 spec:
   containers:
   - name: main

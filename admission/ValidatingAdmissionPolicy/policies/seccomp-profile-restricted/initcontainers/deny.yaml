@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: seccomp-profile-restricted-initcontainers
+  annotations:
+    kubeapt.io/uuid: "e936441f-96f4-4bfa-a70a-97b1ca8b369d"
 spec:
   containers:
   - name: main

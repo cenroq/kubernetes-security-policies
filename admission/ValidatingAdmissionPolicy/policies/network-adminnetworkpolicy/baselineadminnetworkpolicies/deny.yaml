@@ -3,6 +3,8 @@ apiVersion: policy.networking.k8s.io/v1alpha1
 kind: BaselineAdminNetworkPolicy
 metadata:
   name: default
+  annotations:
+    kubeapt.io/uuid: "6226d56c-42b0-412c-a8b0-39a131744b9a"
 spec:
   subject:
     namespaces: {}

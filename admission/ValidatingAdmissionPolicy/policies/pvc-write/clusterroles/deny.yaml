@@ -2,6 +2,8 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   name: violating-clusterrole-pvc-write
+  annotations:
+    kubeapt.io/uuid: "269e256d-3917-4e36-9de2-ea79619ab700"
 rules:
 - apiGroups: [""]
   resources: ["persistentvolumeclaims"]

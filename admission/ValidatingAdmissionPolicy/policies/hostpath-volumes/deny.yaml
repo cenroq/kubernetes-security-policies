@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: hostpath-volumes-pod
+  annotations:
+    kubeapt.io/uuid: "5612ded8-9174-42bf-80de-52468a236655"
 spec:
   containers:
   - name: main

@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: apparmor-profile-initcontainers
+  annotations:
+    kubeapt.io/uuid: "52a53ccc-78d2-4650-b761-ba691fe4d9cd"
 spec:
   containers:
   - name: main

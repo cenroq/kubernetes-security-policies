@@ -2,6 +2,8 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   name: violating-clusterrole-admission-api
+  annotations:
+    kubeapt.io/uuid: "e267b65e-ae33-47c3-9a1d-7d5efd27b359"
 rules:
 - apiGroups: ["admissionregistration.k8s.io"]
   resources: ["validatingwebhookconfigurations"]

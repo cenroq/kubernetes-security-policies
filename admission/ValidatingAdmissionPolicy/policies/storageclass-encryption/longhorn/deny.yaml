@@ -2,6 +2,8 @@ apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: violating-storageclass-encryption-longhorn
+  annotations:
+    kubeapt.io/uuid: "e9a587e3-d5f8-48b3-b42c-22f35db3227e"
 provisioner: driver.longhorn.io
 parameters:
   numberOfReplicas: "3"

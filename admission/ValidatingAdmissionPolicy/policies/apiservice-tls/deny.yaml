@@ -2,6 +2,8 @@ apiVersion: apiregistration.k8s.io/v1
 kind: APIService
 metadata:
   name: v1alpha1.example.com
+  annotations:
+    kubeapt.io/uuid: "d97253ad-f3dd-4721-b40e-944d2ae07159"
 spec:
   group: example.com
   version: v1alpha1

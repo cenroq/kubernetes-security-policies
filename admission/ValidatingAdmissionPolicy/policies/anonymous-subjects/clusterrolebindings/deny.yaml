@@ -2,6 +2,8 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   name: violating-crb-anonymous
+  annotations:
+    kubeapt.io/uuid: "2cf111fd-543c-4375-aca7-a3ffd4e6f700"
 subjects:
 - kind: User
   name: system:anonymous

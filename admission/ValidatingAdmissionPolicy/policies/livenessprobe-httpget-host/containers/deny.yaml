@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: livenessprobe-httpget-host-pod
+  annotations:
+    kubeapt.io/uuid: "f871b54a-afc3-47b9-b25f-0dfac4e2924a"
 spec:
   containers:
   - name: main
