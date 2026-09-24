@@ -10,11 +10,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: container-privileged.owasp.security.cenroq.io/warn
+      - key: container-privileged.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -30,11 +30,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: container-privileged.owasp.security.cenroq.io/audit
+      - key: container-privileged.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -50,11 +50,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: container-privileged.owasp.security.cenroq.io/enforce
+      - key: container-privileged.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -70,11 +70,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: ephemeralcontainer-privileged.owasp.security.cenroq.io/warn
+      - key: ephemeralcontainer-privileged.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -90,11 +90,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: ephemeralcontainer-privileged.owasp.security.cenroq.io/audit
+      - key: ephemeralcontainer-privileged.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -110,11 +110,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: ephemeralcontainer-privileged.owasp.security.cenroq.io/enforce
+      - key: ephemeralcontainer-privileged.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -130,11 +130,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: initcontainer-privileged.owasp.security.cenroq.io/warn
+      - key: initcontainer-privileged.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -150,11 +150,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: initcontainer-privileged.owasp.security.cenroq.io/audit
+      - key: initcontainer-privileged.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -170,11 +170,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: initcontainer-privileged.owasp.security.cenroq.io/enforce
+      - key: initcontainer-privileged.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -190,11 +190,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: container-privilege-escalation.owasp.security.cenroq.io/warn
+      - key: container-privilege-escalation.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -210,11 +210,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: container-privilege-escalation.owasp.security.cenroq.io/audit
+      - key: container-privilege-escalation.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -230,11 +230,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: container-privilege-escalation.owasp.security.cenroq.io/enforce
+      - key: container-privilege-escalation.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -250,11 +250,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: ephemeralcontainer-privilege-escalation.owasp.security.cenroq.io/warn
+      - key: ephemeralcontainer-privilege-escalation.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -270,11 +270,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: ephemeralcontainer-privilege-escalation.owasp.security.cenroq.io/audit
+      - key: ephemeralcontainer-privilege-escalation.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -290,11 +290,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: ephemeralcontainer-privilege-escalation.owasp.security.cenroq.io/enforce
+      - key: ephemeralcontainer-privilege-escalation.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -310,11 +310,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: initcontainer-privilege-escalation.owasp.security.cenroq.io/warn
+      - key: initcontainer-privilege-escalation.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -330,11 +330,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: initcontainer-privilege-escalation.owasp.security.cenroq.io/audit
+      - key: initcontainer-privilege-escalation.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -350,11 +350,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: initcontainer-privilege-escalation.owasp.security.cenroq.io/enforce
+      - key: initcontainer-privilege-escalation.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -370,11 +370,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: container-capabilities-drop-all.owasp.security.cenroq.io/warn
+      - key: container-capabilities-drop-all.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -390,11 +390,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: container-capabilities-drop-all.owasp.security.cenroq.io/audit
+      - key: container-capabilities-drop-all.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -410,11 +410,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: container-capabilities-drop-all.owasp.security.cenroq.io/enforce
+      - key: container-capabilities-drop-all.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -430,11 +430,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: ephemeralcontainer-capabilities-drop-all.owasp.security.cenroq.io/warn
+      - key: ephemeralcontainer-capabilities-drop-all.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -450,11 +450,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: ephemeralcontainer-capabilities-drop-all.owasp.security.cenroq.io/audit
+      - key: ephemeralcontainer-capabilities-drop-all.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -470,11 +470,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: ephemeralcontainer-capabilities-drop-all.owasp.security.cenroq.io/enforce
+      - key: ephemeralcontainer-capabilities-drop-all.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -490,11 +490,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: initcontainer-capabilities-drop-all.owasp.security.cenroq.io/warn
+      - key: initcontainer-capabilities-drop-all.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -510,11 +510,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: initcontainer-capabilities-drop-all.owasp.security.cenroq.io/audit
+      - key: initcontainer-capabilities-drop-all.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -530,11 +530,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: initcontainer-capabilities-drop-all.owasp.security.cenroq.io/enforce
+      - key: initcontainer-capabilities-drop-all.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -550,11 +550,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: container-read-only-root-filesystem.owasp.security.cenroq.io/warn
+      - key: container-read-only-root-filesystem.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -570,11 +570,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: container-read-only-root-filesystem.owasp.security.cenroq.io/audit
+      - key: container-read-only-root-filesystem.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -590,11 +590,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: container-read-only-root-filesystem.owasp.security.cenroq.io/enforce
+      - key: container-read-only-root-filesystem.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -610,11 +610,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: ephemeralcontainer-read-only-root-filesystem.owasp.security.cenroq.io/warn
+      - key: ephemeralcontainer-read-only-root-filesystem.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -630,11 +630,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: ephemeralcontainer-read-only-root-filesystem.owasp.security.cenroq.io/audit
+      - key: ephemeralcontainer-read-only-root-filesystem.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -650,11 +650,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: ephemeralcontainer-read-only-root-filesystem.owasp.security.cenroq.io/enforce
+      - key: ephemeralcontainer-read-only-root-filesystem.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -670,11 +670,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: initcontainer-read-only-root-filesystem.owasp.security.cenroq.io/warn
+      - key: initcontainer-read-only-root-filesystem.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -690,11 +690,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: initcontainer-read-only-root-filesystem.owasp.security.cenroq.io/audit
+      - key: initcontainer-read-only-root-filesystem.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -710,11 +710,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: initcontainer-read-only-root-filesystem.owasp.security.cenroq.io/enforce
+      - key: initcontainer-read-only-root-filesystem.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -730,11 +730,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: container-run-as-user.owasp.security.cenroq.io/warn
+      - key: container-run-as-user.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -750,11 +750,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: container-run-as-user.owasp.security.cenroq.io/audit
+      - key: container-run-as-user.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -770,11 +770,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: container-run-as-user.owasp.security.cenroq.io/enforce
+      - key: container-run-as-user.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -790,11 +790,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: ephemeralcontainer-run-as-user.owasp.security.cenroq.io/warn
+      - key: ephemeralcontainer-run-as-user.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -810,11 +810,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: ephemeralcontainer-run-as-user.owasp.security.cenroq.io/audit
+      - key: ephemeralcontainer-run-as-user.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -830,11 +830,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: ephemeralcontainer-run-as-user.owasp.security.cenroq.io/enforce
+      - key: ephemeralcontainer-run-as-user.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -850,11 +850,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: initcontainer-run-as-user.owasp.security.cenroq.io/warn
+      - key: initcontainer-run-as-user.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -870,11 +870,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: initcontainer-run-as-user.owasp.security.cenroq.io/audit
+      - key: initcontainer-run-as-user.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -890,11 +890,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: initcontainer-run-as-user.owasp.security.cenroq.io/enforce
+      - key: initcontainer-run-as-user.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -910,11 +910,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: pod-run-as-user.owasp.security.cenroq.io/warn
+      - key: pod-run-as-user.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -930,11 +930,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: pod-run-as-user.owasp.security.cenroq.io/audit
+      - key: pod-run-as-user.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -950,11 +950,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: pod-run-as-user.owasp.security.cenroq.io/enforce
+      - key: pod-run-as-user.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -970,11 +970,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: container-run-as-group.owasp.security.cenroq.io/warn
+      - key: container-run-as-group.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -990,11 +990,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: container-run-as-group.owasp.security.cenroq.io/audit
+      - key: container-run-as-group.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1010,11 +1010,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: container-run-as-group.owasp.security.cenroq.io/enforce
+      - key: container-run-as-group.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1030,11 +1030,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: ephemeralcontainer-run-as-group.owasp.security.cenroq.io/warn
+      - key: ephemeralcontainer-run-as-group.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1050,11 +1050,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: ephemeralcontainer-run-as-group.owasp.security.cenroq.io/audit
+      - key: ephemeralcontainer-run-as-group.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1070,11 +1070,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: ephemeralcontainer-run-as-group.owasp.security.cenroq.io/enforce
+      - key: ephemeralcontainer-run-as-group.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1090,11 +1090,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: initcontainer-run-as-group.owasp.security.cenroq.io/warn
+      - key: initcontainer-run-as-group.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1110,11 +1110,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: initcontainer-run-as-group.owasp.security.cenroq.io/audit
+      - key: initcontainer-run-as-group.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1130,11 +1130,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: initcontainer-run-as-group.owasp.security.cenroq.io/enforce
+      - key: initcontainer-run-as-group.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1150,11 +1150,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: pod-run-as-group.owasp.security.cenroq.io/warn
+      - key: pod-run-as-group.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1170,11 +1170,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: pod-run-as-group.owasp.security.cenroq.io/audit
+      - key: pod-run-as-group.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1190,11 +1190,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: pod-run-as-group.owasp.security.cenroq.io/enforce
+      - key: pod-run-as-group.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1210,11 +1210,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: container-run-as-nonroot.owasp.security.cenroq.io/warn
+      - key: container-run-as-nonroot.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1230,11 +1230,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: container-run-as-nonroot.owasp.security.cenroq.io/audit
+      - key: container-run-as-nonroot.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1250,11 +1250,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: container-run-as-nonroot.owasp.security.cenroq.io/enforce
+      - key: container-run-as-nonroot.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1270,11 +1270,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: ephemeralcontainer-run-as-nonroot.owasp.security.cenroq.io/warn
+      - key: ephemeralcontainer-run-as-nonroot.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1290,11 +1290,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: ephemeralcontainer-run-as-nonroot.owasp.security.cenroq.io/audit
+      - key: ephemeralcontainer-run-as-nonroot.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1310,11 +1310,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: ephemeralcontainer-run-as-nonroot.owasp.security.cenroq.io/enforce
+      - key: ephemeralcontainer-run-as-nonroot.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1330,11 +1330,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: initcontainer-run-as-nonroot.owasp.security.cenroq.io/warn
+      - key: initcontainer-run-as-nonroot.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1350,11 +1350,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: initcontainer-run-as-nonroot.owasp.security.cenroq.io/audit
+      - key: initcontainer-run-as-nonroot.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1370,11 +1370,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: initcontainer-run-as-nonroot.owasp.security.cenroq.io/enforce
+      - key: initcontainer-run-as-nonroot.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1390,11 +1390,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: pod-run-as-nonroot.owasp.security.cenroq.io/warn
+      - key: pod-run-as-nonroot.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1410,11 +1410,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: pod-run-as-nonroot.owasp.security.cenroq.io/audit
+      - key: pod-run-as-nonroot.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1430,11 +1430,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: pod-run-as-nonroot.owasp.security.cenroq.io/enforce
+      - key: pod-run-as-nonroot.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1450,11 +1450,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: container-seccomp-profile.owasp.security.cenroq.io/warn
+      - key: container-seccomp-profile.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1470,11 +1470,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: container-seccomp-profile.owasp.security.cenroq.io/audit
+      - key: container-seccomp-profile.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1490,11 +1490,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: container-seccomp-profile.owasp.security.cenroq.io/enforce
+      - key: container-seccomp-profile.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1510,11 +1510,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: ephemeralcontainer-seccomp-profile.owasp.security.cenroq.io/warn
+      - key: ephemeralcontainer-seccomp-profile.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1530,11 +1530,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: ephemeralcontainer-seccomp-profile.owasp.security.cenroq.io/audit
+      - key: ephemeralcontainer-seccomp-profile.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1550,11 +1550,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: ephemeralcontainer-seccomp-profile.owasp.security.cenroq.io/enforce
+      - key: ephemeralcontainer-seccomp-profile.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1570,11 +1570,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: initcontainer-seccomp-profile.owasp.security.cenroq.io/warn
+      - key: initcontainer-seccomp-profile.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1590,11 +1590,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: initcontainer-seccomp-profile.owasp.security.cenroq.io/audit
+      - key: initcontainer-seccomp-profile.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1610,11 +1610,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: initcontainer-seccomp-profile.owasp.security.cenroq.io/enforce
+      - key: initcontainer-seccomp-profile.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1630,11 +1630,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: pod-seccomp-profile.owasp.security.cenroq.io/warn
+      - key: pod-seccomp-profile.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1650,11 +1650,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: pod-seccomp-profile.owasp.security.cenroq.io/audit
+      - key: pod-seccomp-profile.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1670,11 +1670,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: pod-seccomp-profile.owasp.security.cenroq.io/enforce
+      - key: pod-seccomp-profile.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1690,11 +1690,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: pod-hostusers.owasp.security.cenroq.io/warn
+      - key: pod-hostusers.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1710,11 +1710,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: pod-hostusers.owasp.security.cenroq.io/audit
+      - key: pod-hostusers.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1730,11 +1730,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: pod-hostusers.owasp.security.cenroq.io/enforce
+      - key: pod-hostusers.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1750,11 +1750,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: pod-hostpid.owasp.security.cenroq.io/warn
+      - key: pod-hostpid.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1770,11 +1770,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: pod-hostpid.owasp.security.cenroq.io/audit
+      - key: pod-hostpid.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1790,11 +1790,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: pod-hostpid.owasp.security.cenroq.io/enforce
+      - key: pod-hostpid.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1810,11 +1810,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: pod-hostipc.owasp.security.cenroq.io/warn
+      - key: pod-hostipc.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1830,11 +1830,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: pod-hostipc.owasp.security.cenroq.io/audit
+      - key: pod-hostipc.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1850,11 +1850,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: pod-hostipc.owasp.security.cenroq.io/enforce
+      - key: pod-hostipc.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1870,11 +1870,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: pod-automount-serviceaccount-token.owasp.security.cenroq.io/warn
+      - key: pod-automount-serviceaccount-token.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1890,11 +1890,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: pod-automount-serviceaccount-token.owasp.security.cenroq.io/audit
+      - key: pod-automount-serviceaccount-token.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1910,11 +1910,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: pod-automount-serviceaccount-token.owasp.security.cenroq.io/enforce
+      - key: pod-automount-serviceaccount-token.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1930,11 +1930,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: clusterrolebinding-powerful-roles.owasp.security.cenroq.io/warn
+      - key: clusterrolebinding-powerful-roles.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -1950,11 +1950,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: clusterrolebinding-powerful-roles.owasp.security.cenroq.io/audit
+      - key: clusterrolebinding-powerful-roles.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -1970,11 +1970,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: clusterrolebinding-powerful-roles.owasp.security.cenroq.io/enforce
+      - key: clusterrolebinding-powerful-roles.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -1990,11 +1990,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: rolebinding-powerful-roles.owasp.security.cenroq.io/warn
+      - key: rolebinding-powerful-roles.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2010,11 +2010,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: rolebinding-powerful-roles.owasp.security.cenroq.io/audit
+      - key: rolebinding-powerful-roles.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2030,11 +2030,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: rolebinding-powerful-roles.owasp.security.cenroq.io/enforce
+      - key: rolebinding-powerful-roles.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2050,11 +2050,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: clusterrole-secrets-access.owasp.security.cenroq.io/warn
+      - key: clusterrole-secrets-access.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2070,11 +2070,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: clusterrole-secrets-access.owasp.security.cenroq.io/audit
+      - key: clusterrole-secrets-access.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2090,11 +2090,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: clusterrole-secrets-access.owasp.security.cenroq.io/enforce
+      - key: clusterrole-secrets-access.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2110,11 +2110,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: role-secrets-access.owasp.security.cenroq.io/warn
+      - key: role-secrets-access.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2130,11 +2130,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: role-secrets-access.owasp.security.cenroq.io/audit
+      - key: role-secrets-access.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2150,11 +2150,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: role-secrets-access.owasp.security.cenroq.io/enforce
+      - key: role-secrets-access.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2170,11 +2170,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: clusterrole-nodes-proxy-get.owasp.security.cenroq.io/warn
+      - key: clusterrole-nodes-proxy-get.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2190,11 +2190,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: clusterrole-nodes-proxy-get.owasp.security.cenroq.io/audit
+      - key: clusterrole-nodes-proxy-get.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2210,11 +2210,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: clusterrole-nodes-proxy-get.owasp.security.cenroq.io/enforce
+      - key: clusterrole-nodes-proxy-get.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2230,11 +2230,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: clusterrole-rbac-write.owasp.security.cenroq.io/warn
+      - key: clusterrole-rbac-write.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2250,11 +2250,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: clusterrole-rbac-write.owasp.security.cenroq.io/audit
+      - key: clusterrole-rbac-write.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2270,11 +2270,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: clusterrole-rbac-write.owasp.security.cenroq.io/enforce
+      - key: clusterrole-rbac-write.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2290,11 +2290,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: role-rbac-write.owasp.security.cenroq.io/warn
+      - key: role-rbac-write.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2310,11 +2310,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: role-rbac-write.owasp.security.cenroq.io/audit
+      - key: role-rbac-write.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2330,11 +2330,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: role-rbac-write.owasp.security.cenroq.io/enforce
+      - key: role-rbac-write.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2350,11 +2350,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: clusterrole-rbac-impersonate.owasp.security.cenroq.io/warn
+      - key: clusterrole-rbac-impersonate.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2370,11 +2370,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: clusterrole-rbac-impersonate.owasp.security.cenroq.io/audit
+      - key: clusterrole-rbac-impersonate.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2390,11 +2390,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: clusterrole-rbac-impersonate.owasp.security.cenroq.io/enforce
+      - key: clusterrole-rbac-impersonate.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2410,11 +2410,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: role-rbac-impersonate.owasp.security.cenroq.io/warn
+      - key: role-rbac-impersonate.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2430,11 +2430,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: role-rbac-impersonate.owasp.security.cenroq.io/audit
+      - key: role-rbac-impersonate.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2450,11 +2450,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: role-rbac-impersonate.owasp.security.cenroq.io/enforce
+      - key: role-rbac-impersonate.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2470,11 +2470,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: clusterrole-infra-cluster-resources.owasp.security.cenroq.io/warn
+      - key: clusterrole-infra-cluster-resources.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2490,11 +2490,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: clusterrole-infra-cluster-resources.owasp.security.cenroq.io/audit
+      - key: clusterrole-infra-cluster-resources.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2510,11 +2510,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: clusterrole-infra-cluster-resources.owasp.security.cenroq.io/enforce
+      - key: clusterrole-infra-cluster-resources.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2530,11 +2530,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: clusterrole-aggregation.owasp.security.cenroq.io/warn
+      - key: clusterrole-aggregation.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2550,11 +2550,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: clusterrole-aggregation.owasp.security.cenroq.io/audit
+      - key: clusterrole-aggregation.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2570,11 +2570,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: clusterrole-aggregation.owasp.security.cenroq.io/enforce
+      - key: clusterrole-aggregation.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2590,11 +2590,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: clusterrole-wildcard-rules.owasp.security.cenroq.io/warn
+      - key: clusterrole-wildcard-rules.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2610,11 +2610,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: clusterrole-wildcard-rules.owasp.security.cenroq.io/audit
+      - key: clusterrole-wildcard-rules.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2630,11 +2630,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: clusterrole-wildcard-rules.owasp.security.cenroq.io/enforce
+      - key: clusterrole-wildcard-rules.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2650,11 +2650,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: role-wildcard-rules.owasp.security.cenroq.io/warn
+      - key: role-wildcard-rules.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2670,11 +2670,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: role-wildcard-rules.owasp.security.cenroq.io/audit
+      - key: role-wildcard-rules.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2690,11 +2690,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: role-wildcard-rules.owasp.security.cenroq.io/enforce
+      - key: role-wildcard-rules.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2710,11 +2710,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: configmap-secrets.owasp.security.cenroq.io/warn
+      - key: configmap-secrets.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2730,11 +2730,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: configmap-secrets.owasp.security.cenroq.io/audit
+      - key: configmap-secrets.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2750,11 +2750,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: configmap-secrets.owasp.security.cenroq.io/enforce
+      - key: configmap-secrets.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2770,11 +2770,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: serviceaccount-token-secrets.owasp.security.cenroq.io/warn
+      - key: serviceaccount-token-secrets.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2790,11 +2790,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: serviceaccount-token-secrets.owasp.security.cenroq.io/audit
+      - key: serviceaccount-token-secrets.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2810,11 +2810,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: serviceaccount-token-secrets.owasp.security.cenroq.io/enforce
+      - key: serviceaccount-token-secrets.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2830,11 +2830,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: namespace-pod-security-standards.owasp.security.cenroq.io/warn
+      - key: namespace-pod-security-standards.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2850,11 +2850,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: namespace-pod-security-standards.owasp.security.cenroq.io/audit
+      - key: namespace-pod-security-standards.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2870,11 +2870,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: namespace-pod-security-standards.owasp.security.cenroq.io/enforce
+      - key: namespace-pod-security-standards.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2890,11 +2890,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: mutatingwebhookconfiguration-hardening.owasp.security.cenroq.io/warn
+      - key: mutatingwebhookconfiguration-hardening.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2910,11 +2910,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: mutatingwebhookconfiguration-hardening.owasp.security.cenroq.io/audit
+      - key: mutatingwebhookconfiguration-hardening.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2930,11 +2930,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: mutatingwebhookconfiguration-hardening.owasp.security.cenroq.io/enforce
+      - key: mutatingwebhookconfiguration-hardening.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -2950,11 +2950,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: validatingwebhookconfiguration-hardening.owasp.security.cenroq.io/warn
+      - key: validatingwebhookconfiguration-hardening.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -2970,11 +2970,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: validatingwebhookconfiguration-hardening.owasp.security.cenroq.io/audit
+      - key: validatingwebhookconfiguration-hardening.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -2990,11 +2990,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: validatingwebhookconfiguration-hardening.owasp.security.cenroq.io/enforce
+      - key: validatingwebhookconfiguration-hardening.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -3010,11 +3010,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: clusterpolicy-kyverno-not-enforcing.owasp.security.cenroq.io/warn
+      - key: clusterpolicy-kyverno-not-enforcing.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -3030,11 +3030,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: clusterpolicy-kyverno-not-enforcing.owasp.security.cenroq.io/audit
+      - key: clusterpolicy-kyverno-not-enforcing.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -3050,11 +3050,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: clusterpolicy-kyverno-not-enforcing.owasp.security.cenroq.io/enforce
+      - key: clusterpolicy-kyverno-not-enforcing.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -3070,11 +3070,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: policy-kyverno-not-enforcing.owasp.security.cenroq.io/warn
+      - key: policy-kyverno-not-enforcing.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -3090,11 +3090,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: policy-kyverno-not-enforcing.owasp.security.cenroq.io/audit
+      - key: policy-kyverno-not-enforcing.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -3110,11 +3110,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: policy-kyverno-not-enforcing.owasp.security.cenroq.io/enforce
+      - key: policy-kyverno-not-enforcing.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -3130,11 +3130,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: networkpolicy-allow-all.owasp.security.cenroq.io/warn
+      - key: networkpolicy-allow-all.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -3150,11 +3150,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: networkpolicy-allow-all.owasp.security.cenroq.io/audit
+      - key: networkpolicy-allow-all.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -3170,11 +3170,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: networkpolicy-allow-all.owasp.security.cenroq.io/enforce
+      - key: networkpolicy-allow-all.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -3190,11 +3190,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: pod-hostnetwork.owasp.security.cenroq.io/warn
+      - key: pod-hostnetwork.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -3210,11 +3210,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: pod-hostnetwork.owasp.security.cenroq.io/audit
+      - key: pod-hostnetwork.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -3230,11 +3230,11 @@ spec:
   matchResources:
     namespaceSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: pod-hostnetwork.owasp.security.cenroq.io/enforce
+      - key: pod-hostnetwork.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled
@@ -3250,11 +3250,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/warn
+      - key: owasp.org/warn
         operator: In
         values:
         - enabled
-      - key: clusterrole-cert-auth-review.owasp.security.cenroq.io/warn
+      - key: clusterrole-cert-auth-review.security.cenroq.io/warn
         operator: NotIn
         values:
         - disabled
@@ -3270,11 +3270,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/audit
+      - key: owasp.org/audit
         operator: In
         values:
         - enabled
-      - key: clusterrole-cert-auth-review.owasp.security.cenroq.io/audit
+      - key: clusterrole-cert-auth-review.security.cenroq.io/audit
         operator: NotIn
         values:
         - disabled
@@ -3290,11 +3290,11 @@ spec:
   matchResources:
     objectSelector:
       matchExpressions:
-      - key: owasp.security.cenroq.io/enforce
+      - key: owasp.org/enforce
         operator: In
         values:
         - enabled
-      - key: clusterrole-cert-auth-review.owasp.security.cenroq.io/enforce
+      - key: clusterrole-cert-auth-review.security.cenroq.io/enforce
         operator: NotIn
         values:
         - disabled

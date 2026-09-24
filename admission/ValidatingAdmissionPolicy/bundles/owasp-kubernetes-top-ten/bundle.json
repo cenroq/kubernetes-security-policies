@@ -4,9 +4,9 @@
     "version": "v2025.0.0",
     "deployment": "mkdir -p /tmp/cenroq && curl -L https://github.com/cenroq/kubernetes-security-policies/releases/download/vap_owasp-kubernetes-top-ten%40v2025.0.0/owasp-kubernetes-top-ten_v2025.0.0.tar.gz | tar -xz -C /tmp/cenroq && kubectl apply -f /tmp/cenroq/owasp-kubernetes-top-ten/policies.yaml -f /tmp/cenroq/owasp-kubernetes-top-ten/bindings.yaml",
     "labels": {
-        "warn": "owasp.security.cenroq.io/warn",
-        "audit": "owasp.security.cenroq.io/audit",
-        "enforce": "owasp.security.cenroq.io/enforce"
+        "warn": "owasp.org/warn",
+        "audit": "owasp.org/audit",
+        "enforce": "owasp.org/enforce"
     },
     "policies": [
         "container-privileged",
