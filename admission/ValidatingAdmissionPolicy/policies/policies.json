@@ -568,10 +568,6 @@
             "file": "service-account-name/policy.yaml"
         },
         {
-            "name": "pod-serviceaccount-token-projection",
-            "file": "serviceaccount-token-projection/policy.yaml"
-        },
-        {
             "name": "pod-share-process-namespace",
             "file": "share-process-namespace/policy.yaml"
         },

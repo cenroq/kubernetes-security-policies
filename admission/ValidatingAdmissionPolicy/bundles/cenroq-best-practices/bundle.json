@@ -78,7 +78,6 @@
         "configmap-executable-code",
         "ephemeralcontainer-procmount",
         "ingress-tls-hosts",
-        "pod-serviceaccount-token-projection",
         "initcontainer-selinux-user",
         "pod-share-process-namespace",
         "container-prestop-tcpsocket-host",
