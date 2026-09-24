@@ -15,6 +15,13 @@
         ]
     },
     {
+        "name": "owasp-kubernetes-top-ten",
+        "latest-version": "v2025.0.0",
+        "versions": [
+            "v2025.0.0"
+        ]
+    },
+    {
         "name": "kolteq-best-practices",
         "latest-version": "v0.1.1",
         "deprecated": 1782856800,
