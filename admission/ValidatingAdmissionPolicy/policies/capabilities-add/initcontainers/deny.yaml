@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: capabilities-add-initcontainers
+  annotations:
+    kubeapt.io/uuid: "9de7568a-b2d1-4e55-9bef-dba6c1a2f38f"
 spec:
   containers:
   - name: main

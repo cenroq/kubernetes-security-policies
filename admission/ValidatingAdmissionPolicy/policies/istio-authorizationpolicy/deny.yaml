@@ -3,6 +3,8 @@ apiVersion: security.istio.io/v1
 kind: AuthorizationPolicy
 metadata:
   name: violating-istio-authorizationpolicy-allow-all
+  annotations:
+    kubeapt.io/uuid: "ccc05ad0-3f3d-4ea9-90aa-ce9f0529dc0d"
 spec:
   action: ALLOW
   rules:

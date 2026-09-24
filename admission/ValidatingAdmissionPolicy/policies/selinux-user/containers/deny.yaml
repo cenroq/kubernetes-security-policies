@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: selinux-user-containers
+  annotations:
+    kubeapt.io/uuid: "79529e5e-72c3-4021-9358-7040cb8bf82d"
 spec:
   containers:
   - name: main

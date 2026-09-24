@@ -2,6 +2,8 @@ apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingWebhookConfiguration
 metadata:
   name: violating-validatingwebhookconfiguration-hardening
+  annotations:
+    kubeapt.io/uuid: "49e3a715-8dd1-4862-b25e-ce373af957cb"
 webhooks:
 - name: webhook.example.com
   admissionReviewVersions: ["v1"]

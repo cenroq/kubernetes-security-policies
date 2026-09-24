@@ -2,6 +2,8 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: networkpolicy-allow-all
+  annotations:
+    kubeapt.io/uuid: "ff83ae61-3d8a-48b6-9ab0-fd11fd740c33"
 spec:
   podSelector: {}
   policyTypes:

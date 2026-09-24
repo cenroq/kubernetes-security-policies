@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: read-only-root-filesystem-ephemeralcontainers
+  annotations:
+    kubeapt.io/uuid: "d1b97c40-d989-4e75-b984-dab87225265c"
 spec:
   containers:
   - name: main

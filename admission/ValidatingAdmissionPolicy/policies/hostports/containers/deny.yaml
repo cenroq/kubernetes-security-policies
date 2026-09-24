@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: hostports-containers
+  annotations:
+    kubeapt.io/uuid: "8f1b04b9-f999-4be0-aa75-a72ea9c33c1e"
 spec:
   containers:
   - name: main

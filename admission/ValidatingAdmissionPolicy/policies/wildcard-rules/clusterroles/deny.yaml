@@ -2,6 +2,8 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   name: violating-clusterrole-wildcard
+  annotations:
+    kubeapt.io/uuid: "2bb2fe04-7616-4f5a-a873-b27f86a9800d"
 rules:
 - apiGroups: [""]
   resources: ["pods"]

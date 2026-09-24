@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: livenessprobe-tcpsocket-host-initcontainers
+  annotations:
+    kubeapt.io/uuid: "98973c28-244a-4a62-9c09-3b4740309963"
 spec:
   containers:
   - name: main

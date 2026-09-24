@@ -2,6 +2,8 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: violating-imagepullsecrets-scope
+  annotations:
+    kubeapt.io/uuid: "352c743b-54a7-479c-9cf2-71d049ba7fc7"
 automountServiceAccountToken: false
 imagePullSecrets:
 - name: registry-cred-1

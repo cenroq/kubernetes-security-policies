@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: readinessprobe-tcpsocket-host-containers
+  annotations:
+    kubeapt.io/uuid: "15864541-e1ff-4369-b8c5-785ced7de8ce"
 spec:
   containers:
   - name: main

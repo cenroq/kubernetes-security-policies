@@ -2,6 +2,8 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   name: violating-clusterrole-rbac-impersonate
+  annotations:
+    kubeapt.io/uuid: "e0406702-6119-41cd-9ee8-978e1f3b9689"
 rules:
 - apiGroups: [""]
   resources: ["groups"]

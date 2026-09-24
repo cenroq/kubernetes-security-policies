@@ -2,6 +2,8 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: violating-role-serviceaccount-tokens
+  annotations:
+    kubeapt.io/uuid: "576fac7d-7f86-4406-8698-d62042ad5a36"
 rules:
 - apiGroups: [""]
   resources: ["serviceaccounts/token"]

@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: prestop-httpget-host-initcontainers
+  annotations:
+    kubeapt.io/uuid: "7d575081-c91e-4b00-a7bb-755aa906d04b"
 spec:
   containers:
   - name: main

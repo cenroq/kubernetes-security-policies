@@ -2,6 +2,8 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: violating-rolebinding-default-sa
+  annotations:
+    kubeapt.io/uuid: "f715428d-63e6-4690-8e54-8da84f12fa51"
 subjects:
 - kind: ServiceAccount
   name: default

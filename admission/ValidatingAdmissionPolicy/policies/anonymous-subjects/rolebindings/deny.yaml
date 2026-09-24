@@ -2,6 +2,8 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: violating-rolebinding-anonymous
+  annotations:
+    kubeapt.io/uuid: "369f4d61-481b-4213-89c7-4d0dbeaa3121"
 subjects:
 - kind: User
   name: system:anonymous

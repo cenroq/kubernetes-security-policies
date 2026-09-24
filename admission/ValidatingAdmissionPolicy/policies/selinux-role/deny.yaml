@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: selinux-role-pod
+  annotations:
+    kubeapt.io/uuid: "7ee786ba-34bf-43d1-8873-cb16afbe89af"
 spec:
   containers:
   - name: main

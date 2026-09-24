@@ -2,6 +2,8 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: violating-rolebinding-system-group
+  annotations:
+    kubeapt.io/uuid: "d92ff4b2-9bd9-417b-af8b-dffedcc93e43"
 subjects:
 - kind: Group
   name: system:authenticated

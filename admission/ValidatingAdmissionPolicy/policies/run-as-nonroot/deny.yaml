@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: run-as-nonroot-pod
+  annotations:
+    kubeapt.io/uuid: "3e12a1ed-4cb4-4d04-9fc4-75c9ca5af6cc"
 spec:
   containers:
   - name: main

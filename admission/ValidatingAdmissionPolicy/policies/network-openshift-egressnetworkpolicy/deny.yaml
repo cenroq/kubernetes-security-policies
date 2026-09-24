@@ -3,6 +3,8 @@ apiVersion: network.openshift.io/v1
 kind: EgressNetworkPolicy
 metadata:
   name: default
+  annotations:
+    kubeapt.io/uuid: "3da7d46e-f1bb-49aa-8257-8986598e88a9"
 spec:
   egress:
   - type: Allow

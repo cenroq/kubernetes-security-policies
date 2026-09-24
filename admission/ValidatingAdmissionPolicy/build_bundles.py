@@ -92,7 +92,9 @@ def write_probes(bundle_dir: Path, policy_names: list[str], policy_index: dict[s
         deny = src_dir / "deny.yaml"
         if not deny.exists():
             continue
-        header = [f"# policy: {policy_name}"] + ([f"# uuid: {uuid}"] if uuid else [])
+        # The uuid now lives in each manifest's metadata.annotations, so the header
+        # only carries the human-readable policy name.
+        header = [f"# policy: {policy_name}"]
 
         if "# Command: " not in deny.read_text():
             body = deny.read_text().strip()
@@ -107,6 +109,12 @@ def write_probes(bundle_dir: Path, policy_names: list[str], policy_index: dict[s
                         f"deny.yaml document collision {key}: {seen[key]} and {policy_name}"
                     )
                 seen[key] = policy_name
+                stamped = doc.get("metadata", {}).get("annotations", {}).get("kubeapt.io/uuid")
+                if stamped != uuid:
+                    raise SystemExit(
+                        f"{deny}: kubeapt.io/uuid is {stamped!r}, "
+                        f"policy {policy_name} is {uuid!r}"
+                    )
             merged.append("\n".join(header) + "\n" + body)
             continue
 

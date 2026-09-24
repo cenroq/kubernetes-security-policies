@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: poststart-tcpsocket-host-containers
+  annotations:
+    kubeapt.io/uuid: "11bc67f9-eb75-45b1-a5a2-9df6049e98dd"
 spec:
   containers:
   - name: main

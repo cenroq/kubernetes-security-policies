@@ -3,6 +3,8 @@ apiVersion: cilium.io/v2
 kind: CiliumClusterwideNetworkPolicy
 metadata:
   name: violating-ciliumclusterwidenetworkpolicy-egress-world
+  annotations:
+    kubeapt.io/uuid: "0c5ae649-347c-41d8-b00e-f606594917f8"
 spec:
   endpointSelector:
     matchLabels:

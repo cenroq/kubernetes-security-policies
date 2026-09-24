@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: privileged-ephemeralcontainers
+  annotations:
+    kubeapt.io/uuid: "20926aaa-68eb-4741-9d2c-98bfe86a3650"
 spec:
   containers:
   - name: main

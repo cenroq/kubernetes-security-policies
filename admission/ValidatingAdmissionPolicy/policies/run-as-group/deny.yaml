@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: violating-run-as-group-pod
+  annotations:
+    kubeapt.io/uuid: "3b7b754a-0c21-4bf4-bbb4-aaed4b8a5e91"
 spec:
   securityContext:
     runAsGroup: 0

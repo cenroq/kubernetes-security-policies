@@ -3,6 +3,8 @@ apiVersion: security.istio.io/v1
 kind: PeerAuthentication
 metadata:
   name: violating-istio-peerauthentication-mtls
+  annotations:
+    kubeapt.io/uuid: "50c7c898-22c5-4de3-b81e-d4689910780e"
 spec:
   mtls:
     mode: DISABLE

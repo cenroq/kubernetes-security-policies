@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: image-no-latest-containers
+  annotations:
+    kubeapt.io/uuid: "aad5f040-d206-4a33-ae58-95aa2f5d8578"
 spec:
   containers:
   - name: main

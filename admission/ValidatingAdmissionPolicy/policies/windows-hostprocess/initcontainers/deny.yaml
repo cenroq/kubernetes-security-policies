@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: windows-hostprocess-initcontainers
+  annotations:
+    kubeapt.io/uuid: "40d17131-f0d2-4bde-804d-dff8036e221c"
 spec:
   hostNetwork: true
   containers:

@@ -2,6 +2,8 @@ apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: violating-storageclass-cmek-gcp-pd
+  annotations:
+    kubeapt.io/uuid: "b6471576-2bd6-4115-bbc2-07510127f17b"
 provisioner: pd.csi.storage.gke.io
 parameters:
   type: pd-balanced

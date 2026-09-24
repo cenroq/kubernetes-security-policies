@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: image-digest-ephemeralcontainers
+  annotations:
+    kubeapt.io/uuid: "416403a0-7869-4716-8011-97d7f49b1a71"
 spec:
   containers:
   - name: main

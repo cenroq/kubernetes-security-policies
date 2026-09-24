@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: run-as-user-pod
+  annotations:
+    kubeapt.io/uuid: "d950f1c9-b31f-47b1-bc31-86901ff9dda8"
 spec:
   containers:
   - name: main

@@ -2,6 +2,8 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   name: violating-clusterrole-nonresource
+  annotations:
+    kubeapt.io/uuid: "38352a02-360d-47e3-91a5-1fa70e8ae41e"
 rules:
 - nonResourceURLs: ["/metrics"]
   verbs: ["get"]

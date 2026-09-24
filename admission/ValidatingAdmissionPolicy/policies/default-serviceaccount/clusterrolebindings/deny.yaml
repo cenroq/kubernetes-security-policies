@@ -2,6 +2,8 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   name: violating-crb-default-sa
+  annotations:
+    kubeapt.io/uuid: "e56cfce0-5f49-429b-b31e-06796251a1cd"
 subjects:
 - kind: ServiceAccount
   name: default

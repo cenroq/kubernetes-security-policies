@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: seccomp-profile-restricted-ephemeralcontainers
+  annotations:
+    kubeapt.io/uuid: "ae109ba1-7514-400c-bf0c-8f854a867722"
 spec:
   containers:
   - name: main

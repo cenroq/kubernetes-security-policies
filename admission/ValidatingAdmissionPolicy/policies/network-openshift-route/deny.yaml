@@ -3,6 +3,8 @@ apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
   name: violating-route-no-tls
+  annotations:
+    kubeapt.io/uuid: "b3c3431f-6cfd-4459-944c-82d2085bc5b6"
 spec:
   host: app.example.com
   to:

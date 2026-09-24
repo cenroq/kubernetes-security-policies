@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: startupprobe-tcpsocket-host-containers
+  annotations:
+    kubeapt.io/uuid: "1a8a155a-af40-4718-bf9e-0941fafe0da0"
 spec:
   containers:
   - name: main

@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: violating-nodeport
+  annotations:
+    kubeapt.io/uuid: "3c5f4471-4c69-4659-8fe0-f4a7a5036ab3"
 spec:
   type: NodePort
   selector:

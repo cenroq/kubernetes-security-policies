@@ -7,6 +7,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: violating-tls-hosts
+  annotations:
+    kubeapt.io/uuid: "9e07fcea-9c2c-40dc-9807-5d10c98b1a40"
 spec:
   tls:
   - hosts:
@@ -28,6 +30,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: violating-tls-hosts-wildcard-depth
+  annotations:
+    kubeapt.io/uuid: "9e07fcea-9c2c-40dc-9807-5d10c98b1a40"
 spec:
   tls:
   - hosts:

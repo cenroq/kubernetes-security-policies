@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: poststart-httpget-host-initcontainers
+  annotations:
+    kubeapt.io/uuid: "fbef4cf3-cf91-4c11-af0b-ab80b64edff8"
 spec:
   containers:
   - name: main

@@ -2,4 +2,6 @@ apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: violating-storageclass-encryption-linode
+  annotations:
+    kubeapt.io/uuid: "525786c8-d1fa-4308-9d81-93dac98e1cc2"
 provisioner: linodebs.csi.linode.com
