@@ -1,12 +1,13 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: control-plane-schedulable
+  name: node-control-plane-schedulable
   annotations:
-    security.kubeapt.io/displayName: "Control Plane Schedulable"
+    kubeapt.io/uuid: "b0cfc6a8-e466-4436-b2a8-a7d94fbab61a"
+    security.kubeapt.io/displayName: "Lacks a Control Plane NoSchedule Taint"
     security.kubeapt.io/description: "An untainted control-plane node accepts ordinary workloads alongside etcd and the API server, putting tenant containers on the one host where control-plane certificates and static pod manifests sit on disk."
     security.kubeapt.io/resource: "Nodes"
-    security.kubeapt.io/severity: "Low"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Add a taint with key node-role.kubernetes.io/control-plane (or node-role.kubernetes.io/master) and effect NoSchedule or NoExecute to the node. Field: spec.taints."
     security.kubeapt.io/product: "Kubernetes"
 spec:

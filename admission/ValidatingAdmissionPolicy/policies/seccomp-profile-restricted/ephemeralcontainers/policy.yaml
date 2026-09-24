@@ -1,11 +1,12 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: seccomp-profile-ephemeralcontainers-restricted
+  name: ephemeralcontainer-seccomp-profile-restricted
   annotations:
-    security.kubeapt.io/displayName: "Seccomp Profile Restricted"
+    kubeapt.io/uuid: "ae109ba1-7514-400c-bf0c-8f854a867722"
+    security.kubeapt.io/displayName: "Has No Seccomp Profile Set"
     security.kubeapt.io/description: "An ephemeral container with no seccomp profile enforced at pod or ephemeral container level runs with no syscall filter, leaving the full kernel syscall surface reachable for container escape and privilege escalation."
-    security.kubeapt.io/resource: "Ephemeralcontainers"
+    security.kubeapt.io/resource: "EphemeralContainers"
     security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Set the seccomp type to RuntimeDefault, or to Localhost naming a profile loaded on the node, on each ephemeral container or once at pod level. Fields: spec.ephemeralContainers[*].securityContext.seccompProfile.type, spec.securityContext.seccompProfile.type."
     security.kubeapt.io/product: "Kubernetes"

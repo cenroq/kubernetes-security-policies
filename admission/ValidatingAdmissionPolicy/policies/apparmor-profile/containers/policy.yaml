@@ -1,9 +1,10 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: apparmor-profile-containers
+  name: container-apparmor-profile
   annotations:
-    security.kubeapt.io/displayName: "Apparmor Profile"
+    kubeapt.io/uuid: "f95bfa81-151f-47a8-b98b-098085ab75bf"
+    security.kubeapt.io/displayName: "Runs With an Unconfined AppArmor Profile"
     security.kubeapt.io/description: "An Unconfined AppArmor profile strips the mandatory access controls over file, capability and mount operations in the container, widening what a compromised process can reach on the host."
     security.kubeapt.io/resource: "Containers"
     security.kubeapt.io/severity: "Moderate"

@@ -1,11 +1,12 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: apparmor-profile-ephemeralcontainers
+  name: ephemeralcontainer-apparmor-profile
   annotations:
-    security.kubeapt.io/displayName: "Apparmor Profile"
+    kubeapt.io/uuid: "80cb224d-33f7-4f74-a469-07be87fcb3ac"
+    security.kubeapt.io/displayName: "Runs With an Unconfined AppArmor Profile"
     security.kubeapt.io/description: "An Unconfined AppArmor profile strips the mandatory access controls over file, capability and mount operations in the ephemeral container, usually one attached with kubectl debug, widening what a compromised process can reach on the host."
-    security.kubeapt.io/resource: "Ephemeralcontainers"
+    security.kubeapt.io/resource: "EphemeralContainers"
     security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Replace Unconfined with RuntimeDefault, or with Localhost naming a profile loaded on the node. Field: spec.ephemeralContainers[*].securityContext.appArmorProfile.type."
     security.kubeapt.io/product: "Kubernetes"

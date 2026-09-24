@@ -3,10 +3,11 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: clusterrole-infra-cluster-resources
   annotations:
-    security.kubeapt.io/displayName: "Infra Cluster Resources"
+    kubeapt.io/uuid: "de80e01b-df84-4253-b44c-6cd8dfad2e7d"
+    security.kubeapt.io/displayName: "Grants Broad Access to Nodes and Cluster Storage"
     security.kubeapt.io/description: "Reading or proxying nodes exposes kubelet endpoints and every workload placed on them, while write access to persistent volumes, storage classes and namespaces lets a caller mount host paths and stage pods outside guarded namespaces."
     security.kubeapt.io/resource: "ClusterRoles"
-    security.kubeapt.io/severity: "Critical"
+    security.kubeapt.io/severity: "High"
     security.kubeapt.io/remediation: "Drop get, list, watch and proxy on nodes and its proxy, log and metrics subresources, and drop create, update, patch, delete and proxy on persistentvolumes, storageclasses and namespaces. Fields: rules[*].apiGroups, rules[*].resources, rules[*].verbs."
     security.kubeapt.io/product: "Kubernetes"
 spec:

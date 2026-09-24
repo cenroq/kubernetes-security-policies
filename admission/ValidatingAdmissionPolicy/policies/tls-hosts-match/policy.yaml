@@ -1,12 +1,13 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: ingress-tls-hosts-match
+  name: ingress-tls-hosts
   annotations:
-    security.kubeapt.io/displayName: "Tls Hosts Match"
+    kubeapt.io/uuid: "9e07fcea-9c2c-40dc-9807-5d10c98b1a40"
+    security.kubeapt.io/displayName: "Has Hosts Not Covered by Its TLS Configuration"
     security.kubeapt.io/description: "A routed host missing from every TLS block is served over cleartext HTTP or with a default certificate that does not match it, exposing session cookies and credentials to anyone on the network path."
     security.kubeapt.io/resource: "Ingresses"
-    security.kubeapt.io/severity: "High"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Add each hostname from the rules to the hosts list of a spec.tls entry backed by a certificate valid for it. Fields: spec.rules[*].host, spec.tls[*].hosts."
     security.kubeapt.io/product: "Kubernetes"
 spec:
@@ -29,7 +30,12 @@ spec:
   validations:
   - expression: |
       size(variables.hosts) == 0 || (has(object.spec.tls) && variables.hosts.all(h,
-        object.spec.tls.exists(t, has(t.hosts) && t.hosts.exists(th, th == h))
+        object.spec.tls.exists(t, has(t.hosts) && t.hosts.exists(th,
+          th == h ||
+          (th.startsWith("*.") &&
+           h.endsWith(th.substring(1)) &&
+           !h.substring(0, h.size() - th.size() + 1).contains("."))
+        ))
       ))
     message: |
-      Every host in spec.rules[*].host must appear in some spec.tls[*].hosts.
+      Every host in spec.rules[*].host must appear in some spec.tls[*].hosts, either exactly or via a wildcard entry such as "*.example.com" that covers one label.

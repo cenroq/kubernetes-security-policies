@@ -3,10 +3,11 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: service-external-ips
   annotations:
-    security.kubeapt.io/displayName: "External Ips"
+    kubeapt.io/uuid: "67c6d14c-e374-4cfc-87aa-94f214f1e104"
+    security.kubeapt.io/displayName: "Claims Arbitrary External IP Addresses"
     security.kubeapt.io/description: "externalIPs make every node claim the listed addresses and steer matching traffic into the selected pods, so any namespace able to create a Service can hijack and man-in-the-middle traffic destined for those IPs."
     security.kubeapt.io/resource: "Services"
-    security.kubeapt.io/severity: "High"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Remove spec.externalIPs and publish the Service through an Ingress or a LoadBalancer address assigned by the platform. Field: spec.externalIPs."
     security.kubeapt.io/product: "Kubernetes"
 spec:

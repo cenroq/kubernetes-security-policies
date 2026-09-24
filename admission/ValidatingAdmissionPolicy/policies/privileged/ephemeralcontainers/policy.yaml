@@ -1,11 +1,12 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: privileged-ephemeralcontainers
+  name: ephemeralcontainer-privileged
   annotations:
-    security.kubeapt.io/displayName: "Privileged"
+    kubeapt.io/uuid: "20926aaa-68eb-4741-9d2c-98bfe86a3650"
+    security.kubeapt.io/displayName: "Runs in Privileged Mode"
     security.kubeapt.io/description: "A privileged ephemeral container disables almost all container isolation and gets full root access to the node devices, kernel interfaces and filesystem, which is a direct path to node and cluster takeover."
-    security.kubeapt.io/resource: "Ephemeralcontainers"
+    security.kubeapt.io/resource: "EphemeralContainers"
     security.kubeapt.io/severity: "Critical"
     security.kubeapt.io/remediation: "Remove securityContext.privileged from every ephemeral container or set it to false. Field: spec.ephemeralContainers[*].securityContext.privileged."
     security.kubeapt.io/product: "Kubernetes"

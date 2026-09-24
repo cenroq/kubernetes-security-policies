@@ -1,9 +1,10 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: poststart-httpget-host-containers
+  name: container-poststart-httpget-host
   annotations:
-    security.kubeapt.io/displayName: "Poststart Httpget Host"
+    kubeapt.io/uuid: "8aac94da-b019-408f-909d-edc75587c2f9"
+    security.kubeapt.io/displayName: "postStart Hook Targets an Arbitrary Host"
     security.kubeapt.io/description: "A postStart HTTP hook aimed at another host makes the kubelet call an arbitrary URL from the node each time a container starts, reaching internal endpoints closed to pods and triggering side effects there."
     security.kubeapt.io/resource: "Containers"
     security.kubeapt.io/severity: "Low"

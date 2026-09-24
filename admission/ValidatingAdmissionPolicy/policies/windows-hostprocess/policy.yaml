@@ -1,12 +1,13 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: windows-hostprocess
+  name: pod-windows-hostprocess
   annotations:
-    security.kubeapt.io/displayName: "Windows Hostprocess"
+    kubeapt.io/uuid: "042cc512-57cb-4fcb-8936-d302caf7012a"
+    security.kubeapt.io/displayName: "Runs as a Windows HostProcess"
     security.kubeapt.io/description: "A Windows HostProcess pod runs its containers directly on the node in the host namespaces under a system account, exposing the host filesystem, registry and services and making node compromise trivial."
     security.kubeapt.io/resource: "Pods"
-    security.kubeapt.io/severity: "Critical"
+    security.kubeapt.io/severity: "High"
     security.kubeapt.io/remediation: "Remove windowsOptions.hostProcess from the pod security context or set it to false. Field: spec.securityContext.windowsOptions.hostProcess."
     security.kubeapt.io/product: "Kubernetes"
 spec:

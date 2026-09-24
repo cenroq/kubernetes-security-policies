@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: storageclass-cmek-oci-block
   annotations:
-    security.kubeapt.io/displayName: "StorageClass CMEK (OCI Block)"
+    kubeapt.io/uuid: "9f793a96-20bc-4d2e-9210-c41dfa1ec932"
+    security.kubeapt.io/displayName: "Provisions OCI Volumes Without a Customer-Managed Key"
     security.kubeapt.io/description: "Without a Vault master key, volumes provisioned from this class fall back to Oracle-managed keys that you cannot rotate, audit or revoke, so backups and volume clones stay readable to anyone with tenancy-level access."
     security.kubeapt.io/resource: "StorageClasses"
     security.kubeapt.io/severity: "Low"

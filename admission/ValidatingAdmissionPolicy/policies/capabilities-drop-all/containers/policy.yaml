@@ -1,9 +1,10 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: capabilities-drop-all-containers
+  name: container-capabilities-drop-all
   annotations:
-    security.kubeapt.io/displayName: "Capabilities Drop All"
+    kubeapt.io/uuid: "744e7415-e0dd-4f4c-89ad-4594f734b8b9"
+    security.kubeapt.io/displayName: "Retains Default Linux Capabilities"
     security.kubeapt.io/description: "A container that never drops ALL keeps the default runtime capability set, so code execution inside it inherits DAC_OVERRIDE, SETUID and NET_RAW for bypassing file permissions, regaining root and spoofing traffic."
     security.kubeapt.io/resource: "Containers"
     security.kubeapt.io/severity: "Moderate"

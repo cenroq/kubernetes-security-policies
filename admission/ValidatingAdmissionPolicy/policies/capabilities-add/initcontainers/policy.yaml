@@ -1,11 +1,12 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: allowed-capabilities-add-initcontainers
+  name: initcontainer-capabilities-add
   annotations:
-    security.kubeapt.io/displayName: "Capabilities Add"
+    kubeapt.io/uuid: "9de7568a-b2d1-4e55-9bef-dba6c1a2f38f"
+    security.kubeapt.io/displayName: "Adds a Capability Outside the Baseline Set"
     security.kubeapt.io/description: "Linux capabilities beyond the baseline set, such as SYS_ADMIN, SYS_MODULE, SYS_PTRACE or NET_RAW, hand an init container kernel level privileges it can use to mount filesystems, load modules and break out onto the node."
-    security.kubeapt.io/resource: "Initcontainers"
+    security.kubeapt.io/resource: "InitContainers"
     security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Drop the non-baseline entries from the added capability list and keep only baseline names such as CHOWN, KILL, SETGID, SETUID and NET_BIND_SERVICE. Field: spec.initContainers[*].securityContext.capabilities.add."
     security.kubeapt.io/product: "Kubernetes"

@@ -2,6 +2,7 @@
 import argparse
 import hashlib
 import json
+import re
 import shutil
 import tarfile
 import tempfile
@@ -29,8 +30,12 @@ def write_readme(bundle_dir: Path, name: str, description: str, bundle_slug: str
         [
             "Apply:",
             "```bash",
-            "kubectl apply -f . --recursive",
+            "kubectl apply -f policies.yaml -f bindings.yaml",
             "```",
+            "",
+            "Apply only these two files. Do not apply the bundle directory: `probes/` holds",
+            "deliberately non-compliant manifests used to verify that each policy denies what",
+            "it should, and applying them is never intended.",
             "",
             "View online:",
             f"https://cenroq.com/policies/bundles/{bundle_slug}",
@@ -41,6 +46,66 @@ def write_readme(bundle_dir: Path, name: str, description: str, bundle_slug: str
         ]
     )
     (bundle_dir / "README.md").write_text("\n".join(lines))
+
+
+def write_probes(bundle_dir: Path, policy_names: list[str], policy_index: dict[str, Path]):
+    """Copy each policy's deny-case manifests into <bundle>/probes/ as plain YAML.
+
+    kubeapt installs a bundle from a hard-coded two-filename allowlist
+    (policies.yaml, bindings.yaml) and never scans the directory, so probes are
+    inert on that path by construction. The kubectl fallback in bundle.json and
+    README.md names those same two files for the same reason.
+    """
+    probes_dir = bundle_dir / "probes"
+    written: dict[str, Path] = {}
+
+    for policy_name in policy_names:
+        src_dir = policy_index[policy_name].parent
+        uuid = read_policy_uuid(policy_index[policy_name])
+        for src in sorted(src_dir.glob("deny*.yaml")):
+            if src.name == "deny.yaml":
+                dest_name = f"{policy_name}.yaml"
+            elif src.name.startswith("deny-"):
+                suffix = src.name[len("deny-") : -len(".yaml")]
+                dest_name = f"{policy_name}.{suffix}.yaml"
+            else:
+                continue
+            if dest_name in written:
+                raise SystemExit(f"probe filename collision: {dest_name}")
+            header = [f"# policy: {policy_name}"]
+            if uuid:
+                header.append(f"# uuid: {uuid}")
+            body = rewrite_probe_commands(src.read_text(), policy_name)
+            probes_dir.mkdir(parents=True, exist_ok=True)
+            (probes_dir / dest_name).write_text("\n".join(header) + "\n" + body)
+            written[dest_name] = src
+
+    return written
+
+
+def read_policy_uuid(policy_path: Path) -> str | None:
+    doc = yaml.safe_load(policy_path.read_text())
+    if not isinstance(doc, dict):
+        return None
+    return doc.get("metadata", {}).get("annotations", {}).get("kubeapt.io/uuid")
+
+
+def rewrite_probe_commands(text: str, policy_name: str) -> str:
+    """Repoint '# Command:' --custom paths at the probe's bundle-relative location.
+
+    In the repo those paths are like policies/<dir>/deny-<suffix>.yaml, which does
+    not exist inside an extracted bundle. Anything that does not match is left alone.
+    """
+    out = []
+    for line in text.split("\n"):
+        if line.startswith("# Command: "):
+            line = re.sub(
+                r"--custom=\S*/deny-([A-Za-z0-9._-]+)\.yaml",
+                lambda m: f"--custom=probes/{policy_name}.{m.group(1)}.yaml",
+                line,
+            )
+        out.append(line)
+    return "\n".join(out)
 
 
 def load_policy_index(root: Path) -> dict[str, Path]:
@@ -122,10 +187,18 @@ def build_bundle(root: Path, bundle_dir: Path, policy_index: dict[str, Path]):
         bindings_path = root / "bundles" / bundle_slug / "bindings.yaml"
         if bindings_path.exists():
             bindings_docs = []
+            dangling: dict[str, int] = {}
+            unbound = set(deduped)
             for doc in yaml.safe_load_all(bindings_path.read_text()):
                 if not isinstance(doc, dict):
                     bindings_docs.append(doc)
                     continue
+                # A binding whose policyName does not resolve is accepted by the API server
+                # and then silently never enforced, so catch it at build time.
+                referenced = doc.get("spec", {}).get("policyName")
+                if referenced not in policy_index:
+                    dangling[referenced] = dangling.get(referenced, 0) + 1
+                unbound.discard(referenced)
                 metadata = doc.setdefault("metadata", {})
                 current_name = metadata.get("name")
                 if current_name:
@@ -136,9 +209,20 @@ def build_bundle(root: Path, bundle_dir: Path, policy_index: dict[str, Path]):
                 annotations["policy-bundle.cenroq.io/name"] = bundle_slug
                 annotations["policy-bundle.cenroq.io/version"] = version
                 bindings_docs.append(doc)
+            if dangling:
+                detail = ", ".join(f"{n} ({c} bindings)" for n, c in sorted(dangling.items(), key=lambda x: str(x[0])))
+                raise SystemExit(
+                    f"bundle {bundle_slug} has bindings referencing unknown policies: {detail}"
+                )
+            if unbound:
+                raise SystemExit(
+                    f"bundle {bundle_slug} has policies with no binding: {', '.join(sorted(unbound))}"
+                )
             (bundle_dir / "bindings.yaml").write_text(
                 yaml.safe_dump_all(bindings_docs, sort_keys=False, explicit_start=True)
             )
+
+        write_probes(bundle_dir, deduped, policy_index)
 
         write_readme(bundle_dir, name, description, bundle_slug)
 

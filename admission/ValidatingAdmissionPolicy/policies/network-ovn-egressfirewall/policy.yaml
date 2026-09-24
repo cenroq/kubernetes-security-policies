@@ -3,10 +3,11 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: egressfirewall-allow-all
   annotations:
-    security.kubeapt.io/displayName: "OVN EgressFirewall Allow-All"
+    kubeapt.io/uuid: "c4eec6b4-7132-4295-9672-ca1573bd0189"
+    security.kubeapt.io/displayName: "Permits Egress to 0.0.0.0/0"
     security.kubeapt.io/description: "An Allow entry for 0.0.0.0/0 leaves the OVN-Kubernetes egress firewall with no restriction at all, so any pod in the namespace can open connections to arbitrary internet hosts for command-and-control and data theft."
     security.kubeapt.io/resource: "EgressFirewalls"
-    security.kubeapt.io/severity: "High"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Replace 0.0.0.0/0 with the specific destination CIDRs the namespace needs and keep a trailing Deny rule for everything else. Field: spec.egress[*].to.cidrSelector."
     security.kubeapt.io/product: "OVN-Kubernetes"
 spec:

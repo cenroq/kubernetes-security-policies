@@ -1,12 +1,13 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: istio-authorizationpolicy-allow-all
+  name: authorizationpolicy-allow-all
   annotations:
-    security.kubeapt.io/displayName: "Istio AuthorizationPolicy Allow-All"
+    kubeapt.io/uuid: "ccc05ad0-3f3d-4ea9-90aa-ce9f0529dc0d"
+    security.kubeapt.io/displayName: "ALLOW Rule Matches All Requests"
     security.kubeapt.io/description: "An ALLOW rule with no from, to or when matches every request, so the workload accepts any caller inside or outside the mesh while still appearing to be under authorization control."
     security.kubeapt.io/resource: "AuthorizationPolicies"
-    security.kubeapt.io/severity: "High"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Add from, to or when conditions naming the permitted principals, namespaces, paths or methods to every ALLOW rule instead of leaving one unconditioned. Fields: spec.rules[*].from, spec.rules[*].to, spec.rules[*].when."
     security.kubeapt.io/product: "Istio"
 spec:

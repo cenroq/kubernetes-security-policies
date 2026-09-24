@@ -1,9 +1,10 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: selinux-user-containers
+  name: container-selinux-user
   annotations:
-    security.kubeapt.io/displayName: "Selinux User"
+    kubeapt.io/uuid: "79529e5e-72c3-4021-9358-7040cb8bf82d"
+    security.kubeapt.io/displayName: "Sets a Custom SELinux User"
     security.kubeapt.io/description: "A custom SELinux user label replaces the confined context the runtime assigns to the container, granting a policy domain with transitions and file access the sandbox was never meant to allow."
     security.kubeapt.io/resource: "Containers"
     security.kubeapt.io/severity: "Moderate"

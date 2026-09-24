@@ -1,11 +1,12 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: startupprobe-tcpsocket-host-initcontainers
+  name: initcontainer-startupprobe-tcpsocket-host
   annotations:
-    security.kubeapt.io/displayName: "Startupprobe Tcpsocket Host"
+    kubeapt.io/uuid: "b45fe463-3d31-457e-9ad3-850462f795ff"
+    security.kubeapt.io/displayName: "Startup TCP Probe Targets an Arbitrary Host"
     security.kubeapt.io/description: "Pointing the startup TCP probe at another host makes the kubelet open connections from the node to an arbitrary address, probing endpoints closed to pods, and a hung init container passes its startup gate."
-    security.kubeapt.io/resource: "Initcontainers"
+    security.kubeapt.io/resource: "InitContainers"
     security.kubeapt.io/severity: "Low"
     security.kubeapt.io/remediation: "Remove the host field so the probe targets the pod IP, or set it to an empty string. Field: spec.initContainers[*].startupProbe.tcpSocket.host."
     security.kubeapt.io/product: "Kubernetes"

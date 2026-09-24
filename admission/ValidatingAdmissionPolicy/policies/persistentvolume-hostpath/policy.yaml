@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: persistentvolume-hostpath
   annotations:
-    security.kubeapt.io/displayName: "PersistentVolume HostPath"
+    kubeapt.io/uuid: "fbbade48-edc3-4fc9-9285-32924d2c5e4b"
+    security.kubeapt.io/displayName: "Is Backed by a Node-Local hostPath Volume"
     security.kubeapt.io/description: "A hostPath or local PersistentVolume hands pods a path on the node filesystem, so any workload that binds the claim can read or tamper with kubelet credentials and other tenants' data."
     security.kubeapt.io/resource: "PersistentVolumes"
     security.kubeapt.io/severity: "High"

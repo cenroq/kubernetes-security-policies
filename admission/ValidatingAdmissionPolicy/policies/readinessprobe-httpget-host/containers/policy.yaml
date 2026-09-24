@@ -1,9 +1,10 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: readinessprobe-httpget-host-containers
+  name: container-readinessprobe-httpget-host
   annotations:
-    security.kubeapt.io/displayName: "Readinessprobe Httpget Host"
+    kubeapt.io/uuid: "c897bc90-9389-46c2-a431-78fe5037fe21"
+    security.kubeapt.io/displayName: "Readiness Probe Targets an Arbitrary Host"
     security.kubeapt.io/description: "Redirecting the readiness HTTP probe to another host makes the kubelet fetch an arbitrary URL from the node, reaching metadata and node-local endpoints closed to pods, while Service traffic keeps reaching an unchecked container."
     security.kubeapt.io/resource: "Containers"
     security.kubeapt.io/severity: "Low"

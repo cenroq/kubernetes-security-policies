@@ -1,12 +1,13 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: configmap-no-executable-code
+  name: configmap-executable-code
   annotations:
-    security.kubeapt.io/displayName: "No Executable Code"
+    kubeapt.io/uuid: "2d9872e4-6538-497b-b9f1-64479e562fcd"
+    security.kubeapt.io/displayName: "Stores Executable Code or Scripts"
     security.kubeapt.io/description: "Scripts stored in a ConfigMap and executed by a pod turn ConfigMap write access into code execution inside the container, bypassing image scanning, image signing and any review of what actually runs."
     security.kubeapt.io/resource: "ConfigMaps"
-    security.kubeapt.io/severity: "Low"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Move scripts, shebang files and other executable content into the container image or a signed artifact, keeping only inert configuration values in the ConfigMap. Field: data."
     security.kubeapt.io/product: "Kubernetes"
 spec:

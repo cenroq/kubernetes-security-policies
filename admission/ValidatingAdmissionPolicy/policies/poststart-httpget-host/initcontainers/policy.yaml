@@ -1,11 +1,12 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: poststart-httpget-host-initcontainers
+  name: initcontainer-poststart-httpget-host
   annotations:
-    security.kubeapt.io/displayName: "Poststart Httpget Host"
+    kubeapt.io/uuid: "fbef4cf3-cf91-4c11-af0b-ab80b64edff8"
+    security.kubeapt.io/displayName: "postStart Hook Targets an Arbitrary Host"
     security.kubeapt.io/description: "A postStart HTTP hook aimed at another host makes the kubelet call an arbitrary URL from the node each time an init container starts, reaching internal endpoints closed to pods and triggering side effects there."
-    security.kubeapt.io/resource: "Initcontainers"
+    security.kubeapt.io/resource: "InitContainers"
     security.kubeapt.io/severity: "Low"
     security.kubeapt.io/remediation: "Remove the host field so the hook targets the pod IP, or set it to an empty string. Field: spec.initContainers[*].lifecycle.postStart.httpGet.host."
     security.kubeapt.io/product: "Kubernetes"

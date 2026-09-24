@@ -1,12 +1,13 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: allowed-sysctls
+  name: pod-sysctls
   annotations:
-    security.kubeapt.io/displayName: "Sysctls"
+    kubeapt.io/uuid: "ef3af6c4-dc03-46bd-9f3c-7f9ac329edf2"
+    security.kubeapt.io/displayName: "Sets a Sysctl Outside the Approved List"
     security.kubeapt.io/description: "A sysctl outside the approved list reaches kernel tunables shared with the node, letting a pod weaken host network and memory protections for every workload on that node and destabilise the kubelet itself."
     security.kubeapt.io/resource: "Pods"
-    security.kubeapt.io/severity: "Critical"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Remove the unapproved sysctl entries and keep only allowed names such as net.ipv4.ip_local_port_range, net.ipv4.tcp_syncookies or kernel.shm_rmid_forced. Field: spec.securityContext.sysctls[*].name."
     security.kubeapt.io/product: "Kubernetes"
 spec:

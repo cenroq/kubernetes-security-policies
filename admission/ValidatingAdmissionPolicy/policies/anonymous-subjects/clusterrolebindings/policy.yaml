@@ -3,10 +3,11 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: clusterrolebinding-anonymous-subjects
   annotations:
-    security.kubeapt.io/displayName: "Anonymous Subjects"
+    kubeapt.io/uuid: "2cf111fd-543c-4375-aca7-a3ffd4e6f700"
+    security.kubeapt.io/displayName: "Binds a Role to an Anonymous Identity"
     security.kubeapt.io/description: "Binding a ClusterRole to system:anonymous grants it cluster-wide to every unauthenticated caller that reaches the API server, and catch-all names like everyone or all-users leave nobody accountable for who exercises it."
     security.kubeapt.io/resource: "ClusterRoleBindings"
-    security.kubeapt.io/severity: "Low"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Replace the anonymous or shared user subject with the specific named users, groups or ServiceAccounts that need the role. Fields: subjects[*].kind, subjects[*].name."
     security.kubeapt.io/product: "Kubernetes"
 spec:

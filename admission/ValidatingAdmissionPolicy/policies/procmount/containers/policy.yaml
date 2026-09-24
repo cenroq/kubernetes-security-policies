@@ -1,12 +1,13 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: procmount-containers
+  name: container-procmount
   annotations:
-    security.kubeapt.io/displayName: "Procmount"
+    kubeapt.io/uuid: "0ceb2a31-3447-4a3c-9e67-ea7fbb65f581"
+    security.kubeapt.io/displayName: "Uses an Unmasked /proc Mount"
     security.kubeapt.io/description: "An unmasked /proc strips the default masks and read-only paths the runtime applies, exposing kernel memory and tunables such as /proc/kcore and /proc/sys to the container and easing container escape."
     security.kubeapt.io/resource: "Containers"
-    security.kubeapt.io/severity: "Critical"
+    security.kubeapt.io/severity: "High"
     security.kubeapt.io/remediation: "Remove securityContext.procMount from every container or set it back to Default instead of Unmasked. Field: spec.containers[*].securityContext.procMount."
     security.kubeapt.io/product: "Kubernetes"
 spec:

@@ -1,9 +1,10 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: kyverno-policy-not-enforcing
+  name: policy-kyverno-not-enforcing
   annotations:
-    security.kubeapt.io/displayName: "Kyverno Policy Not Enforcing"
+    kubeapt.io/uuid: "83a82437-a78c-4d85-b43e-b57739382e7e"
+    security.kubeapt.io/displayName: "Audits Instead of Enforcing Violations"
     security.kubeapt.io/description: "A Policy left on Audit only records violations in a report, so the workloads it was written to block are still admitted into its namespace and the protection exists only as a log entry."
     security.kubeapt.io/resource: "Policies"
     security.kubeapt.io/severity: "Moderate"

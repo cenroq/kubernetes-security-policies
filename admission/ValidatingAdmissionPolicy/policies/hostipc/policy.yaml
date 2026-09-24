@@ -1,12 +1,13 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: hostipc
+  name: pod-hostipc
   annotations:
-    security.kubeapt.io/displayName: "Hostipc"
+    kubeapt.io/uuid: "29c502b6-a8aa-4cd7-a309-482332dd9a52"
+    security.kubeapt.io/displayName: "Shares the Host IPC Namespace"
     security.kubeapt.io/description: "Sharing the host IPC namespace exposes the node shared memory segments, semaphores and message queues to the container, letting it read in-memory data and tamper with host processes and other pods that share it."
     security.kubeapt.io/resource: "Pods"
-    security.kubeapt.io/severity: "Critical"
+    security.kubeapt.io/severity: "High"
     security.kubeapt.io/remediation: "Remove spec.hostIPC or set it to false. Field: spec.hostIPC."
     security.kubeapt.io/product: "Kubernetes"
 spec:

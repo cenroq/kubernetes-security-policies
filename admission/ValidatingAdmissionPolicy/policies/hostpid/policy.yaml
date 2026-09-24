@@ -1,12 +1,13 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: hostpid
+  name: pod-hostpid
   annotations:
-    security.kubeapt.io/displayName: "Hostpid"
+    kubeapt.io/uuid: "23ef68db-2409-43a1-854d-c46477a533a9"
+    security.kubeapt.io/displayName: "Shares the Host PID Namespace"
     security.kubeapt.io/description: "Sharing the host PID namespace exposes every process on the node to the container, leaking credentials from process command lines and /proc and letting it signal or trace host and other tenant workloads."
     security.kubeapt.io/resource: "Pods"
-    security.kubeapt.io/severity: "Critical"
+    security.kubeapt.io/severity: "High"
     security.kubeapt.io/remediation: "Remove spec.hostPID or set it to false. Field: spec.hostPID."
     security.kubeapt.io/product: "Kubernetes"
 spec:

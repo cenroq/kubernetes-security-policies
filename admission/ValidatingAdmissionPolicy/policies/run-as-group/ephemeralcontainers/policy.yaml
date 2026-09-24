@@ -1,11 +1,12 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: run-as-group-ephemeralcontainers
+  name: ephemeralcontainer-run-as-group
   annotations:
-    security.kubeapt.io/displayName: "Run As Group"
+    kubeapt.io/uuid: "fb6e2c02-8653-4d6a-8f60-38512cc54daf"
+    security.kubeapt.io/displayName: "Runs With the Root Group (GID 0)"
     security.kubeapt.io/description: "An ephemeral debug container running with GID 0 places its processes in the root group, which owns or can write many files in images and mounted host volumes, widening what a compromised process reaches."
-    security.kubeapt.io/resource: "Ephemeralcontainers"
+    security.kubeapt.io/resource: "EphemeralContainers"
     security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Set runAsGroup to a non-zero GID such as 1000 on the debug container, or leave it unset. Field: spec.ephemeralContainers[*].securityContext.runAsGroup."
     security.kubeapt.io/product: "Kubernetes"

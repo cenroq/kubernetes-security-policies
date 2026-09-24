@@ -1,9 +1,10 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: selinux-type-containers
+  name: container-selinux-type
   annotations:
-    security.kubeapt.io/displayName: "Selinux Type"
+    kubeapt.io/uuid: "743d3d26-0e4a-47fb-bcde-6fc558b80e7d"
+    security.kubeapt.io/displayName: "Sets a Non-Standard SELinux Type"
     security.kubeapt.io/description: "An SELinux type outside the container domains, such as spc_t or unconfined_t, drops the kernel confinement that stops a container process from reading host files and reaching devices it does not own."
     security.kubeapt.io/resource: "Containers"
     security.kubeapt.io/severity: "Moderate"

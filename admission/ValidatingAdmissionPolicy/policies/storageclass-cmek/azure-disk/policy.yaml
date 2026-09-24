@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: storageclass-cmek-azure-disk
   annotations:
-    security.kubeapt.io/displayName: "StorageClass CMEK (Azure Disk)"
+    kubeapt.io/uuid: "ac28076c-cb38-46d4-b611-5f4e80bb46b3"
+    security.kubeapt.io/displayName: "Provisions Azure Disks Without a Customer-Managed Key"
     security.kubeapt.io/description: "Without a Disk Encryption Set, disks provisioned from this class fall back to platform-managed keys that you cannot rotate, audit or revoke, so snapshots and disk copies stay readable to anyone with subscription-level access."
     security.kubeapt.io/resource: "StorageClasses"
     security.kubeapt.io/severity: "Low"

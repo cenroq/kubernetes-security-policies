@@ -1,0 +1,46 @@
+# Must be DENIED. Two shapes the policy has to reject:
+#  1. a rule host with no TLS entry covering it at all
+#  2. a multi-label host under a single-label wildcard — *.example.com does NOT
+#     cover a.b.example.com (RFC 6125), so this must not be let through by the
+#     wildcard matching.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: violating-tls-hosts
+spec:
+  tls:
+  - hosts:
+    - other.example.com
+    secretName: tls-other
+  rules:
+  - host: app.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: demo
+            port:
+              number: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: violating-tls-hosts-wildcard-depth
+spec:
+  tls:
+  - hosts:
+    - "*.example.com"
+    secretName: tls-wild
+  rules:
+  - host: a.b.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: demo
+            port:
+              number: 80

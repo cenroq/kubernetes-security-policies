@@ -1,12 +1,13 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: route-no-tls
+  name: route-tls
   annotations:
-    security.kubeapt.io/displayName: "OpenShift Route No TLS"
+    kubeapt.io/uuid: "b3c3431f-6cfd-4459-944c-82d2085bc5b6"
+    security.kubeapt.io/displayName: "Defines No TLS Termination"
     security.kubeapt.io/description: "A Route without a TLS section is published over plain HTTP at the router, so session cookies and credentials cross the network in cleartext and can be read or rewritten in transit."
     security.kubeapt.io/resource: "Routes"
-    security.kubeapt.io/severity: "High"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Add a spec.tls block using edge, reencrypt or passthrough termination so the router serves the host over HTTPS. Field: spec.tls."
     security.kubeapt.io/product: "OpenShift"
 spec:

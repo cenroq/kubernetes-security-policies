@@ -1,12 +1,13 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: hostnetwork
+  name: pod-hostnetwork
   annotations:
-    security.kubeapt.io/displayName: "Hostnetwork"
+    kubeapt.io/uuid: "0905d194-7177-43ee-a9cd-49a5d3e10e79"
+    security.kubeapt.io/displayName: "Shares the Host Network Namespace"
     security.kubeapt.io/description: "Host networking removes network namespace isolation, letting the workload sniff all node traffic, bind directly to node ports and reach loopback-bound node services such as the kubelet and local metadata proxies."
     security.kubeapt.io/resource: "Pods"
-    security.kubeapt.io/severity: "Critical"
+    security.kubeapt.io/severity: "High"
     security.kubeapt.io/remediation: "Remove spec.hostNetwork or set it to false and expose the workload through a Service instead. Field: spec.hostNetwork."
     security.kubeapt.io/product: "Kubernetes"
 spec:

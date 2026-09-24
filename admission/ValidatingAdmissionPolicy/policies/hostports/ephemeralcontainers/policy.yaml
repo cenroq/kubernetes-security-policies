@@ -1,12 +1,13 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: allowed-hostports-ephemeralcontainers
+  name: ephemeralcontainer-hostports
   annotations:
-    security.kubeapt.io/displayName: "Hostports"
+    kubeapt.io/uuid: "76388b3e-0254-4b2c-b68b-901f97a3c47b"
+    security.kubeapt.io/displayName: "Binds a hostPort on the Node"
     security.kubeapt.io/description: "A hostPort binds the ephemeral container port onto the node network interfaces, exposing it to anything that can reach the node, bypassing Service and NetworkPolicy controls and squatting on node component ports."
-    security.kubeapt.io/resource: "Ephemeralcontainers"
-    security.kubeapt.io/severity: "Critical"
+    security.kubeapt.io/resource: "EphemeralContainers"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Remove the hostPort field or set it to 0 and publish the workload through a Service instead. Field: spec.ephemeralContainers[*].ports[*].hostPort."
     security.kubeapt.io/product: "Kubernetes"
 spec:

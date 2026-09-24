@@ -1,12 +1,13 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: ingress-no-dangerous-snippets
+  name: ingress-configuration-snippets
   annotations:
-    security.kubeapt.io/displayName: "No Dangerous Snippets"
+    kubeapt.io/uuid: "458979ee-7792-497e-9c29-df31eb75f147"
+    security.kubeapt.io/displayName: "Uses a Raw Controller Snippet Annotation"
     security.kubeapt.io/description: "Snippet and router-override annotations are folded straight into the shared ingress controller configuration, so anyone able to create an Ingress can hijack hosts from other namespaces, strip authentication, or run code inside the controller."
     security.kubeapt.io/resource: "Ingresses"
-    security.kubeapt.io/severity: "Low"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Delete the nginx, haproxy and traefik snippet and router-override annotations and make the routing or authentication change through supported Ingress fields or controller configuration owned by the platform team. Field: metadata.annotations."
     security.kubeapt.io/product: "Kubernetes"
 spec:

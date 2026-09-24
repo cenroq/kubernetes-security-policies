@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: validatingwebhookconfiguration-hardening
   annotations:
-    security.kubeapt.io/displayName: "Webhook Hardening"
+    kubeapt.io/uuid: "49e3a715-8dd1-4862-b25e-ce373af957cb"
+    security.kubeapt.io/displayName: "Fails Open or Uses an Off-Cluster Endpoint"
     security.kubeapt.io/description: "A webhook that fails open is bypassed by anyone who can make it unreachable, and an external URL endpoint sends every reviewed object off-cluster and lets whoever runs it decide what admission accepts."
     security.kubeapt.io/resource: "ValidatingWebhookConfigurations"
     security.kubeapt.io/severity: "Moderate"

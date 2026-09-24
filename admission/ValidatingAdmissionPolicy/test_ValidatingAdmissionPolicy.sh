@@ -160,7 +160,7 @@ apply_test_namespace
 while IFS= read -r policy; do
   policy_dir="$(dirname "$policy")"
   policy_id="${policy_dir#${POLICY_ROOT}/}"
-  example="${policy_dir}/test.yaml"
+  example="${policy_dir}/deny.yaml"
   policy_info="$(get_policy_info "$policy")"
   policy_name="${policy_info%%$'\t'*}"
   policy_scope="${policy_info##*$'\t'}"
@@ -179,7 +179,7 @@ while IFS= read -r policy; do
 
   # Skip CRD-targeted policies when their CRD is not installed (e.g. vanilla CI
   # cluster). Tests declare requirements via a "# RequiresCRD: <name>[,<name>...]"
-  # comment in test.yaml; <name> is the full CRD name (e.g. ciliumnetworkpolicies.cilium.io).
+  # comment in deny.yaml; <name> is the full CRD name (e.g. ciliumnetworkpolicies.cilium.io).
   requires_crd="$(awk -F'RequiresCRD: ' '/^# RequiresCRD: /{print $2; exit}' "$use_example")"
   if [[ -n "${requires_crd}" ]]; then
     missing_crd=""
@@ -251,6 +251,27 @@ while IFS= read -r policy; do
   else
     echo "✅  Denied as expected"
     PASSED=$((PASSED + 1))
+  fi
+
+  # Optional companion case: a compliant manifest that must be ADMITTED while the
+  # policy is active. Without this the suite can only ever prove that a policy
+  # denies something, never that it leaves valid resources alone.
+  allowed_example="${policy_dir}/allow.yaml"
+  if [[ -f "$allowed_example" ]]; then
+    echo "Allowed: ${allowed_example}"
+    set +e
+    allowed_output="$(apply_example_precheck "$policy_scope" "$allowed_example")"
+    allowed_status=$?
+    set -e
+    if [[ $allowed_status -eq 0 ]]; then
+      echo "✅  Admitted as expected"
+      PASSED=$((PASSED + 1))
+    else
+      echo "❌  Compliant example was denied; expected admission"
+      echo "$allowed_output"
+      FAILED=$((FAILED + 1))
+      break
+    fi
   fi
 
   if [[ -n "${command_line}" ]]; then

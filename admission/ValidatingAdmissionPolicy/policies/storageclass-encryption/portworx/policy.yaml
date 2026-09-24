@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: storageclass-encryption-portworx
   annotations:
-    security.kubeapt.io/displayName: "StorageClass Encryption (Portworx)"
+    kubeapt.io/uuid: "11683afb-8433-40e5-9f2f-9e1c52d7865a"
+    security.kubeapt.io/displayName: "Provisions Unencrypted Portworx Volumes"
     security.kubeapt.io/description: "Volumes provisioned from this class are stored unencrypted across the Portworx cluster, so anyone with access to a backing node disk, a cloud snapshot or the storage fabric reads the data without any Kubernetes access."
     security.kubeapt.io/resource: "StorageClasses"
     security.kubeapt.io/severity: "Low"

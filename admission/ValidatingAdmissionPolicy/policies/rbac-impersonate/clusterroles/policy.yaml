@@ -3,10 +3,11 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: clusterrole-rbac-impersonate
   annotations:
-    security.kubeapt.io/displayName: "Rbac Impersonate"
+    kubeapt.io/uuid: "e0406702-6119-41cd-9ee8-978e1f3b9689"
+    security.kubeapt.io/displayName: "Grants the impersonate Verb"
     security.kubeapt.io/description: "Impersonation lets the holder send requests as any other user, group or service account, borrowing the permissions of cluster-admin identities without ever being granted those permissions in its own bindings."
     security.kubeapt.io/resource: "ClusterRoles"
-    security.kubeapt.io/severity: "High"
+    security.kubeapt.io/severity: "Critical"
     security.kubeapt.io/remediation: "Remove the impersonate verb, and any wildcard verb, from every rule covering users, groups, serviceaccounts, uids or userextras. Fields: rules[*].resources, rules[*].verbs."
     security.kubeapt.io/product: "Kubernetes"
 spec:

@@ -1,11 +1,12 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: read-only-root-filesystem-ephemeralcontainers
+  name: ephemeralcontainer-read-only-root-filesystem
   annotations:
-    security.kubeapt.io/displayName: "Read Only Root Filesystem"
+    kubeapt.io/uuid: "d1b97c40-d989-4e75-b984-dab87225265c"
+    security.kubeapt.io/displayName: "Runs With a Writable Root Filesystem"
     security.kubeapt.io/description: "A writable ephemeral container root filesystem lets an intruder drop tooling, overwrite application binaries, and rewrite configuration in place, leaving a foothold in the running pod that nothing in the image would reveal."
-    security.kubeapt.io/resource: "Ephemeralcontainers"
+    security.kubeapt.io/resource: "EphemeralContainers"
     security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Set readOnlyRootFilesystem to true on every ephemeral container and mount an existing pod volume over any path the debug tooling must write, since a running pod cannot gain new volumes. Field: spec.ephemeralContainers[*].securityContext.readOnlyRootFilesystem."
     security.kubeapt.io/product: "Kubernetes"

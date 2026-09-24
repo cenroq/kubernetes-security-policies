@@ -1,9 +1,10 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: seccomp-profile-pod
+  name: pod-seccomp-profile
   annotations:
-    security.kubeapt.io/displayName: "Seccomp Profile"
+    kubeapt.io/uuid: "7b5bdc67-99f8-4ba3-aeb4-757ae83a95c2"
+    security.kubeapt.io/displayName: "Runs With an Unconfined Seccomp Profile"
     security.kubeapt.io/description: "An Unconfined seccomp profile at pod level removes the syscall filter from every container inheriting it, exposing the full kernel syscall surface including the obscure calls that container escape and privilege-escalation exploits depend on."
     security.kubeapt.io/resource: "Pods"
     security.kubeapt.io/severity: "Moderate"

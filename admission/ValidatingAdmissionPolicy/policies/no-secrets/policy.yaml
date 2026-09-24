@@ -1,12 +1,13 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: configmap-no-secrets
+  name: configmap-secrets
   annotations:
-    security.kubeapt.io/displayName: "No Secrets"
+    kubeapt.io/uuid: "21735678-f711-4b9f-a267-cbd09c7afbfc"
+    security.kubeapt.io/displayName: "Stores Credentials, Tokens or Private Keys"
     security.kubeapt.io/description: "Credentials in a ConfigMap are stored unencrypted and readable by anyone holding the broad ConfigMap read permission most roles grant, and they leak further through logs, backups and manifests in source control."
     security.kubeapt.io/resource: "ConfigMaps"
-    security.kubeapt.io/severity: "High"
+    security.kubeapt.io/severity: "Critical"
     security.kubeapt.io/remediation: "Move passwords, tokens, private keys and cloud credentials into Secrets referenced by the workload, then delete those entries from the ConfigMap. Fields: data, binaryData."
     security.kubeapt.io/product: "Kubernetes"
 spec:

@@ -1,11 +1,12 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: selinux-role-initcontainers
+  name: initcontainer-selinux-role
   annotations:
-    security.kubeapt.io/displayName: "Selinux Role"
+    kubeapt.io/uuid: "32ff7e30-616c-43a7-92ae-44022ecc0da3"
+    security.kubeapt.io/displayName: "Sets a Custom SELinux Role"
     security.kubeapt.io/description: "A custom SELinux role label lets the init container transition into domains outside the confined container role, weakening the mandatory access control that keeps a compromised process away from host files and devices."
-    security.kubeapt.io/resource: "Initcontainers"
+    security.kubeapt.io/resource: "InitContainers"
     security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Remove the seLinuxOptions.role setting from every init container or leave it as an empty string so the runtime assigns its default container role. Field: spec.initContainers[*].securityContext.seLinuxOptions.role."
     security.kubeapt.io/product: "Kubernetes"

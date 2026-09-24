@@ -1,9 +1,10 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: selinux-role
+  name: pod-selinux-role
   annotations:
-    security.kubeapt.io/displayName: "Selinux Role"
+    kubeapt.io/uuid: "7ee786ba-34bf-43d1-8873-cb16afbe89af"
+    security.kubeapt.io/displayName: "Sets a Custom SELinux Role"
     security.kubeapt.io/description: "A custom SELinux role label applied pod-wide lets containers transition into domains outside the confined container role, weakening the mandatory access control that keeps a compromised process away from host files and devices."
     security.kubeapt.io/resource: "Pods"
     security.kubeapt.io/severity: "Moderate"

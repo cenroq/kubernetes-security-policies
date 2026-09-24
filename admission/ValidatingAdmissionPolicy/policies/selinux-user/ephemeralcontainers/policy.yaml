@@ -1,11 +1,12 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: selinux-user-ephemeralcontainers
+  name: ephemeralcontainer-selinux-user
   annotations:
-    security.kubeapt.io/displayName: "Selinux User"
+    kubeapt.io/uuid: "4598e7df-4c5e-4ee2-a0b5-9ce4179a89fc"
+    security.kubeapt.io/displayName: "Sets a Custom SELinux User"
     security.kubeapt.io/description: "A custom SELinux user label replaces the confined context the runtime assigns to the ephemeral container, granting a policy domain with transitions and file access the sandbox was never meant to allow."
-    security.kubeapt.io/resource: "Ephemeralcontainers"
+    security.kubeapt.io/resource: "EphemeralContainers"
     security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Remove the seLinuxOptions.user setting from every ephemeral container or leave it as an empty string so the runtime assigns its default SELinux user. Field: spec.ephemeralContainers[*].securityContext.seLinuxOptions.user."
     security.kubeapt.io/product: "Kubernetes"

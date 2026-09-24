@@ -1,12 +1,13 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: windows-hostprocess-containers
+  name: container-windows-hostprocess
   annotations:
-    security.kubeapt.io/displayName: "Windows Hostprocess"
+    kubeapt.io/uuid: "6dd987f5-a988-40f2-bce8-d6eef4c6eb4d"
+    security.kubeapt.io/displayName: "Runs as a Windows HostProcess"
     security.kubeapt.io/description: "A Windows HostProcess container runs directly on the node in the host namespaces under a system account, exposing the host filesystem, registry and services and making node compromise trivial."
     security.kubeapt.io/resource: "Containers"
-    security.kubeapt.io/severity: "Critical"
+    security.kubeapt.io/severity: "High"
     security.kubeapt.io/remediation: "Remove windowsOptions.hostProcess from every container security context or set it to false. Field: spec.containers[*].securityContext.windowsOptions.hostProcess."
     security.kubeapt.io/product: "Kubernetes"
 spec:

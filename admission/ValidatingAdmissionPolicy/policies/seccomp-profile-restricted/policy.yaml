@@ -1,9 +1,10 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: seccomp-profile-pod-restricted
+  name: pod-seccomp-profile-restricted
   annotations:
-    security.kubeapt.io/displayName: "Seccomp Profile Restricted"
+    kubeapt.io/uuid: "9612c6ac-4f88-4f18-a415-b85286cf6c8f"
+    security.kubeapt.io/displayName: "Has No Seccomp Profile Set"
     security.kubeapt.io/description: "A pod with no seccomp profile enforced at pod level, and containers that set none either, runs with no syscall filter, leaving the full kernel syscall surface reachable for container escape and privilege escalation."
     security.kubeapt.io/resource: "Pods"
     security.kubeapt.io/severity: "Moderate"

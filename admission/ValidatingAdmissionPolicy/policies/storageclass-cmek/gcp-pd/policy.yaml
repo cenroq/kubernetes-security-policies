@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: storageclass-cmek-gcp-pd
   annotations:
-    security.kubeapt.io/displayName: "StorageClass CMEK (GCP PD)"
+    kubeapt.io/uuid: "b6471576-2bd6-4115-bbc2-07510127f17b"
+    security.kubeapt.io/displayName: "Provisions GCP Disks Without a Customer-Managed Key"
     security.kubeapt.io/description: "Without a Cloud KMS key, disks provisioned from this class fall back to Google-managed keys that you cannot rotate, audit or revoke, so snapshots and disk images stay readable to anyone with project-level access."
     security.kubeapt.io/resource: "StorageClasses"
     security.kubeapt.io/severity: "Low"

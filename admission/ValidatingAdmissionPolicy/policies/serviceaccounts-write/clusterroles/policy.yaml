@@ -3,10 +3,11 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: clusterrole-serviceaccounts-write
   annotations:
-    security.kubeapt.io/displayName: "Serviceaccounts Write"
+    kubeapt.io/uuid: "c2ceea3b-e377-4be5-ba9d-0b86ffdb3030"
+    security.kubeapt.io/displayName: "Grants Write Access to ServiceAccounts"
     security.kubeapt.io/description: "Creating or replacing ServiceAccounts anywhere in the cluster lets an attacker re-create an identity that existing bindings already point at and take over its tokens, inheriting every permission bound to that name."
     security.kubeapt.io/resource: "ClusterRoles"
-    security.kubeapt.io/severity: "Critical"
+    security.kubeapt.io/severity: "High"
     security.kubeapt.io/remediation: "Remove create, update, patch and delete from every rule covering serviceaccounts in the core API group, keeping get, list and watch only where a workload needs them. Fields: rules[*].apiGroups, rules[*].resources, rules[*].verbs."
     security.kubeapt.io/product: "Kubernetes"
 spec:

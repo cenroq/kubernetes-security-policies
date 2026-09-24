@@ -1,0 +1,58 @@
+# Must be ADMITTED. Two legitimate layouts that exact string matching rejected:
+#  1. a wildcard certificate covering a single label
+#  2. one certificate per host, which is what cert-manager emits by default —
+#     this is the shape that the removed ingress-tls policy wrongly denied.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: tls-hosts-allowed-wildcard
+spec:
+  tls:
+  - hosts:
+    - "*.example.com"
+    secretName: tls-wild
+  rules:
+  - host: app.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: demo
+            port:
+              number: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: tls-hosts-allowed-per-host
+spec:
+  tls:
+  - hosts:
+    - app2.example.com
+    secretName: tls-app2
+  - hosts:
+    - api2.example.com
+    secretName: tls-api2
+  rules:
+  - host: app2.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: demo
+            port:
+              number: 80
+  - host: api2.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: demo
+            port:
+              number: 80

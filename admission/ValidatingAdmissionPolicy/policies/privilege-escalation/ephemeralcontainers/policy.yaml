@@ -1,12 +1,13 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: allow-privilege-escalation-ephemeralcontainers
+  name: ephemeralcontainer-privilege-escalation
   annotations:
-    security.kubeapt.io/displayName: "Privilege Escalation"
+    kubeapt.io/uuid: "5a3050eb-06b6-4eff-88db-e9bcd5ab38f7"
+    security.kubeapt.io/displayName: "Permits Privilege Escalation"
     security.kubeapt.io/description: "Leaving privilege escalation enabled lets a process in the ephemeral container gain more privileges than its parent through setuid binaries or file capabilities, turning a compromised unprivileged process into root inside the container."
-    security.kubeapt.io/resource: "Ephemeralcontainers"
-    security.kubeapt.io/severity: "Critical"
+    security.kubeapt.io/resource: "EphemeralContainers"
+    security.kubeapt.io/severity: "High"
     security.kubeapt.io/remediation: "Set allowPrivilegeEscalation to false in the security context of every ephemeral container. The field must be present explicitly, since omitting it also fails. Field: spec.ephemeralContainers[*].securityContext.allowPrivilegeEscalation."
     security.kubeapt.io/product: "Kubernetes"
 spec:

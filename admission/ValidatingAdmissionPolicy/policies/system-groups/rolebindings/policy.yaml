@@ -3,10 +3,11 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: rolebinding-system-groups
   annotations:
-    security.kubeapt.io/displayName: "System Groups"
+    kubeapt.io/uuid: "d92ff4b2-9bd9-417b-af8b-dffedcc93e43"
+    security.kubeapt.io/displayName: "Binds a Privileged Role to a System Group"
     security.kubeapt.io/description: "Naming system:authenticated, system:unauthenticated or system:serviceaccounts as a subject grants the role to every account in the cluster at once, so the namespace permissions extend to anyone who can reach the API server."
     security.kubeapt.io/resource: "RoleBindings"
-    security.kubeapt.io/severity: "Low"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Replace the system group subject with the specific users, groups or ServiceAccounts that need the role. Fields: subjects[*].kind, subjects[*].name."
     security.kubeapt.io/product: "Kubernetes"
 spec:

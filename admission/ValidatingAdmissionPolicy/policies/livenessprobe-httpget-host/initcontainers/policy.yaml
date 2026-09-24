@@ -1,11 +1,12 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: livenessprobe-httpget-host-initcontainers
+  name: initcontainer-livenessprobe-httpget-host
   annotations:
-    security.kubeapt.io/displayName: "Livenessprobe Httpget Host"
+    kubeapt.io/uuid: "2fedfec0-bde4-4c12-ab33-7d9ff294b3fe"
+    security.kubeapt.io/displayName: "Liveness Probe Targets an Arbitrary Host"
     security.kubeapt.io/description: "Redirecting the liveness HTTP probe to another host makes the kubelet fetch an arbitrary URL from the node, reaching metadata and node-local endpoints closed to pods, while a hung init container is never restarted."
-    security.kubeapt.io/resource: "Initcontainers"
+    security.kubeapt.io/resource: "InitContainers"
     security.kubeapt.io/severity: "Low"
     security.kubeapt.io/remediation: "Remove the host field so the probe targets the pod IP, or set it to an empty string. Field: spec.initContainers[*].livenessProbe.httpGet.host."
     security.kubeapt.io/product: "Kubernetes"

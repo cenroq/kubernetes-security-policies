@@ -3,10 +3,11 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: baselineadminnetworkpolicy-allow-all
   annotations:
-    security.kubeapt.io/displayName: "BaselineAdminNetworkPolicy Allow-All"
+    kubeapt.io/uuid: "6226d56c-42b0-412c-a8b0-39a131744b9a"
+    security.kubeapt.io/displayName: "Allows Traffic Across All Namespaces"
     security.kubeapt.io/description: "An Allow rule with an empty namespaces selector matches every namespace in the cluster, so any traffic that no NetworkPolicy or AdminNetworkPolicy decides falls back to being permitted rather than dropped."
     security.kubeapt.io/resource: "BaselineAdminNetworkPolicies"
-    security.kubeapt.io/severity: "High"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Give each Allow rule a namespaces selector that names the specific namespaces it should cover instead of an empty match-all selector. Fields: spec.ingress[*].from[*].namespaces, spec.egress[*].to[*].namespaces."
     security.kubeapt.io/product: "Kubernetes"
 spec:

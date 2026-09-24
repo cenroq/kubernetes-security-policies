@@ -1,9 +1,10 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: run-as-nonroot-pod
+  name: pod-run-as-nonroot
   annotations:
-    security.kubeapt.io/displayName: "Run As Nonroot"
+    kubeapt.io/uuid: "3e12a1ed-4cb4-4d04-9fc4-75c9ca5af6cc"
+    security.kubeapt.io/displayName: "May Run as Root"
     security.kubeapt.io/description: "With runAsNonRoot unset, the kubelet never rejects an image whose user is UID 0, so the pod silently runs as root and any compromise gains root file ownership and the full capability set."
     security.kubeapt.io/resource: "Pods"
     security.kubeapt.io/severity: "Moderate"

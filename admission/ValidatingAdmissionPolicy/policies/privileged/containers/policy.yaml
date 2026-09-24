@@ -1,9 +1,10 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: privileged-containers
+  name: container-privileged
   annotations:
-    security.kubeapt.io/displayName: "Privileged"
+    kubeapt.io/uuid: "2873ca8e-c322-4e60-8bb2-aebf881490f9"
+    security.kubeapt.io/displayName: "Runs in Privileged Mode"
     security.kubeapt.io/description: "A privileged container disables almost all container isolation and gets full root access to the node devices, kernel interfaces and filesystem, which is a direct path to node and cluster takeover."
     security.kubeapt.io/resource: "Containers"
     security.kubeapt.io/severity: "Critical"

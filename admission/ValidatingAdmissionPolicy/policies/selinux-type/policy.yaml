@@ -1,9 +1,10 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: selinux-type
+  name: pod-selinux-type
   annotations:
-    security.kubeapt.io/displayName: "Selinux Type"
+    kubeapt.io/uuid: "0af728c2-2db1-4db5-ac43-78070367e4a1"
+    security.kubeapt.io/displayName: "Sets a Non-Standard SELinux Type"
     security.kubeapt.io/description: "An SELinux type outside the container domains, such as spc_t or unconfined_t, drops the kernel confinement that stops pod containers from reading host files and reaching devices they do not own."
     security.kubeapt.io/resource: "Pods"
     security.kubeapt.io/severity: "Moderate"

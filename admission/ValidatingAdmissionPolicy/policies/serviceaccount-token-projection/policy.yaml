@@ -1,9 +1,10 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: serviceaccount-token-projection
+  name: pod-serviceaccount-token-projection
   annotations:
-    security.kubeapt.io/displayName: "Serviceaccount Token Projection"
+    kubeapt.io/uuid: "a41bf199-ff1b-450c-8a31-d924a6089451"
+    security.kubeapt.io/displayName: "Mounts an Unprojected ServiceAccount Token"
     security.kubeapt.io/description: "A pod that names a ServiceAccount but declares no projected token volume gets the cluster default mount, so a token copied out of its filesystem carries a broad audience and a lifetime nobody pinned."
     security.kubeapt.io/resource: "Pods"
     security.kubeapt.io/severity: "Low"

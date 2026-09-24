@@ -1,9 +1,10 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: read-only-root-filesystem-containers
+  name: container-read-only-root-filesystem
   annotations:
-    security.kubeapt.io/displayName: "Read Only Root Filesystem"
+    kubeapt.io/uuid: "4ed91688-4092-4429-b68d-a29c21f1267e"
+    security.kubeapt.io/displayName: "Runs With a Writable Root Filesystem"
     security.kubeapt.io/description: "A writable container root filesystem lets an intruder drop tooling, overwrite application binaries, and rewrite configuration in place, leaving a foothold in the running pod that nothing in the image would reveal."
     security.kubeapt.io/resource: "Containers"
     security.kubeapt.io/severity: "Moderate"
