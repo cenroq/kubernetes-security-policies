@@ -1,11 +1,12 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: run-as-user-ephemeralcontainers
+  name: ephemeralcontainer-run-as-user
   annotations:
-    security.kubeapt.io/displayName: "Run As User"
+    kubeapt.io/uuid: "98905548-0495-45ef-9457-70a624f240eb"
+    security.kubeapt.io/displayName: "Runs as Root (UID 0)"
     security.kubeapt.io/description: "Running an ephemeral debug container as UID 0 gives every process the in-container root identity, so writable host mounts, setuid binaries and isolation weaknesses become exploitable with root file ownership and the full capability set."
-    security.kubeapt.io/resource: "Ephemeralcontainers"
+    security.kubeapt.io/resource: "EphemeralContainers"
     security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Set runAsUser to a non-zero UID such as 1000 on the debug container, or leave it unset so the image user applies. Field: spec.ephemeralContainers[*].securityContext.runAsUser."
     security.kubeapt.io/product: "Kubernetes"

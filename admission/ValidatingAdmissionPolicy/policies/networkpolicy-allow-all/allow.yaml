@@ -1,0 +1,13 @@
+# Must be ACCEPTED. The canonical default-deny baseline from the upstream Kubernetes
+# docs: it selects every pod but declares no ingress/egress rules, so with these
+# policyTypes it denies all traffic. Absence of the sections is the opposite of
+# allow-all, and treating it as allow-all is what this case guards against.
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: networkpolicy-allow-all-allowed
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  - Egress

@@ -1,9 +1,10 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: service-account-name
+  name: pod-serviceaccount-name
   annotations:
-    security.kubeapt.io/displayName: "Service Account Name"
+    kubeapt.io/uuid: "1e4e5442-122f-4dd9-86ce-a6104971b13b"
+    security.kubeapt.io/displayName: "Uses the Default ServiceAccount"
     security.kubeapt.io/description: "Running under the namespace default ServiceAccount makes every workload share one identity, so any permission granted to it reaches all of them and API audit records cannot be traced back to a single pod."
     security.kubeapt.io/resource: "Pods"
     security.kubeapt.io/severity: "Low"

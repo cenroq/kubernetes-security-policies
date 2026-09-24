@@ -3,10 +3,11 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: role-workloads-write
   annotations:
-    security.kubeapt.io/displayName: "Workloads Write"
+    kubeapt.io/uuid: "badd6afe-218a-4a3c-a102-737afb5a5fa9"
+    security.kubeapt.io/displayName: "Grants Write Access to Workload Controllers"
     security.kubeapt.io/description: "Write access to workload controllers becomes arbitrary pod creation through the controller, letting the holder run any image under any service account in the namespace and, with DaemonSets, land that container on every node."
     security.kubeapt.io/resource: "Roles"
-    security.kubeapt.io/severity: "Critical"
+    security.kubeapt.io/severity: "High"
     security.kubeapt.io/remediation: "Remove create, update, patch and delete from rules covering deployments, daemonsets, statefulsets and replicasets in the apps group and jobs and cronjobs in the batch group. Fields: rules[*].apiGroups, rules[*].resources, rules[*].verbs."
     security.kubeapt.io/product: "Kubernetes"
 spec:

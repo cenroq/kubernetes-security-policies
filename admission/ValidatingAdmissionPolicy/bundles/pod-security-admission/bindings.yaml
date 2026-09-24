@@ -2,9 +2,9 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: run-as-user-pod-namespace-warn
+  name: pod-run-as-user-namespace-warn
 spec:
-  policyName: run-as-user-pod
+  policyName: pod-run-as-user
   validationActions:
   - Warn
   matchResources:
@@ -15,6 +15,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-run-as-user.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: run-as-user-pod.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -23,9 +27,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: run-as-user-pod-namespace-audit
+  name: pod-run-as-user-namespace-audit
 spec:
-  policyName: run-as-user-pod
+  policyName: pod-run-as-user
   validationActions:
   - Audit
   matchResources:
@@ -36,6 +40,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-run-as-user.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: run-as-user-pod.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -44,9 +52,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: run-as-user-pod-namespace-enforce
+  name: pod-run-as-user-namespace-enforce
 spec:
-  policyName: run-as-user-pod
+  policyName: pod-run-as-user
   validationActions:
   - Deny
   matchResources:
@@ -57,6 +65,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-run-as-user.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: run-as-user-pod.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -65,9 +77,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: run-as-user-initcontainers-namespace-warn
+  name: initcontainer-run-as-user-namespace-warn
 spec:
-  policyName: run-as-user-initcontainers
+  policyName: initcontainer-run-as-user
   validationActions:
   - Warn
   matchResources:
@@ -78,6 +90,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-run-as-user.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: run-as-user-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -86,9 +102,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: run-as-user-initcontainers-namespace-audit
+  name: initcontainer-run-as-user-namespace-audit
 spec:
-  policyName: run-as-user-initcontainers
+  policyName: initcontainer-run-as-user
   validationActions:
   - Audit
   matchResources:
@@ -99,6 +115,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-run-as-user.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: run-as-user-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -107,9 +127,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: run-as-user-initcontainers-namespace-enforce
+  name: initcontainer-run-as-user-namespace-enforce
 spec:
-  policyName: run-as-user-initcontainers
+  policyName: initcontainer-run-as-user
   validationActions:
   - Deny
   matchResources:
@@ -120,6 +140,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-run-as-user.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: run-as-user-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -128,9 +152,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: run-as-user-ephemeralcontainers-namespace-warn
+  name: ephemeralcontainer-run-as-user-namespace-warn
 spec:
-  policyName: run-as-user-ephemeralcontainers
+  policyName: ephemeralcontainer-run-as-user
   validationActions:
   - Warn
   matchResources:
@@ -141,6 +165,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-run-as-user.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: run-as-user-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -149,9 +177,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: run-as-user-ephemeralcontainers-namespace-audit
+  name: ephemeralcontainer-run-as-user-namespace-audit
 spec:
-  policyName: run-as-user-ephemeralcontainers
+  policyName: ephemeralcontainer-run-as-user
   validationActions:
   - Audit
   matchResources:
@@ -162,6 +190,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-run-as-user.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: run-as-user-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -170,9 +202,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: run-as-user-ephemeralcontainers-namespace-enforce
+  name: ephemeralcontainer-run-as-user-namespace-enforce
 spec:
-  policyName: run-as-user-ephemeralcontainers
+  policyName: ephemeralcontainer-run-as-user
   validationActions:
   - Deny
   matchResources:
@@ -183,6 +215,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-run-as-user.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: run-as-user-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -191,9 +227,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: run-as-user-containers-namespace-warn
+  name: container-run-as-user-namespace-warn
 spec:
-  policyName: run-as-user-containers
+  policyName: container-run-as-user
   validationActions:
   - Warn
   matchResources:
@@ -204,6 +240,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-run-as-user.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: run-as-user-containers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -212,9 +252,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: run-as-user-containers-namespace-audit
+  name: container-run-as-user-namespace-audit
 spec:
-  policyName: run-as-user-containers
+  policyName: container-run-as-user
   validationActions:
   - Audit
   matchResources:
@@ -225,6 +265,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-run-as-user.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: run-as-user-containers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -233,9 +277,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: run-as-user-containers-namespace-enforce
+  name: container-run-as-user-namespace-enforce
 spec:
-  policyName: run-as-user-containers
+  policyName: container-run-as-user
   validationActions:
   - Deny
   matchResources:
@@ -246,6 +290,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-run-as-user.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: run-as-user-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -254,9 +302,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: seccomp-profile-pod-restricted-namespace-warn
+  name: pod-seccomp-profile-restricted-namespace-warn
 spec:
-  policyName: seccomp-profile-pod-restricted
+  policyName: pod-seccomp-profile-restricted
   validationActions:
   - Warn
   matchResources:
@@ -267,6 +315,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-seccomp-profile-restricted.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: seccomp-profile-pod-restricted.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -275,9 +327,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: seccomp-profile-pod-restricted-namespace-audit
+  name: pod-seccomp-profile-restricted-namespace-audit
 spec:
-  policyName: seccomp-profile-pod-restricted
+  policyName: pod-seccomp-profile-restricted
   validationActions:
   - Audit
   matchResources:
@@ -288,6 +340,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-seccomp-profile-restricted.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: seccomp-profile-pod-restricted.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -296,9 +352,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: seccomp-profile-pod-restricted-namespace-enforce
+  name: pod-seccomp-profile-restricted-namespace-enforce
 spec:
-  policyName: seccomp-profile-pod-restricted
+  policyName: pod-seccomp-profile-restricted
   validationActions:
   - Deny
   matchResources:
@@ -309,6 +365,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-seccomp-profile-restricted.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: seccomp-profile-pod-restricted.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -317,9 +377,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: seccomp-profile-initcontainers-restricted-namespace-warn
+  name: initcontainer-seccomp-profile-restricted-namespace-warn
 spec:
-  policyName: seccomp-profile-initcontainers-restricted
+  policyName: initcontainer-seccomp-profile-restricted
   validationActions:
   - Warn
   matchResources:
@@ -330,6 +390,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-seccomp-profile-restricted.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: seccomp-profile-initcontainers-restricted.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -338,9 +402,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: seccomp-profile-initcontainers-restricted-namespace-audit
+  name: initcontainer-seccomp-profile-restricted-namespace-audit
 spec:
-  policyName: seccomp-profile-initcontainers-restricted
+  policyName: initcontainer-seccomp-profile-restricted
   validationActions:
   - Audit
   matchResources:
@@ -351,6 +415,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-seccomp-profile-restricted.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: seccomp-profile-initcontainers-restricted.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -359,9 +427,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: seccomp-profile-initcontainers-restricted-namespace-enforce
+  name: initcontainer-seccomp-profile-restricted-namespace-enforce
 spec:
-  policyName: seccomp-profile-initcontainers-restricted
+  policyName: initcontainer-seccomp-profile-restricted
   validationActions:
   - Deny
   matchResources:
@@ -372,6 +440,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-seccomp-profile-restricted.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: seccomp-profile-initcontainers-restricted.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -380,9 +452,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: seccomp-profile-ephemeralcontainers-restricted-namespace-warn
+  name: ephemeralcontainer-seccomp-profile-restricted-namespace-warn
 spec:
-  policyName: seccomp-profile-ephemeralcontainers-restricted
+  policyName: ephemeralcontainer-seccomp-profile-restricted
   validationActions:
   - Warn
   matchResources:
@@ -393,6 +465,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-seccomp-profile-restricted.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: seccomp-profile-ephemeralcontainers-restricted.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -401,9 +477,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: seccomp-profile-ephemeralcontainers-restricted-namespace-audit
+  name: ephemeralcontainer-seccomp-profile-restricted-namespace-audit
 spec:
-  policyName: seccomp-profile-ephemeralcontainers-restricted
+  policyName: ephemeralcontainer-seccomp-profile-restricted
   validationActions:
   - Audit
   matchResources:
@@ -414,6 +490,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-seccomp-profile-restricted.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: seccomp-profile-ephemeralcontainers-restricted.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -422,9 +502,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: seccomp-profile-ephemeralcontainers-restricted-namespace-enforce
+  name: ephemeralcontainer-seccomp-profile-restricted-namespace-enforce
 spec:
-  policyName: seccomp-profile-ephemeralcontainers-restricted
+  policyName: ephemeralcontainer-seccomp-profile-restricted
   validationActions:
   - Deny
   matchResources:
@@ -435,6 +515,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-seccomp-profile-restricted.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: seccomp-profile-ephemeralcontainers-restricted.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -443,9 +527,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: seccomp-profile-containers-restricted-namespace-warn
+  name: container-seccomp-profile-restricted-namespace-warn
 spec:
-  policyName: seccomp-profile-containers-restricted
+  policyName: container-seccomp-profile-restricted
   validationActions:
   - Warn
   matchResources:
@@ -456,6 +540,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-seccomp-profile-restricted.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: seccomp-profile-containers-restricted.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -464,9 +552,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: seccomp-profile-containers-restricted-namespace-audit
+  name: container-seccomp-profile-restricted-namespace-audit
 spec:
-  policyName: seccomp-profile-containers-restricted
+  policyName: container-seccomp-profile-restricted
   validationActions:
   - Audit
   matchResources:
@@ -477,6 +565,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-seccomp-profile-restricted.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: seccomp-profile-containers-restricted.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -485,9 +577,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: seccomp-profile-containers-restricted-namespace-enforce
+  name: container-seccomp-profile-restricted-namespace-enforce
 spec:
-  policyName: seccomp-profile-containers-restricted
+  policyName: container-seccomp-profile-restricted
   validationActions:
   - Deny
   matchResources:
@@ -498,6 +590,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-seccomp-profile-restricted.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: seccomp-profile-containers-restricted.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -506,9 +602,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-role-namespace-warn
+  name: pod-selinux-role-namespace-warn
 spec:
-  policyName: selinux-role
+  policyName: pod-selinux-role
   validationActions:
   - Warn
   matchResources:
@@ -519,6 +615,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-selinux-role.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-role.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -527,9 +627,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-role-namespace-audit
+  name: pod-selinux-role-namespace-audit
 spec:
-  policyName: selinux-role
+  policyName: pod-selinux-role
   validationActions:
   - Audit
   matchResources:
@@ -540,6 +640,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-selinux-role.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-role.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -548,9 +652,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-role-namespace-enforce
+  name: pod-selinux-role-namespace-enforce
 spec:
-  policyName: selinux-role
+  policyName: pod-selinux-role
   validationActions:
   - Deny
   matchResources:
@@ -561,6 +665,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-selinux-role.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-role.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -569,9 +677,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-role-initcontainers-namespace-warn
+  name: initcontainer-selinux-role-namespace-warn
 spec:
-  policyName: selinux-role-initcontainers
+  policyName: initcontainer-selinux-role
   validationActions:
   - Warn
   matchResources:
@@ -582,6 +690,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-selinux-role.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-role-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -590,9 +702,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-role-initcontainers-namespace-audit
+  name: initcontainer-selinux-role-namespace-audit
 spec:
-  policyName: selinux-role-initcontainers
+  policyName: initcontainer-selinux-role
   validationActions:
   - Audit
   matchResources:
@@ -603,6 +715,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-selinux-role.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-role-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -611,9 +727,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-role-initcontainers-namespace-enforce
+  name: initcontainer-selinux-role-namespace-enforce
 spec:
-  policyName: selinux-role-initcontainers
+  policyName: initcontainer-selinux-role
   validationActions:
   - Deny
   matchResources:
@@ -624,6 +740,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-selinux-role.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-role-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -632,9 +752,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-role-ephemeralcontainers-namespace-warn
+  name: ephemeralcontainer-selinux-role-namespace-warn
 spec:
-  policyName: selinux-role-ephemeralcontainers
+  policyName: ephemeralcontainer-selinux-role
   validationActions:
   - Warn
   matchResources:
@@ -645,6 +765,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-selinux-role.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-role-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -653,9 +777,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-role-ephemeralcontainers-namespace-audit
+  name: ephemeralcontainer-selinux-role-namespace-audit
 spec:
-  policyName: selinux-role-ephemeralcontainers
+  policyName: ephemeralcontainer-selinux-role
   validationActions:
   - Audit
   matchResources:
@@ -666,6 +790,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-selinux-role.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-role-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -674,9 +802,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-role-ephemeralcontainers-namespace-enforce
+  name: ephemeralcontainer-selinux-role-namespace-enforce
 spec:
-  policyName: selinux-role-ephemeralcontainers
+  policyName: ephemeralcontainer-selinux-role
   validationActions:
   - Deny
   matchResources:
@@ -687,6 +815,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-selinux-role.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-role-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -695,9 +827,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-role-containers-namespace-warn
+  name: container-selinux-role-namespace-warn
 spec:
-  policyName: selinux-role-containers
+  policyName: container-selinux-role
   validationActions:
   - Warn
   matchResources:
@@ -708,6 +840,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-selinux-role.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-role-containers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -716,9 +852,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-role-containers-namespace-audit
+  name: container-selinux-role-namespace-audit
 spec:
-  policyName: selinux-role-containers
+  policyName: container-selinux-role
   validationActions:
   - Audit
   matchResources:
@@ -729,6 +865,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-selinux-role.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-role-containers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -737,9 +877,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-role-containers-namespace-enforce
+  name: container-selinux-role-namespace-enforce
 spec:
-  policyName: selinux-role-containers
+  policyName: container-selinux-role
   validationActions:
   - Deny
   matchResources:
@@ -750,6 +890,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-selinux-role.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-role-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -758,9 +902,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allowed-sysctls-namespace-warn
+  name: pod-sysctls-namespace-warn
 spec:
-  policyName: allowed-sysctls
+  policyName: pod-sysctls
   validationActions:
   - Warn
   matchResources:
@@ -771,6 +915,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-sysctls.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: allowed-sysctls.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -779,9 +927,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allowed-sysctls-namespace-audit
+  name: pod-sysctls-namespace-audit
 spec:
-  policyName: allowed-sysctls
+  policyName: pod-sysctls
   validationActions:
   - Audit
   matchResources:
@@ -792,6 +940,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-sysctls.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: allowed-sysctls.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -800,9 +952,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allowed-sysctls-namespace-enforce
+  name: pod-sysctls-namespace-enforce
 spec:
-  policyName: allowed-sysctls
+  policyName: pod-sysctls
   validationActions:
   - Deny
   matchResources:
@@ -813,6 +965,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-sysctls.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: allowed-sysctls.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -821,9 +977,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: poststart-tcpsocket-host-initcontainers-namespace-warn
+  name: initcontainer-poststart-tcpsocket-host-namespace-warn
 spec:
-  policyName: poststart-tcpsocket-host-initcontainers
+  policyName: initcontainer-poststart-tcpsocket-host
   validationActions:
   - Warn
   matchResources:
@@ -834,6 +990,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-poststart-tcpsocket-host.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: poststart-tcpsocket-host-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -842,9 +1002,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: poststart-tcpsocket-host-initcontainers-namespace-audit
+  name: initcontainer-poststart-tcpsocket-host-namespace-audit
 spec:
-  policyName: poststart-tcpsocket-host-initcontainers
+  policyName: initcontainer-poststart-tcpsocket-host
   validationActions:
   - Audit
   matchResources:
@@ -855,6 +1015,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-poststart-tcpsocket-host.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: poststart-tcpsocket-host-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -863,9 +1027,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: poststart-tcpsocket-host-initcontainers-namespace-enforce
+  name: initcontainer-poststart-tcpsocket-host-namespace-enforce
 spec:
-  policyName: poststart-tcpsocket-host-initcontainers
+  policyName: initcontainer-poststart-tcpsocket-host
   validationActions:
   - Deny
   matchResources:
@@ -876,6 +1040,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-poststart-tcpsocket-host.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: poststart-tcpsocket-host-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -884,9 +1052,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: poststart-tcpsocket-host-containers-namespace-warn
+  name: container-poststart-tcpsocket-host-namespace-warn
 spec:
-  policyName: poststart-tcpsocket-host-containers
+  policyName: container-poststart-tcpsocket-host
   validationActions:
   - Warn
   matchResources:
@@ -897,6 +1065,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-poststart-tcpsocket-host.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: poststart-tcpsocket-host-containers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -905,9 +1077,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: poststart-tcpsocket-host-containers-namespace-audit
+  name: container-poststart-tcpsocket-host-namespace-audit
 spec:
-  policyName: poststart-tcpsocket-host-containers
+  policyName: container-poststart-tcpsocket-host
   validationActions:
   - Audit
   matchResources:
@@ -918,6 +1090,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-poststart-tcpsocket-host.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: poststart-tcpsocket-host-containers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -926,9 +1102,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: poststart-tcpsocket-host-containers-namespace-enforce
+  name: container-poststart-tcpsocket-host-namespace-enforce
 spec:
-  policyName: poststart-tcpsocket-host-containers
+  policyName: container-poststart-tcpsocket-host
   validationActions:
   - Deny
   matchResources:
@@ -939,6 +1115,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-poststart-tcpsocket-host.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: poststart-tcpsocket-host-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -947,9 +1127,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: startupprobe-httpget-host-initcontainers-namespace-warn
+  name: initcontainer-startupprobe-httpget-host-namespace-warn
 spec:
-  policyName: startupprobe-httpget-host-initcontainers
+  policyName: initcontainer-startupprobe-httpget-host
   validationActions:
   - Warn
   matchResources:
@@ -960,6 +1140,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-startupprobe-httpget-host.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: startupprobe-httpget-host-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -968,9 +1152,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: startupprobe-httpget-host-initcontainers-namespace-audit
+  name: initcontainer-startupprobe-httpget-host-namespace-audit
 spec:
-  policyName: startupprobe-httpget-host-initcontainers
+  policyName: initcontainer-startupprobe-httpget-host
   validationActions:
   - Audit
   matchResources:
@@ -981,6 +1165,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-startupprobe-httpget-host.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: startupprobe-httpget-host-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -989,9 +1177,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: startupprobe-httpget-host-initcontainers-namespace-enforce
+  name: initcontainer-startupprobe-httpget-host-namespace-enforce
 spec:
-  policyName: startupprobe-httpget-host-initcontainers
+  policyName: initcontainer-startupprobe-httpget-host
   validationActions:
   - Deny
   matchResources:
@@ -1002,6 +1190,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-startupprobe-httpget-host.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: startupprobe-httpget-host-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -1010,9 +1202,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: startupprobe-httpget-host-containers-namespace-warn
+  name: container-startupprobe-httpget-host-namespace-warn
 spec:
-  policyName: startupprobe-httpget-host-containers
+  policyName: container-startupprobe-httpget-host
   validationActions:
   - Warn
   matchResources:
@@ -1023,6 +1215,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-startupprobe-httpget-host.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: startupprobe-httpget-host-containers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -1031,9 +1227,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: startupprobe-httpget-host-containers-namespace-audit
+  name: container-startupprobe-httpget-host-namespace-audit
 spec:
-  policyName: startupprobe-httpget-host-containers
+  policyName: container-startupprobe-httpget-host
   validationActions:
   - Audit
   matchResources:
@@ -1044,6 +1240,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-startupprobe-httpget-host.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: startupprobe-httpget-host-containers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -1052,9 +1252,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: startupprobe-httpget-host-containers-namespace-enforce
+  name: container-startupprobe-httpget-host-namespace-enforce
 spec:
-  policyName: startupprobe-httpget-host-containers
+  policyName: container-startupprobe-httpget-host
   validationActions:
   - Deny
   matchResources:
@@ -1065,6 +1265,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-startupprobe-httpget-host.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: startupprobe-httpget-host-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -1073,9 +1277,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: apparmor-annotation-values-namespace-warn
+  name: pod-apparmor-annotation-values-namespace-warn
 spec:
-  policyName: apparmor-annotation-values
+  policyName: pod-apparmor-annotation-values
   validationActions:
   - Warn
   matchResources:
@@ -1086,6 +1290,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-apparmor-annotation-values.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: apparmor-annotation-values.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -1094,9 +1302,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: apparmor-annotation-values-namespace-audit
+  name: pod-apparmor-annotation-values-namespace-audit
 spec:
-  policyName: apparmor-annotation-values
+  policyName: pod-apparmor-annotation-values
   validationActions:
   - Audit
   matchResources:
@@ -1107,6 +1315,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-apparmor-annotation-values.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: apparmor-annotation-values.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -1115,9 +1327,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: apparmor-annotation-values-namespace-enforce
+  name: pod-apparmor-annotation-values-namespace-enforce
 spec:
-  policyName: apparmor-annotation-values
+  policyName: pod-apparmor-annotation-values
   validationActions:
   - Deny
   matchResources:
@@ -1128,6 +1340,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-apparmor-annotation-values.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: apparmor-annotation-values.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -1136,9 +1352,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: hostipc-namespace-warn
+  name: pod-hostipc-namespace-warn
 spec:
-  policyName: hostipc
+  policyName: pod-hostipc
   validationActions:
   - Warn
   matchResources:
@@ -1149,6 +1365,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-hostipc.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: hostipc.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -1157,9 +1377,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: hostipc-namespace-audit
+  name: pod-hostipc-namespace-audit
 spec:
-  policyName: hostipc
+  policyName: pod-hostipc
   validationActions:
   - Audit
   matchResources:
@@ -1170,6 +1390,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-hostipc.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: hostipc.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -1178,9 +1402,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: hostipc-namespace-enforce
+  name: pod-hostipc-namespace-enforce
 spec:
-  policyName: hostipc
+  policyName: pod-hostipc
   validationActions:
   - Deny
   matchResources:
@@ -1191,6 +1415,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-hostipc.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: hostipc.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -1199,9 +1427,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: privileged-initcontainers-namespace-warn
+  name: initcontainer-privileged-namespace-warn
 spec:
-  policyName: privileged-initcontainers
+  policyName: initcontainer-privileged
   validationActions:
   - Warn
   matchResources:
@@ -1212,6 +1440,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-privileged.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: privileged-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -1220,9 +1452,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: privileged-initcontainers-namespace-audit
+  name: initcontainer-privileged-namespace-audit
 spec:
-  policyName: privileged-initcontainers
+  policyName: initcontainer-privileged
   validationActions:
   - Audit
   matchResources:
@@ -1233,6 +1465,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-privileged.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: privileged-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -1241,9 +1477,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: privileged-initcontainers-namespace-enforce
+  name: initcontainer-privileged-namespace-enforce
 spec:
-  policyName: privileged-initcontainers
+  policyName: initcontainer-privileged
   validationActions:
   - Deny
   matchResources:
@@ -1254,6 +1490,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-privileged.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: privileged-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -1262,9 +1502,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: privileged-ephemeralcontainers-namespace-warn
+  name: ephemeralcontainer-privileged-namespace-warn
 spec:
-  policyName: privileged-ephemeralcontainers
+  policyName: ephemeralcontainer-privileged
   validationActions:
   - Warn
   matchResources:
@@ -1275,6 +1515,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-privileged.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: privileged-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -1283,9 +1527,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: privileged-ephemeralcontainers-namespace-audit
+  name: ephemeralcontainer-privileged-namespace-audit
 spec:
-  policyName: privileged-ephemeralcontainers
+  policyName: ephemeralcontainer-privileged
   validationActions:
   - Audit
   matchResources:
@@ -1296,6 +1540,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-privileged.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: privileged-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -1304,9 +1552,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: privileged-ephemeralcontainers-namespace-enforce
+  name: ephemeralcontainer-privileged-namespace-enforce
 spec:
-  policyName: privileged-ephemeralcontainers
+  policyName: ephemeralcontainer-privileged
   validationActions:
   - Deny
   matchResources:
@@ -1317,6 +1565,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-privileged.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: privileged-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -1325,9 +1577,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: privileged-containers-namespace-warn
+  name: container-privileged-namespace-warn
 spec:
-  policyName: privileged-containers
+  policyName: container-privileged
   validationActions:
   - Warn
   matchResources:
@@ -1338,6 +1590,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-privileged.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: privileged-containers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -1346,9 +1602,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: privileged-containers-namespace-audit
+  name: container-privileged-namespace-audit
 spec:
-  policyName: privileged-containers
+  policyName: container-privileged
   validationActions:
   - Audit
   matchResources:
@@ -1359,6 +1615,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-privileged.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: privileged-containers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -1367,9 +1627,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: privileged-containers-namespace-enforce
+  name: container-privileged-namespace-enforce
 spec:
-  policyName: privileged-containers
+  policyName: container-privileged
   validationActions:
   - Deny
   matchResources:
@@ -1380,6 +1640,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-privileged.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: privileged-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -1388,9 +1652,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: apparmor-profile-pod-namespace-warn
+  name: pod-apparmor-profile-namespace-warn
 spec:
-  policyName: apparmor-profile-pod
+  policyName: pod-apparmor-profile
   validationActions:
   - Warn
   matchResources:
@@ -1401,6 +1665,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-apparmor-profile.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: apparmor-profile-pod.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -1409,9 +1677,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: apparmor-profile-pod-namespace-audit
+  name: pod-apparmor-profile-namespace-audit
 spec:
-  policyName: apparmor-profile-pod
+  policyName: pod-apparmor-profile
   validationActions:
   - Audit
   matchResources:
@@ -1422,6 +1690,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-apparmor-profile.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: apparmor-profile-pod.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -1430,9 +1702,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: apparmor-profile-pod-namespace-enforce
+  name: pod-apparmor-profile-namespace-enforce
 spec:
-  policyName: apparmor-profile-pod
+  policyName: pod-apparmor-profile
   validationActions:
   - Deny
   matchResources:
@@ -1443,6 +1715,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-apparmor-profile.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: apparmor-profile-pod.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -1451,9 +1727,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: apparmor-profile-initcontainers-namespace-warn
+  name: initcontainer-apparmor-profile-namespace-warn
 spec:
-  policyName: apparmor-profile-initcontainers
+  policyName: initcontainer-apparmor-profile
   validationActions:
   - Warn
   matchResources:
@@ -1464,6 +1740,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-apparmor-profile.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: apparmor-profile-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -1472,9 +1752,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: apparmor-profile-initcontainers-namespace-audit
+  name: initcontainer-apparmor-profile-namespace-audit
 spec:
-  policyName: apparmor-profile-initcontainers
+  policyName: initcontainer-apparmor-profile
   validationActions:
   - Audit
   matchResources:
@@ -1485,6 +1765,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-apparmor-profile.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: apparmor-profile-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -1493,9 +1777,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: apparmor-profile-initcontainers-namespace-enforce
+  name: initcontainer-apparmor-profile-namespace-enforce
 spec:
-  policyName: apparmor-profile-initcontainers
+  policyName: initcontainer-apparmor-profile
   validationActions:
   - Deny
   matchResources:
@@ -1506,6 +1790,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-apparmor-profile.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: apparmor-profile-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -1514,9 +1802,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: apparmor-profile-ephemeralcontainers-namespace-warn
+  name: ephemeralcontainer-apparmor-profile-namespace-warn
 spec:
-  policyName: apparmor-profile-ephemeralcontainers
+  policyName: ephemeralcontainer-apparmor-profile
   validationActions:
   - Warn
   matchResources:
@@ -1527,6 +1815,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-apparmor-profile.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: apparmor-profile-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -1535,9 +1827,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: apparmor-profile-ephemeralcontainers-namespace-audit
+  name: ephemeralcontainer-apparmor-profile-namespace-audit
 spec:
-  policyName: apparmor-profile-ephemeralcontainers
+  policyName: ephemeralcontainer-apparmor-profile
   validationActions:
   - Audit
   matchResources:
@@ -1548,6 +1840,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-apparmor-profile.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: apparmor-profile-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -1556,9 +1852,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: apparmor-profile-ephemeralcontainers-namespace-enforce
+  name: ephemeralcontainer-apparmor-profile-namespace-enforce
 spec:
-  policyName: apparmor-profile-ephemeralcontainers
+  policyName: ephemeralcontainer-apparmor-profile
   validationActions:
   - Deny
   matchResources:
@@ -1569,6 +1865,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-apparmor-profile.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: apparmor-profile-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -1577,9 +1877,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: apparmor-profile-containers-namespace-warn
+  name: container-apparmor-profile-namespace-warn
 spec:
-  policyName: apparmor-profile-containers
+  policyName: container-apparmor-profile
   validationActions:
   - Warn
   matchResources:
@@ -1590,6 +1890,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-apparmor-profile.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: apparmor-profile-containers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -1598,9 +1902,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: apparmor-profile-containers-namespace-audit
+  name: container-apparmor-profile-namespace-audit
 spec:
-  policyName: apparmor-profile-containers
+  policyName: container-apparmor-profile
   validationActions:
   - Audit
   matchResources:
@@ -1611,6 +1915,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-apparmor-profile.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: apparmor-profile-containers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -1619,9 +1927,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: apparmor-profile-containers-namespace-enforce
+  name: container-apparmor-profile-namespace-enforce
 spec:
-  policyName: apparmor-profile-containers
+  policyName: container-apparmor-profile
   validationActions:
   - Deny
   matchResources:
@@ -1632,6 +1940,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-apparmor-profile.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: apparmor-profile-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -1640,9 +1952,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: prestop-httpget-host-initcontainers-namespace-warn
+  name: initcontainer-prestop-httpget-host-namespace-warn
 spec:
-  policyName: prestop-httpget-host-initcontainers
+  policyName: initcontainer-prestop-httpget-host
   validationActions:
   - Warn
   matchResources:
@@ -1653,6 +1965,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-prestop-httpget-host.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: prestop-httpget-host-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -1661,9 +1977,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: prestop-httpget-host-initcontainers-namespace-audit
+  name: initcontainer-prestop-httpget-host-namespace-audit
 spec:
-  policyName: prestop-httpget-host-initcontainers
+  policyName: initcontainer-prestop-httpget-host
   validationActions:
   - Audit
   matchResources:
@@ -1674,6 +1990,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-prestop-httpget-host.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: prestop-httpget-host-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -1682,9 +2002,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: prestop-httpget-host-initcontainers-namespace-enforce
+  name: initcontainer-prestop-httpget-host-namespace-enforce
 spec:
-  policyName: prestop-httpget-host-initcontainers
+  policyName: initcontainer-prestop-httpget-host
   validationActions:
   - Deny
   matchResources:
@@ -1695,6 +2015,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-prestop-httpget-host.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: prestop-httpget-host-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -1703,9 +2027,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: prestop-httpget-host-containers-namespace-warn
+  name: container-prestop-httpget-host-namespace-warn
 spec:
-  policyName: prestop-httpget-host-containers
+  policyName: container-prestop-httpget-host
   validationActions:
   - Warn
   matchResources:
@@ -1716,6 +2040,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-prestop-httpget-host.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: prestop-httpget-host-containers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -1724,9 +2052,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: prestop-httpget-host-containers-namespace-audit
+  name: container-prestop-httpget-host-namespace-audit
 spec:
-  policyName: prestop-httpget-host-containers
+  policyName: container-prestop-httpget-host
   validationActions:
   - Audit
   matchResources:
@@ -1737,6 +2065,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-prestop-httpget-host.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: prestop-httpget-host-containers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -1745,9 +2077,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: prestop-httpget-host-containers-namespace-enforce
+  name: container-prestop-httpget-host-namespace-enforce
 spec:
-  policyName: prestop-httpget-host-containers
+  policyName: container-prestop-httpget-host
   validationActions:
   - Deny
   matchResources:
@@ -1758,6 +2090,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-prestop-httpget-host.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: prestop-httpget-host-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -1766,9 +2102,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: procmount-initcontainers-namespace-warn
+  name: initcontainer-procmount-namespace-warn
 spec:
-  policyName: procmount-initcontainers
+  policyName: initcontainer-procmount
   validationActions:
   - Warn
   matchResources:
@@ -1779,6 +2115,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-procmount.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: procmount-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -1787,9 +2127,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: procmount-initcontainers-namespace-audit
+  name: initcontainer-procmount-namespace-audit
 spec:
-  policyName: procmount-initcontainers
+  policyName: initcontainer-procmount
   validationActions:
   - Audit
   matchResources:
@@ -1800,6 +2140,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-procmount.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: procmount-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -1808,9 +2152,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: procmount-initcontainers-namespace-enforce
+  name: initcontainer-procmount-namespace-enforce
 spec:
-  policyName: procmount-initcontainers
+  policyName: initcontainer-procmount
   validationActions:
   - Deny
   matchResources:
@@ -1821,6 +2165,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-procmount.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: procmount-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -1829,9 +2177,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: procmount-ephemeralcontainers-namespace-warn
+  name: ephemeralcontainer-procmount-namespace-warn
 spec:
-  policyName: procmount-ephemeralcontainers
+  policyName: ephemeralcontainer-procmount
   validationActions:
   - Warn
   matchResources:
@@ -1842,6 +2190,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-procmount.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: procmount-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -1850,9 +2202,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: procmount-ephemeralcontainers-namespace-audit
+  name: ephemeralcontainer-procmount-namespace-audit
 spec:
-  policyName: procmount-ephemeralcontainers
+  policyName: ephemeralcontainer-procmount
   validationActions:
   - Audit
   matchResources:
@@ -1863,6 +2215,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-procmount.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: procmount-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -1871,9 +2227,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: procmount-ephemeralcontainers-namespace-enforce
+  name: ephemeralcontainer-procmount-namespace-enforce
 spec:
-  policyName: procmount-ephemeralcontainers
+  policyName: ephemeralcontainer-procmount
   validationActions:
   - Deny
   matchResources:
@@ -1884,6 +2240,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-procmount.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: procmount-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -1892,9 +2252,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: procmount-containers-namespace-warn
+  name: container-procmount-namespace-warn
 spec:
-  policyName: procmount-containers
+  policyName: container-procmount
   validationActions:
   - Warn
   matchResources:
@@ -1905,6 +2265,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-procmount.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: procmount-containers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -1913,9 +2277,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: procmount-containers-namespace-audit
+  name: container-procmount-namespace-audit
 spec:
-  policyName: procmount-containers
+  policyName: container-procmount
   validationActions:
   - Audit
   matchResources:
@@ -1926,6 +2290,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-procmount.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: procmount-containers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -1934,9 +2302,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: procmount-containers-namespace-enforce
+  name: container-procmount-namespace-enforce
 spec:
-  policyName: procmount-containers
+  policyName: container-procmount
   validationActions:
   - Deny
   matchResources:
@@ -1947,6 +2315,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-procmount.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: procmount-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -1955,9 +2327,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-user-namespace-warn
+  name: pod-selinux-user-namespace-warn
 spec:
-  policyName: selinux-user
+  policyName: pod-selinux-user
   validationActions:
   - Warn
   matchResources:
@@ -1968,6 +2340,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-selinux-user.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-user.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -1976,9 +2352,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-user-namespace-audit
+  name: pod-selinux-user-namespace-audit
 spec:
-  policyName: selinux-user
+  policyName: pod-selinux-user
   validationActions:
   - Audit
   matchResources:
@@ -1989,6 +2365,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-selinux-user.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-user.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -1997,9 +2377,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-user-namespace-enforce
+  name: pod-selinux-user-namespace-enforce
 spec:
-  policyName: selinux-user
+  policyName: pod-selinux-user
   validationActions:
   - Deny
   matchResources:
@@ -2010,6 +2390,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-selinux-user.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-user.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -2018,9 +2402,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-user-initcontainers-namespace-warn
+  name: initcontainer-selinux-user-namespace-warn
 spec:
-  policyName: selinux-user-initcontainers
+  policyName: initcontainer-selinux-user
   validationActions:
   - Warn
   matchResources:
@@ -2031,6 +2415,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-selinux-user.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-user-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -2039,9 +2427,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-user-initcontainers-namespace-audit
+  name: initcontainer-selinux-user-namespace-audit
 spec:
-  policyName: selinux-user-initcontainers
+  policyName: initcontainer-selinux-user
   validationActions:
   - Audit
   matchResources:
@@ -2052,6 +2440,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-selinux-user.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-user-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -2060,9 +2452,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-user-initcontainers-namespace-enforce
+  name: initcontainer-selinux-user-namespace-enforce
 spec:
-  policyName: selinux-user-initcontainers
+  policyName: initcontainer-selinux-user
   validationActions:
   - Deny
   matchResources:
@@ -2073,6 +2465,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-selinux-user.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-user-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -2081,9 +2477,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-user-ephemeralcontainers-namespace-warn
+  name: ephemeralcontainer-selinux-user-namespace-warn
 spec:
-  policyName: selinux-user-ephemeralcontainers
+  policyName: ephemeralcontainer-selinux-user
   validationActions:
   - Warn
   matchResources:
@@ -2094,6 +2490,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-selinux-user.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-user-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -2102,9 +2502,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-user-ephemeralcontainers-namespace-audit
+  name: ephemeralcontainer-selinux-user-namespace-audit
 spec:
-  policyName: selinux-user-ephemeralcontainers
+  policyName: ephemeralcontainer-selinux-user
   validationActions:
   - Audit
   matchResources:
@@ -2115,6 +2515,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-selinux-user.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-user-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -2123,9 +2527,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-user-ephemeralcontainers-namespace-enforce
+  name: ephemeralcontainer-selinux-user-namespace-enforce
 spec:
-  policyName: selinux-user-ephemeralcontainers
+  policyName: ephemeralcontainer-selinux-user
   validationActions:
   - Deny
   matchResources:
@@ -2136,6 +2540,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-selinux-user.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-user-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -2144,9 +2552,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-user-containers-namespace-warn
+  name: container-selinux-user-namespace-warn
 spec:
-  policyName: selinux-user-containers
+  policyName: container-selinux-user
   validationActions:
   - Warn
   matchResources:
@@ -2157,6 +2565,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-selinux-user.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-user-containers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -2165,9 +2577,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-user-containers-namespace-audit
+  name: container-selinux-user-namespace-audit
 spec:
-  policyName: selinux-user-containers
+  policyName: container-selinux-user
   validationActions:
   - Audit
   matchResources:
@@ -2178,6 +2590,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-selinux-user.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-user-containers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -2186,9 +2602,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-user-containers-namespace-enforce
+  name: container-selinux-user-namespace-enforce
 spec:
-  policyName: selinux-user-containers
+  policyName: container-selinux-user
   validationActions:
   - Deny
   matchResources:
@@ -2199,6 +2615,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-selinux-user.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-user-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -2207,9 +2627,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: prestop-tcpsocket-host-initcontainers-namespace-warn
+  name: initcontainer-prestop-tcpsocket-host-namespace-warn
 spec:
-  policyName: prestop-tcpsocket-host-initcontainers
+  policyName: initcontainer-prestop-tcpsocket-host
   validationActions:
   - Warn
   matchResources:
@@ -2220,6 +2640,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-prestop-tcpsocket-host.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: prestop-tcpsocket-host-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -2228,9 +2652,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: prestop-tcpsocket-host-initcontainers-namespace-audit
+  name: initcontainer-prestop-tcpsocket-host-namespace-audit
 spec:
-  policyName: prestop-tcpsocket-host-initcontainers
+  policyName: initcontainer-prestop-tcpsocket-host
   validationActions:
   - Audit
   matchResources:
@@ -2241,6 +2665,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-prestop-tcpsocket-host.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: prestop-tcpsocket-host-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -2249,9 +2677,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: prestop-tcpsocket-host-initcontainers-namespace-enforce
+  name: initcontainer-prestop-tcpsocket-host-namespace-enforce
 spec:
-  policyName: prestop-tcpsocket-host-initcontainers
+  policyName: initcontainer-prestop-tcpsocket-host
   validationActions:
   - Deny
   matchResources:
@@ -2262,6 +2690,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-prestop-tcpsocket-host.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: prestop-tcpsocket-host-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -2270,9 +2702,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: prestop-tcpsocket-host-containers-namespace-warn
+  name: container-prestop-tcpsocket-host-namespace-warn
 spec:
-  policyName: prestop-tcpsocket-host-containers
+  policyName: container-prestop-tcpsocket-host
   validationActions:
   - Warn
   matchResources:
@@ -2283,6 +2715,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-prestop-tcpsocket-host.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: prestop-tcpsocket-host-containers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -2291,9 +2727,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: prestop-tcpsocket-host-containers-namespace-audit
+  name: container-prestop-tcpsocket-host-namespace-audit
 spec:
-  policyName: prestop-tcpsocket-host-containers
+  policyName: container-prestop-tcpsocket-host
   validationActions:
   - Audit
   matchResources:
@@ -2304,6 +2740,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-prestop-tcpsocket-host.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: prestop-tcpsocket-host-containers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -2312,9 +2752,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: prestop-tcpsocket-host-containers-namespace-enforce
+  name: container-prestop-tcpsocket-host-namespace-enforce
 spec:
-  policyName: prestop-tcpsocket-host-containers
+  policyName: container-prestop-tcpsocket-host
   validationActions:
   - Deny
   matchResources:
@@ -2325,6 +2765,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-prestop-tcpsocket-host.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: prestop-tcpsocket-host-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -2333,9 +2777,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-type-namespace-warn
+  name: pod-selinux-type-namespace-warn
 spec:
-  policyName: selinux-type
+  policyName: pod-selinux-type
   validationActions:
   - Warn
   matchResources:
@@ -2346,6 +2790,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-selinux-type.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-type.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -2354,9 +2802,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-type-namespace-audit
+  name: pod-selinux-type-namespace-audit
 spec:
-  policyName: selinux-type
+  policyName: pod-selinux-type
   validationActions:
   - Audit
   matchResources:
@@ -2367,6 +2815,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-selinux-type.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-type.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -2375,9 +2827,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-type-namespace-enforce
+  name: pod-selinux-type-namespace-enforce
 spec:
-  policyName: selinux-type
+  policyName: pod-selinux-type
   validationActions:
   - Deny
   matchResources:
@@ -2388,6 +2840,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-selinux-type.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-type.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -2396,9 +2852,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-type-initcontainers-namespace-warn
+  name: initcontainer-selinux-type-namespace-warn
 spec:
-  policyName: selinux-type-initcontainers
+  policyName: initcontainer-selinux-type
   validationActions:
   - Warn
   matchResources:
@@ -2409,6 +2865,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-selinux-type.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-type-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -2417,9 +2877,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-type-initcontainers-namespace-audit
+  name: initcontainer-selinux-type-namespace-audit
 spec:
-  policyName: selinux-type-initcontainers
+  policyName: initcontainer-selinux-type
   validationActions:
   - Audit
   matchResources:
@@ -2430,6 +2890,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-selinux-type.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-type-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -2438,9 +2902,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-type-initcontainers-namespace-enforce
+  name: initcontainer-selinux-type-namespace-enforce
 spec:
-  policyName: selinux-type-initcontainers
+  policyName: initcontainer-selinux-type
   validationActions:
   - Deny
   matchResources:
@@ -2451,6 +2915,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-selinux-type.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-type-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -2459,9 +2927,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-type-ephemeralcontainers-namespace-warn
+  name: ephemeralcontainer-selinux-type-namespace-warn
 spec:
-  policyName: selinux-type-ephemeralcontainers
+  policyName: ephemeralcontainer-selinux-type
   validationActions:
   - Warn
   matchResources:
@@ -2472,6 +2940,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-selinux-type.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-type-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -2480,9 +2952,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-type-ephemeralcontainers-namespace-audit
+  name: ephemeralcontainer-selinux-type-namespace-audit
 spec:
-  policyName: selinux-type-ephemeralcontainers
+  policyName: ephemeralcontainer-selinux-type
   validationActions:
   - Audit
   matchResources:
@@ -2493,6 +2965,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-selinux-type.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-type-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -2501,9 +2977,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-type-ephemeralcontainers-namespace-enforce
+  name: ephemeralcontainer-selinux-type-namespace-enforce
 spec:
-  policyName: selinux-type-ephemeralcontainers
+  policyName: ephemeralcontainer-selinux-type
   validationActions:
   - Deny
   matchResources:
@@ -2514,6 +2990,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-selinux-type.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-type-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -2522,9 +3002,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-type-containers-namespace-warn
+  name: container-selinux-type-namespace-warn
 spec:
-  policyName: selinux-type-containers
+  policyName: container-selinux-type
   validationActions:
   - Warn
   matchResources:
@@ -2535,6 +3015,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-selinux-type.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-type-containers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -2543,9 +3027,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-type-containers-namespace-audit
+  name: container-selinux-type-namespace-audit
 spec:
-  policyName: selinux-type-containers
+  policyName: container-selinux-type
   validationActions:
   - Audit
   matchResources:
@@ -2556,6 +3040,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-selinux-type.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-type-containers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -2564,9 +3052,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: selinux-type-containers-namespace-enforce
+  name: container-selinux-type-namespace-enforce
 spec:
-  policyName: selinux-type-containers
+  policyName: container-selinux-type
   validationActions:
   - Deny
   matchResources:
@@ -2577,6 +3065,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-selinux-type.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: selinux-type-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -2585,9 +3077,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: readinessprobe-httpget-host-initcontainers-namespace-warn
+  name: initcontainer-readinessprobe-httpget-host-namespace-warn
 spec:
-  policyName: readinessprobe-httpget-host-initcontainers
+  policyName: initcontainer-readinessprobe-httpget-host
   validationActions:
   - Warn
   matchResources:
@@ -2598,6 +3090,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-readinessprobe-httpget-host.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: readinessprobe-httpget-host-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -2606,9 +3102,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: readinessprobe-httpget-host-initcontainers-namespace-audit
+  name: initcontainer-readinessprobe-httpget-host-namespace-audit
 spec:
-  policyName: readinessprobe-httpget-host-initcontainers
+  policyName: initcontainer-readinessprobe-httpget-host
   validationActions:
   - Audit
   matchResources:
@@ -2619,6 +3115,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-readinessprobe-httpget-host.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: readinessprobe-httpget-host-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -2627,9 +3127,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: readinessprobe-httpget-host-initcontainers-namespace-enforce
+  name: initcontainer-readinessprobe-httpget-host-namespace-enforce
 spec:
-  policyName: readinessprobe-httpget-host-initcontainers
+  policyName: initcontainer-readinessprobe-httpget-host
   validationActions:
   - Deny
   matchResources:
@@ -2640,6 +3140,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-readinessprobe-httpget-host.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: readinessprobe-httpget-host-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -2648,9 +3152,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: readinessprobe-httpget-host-containers-namespace-warn
+  name: container-readinessprobe-httpget-host-namespace-warn
 spec:
-  policyName: readinessprobe-httpget-host-containers
+  policyName: container-readinessprobe-httpget-host
   validationActions:
   - Warn
   matchResources:
@@ -2661,6 +3165,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-readinessprobe-httpget-host.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: readinessprobe-httpget-host-containers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -2669,9 +3177,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: readinessprobe-httpget-host-containers-namespace-audit
+  name: container-readinessprobe-httpget-host-namespace-audit
 spec:
-  policyName: readinessprobe-httpget-host-containers
+  policyName: container-readinessprobe-httpget-host
   validationActions:
   - Audit
   matchResources:
@@ -2682,6 +3190,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-readinessprobe-httpget-host.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: readinessprobe-httpget-host-containers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -2690,9 +3202,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: readinessprobe-httpget-host-containers-namespace-enforce
+  name: container-readinessprobe-httpget-host-namespace-enforce
 spec:
-  policyName: readinessprobe-httpget-host-containers
+  policyName: container-readinessprobe-httpget-host
   validationActions:
   - Deny
   matchResources:
@@ -2703,6 +3215,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-readinessprobe-httpget-host.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: readinessprobe-httpget-host-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -2711,9 +3227,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: hostpid-namespace-warn
+  name: pod-hostpid-namespace-warn
 spec:
-  policyName: hostpid
+  policyName: pod-hostpid
   validationActions:
   - Warn
   matchResources:
@@ -2724,6 +3240,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-hostpid.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: hostpid.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -2732,9 +3252,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: hostpid-namespace-audit
+  name: pod-hostpid-namespace-audit
 spec:
-  policyName: hostpid
+  policyName: pod-hostpid
   validationActions:
   - Audit
   matchResources:
@@ -2745,6 +3265,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-hostpid.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: hostpid.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -2753,9 +3277,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: hostpid-namespace-enforce
+  name: pod-hostpid-namespace-enforce
 spec:
-  policyName: hostpid
+  policyName: pod-hostpid
   validationActions:
   - Deny
   matchResources:
@@ -2766,6 +3290,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-hostpid.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: hostpid.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -2774,9 +3302,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: readinessprobe-tcpsocket-host-initcontainers-namespace-warn
+  name: initcontainer-readinessprobe-tcpsocket-host-namespace-warn
 spec:
-  policyName: readinessprobe-tcpsocket-host-initcontainers
+  policyName: initcontainer-readinessprobe-tcpsocket-host
   validationActions:
   - Warn
   matchResources:
@@ -2787,6 +3315,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-readinessprobe-tcpsocket-host.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: readinessprobe-tcpsocket-host-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -2795,9 +3327,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: readinessprobe-tcpsocket-host-initcontainers-namespace-audit
+  name: initcontainer-readinessprobe-tcpsocket-host-namespace-audit
 spec:
-  policyName: readinessprobe-tcpsocket-host-initcontainers
+  policyName: initcontainer-readinessprobe-tcpsocket-host
   validationActions:
   - Audit
   matchResources:
@@ -2808,6 +3340,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-readinessprobe-tcpsocket-host.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: readinessprobe-tcpsocket-host-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -2816,9 +3352,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: readinessprobe-tcpsocket-host-initcontainers-namespace-enforce
+  name: initcontainer-readinessprobe-tcpsocket-host-namespace-enforce
 spec:
-  policyName: readinessprobe-tcpsocket-host-initcontainers
+  policyName: initcontainer-readinessprobe-tcpsocket-host
   validationActions:
   - Deny
   matchResources:
@@ -2829,6 +3365,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-readinessprobe-tcpsocket-host.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: readinessprobe-tcpsocket-host-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -2837,9 +3377,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: readinessprobe-tcpsocket-host-containers-namespace-warn
+  name: container-readinessprobe-tcpsocket-host-namespace-warn
 spec:
-  policyName: readinessprobe-tcpsocket-host-containers
+  policyName: container-readinessprobe-tcpsocket-host
   validationActions:
   - Warn
   matchResources:
@@ -2850,6 +3390,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-readinessprobe-tcpsocket-host.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: readinessprobe-tcpsocket-host-containers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -2858,9 +3402,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: readinessprobe-tcpsocket-host-containers-namespace-audit
+  name: container-readinessprobe-tcpsocket-host-namespace-audit
 spec:
-  policyName: readinessprobe-tcpsocket-host-containers
+  policyName: container-readinessprobe-tcpsocket-host
   validationActions:
   - Audit
   matchResources:
@@ -2871,6 +3415,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-readinessprobe-tcpsocket-host.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: readinessprobe-tcpsocket-host-containers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -2879,9 +3427,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: readinessprobe-tcpsocket-host-containers-namespace-enforce
+  name: container-readinessprobe-tcpsocket-host-namespace-enforce
 spec:
-  policyName: readinessprobe-tcpsocket-host-containers
+  policyName: container-readinessprobe-tcpsocket-host
   validationActions:
   - Deny
   matchResources:
@@ -2892,6 +3440,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-readinessprobe-tcpsocket-host.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: readinessprobe-tcpsocket-host-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -2900,9 +3452,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allow-privilege-escalation-initcontainers-namespace-warn
+  name: initcontainer-privilege-escalation-namespace-warn
 spec:
-  policyName: allow-privilege-escalation-initcontainers
+  policyName: initcontainer-privilege-escalation
   validationActions:
   - Warn
   matchResources:
@@ -2913,6 +3465,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-privilege-escalation.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: allow-privilege-escalation-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -2921,9 +3477,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allow-privilege-escalation-initcontainers-namespace-audit
+  name: initcontainer-privilege-escalation-namespace-audit
 spec:
-  policyName: allow-privilege-escalation-initcontainers
+  policyName: initcontainer-privilege-escalation
   validationActions:
   - Audit
   matchResources:
@@ -2934,6 +3490,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-privilege-escalation.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: allow-privilege-escalation-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -2942,9 +3502,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allow-privilege-escalation-initcontainers-namespace-enforce
+  name: initcontainer-privilege-escalation-namespace-enforce
 spec:
-  policyName: allow-privilege-escalation-initcontainers
+  policyName: initcontainer-privilege-escalation
   validationActions:
   - Deny
   matchResources:
@@ -2955,6 +3515,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-privilege-escalation.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: allow-privilege-escalation-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -2963,9 +3527,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allow-privilege-escalation-ephemeralcontainers-namespace-warn
+  name: ephemeralcontainer-privilege-escalation-namespace-warn
 spec:
-  policyName: allow-privilege-escalation-ephemeralcontainers
+  policyName: ephemeralcontainer-privilege-escalation
   validationActions:
   - Warn
   matchResources:
@@ -2976,6 +3540,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-privilege-escalation.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: allow-privilege-escalation-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -2984,9 +3552,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allow-privilege-escalation-ephemeralcontainers-namespace-audit
+  name: ephemeralcontainer-privilege-escalation-namespace-audit
 spec:
-  policyName: allow-privilege-escalation-ephemeralcontainers
+  policyName: ephemeralcontainer-privilege-escalation
   validationActions:
   - Audit
   matchResources:
@@ -2997,6 +3565,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-privilege-escalation.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: allow-privilege-escalation-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -3005,9 +3577,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allow-privilege-escalation-ephemeralcontainers-namespace-enforce
+  name: ephemeralcontainer-privilege-escalation-namespace-enforce
 spec:
-  policyName: allow-privilege-escalation-ephemeralcontainers
+  policyName: ephemeralcontainer-privilege-escalation
   validationActions:
   - Deny
   matchResources:
@@ -3018,6 +3590,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-privilege-escalation.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: allow-privilege-escalation-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -3026,9 +3602,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allow-privilege-escalation-containers-namespace-warn
+  name: container-privilege-escalation-namespace-warn
 spec:
-  policyName: allow-privilege-escalation-containers
+  policyName: container-privilege-escalation
   validationActions:
   - Warn
   matchResources:
@@ -3039,6 +3615,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-privilege-escalation.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: allow-privilege-escalation-containers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -3047,9 +3627,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allow-privilege-escalation-containers-namespace-audit
+  name: container-privilege-escalation-namespace-audit
 spec:
-  policyName: allow-privilege-escalation-containers
+  policyName: container-privilege-escalation
   validationActions:
   - Audit
   matchResources:
@@ -3060,6 +3640,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-privilege-escalation.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: allow-privilege-escalation-containers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -3068,9 +3652,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allow-privilege-escalation-containers-namespace-enforce
+  name: container-privilege-escalation-namespace-enforce
 spec:
-  policyName: allow-privilege-escalation-containers
+  policyName: container-privilege-escalation
   validationActions:
   - Deny
   matchResources:
@@ -3081,6 +3665,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-privilege-escalation.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: allow-privilege-escalation-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -3089,9 +3677,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: capabilities-add-netbindservice-initcontainers-namespace-warn
+  name: initcontainer-capabilities-add-netbindservice-namespace-warn
 spec:
-  policyName: capabilities-add-netbindservice-initcontainers
+  policyName: initcontainer-capabilities-add-netbindservice
   validationActions:
   - Warn
   matchResources:
@@ -3102,6 +3690,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-capabilities-add-netbindservice.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: capabilities-add-netbindservice-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -3110,9 +3702,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: capabilities-add-netbindservice-initcontainers-namespace-audit
+  name: initcontainer-capabilities-add-netbindservice-namespace-audit
 spec:
-  policyName: capabilities-add-netbindservice-initcontainers
+  policyName: initcontainer-capabilities-add-netbindservice
   validationActions:
   - Audit
   matchResources:
@@ -3123,6 +3715,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-capabilities-add-netbindservice.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: capabilities-add-netbindservice-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -3131,9 +3727,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: capabilities-add-netbindservice-initcontainers-namespace-enforce
+  name: initcontainer-capabilities-add-netbindservice-namespace-enforce
 spec:
-  policyName: capabilities-add-netbindservice-initcontainers
+  policyName: initcontainer-capabilities-add-netbindservice
   validationActions:
   - Deny
   matchResources:
@@ -3144,6 +3740,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-capabilities-add-netbindservice.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: capabilities-add-netbindservice-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -3152,9 +3752,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: capabilities-add-netbindservice-ephemeralcontainers-namespace-warn
+  name: ephemeralcontainer-capabilities-add-netbindservice-namespace-warn
 spec:
-  policyName: capabilities-add-netbindservice-ephemeralcontainers
+  policyName: ephemeralcontainer-capabilities-add-netbindservice
   validationActions:
   - Warn
   matchResources:
@@ -3165,6 +3765,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-capabilities-add-netbindservice.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: capabilities-add-netbindservice-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -3173,9 +3777,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: capabilities-add-netbindservice-ephemeralcontainers-namespace-audit
+  name: ephemeralcontainer-capabilities-add-netbindservice-namespace-audit
 spec:
-  policyName: capabilities-add-netbindservice-ephemeralcontainers
+  policyName: ephemeralcontainer-capabilities-add-netbindservice
   validationActions:
   - Audit
   matchResources:
@@ -3186,6 +3790,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-capabilities-add-netbindservice.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: capabilities-add-netbindservice-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -3194,9 +3802,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: capabilities-add-netbindservice-ephemeralcontainers-namespace-enforce
+  name: ephemeralcontainer-capabilities-add-netbindservice-namespace-enforce
 spec:
-  policyName: capabilities-add-netbindservice-ephemeralcontainers
+  policyName: ephemeralcontainer-capabilities-add-netbindservice
   validationActions:
   - Deny
   matchResources:
@@ -3207,6 +3815,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-capabilities-add-netbindservice.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: capabilities-add-netbindservice-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -3215,9 +3827,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: capabilities-add-netbindservice-containers-namespace-warn
+  name: container-capabilities-add-netbindservice-namespace-warn
 spec:
-  policyName: capabilities-add-netbindservice-containers
+  policyName: container-capabilities-add-netbindservice
   validationActions:
   - Warn
   matchResources:
@@ -3228,6 +3840,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-capabilities-add-netbindservice.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: capabilities-add-netbindservice-containers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -3236,9 +3852,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: capabilities-add-netbindservice-containers-namespace-audit
+  name: container-capabilities-add-netbindservice-namespace-audit
 spec:
-  policyName: capabilities-add-netbindservice-containers
+  policyName: container-capabilities-add-netbindservice
   validationActions:
   - Audit
   matchResources:
@@ -3249,6 +3865,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-capabilities-add-netbindservice.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: capabilities-add-netbindservice-containers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -3257,9 +3877,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: capabilities-add-netbindservice-containers-namespace-enforce
+  name: container-capabilities-add-netbindservice-namespace-enforce
 spec:
-  policyName: capabilities-add-netbindservice-containers
+  policyName: container-capabilities-add-netbindservice
   validationActions:
   - Deny
   matchResources:
@@ -3270,6 +3890,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-capabilities-add-netbindservice.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: capabilities-add-netbindservice-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -3278,9 +3902,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: capabilities-drop-all-initcontainers-namespace-warn
+  name: initcontainer-capabilities-drop-all-namespace-warn
 spec:
-  policyName: capabilities-drop-all-initcontainers
+  policyName: initcontainer-capabilities-drop-all
   validationActions:
   - Warn
   matchResources:
@@ -3291,6 +3915,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-capabilities-drop-all.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: capabilities-drop-all-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -3299,9 +3927,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: capabilities-drop-all-initcontainers-namespace-audit
+  name: initcontainer-capabilities-drop-all-namespace-audit
 spec:
-  policyName: capabilities-drop-all-initcontainers
+  policyName: initcontainer-capabilities-drop-all
   validationActions:
   - Audit
   matchResources:
@@ -3312,6 +3940,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-capabilities-drop-all.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: capabilities-drop-all-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -3320,9 +3952,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: capabilities-drop-all-initcontainers-namespace-enforce
+  name: initcontainer-capabilities-drop-all-namespace-enforce
 spec:
-  policyName: capabilities-drop-all-initcontainers
+  policyName: initcontainer-capabilities-drop-all
   validationActions:
   - Deny
   matchResources:
@@ -3333,6 +3965,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-capabilities-drop-all.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: capabilities-drop-all-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -3341,9 +3977,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: capabilities-drop-all-ephemeralcontainers-namespace-warn
+  name: ephemeralcontainer-capabilities-drop-all-namespace-warn
 spec:
-  policyName: capabilities-drop-all-ephemeralcontainers
+  policyName: ephemeralcontainer-capabilities-drop-all
   validationActions:
   - Warn
   matchResources:
@@ -3354,6 +3990,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-capabilities-drop-all.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: capabilities-drop-all-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -3362,9 +4002,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: capabilities-drop-all-ephemeralcontainers-namespace-audit
+  name: ephemeralcontainer-capabilities-drop-all-namespace-audit
 spec:
-  policyName: capabilities-drop-all-ephemeralcontainers
+  policyName: ephemeralcontainer-capabilities-drop-all
   validationActions:
   - Audit
   matchResources:
@@ -3375,6 +4015,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-capabilities-drop-all.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: capabilities-drop-all-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -3383,9 +4027,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: capabilities-drop-all-ephemeralcontainers-namespace-enforce
+  name: ephemeralcontainer-capabilities-drop-all-namespace-enforce
 spec:
-  policyName: capabilities-drop-all-ephemeralcontainers
+  policyName: ephemeralcontainer-capabilities-drop-all
   validationActions:
   - Deny
   matchResources:
@@ -3396,6 +4040,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-capabilities-drop-all.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: capabilities-drop-all-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -3404,9 +4052,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: capabilities-drop-all-containers-namespace-warn
+  name: container-capabilities-drop-all-namespace-warn
 spec:
-  policyName: capabilities-drop-all-containers
+  policyName: container-capabilities-drop-all
   validationActions:
   - Warn
   matchResources:
@@ -3417,6 +4065,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-capabilities-drop-all.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: capabilities-drop-all-containers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -3425,9 +4077,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: capabilities-drop-all-containers-namespace-audit
+  name: container-capabilities-drop-all-namespace-audit
 spec:
-  policyName: capabilities-drop-all-containers
+  policyName: container-capabilities-drop-all
   validationActions:
   - Audit
   matchResources:
@@ -3438,6 +4090,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-capabilities-drop-all.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: capabilities-drop-all-containers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -3446,9 +4102,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: capabilities-drop-all-containers-namespace-enforce
+  name: container-capabilities-drop-all-namespace-enforce
 spec:
-  policyName: capabilities-drop-all-containers
+  policyName: container-capabilities-drop-all
   validationActions:
   - Deny
   matchResources:
@@ -3459,6 +4115,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-capabilities-drop-all.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: capabilities-drop-all-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -3467,9 +4127,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: hostpath-volumes-namespace-warn
+  name: pod-hostpath-volumes-namespace-warn
 spec:
-  policyName: hostpath-volumes
+  policyName: pod-hostpath-volumes
   validationActions:
   - Warn
   matchResources:
@@ -3480,6 +4140,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-hostpath-volumes.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: hostpath-volumes.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -3488,9 +4152,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: hostpath-volumes-namespace-audit
+  name: pod-hostpath-volumes-namespace-audit
 spec:
-  policyName: hostpath-volumes
+  policyName: pod-hostpath-volumes
   validationActions:
   - Audit
   matchResources:
@@ -3501,6 +4165,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-hostpath-volumes.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: hostpath-volumes.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -3509,9 +4177,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: hostpath-volumes-namespace-enforce
+  name: pod-hostpath-volumes-namespace-enforce
 spec:
-  policyName: hostpath-volumes
+  policyName: pod-hostpath-volumes
   validationActions:
   - Deny
   matchResources:
@@ -3522,6 +4190,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-hostpath-volumes.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: hostpath-volumes.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -3530,9 +4202,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: run-as-nonroot-pod-namespace-warn
+  name: pod-run-as-nonroot-namespace-warn
 spec:
-  policyName: run-as-nonroot-pod
+  policyName: pod-run-as-nonroot
   validationActions:
   - Warn
   matchResources:
@@ -3543,6 +4215,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-run-as-nonroot.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: run-as-nonroot-pod.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -3551,9 +4227,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: run-as-nonroot-pod-namespace-audit
+  name: pod-run-as-nonroot-namespace-audit
 spec:
-  policyName: run-as-nonroot-pod
+  policyName: pod-run-as-nonroot
   validationActions:
   - Audit
   matchResources:
@@ -3564,6 +4240,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-run-as-nonroot.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: run-as-nonroot-pod.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -3572,9 +4252,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: run-as-nonroot-pod-namespace-enforce
+  name: pod-run-as-nonroot-namespace-enforce
 spec:
-  policyName: run-as-nonroot-pod
+  policyName: pod-run-as-nonroot
   validationActions:
   - Deny
   matchResources:
@@ -3585,6 +4265,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-run-as-nonroot.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: run-as-nonroot-pod.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -3593,9 +4277,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: run-as-nonroot-initcontainers-namespace-warn
+  name: initcontainer-run-as-nonroot-namespace-warn
 spec:
-  policyName: run-as-nonroot-initcontainers
+  policyName: initcontainer-run-as-nonroot
   validationActions:
   - Warn
   matchResources:
@@ -3606,6 +4290,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-run-as-nonroot.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: run-as-nonroot-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -3614,9 +4302,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: run-as-nonroot-initcontainers-namespace-audit
+  name: initcontainer-run-as-nonroot-namespace-audit
 spec:
-  policyName: run-as-nonroot-initcontainers
+  policyName: initcontainer-run-as-nonroot
   validationActions:
   - Audit
   matchResources:
@@ -3627,6 +4315,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-run-as-nonroot.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: run-as-nonroot-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -3635,9 +4327,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: run-as-nonroot-initcontainers-namespace-enforce
+  name: initcontainer-run-as-nonroot-namespace-enforce
 spec:
-  policyName: run-as-nonroot-initcontainers
+  policyName: initcontainer-run-as-nonroot
   validationActions:
   - Deny
   matchResources:
@@ -3648,6 +4340,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-run-as-nonroot.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: run-as-nonroot-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -3656,9 +4352,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: run-as-nonroot-ephemeralcontainers-namespace-warn
+  name: ephemeralcontainer-run-as-nonroot-namespace-warn
 spec:
-  policyName: run-as-nonroot-ephemeralcontainers
+  policyName: ephemeralcontainer-run-as-nonroot
   validationActions:
   - Warn
   matchResources:
@@ -3669,6 +4365,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-run-as-nonroot.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: run-as-nonroot-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -3677,9 +4377,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: run-as-nonroot-ephemeralcontainers-namespace-audit
+  name: ephemeralcontainer-run-as-nonroot-namespace-audit
 spec:
-  policyName: run-as-nonroot-ephemeralcontainers
+  policyName: ephemeralcontainer-run-as-nonroot
   validationActions:
   - Audit
   matchResources:
@@ -3690,6 +4390,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-run-as-nonroot.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: run-as-nonroot-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -3698,9 +4402,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: run-as-nonroot-ephemeralcontainers-namespace-enforce
+  name: ephemeralcontainer-run-as-nonroot-namespace-enforce
 spec:
-  policyName: run-as-nonroot-ephemeralcontainers
+  policyName: ephemeralcontainer-run-as-nonroot
   validationActions:
   - Deny
   matchResources:
@@ -3711,6 +4415,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-run-as-nonroot.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: run-as-nonroot-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -3719,9 +4427,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: run-as-nonroot-containers-namespace-warn
+  name: container-run-as-nonroot-namespace-warn
 spec:
-  policyName: run-as-nonroot-containers
+  policyName: container-run-as-nonroot
   validationActions:
   - Warn
   matchResources:
@@ -3732,6 +4440,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-run-as-nonroot.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: run-as-nonroot-containers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -3740,9 +4452,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: run-as-nonroot-containers-namespace-audit
+  name: container-run-as-nonroot-namespace-audit
 spec:
-  policyName: run-as-nonroot-containers
+  policyName: container-run-as-nonroot
   validationActions:
   - Audit
   matchResources:
@@ -3753,6 +4465,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-run-as-nonroot.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: run-as-nonroot-containers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -3761,9 +4477,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: run-as-nonroot-containers-namespace-enforce
+  name: container-run-as-nonroot-namespace-enforce
 spec:
-  policyName: run-as-nonroot-containers
+  policyName: container-run-as-nonroot
   validationActions:
   - Deny
   matchResources:
@@ -3774,6 +4490,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-run-as-nonroot.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: run-as-nonroot-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -3782,9 +4502,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: livenessprobe-httpget-host-initcontainers-namespace-warn
+  name: initcontainer-livenessprobe-httpget-host-namespace-warn
 spec:
-  policyName: livenessprobe-httpget-host-initcontainers
+  policyName: initcontainer-livenessprobe-httpget-host
   validationActions:
   - Warn
   matchResources:
@@ -3795,6 +4515,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-livenessprobe-httpget-host.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: livenessprobe-httpget-host-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -3803,9 +4527,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: livenessprobe-httpget-host-initcontainers-namespace-audit
+  name: initcontainer-livenessprobe-httpget-host-namespace-audit
 spec:
-  policyName: livenessprobe-httpget-host-initcontainers
+  policyName: initcontainer-livenessprobe-httpget-host
   validationActions:
   - Audit
   matchResources:
@@ -3816,6 +4540,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-livenessprobe-httpget-host.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: livenessprobe-httpget-host-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -3824,9 +4552,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: livenessprobe-httpget-host-initcontainers-namespace-enforce
+  name: initcontainer-livenessprobe-httpget-host-namespace-enforce
 spec:
-  policyName: livenessprobe-httpget-host-initcontainers
+  policyName: initcontainer-livenessprobe-httpget-host
   validationActions:
   - Deny
   matchResources:
@@ -3837,6 +4565,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-livenessprobe-httpget-host.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: livenessprobe-httpget-host-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -3845,9 +4577,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: livenessprobe-httpget-host-namespace-warn
+  name: container-livenessprobe-httpget-host-namespace-warn
 spec:
-  policyName: livenessprobe-httpget-host
+  policyName: container-livenessprobe-httpget-host
   validationActions:
   - Warn
   matchResources:
@@ -3858,6 +4590,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-livenessprobe-httpget-host.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: livenessprobe-httpget-host.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -3866,9 +4602,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: livenessprobe-httpget-host-namespace-audit
+  name: container-livenessprobe-httpget-host-namespace-audit
 spec:
-  policyName: livenessprobe-httpget-host
+  policyName: container-livenessprobe-httpget-host
   validationActions:
   - Audit
   matchResources:
@@ -3879,6 +4615,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-livenessprobe-httpget-host.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: livenessprobe-httpget-host.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -3887,9 +4627,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: livenessprobe-httpget-host-namespace-enforce
+  name: container-livenessprobe-httpget-host-namespace-enforce
 spec:
-  policyName: livenessprobe-httpget-host
+  policyName: container-livenessprobe-httpget-host
   validationActions:
   - Deny
   matchResources:
@@ -3900,6 +4640,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-livenessprobe-httpget-host.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: livenessprobe-httpget-host.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -3908,9 +4652,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allowed-capabilities-add-initcontainers-namespace-warn
+  name: initcontainer-capabilities-add-namespace-warn
 spec:
-  policyName: allowed-capabilities-add-initcontainers
+  policyName: initcontainer-capabilities-add
   validationActions:
   - Warn
   matchResources:
@@ -3921,6 +4665,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-capabilities-add.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: allowed-capabilities-add-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -3929,9 +4677,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allowed-capabilities-add-initcontainers-namespace-audit
+  name: initcontainer-capabilities-add-namespace-audit
 spec:
-  policyName: allowed-capabilities-add-initcontainers
+  policyName: initcontainer-capabilities-add
   validationActions:
   - Audit
   matchResources:
@@ -3942,6 +4690,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-capabilities-add.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: allowed-capabilities-add-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -3950,9 +4702,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allowed-capabilities-add-initcontainers-namespace-enforce
+  name: initcontainer-capabilities-add-namespace-enforce
 spec:
-  policyName: allowed-capabilities-add-initcontainers
+  policyName: initcontainer-capabilities-add
   validationActions:
   - Deny
   matchResources:
@@ -3963,6 +4715,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-capabilities-add.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: allowed-capabilities-add-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -3971,9 +4727,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allowed-capabilities-add-ephemeralcontainers-namespace-warn
+  name: ephemeralcontainer-capabilities-add-namespace-warn
 spec:
-  policyName: allowed-capabilities-add-ephemeralcontainers
+  policyName: ephemeralcontainer-capabilities-add
   validationActions:
   - Warn
   matchResources:
@@ -3984,6 +4740,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-capabilities-add.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: allowed-capabilities-add-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -3992,9 +4752,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allowed-capabilities-add-ephemeralcontainers-namespace-audit
+  name: ephemeralcontainer-capabilities-add-namespace-audit
 spec:
-  policyName: allowed-capabilities-add-ephemeralcontainers
+  policyName: ephemeralcontainer-capabilities-add
   validationActions:
   - Audit
   matchResources:
@@ -4005,6 +4765,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-capabilities-add.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: allowed-capabilities-add-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -4013,9 +4777,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allowed-capabilities-add-ephemeralcontainers-namespace-enforce
+  name: ephemeralcontainer-capabilities-add-namespace-enforce
 spec:
-  policyName: allowed-capabilities-add-ephemeralcontainers
+  policyName: ephemeralcontainer-capabilities-add
   validationActions:
   - Deny
   matchResources:
@@ -4026,6 +4790,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-capabilities-add.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: allowed-capabilities-add-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -4034,9 +4802,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allowed-capabilities-add-containers-namespace-warn
+  name: container-capabilities-add-namespace-warn
 spec:
-  policyName: allowed-capabilities-add-containers
+  policyName: container-capabilities-add
   validationActions:
   - Warn
   matchResources:
@@ -4047,6 +4815,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-capabilities-add.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: allowed-capabilities-add-containers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -4055,9 +4827,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allowed-capabilities-add-containers-namespace-audit
+  name: container-capabilities-add-namespace-audit
 spec:
-  policyName: allowed-capabilities-add-containers
+  policyName: container-capabilities-add
   validationActions:
   - Audit
   matchResources:
@@ -4068,6 +4840,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-capabilities-add.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: allowed-capabilities-add-containers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -4076,9 +4852,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allowed-capabilities-add-containers-namespace-enforce
+  name: container-capabilities-add-namespace-enforce
 spec:
-  policyName: allowed-capabilities-add-containers
+  policyName: container-capabilities-add
   validationActions:
   - Deny
   matchResources:
@@ -4089,6 +4865,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-capabilities-add.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: allowed-capabilities-add-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -4097,9 +4877,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: seccomp-profile-pod-namespace-warn
+  name: pod-seccomp-profile-namespace-warn
 spec:
-  policyName: seccomp-profile-pod
+  policyName: pod-seccomp-profile
   validationActions:
   - Warn
   matchResources:
@@ -4110,6 +4890,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-seccomp-profile.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: seccomp-profile-pod.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -4118,9 +4902,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: seccomp-profile-pod-namespace-audit
+  name: pod-seccomp-profile-namespace-audit
 spec:
-  policyName: seccomp-profile-pod
+  policyName: pod-seccomp-profile
   validationActions:
   - Audit
   matchResources:
@@ -4131,6 +4915,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-seccomp-profile.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: seccomp-profile-pod.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -4139,9 +4927,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: seccomp-profile-pod-namespace-enforce
+  name: pod-seccomp-profile-namespace-enforce
 spec:
-  policyName: seccomp-profile-pod
+  policyName: pod-seccomp-profile
   validationActions:
   - Deny
   matchResources:
@@ -4152,6 +4940,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-seccomp-profile.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: seccomp-profile-pod.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -4160,9 +4952,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: seccomp-profile-initcontainers-namespace-warn
+  name: initcontainer-seccomp-profile-namespace-warn
 spec:
-  policyName: seccomp-profile-initcontainers
+  policyName: initcontainer-seccomp-profile
   validationActions:
   - Warn
   matchResources:
@@ -4173,6 +4965,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-seccomp-profile.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: seccomp-profile-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -4181,9 +4977,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: seccomp-profile-initcontainers-namespace-audit
+  name: initcontainer-seccomp-profile-namespace-audit
 spec:
-  policyName: seccomp-profile-initcontainers
+  policyName: initcontainer-seccomp-profile
   validationActions:
   - Audit
   matchResources:
@@ -4194,6 +4990,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-seccomp-profile.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: seccomp-profile-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -4202,9 +5002,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: seccomp-profile-initcontainers-namespace-enforce
+  name: initcontainer-seccomp-profile-namespace-enforce
 spec:
-  policyName: seccomp-profile-initcontainers
+  policyName: initcontainer-seccomp-profile
   validationActions:
   - Deny
   matchResources:
@@ -4215,6 +5015,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-seccomp-profile.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: seccomp-profile-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -4223,9 +5027,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: seccomp-profile-ephemeralcontainers-namespace-warn
+  name: ephemeralcontainer-seccomp-profile-namespace-warn
 spec:
-  policyName: seccomp-profile-ephemeralcontainers
+  policyName: ephemeralcontainer-seccomp-profile
   validationActions:
   - Warn
   matchResources:
@@ -4236,6 +5040,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-seccomp-profile.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: seccomp-profile-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -4244,9 +5052,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: seccomp-profile-ephemeralcontainers-namespace-audit
+  name: ephemeralcontainer-seccomp-profile-namespace-audit
 spec:
-  policyName: seccomp-profile-ephemeralcontainers
+  policyName: ephemeralcontainer-seccomp-profile
   validationActions:
   - Audit
   matchResources:
@@ -4257,6 +5065,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-seccomp-profile.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: seccomp-profile-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -4265,9 +5077,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: seccomp-profile-ephemeralcontainers-namespace-enforce
+  name: ephemeralcontainer-seccomp-profile-namespace-enforce
 spec:
-  policyName: seccomp-profile-ephemeralcontainers
+  policyName: ephemeralcontainer-seccomp-profile
   validationActions:
   - Deny
   matchResources:
@@ -4278,6 +5090,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-seccomp-profile.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: seccomp-profile-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -4286,9 +5102,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: seccomp-profile-containers-namespace-warn
+  name: container-seccomp-profile-namespace-warn
 spec:
-  policyName: seccomp-profile-containers
+  policyName: container-seccomp-profile
   validationActions:
   - Warn
   matchResources:
@@ -4299,6 +5115,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-seccomp-profile.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: seccomp-profile-containers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -4307,9 +5127,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: seccomp-profile-containers-namespace-audit
+  name: container-seccomp-profile-namespace-audit
 spec:
-  policyName: seccomp-profile-containers
+  policyName: container-seccomp-profile
   validationActions:
   - Audit
   matchResources:
@@ -4320,6 +5140,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-seccomp-profile.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: seccomp-profile-containers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -4328,9 +5152,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: seccomp-profile-containers-namespace-enforce
+  name: container-seccomp-profile-namespace-enforce
 spec:
-  policyName: seccomp-profile-containers
+  policyName: container-seccomp-profile
   validationActions:
   - Deny
   matchResources:
@@ -4341,6 +5165,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-seccomp-profile.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: seccomp-profile-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -4349,9 +5177,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: windows-hostprocess-namespace-warn
+  name: pod-windows-hostprocess-namespace-warn
 spec:
-  policyName: windows-hostprocess
+  policyName: pod-windows-hostprocess
   validationActions:
   - Warn
   matchResources:
@@ -4362,6 +5190,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-windows-hostprocess.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: windows-hostprocess.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -4370,9 +5202,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: windows-hostprocess-namespace-audit
+  name: pod-windows-hostprocess-namespace-audit
 spec:
-  policyName: windows-hostprocess
+  policyName: pod-windows-hostprocess
   validationActions:
   - Audit
   matchResources:
@@ -4383,6 +5215,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-windows-hostprocess.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: windows-hostprocess.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -4391,9 +5227,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: windows-hostprocess-namespace-enforce
+  name: pod-windows-hostprocess-namespace-enforce
 spec:
-  policyName: windows-hostprocess
+  policyName: pod-windows-hostprocess
   validationActions:
   - Deny
   matchResources:
@@ -4404,6 +5240,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-windows-hostprocess.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: windows-hostprocess.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -4412,9 +5252,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: windows-hostprocess-initcontainers-namespace-warn
+  name: initcontainer-windows-hostprocess-namespace-warn
 spec:
-  policyName: windows-hostprocess-initcontainers
+  policyName: initcontainer-windows-hostprocess
   validationActions:
   - Warn
   matchResources:
@@ -4425,6 +5265,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-windows-hostprocess.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: windows-hostprocess-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -4433,9 +5277,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: windows-hostprocess-initcontainers-namespace-audit
+  name: initcontainer-windows-hostprocess-namespace-audit
 spec:
-  policyName: windows-hostprocess-initcontainers
+  policyName: initcontainer-windows-hostprocess
   validationActions:
   - Audit
   matchResources:
@@ -4446,6 +5290,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-windows-hostprocess.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: windows-hostprocess-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -4454,9 +5302,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: windows-hostprocess-initcontainers-namespace-enforce
+  name: initcontainer-windows-hostprocess-namespace-enforce
 spec:
-  policyName: windows-hostprocess-initcontainers
+  policyName: initcontainer-windows-hostprocess
   validationActions:
   - Deny
   matchResources:
@@ -4467,6 +5315,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-windows-hostprocess.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: windows-hostprocess-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -4475,9 +5327,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: windows-hostprocess-ephemeralcontainers-namespace-warn
+  name: ephemeralcontainer-windows-hostprocess-namespace-warn
 spec:
-  policyName: windows-hostprocess-ephemeralcontainers
+  policyName: ephemeralcontainer-windows-hostprocess
   validationActions:
   - Warn
   matchResources:
@@ -4488,6 +5340,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-windows-hostprocess.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: windows-hostprocess-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -4496,9 +5352,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: windows-hostprocess-ephemeralcontainers-namespace-audit
+  name: ephemeralcontainer-windows-hostprocess-namespace-audit
 spec:
-  policyName: windows-hostprocess-ephemeralcontainers
+  policyName: ephemeralcontainer-windows-hostprocess
   validationActions:
   - Audit
   matchResources:
@@ -4509,6 +5365,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-windows-hostprocess.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: windows-hostprocess-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -4517,9 +5377,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: windows-hostprocess-ephemeralcontainers-namespace-enforce
+  name: ephemeralcontainer-windows-hostprocess-namespace-enforce
 spec:
-  policyName: windows-hostprocess-ephemeralcontainers
+  policyName: ephemeralcontainer-windows-hostprocess
   validationActions:
   - Deny
   matchResources:
@@ -4530,6 +5390,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-windows-hostprocess.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: windows-hostprocess-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -4538,9 +5402,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: windows-hostprocess-containers-namespace-warn
+  name: container-windows-hostprocess-namespace-warn
 spec:
-  policyName: windows-hostprocess-containers
+  policyName: container-windows-hostprocess
   validationActions:
   - Warn
   matchResources:
@@ -4551,6 +5415,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-windows-hostprocess.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: windows-hostprocess-containers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -4559,9 +5427,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: windows-hostprocess-containers-namespace-audit
+  name: container-windows-hostprocess-namespace-audit
 spec:
-  policyName: windows-hostprocess-containers
+  policyName: container-windows-hostprocess
   validationActions:
   - Audit
   matchResources:
@@ -4572,6 +5440,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-windows-hostprocess.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: windows-hostprocess-containers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -4580,9 +5452,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: windows-hostprocess-containers-namespace-enforce
+  name: container-windows-hostprocess-namespace-enforce
 spec:
-  policyName: windows-hostprocess-containers
+  policyName: container-windows-hostprocess
   validationActions:
   - Deny
   matchResources:
@@ -4593,6 +5465,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-windows-hostprocess.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: windows-hostprocess-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -4601,9 +5477,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: hostnetwork-namespace-warn
+  name: pod-hostnetwork-namespace-warn
 spec:
-  policyName: hostnetwork
+  policyName: pod-hostnetwork
   validationActions:
   - Warn
   matchResources:
@@ -4614,6 +5490,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-hostnetwork.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: hostnetwork.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -4622,9 +5502,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: hostnetwork-namespace-audit
+  name: pod-hostnetwork-namespace-audit
 spec:
-  policyName: hostnetwork
+  policyName: pod-hostnetwork
   validationActions:
   - Audit
   matchResources:
@@ -4635,6 +5515,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-hostnetwork.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: hostnetwork.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -4643,9 +5527,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: hostnetwork-namespace-enforce
+  name: pod-hostnetwork-namespace-enforce
 spec:
-  policyName: hostnetwork
+  policyName: pod-hostnetwork
   validationActions:
   - Deny
   matchResources:
@@ -4656,6 +5540,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-hostnetwork.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: hostnetwork.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -4664,9 +5552,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: livenessprobe-tcpsocket-host-initcontainers-namespace-warn
+  name: initcontainer-livenessprobe-tcpsocket-host-namespace-warn
 spec:
-  policyName: livenessprobe-tcpsocket-host-initcontainers
+  policyName: initcontainer-livenessprobe-tcpsocket-host
   validationActions:
   - Warn
   matchResources:
@@ -4677,6 +5565,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-livenessprobe-tcpsocket-host.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: livenessprobe-tcpsocket-host-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -4685,9 +5577,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: livenessprobe-tcpsocket-host-initcontainers-namespace-audit
+  name: initcontainer-livenessprobe-tcpsocket-host-namespace-audit
 spec:
-  policyName: livenessprobe-tcpsocket-host-initcontainers
+  policyName: initcontainer-livenessprobe-tcpsocket-host
   validationActions:
   - Audit
   matchResources:
@@ -4698,6 +5590,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-livenessprobe-tcpsocket-host.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: livenessprobe-tcpsocket-host-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -4706,9 +5602,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: livenessprobe-tcpsocket-host-initcontainers-namespace-enforce
+  name: initcontainer-livenessprobe-tcpsocket-host-namespace-enforce
 spec:
-  policyName: livenessprobe-tcpsocket-host-initcontainers
+  policyName: initcontainer-livenessprobe-tcpsocket-host
   validationActions:
   - Deny
   matchResources:
@@ -4719,6 +5615,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-livenessprobe-tcpsocket-host.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: livenessprobe-tcpsocket-host-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -4727,9 +5627,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: livenessprobe-tcpsocket-host-containers-namespace-warn
+  name: container-livenessprobe-tcpsocket-host-namespace-warn
 spec:
-  policyName: livenessprobe-tcpsocket-host-containers
+  policyName: container-livenessprobe-tcpsocket-host
   validationActions:
   - Warn
   matchResources:
@@ -4740,6 +5640,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-livenessprobe-tcpsocket-host.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: livenessprobe-tcpsocket-host-containers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -4748,9 +5652,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: livenessprobe-tcpsocket-host-containers-namespace-audit
+  name: container-livenessprobe-tcpsocket-host-namespace-audit
 spec:
-  policyName: livenessprobe-tcpsocket-host-containers
+  policyName: container-livenessprobe-tcpsocket-host
   validationActions:
   - Audit
   matchResources:
@@ -4761,6 +5665,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-livenessprobe-tcpsocket-host.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: livenessprobe-tcpsocket-host-containers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -4769,9 +5677,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: livenessprobe-tcpsocket-host-containers-namespace-enforce
+  name: container-livenessprobe-tcpsocket-host-namespace-enforce
 spec:
-  policyName: livenessprobe-tcpsocket-host-containers
+  policyName: container-livenessprobe-tcpsocket-host
   validationActions:
   - Deny
   matchResources:
@@ -4782,6 +5690,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-livenessprobe-tcpsocket-host.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: livenessprobe-tcpsocket-host-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -4790,9 +5702,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allowed-hostports-initcontainers-namespace-warn
+  name: initcontainer-hostports-namespace-warn
 spec:
-  policyName: allowed-hostports-initcontainers
+  policyName: initcontainer-hostports
   validationActions:
   - Warn
   matchResources:
@@ -4803,6 +5715,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-hostports.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: allowed-hostports-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -4811,9 +5727,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allowed-hostports-initcontainers-namespace-audit
+  name: initcontainer-hostports-namespace-audit
 spec:
-  policyName: allowed-hostports-initcontainers
+  policyName: initcontainer-hostports
   validationActions:
   - Audit
   matchResources:
@@ -4824,6 +5740,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-hostports.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: allowed-hostports-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -4832,9 +5752,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allowed-hostports-initcontainers-namespace-enforce
+  name: initcontainer-hostports-namespace-enforce
 spec:
-  policyName: allowed-hostports-initcontainers
+  policyName: initcontainer-hostports
   validationActions:
   - Deny
   matchResources:
@@ -4845,6 +5765,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-hostports.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: allowed-hostports-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -4853,9 +5777,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allowed-hostports-ephemeralcontainers-namespace-warn
+  name: ephemeralcontainer-hostports-namespace-warn
 spec:
-  policyName: allowed-hostports-ephemeralcontainers
+  policyName: ephemeralcontainer-hostports
   validationActions:
   - Warn
   matchResources:
@@ -4866,6 +5790,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-hostports.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: allowed-hostports-ephemeralcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -4874,9 +5802,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allowed-hostports-ephemeralcontainers-namespace-audit
+  name: ephemeralcontainer-hostports-namespace-audit
 spec:
-  policyName: allowed-hostports-ephemeralcontainers
+  policyName: ephemeralcontainer-hostports
   validationActions:
   - Audit
   matchResources:
@@ -4887,6 +5815,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-hostports.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: allowed-hostports-ephemeralcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -4895,9 +5827,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allowed-hostports-ephemeralcontainers-namespace-enforce
+  name: ephemeralcontainer-hostports-namespace-enforce
 spec:
-  policyName: allowed-hostports-ephemeralcontainers
+  policyName: ephemeralcontainer-hostports
   validationActions:
   - Deny
   matchResources:
@@ -4908,6 +5840,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: ephemeralcontainer-hostports.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: allowed-hostports-ephemeralcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -4916,9 +5852,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allowed-hostports-containers-namespace-warn
+  name: container-hostports-namespace-warn
 spec:
-  policyName: allowed-hostports-containers
+  policyName: container-hostports
   validationActions:
   - Warn
   matchResources:
@@ -4929,6 +5865,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-hostports.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: allowed-hostports-containers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -4937,9 +5877,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allowed-hostports-containers-namespace-audit
+  name: container-hostports-namespace-audit
 spec:
-  policyName: allowed-hostports-containers
+  policyName: container-hostports
   validationActions:
   - Audit
   matchResources:
@@ -4950,6 +5890,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-hostports.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: allowed-hostports-containers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -4958,9 +5902,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allowed-hostports-containers-namespace-enforce
+  name: container-hostports-namespace-enforce
 spec:
-  policyName: allowed-hostports-containers
+  policyName: container-hostports
   validationActions:
   - Deny
   matchResources:
@@ -4971,6 +5915,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-hostports.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: allowed-hostports-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -4979,9 +5927,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: poststart-httpget-host-initcontainers-namespace-warn
+  name: initcontainer-poststart-httpget-host-namespace-warn
 spec:
-  policyName: poststart-httpget-host-initcontainers
+  policyName: initcontainer-poststart-httpget-host
   validationActions:
   - Warn
   matchResources:
@@ -4992,6 +5940,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-poststart-httpget-host.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: poststart-httpget-host-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -5000,9 +5952,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: poststart-httpget-host-initcontainers-namespace-audit
+  name: initcontainer-poststart-httpget-host-namespace-audit
 spec:
-  policyName: poststart-httpget-host-initcontainers
+  policyName: initcontainer-poststart-httpget-host
   validationActions:
   - Audit
   matchResources:
@@ -5013,6 +5965,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-poststart-httpget-host.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: poststart-httpget-host-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -5021,9 +5977,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: poststart-httpget-host-initcontainers-namespace-enforce
+  name: initcontainer-poststart-httpget-host-namespace-enforce
 spec:
-  policyName: poststart-httpget-host-initcontainers
+  policyName: initcontainer-poststart-httpget-host
   validationActions:
   - Deny
   matchResources:
@@ -5034,6 +5990,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-poststart-httpget-host.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: poststart-httpget-host-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -5042,9 +6002,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: poststart-httpget-host-containers-namespace-warn
+  name: container-poststart-httpget-host-namespace-warn
 spec:
-  policyName: poststart-httpget-host-containers
+  policyName: container-poststart-httpget-host
   validationActions:
   - Warn
   matchResources:
@@ -5055,6 +6015,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-poststart-httpget-host.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: poststart-httpget-host-containers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -5063,9 +6027,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: poststart-httpget-host-containers-namespace-audit
+  name: container-poststart-httpget-host-namespace-audit
 spec:
-  policyName: poststart-httpget-host-containers
+  policyName: container-poststart-httpget-host
   validationActions:
   - Audit
   matchResources:
@@ -5076,6 +6040,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-poststart-httpget-host.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: poststart-httpget-host-containers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -5084,9 +6052,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: poststart-httpget-host-containers-namespace-enforce
+  name: container-poststart-httpget-host-namespace-enforce
 spec:
-  policyName: poststart-httpget-host-containers
+  policyName: container-poststart-httpget-host
   validationActions:
   - Deny
   matchResources:
@@ -5097,6 +6065,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-poststart-httpget-host.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: poststart-httpget-host-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -5105,9 +6077,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: startupprobe-tcpsocket-host-initcontainers-namespace-warn
+  name: initcontainer-startupprobe-tcpsocket-host-namespace-warn
 spec:
-  policyName: startupprobe-tcpsocket-host-initcontainers
+  policyName: initcontainer-startupprobe-tcpsocket-host
   validationActions:
   - Warn
   matchResources:
@@ -5118,6 +6090,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-startupprobe-tcpsocket-host.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: startupprobe-tcpsocket-host-initcontainers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -5126,9 +6102,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: startupprobe-tcpsocket-host-initcontainers-namespace-audit
+  name: initcontainer-startupprobe-tcpsocket-host-namespace-audit
 spec:
-  policyName: startupprobe-tcpsocket-host-initcontainers
+  policyName: initcontainer-startupprobe-tcpsocket-host
   validationActions:
   - Audit
   matchResources:
@@ -5139,6 +6115,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-startupprobe-tcpsocket-host.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: startupprobe-tcpsocket-host-initcontainers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -5147,9 +6127,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: startupprobe-tcpsocket-host-initcontainers-namespace-enforce
+  name: initcontainer-startupprobe-tcpsocket-host-namespace-enforce
 spec:
-  policyName: startupprobe-tcpsocket-host-initcontainers
+  policyName: initcontainer-startupprobe-tcpsocket-host
   validationActions:
   - Deny
   matchResources:
@@ -5160,6 +6140,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: initcontainer-startupprobe-tcpsocket-host.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: startupprobe-tcpsocket-host-initcontainers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -5168,9 +6152,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: startupprobe-tcpsocket-host-containers-namespace-warn
+  name: container-startupprobe-tcpsocket-host-namespace-warn
 spec:
-  policyName: startupprobe-tcpsocket-host-containers
+  policyName: container-startupprobe-tcpsocket-host
   validationActions:
   - Warn
   matchResources:
@@ -5181,6 +6165,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-startupprobe-tcpsocket-host.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: startupprobe-tcpsocket-host-containers.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -5189,9 +6177,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: startupprobe-tcpsocket-host-containers-namespace-audit
+  name: container-startupprobe-tcpsocket-host-namespace-audit
 spec:
-  policyName: startupprobe-tcpsocket-host-containers
+  policyName: container-startupprobe-tcpsocket-host
   validationActions:
   - Audit
   matchResources:
@@ -5202,6 +6190,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-startupprobe-tcpsocket-host.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: startupprobe-tcpsocket-host-containers.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -5210,9 +6202,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: startupprobe-tcpsocket-host-containers-namespace-enforce
+  name: container-startupprobe-tcpsocket-host-namespace-enforce
 spec:
-  policyName: startupprobe-tcpsocket-host-containers
+  policyName: container-startupprobe-tcpsocket-host
   validationActions:
   - Deny
   matchResources:
@@ -5223,6 +6215,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: container-startupprobe-tcpsocket-host.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: startupprobe-tcpsocket-host-containers.security.cenroq.io/enforce
         operator: NotIn
         values:
@@ -5231,9 +6227,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allowed-volume-types-namespace-warn
+  name: pod-volume-types-namespace-warn
 spec:
-  policyName: allowed-volume-types
+  policyName: pod-volume-types
   validationActions:
   - Warn
   matchResources:
@@ -5244,6 +6240,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-volume-types.security.cenroq.io/warn
+        operator: NotIn
+        values:
+        - disabled
       - key: allowed-volume-types.security.cenroq.io/warn
         operator: NotIn
         values:
@@ -5252,9 +6252,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allowed-volume-types-namespace-audit
+  name: pod-volume-types-namespace-audit
 spec:
-  policyName: allowed-volume-types
+  policyName: pod-volume-types
   validationActions:
   - Audit
   matchResources:
@@ -5265,6 +6265,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-volume-types.security.cenroq.io/audit
+        operator: NotIn
+        values:
+        - disabled
       - key: allowed-volume-types.security.cenroq.io/audit
         operator: NotIn
         values:
@@ -5273,9 +6277,9 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: allowed-volume-types-namespace-enforce
+  name: pod-volume-types-namespace-enforce
 spec:
-  policyName: allowed-volume-types
+  policyName: pod-volume-types
   validationActions:
   - Deny
   matchResources:
@@ -5286,6 +6290,10 @@ spec:
         values:
         - baseline
         - restricted
+      - key: pod-volume-types.security.cenroq.io/enforce
+        operator: NotIn
+        values:
+        - disabled
       - key: allowed-volume-types.security.cenroq.io/enforce
         operator: NotIn
         values:

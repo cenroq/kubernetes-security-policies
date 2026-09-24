@@ -1,12 +1,13 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: serviceaccount-automount-token-false
+  name: serviceaccount-token-automount
   annotations:
-    security.kubeapt.io/displayName: "Automount Token False"
+    kubeapt.io/uuid: "8076b964-2115-4b03-8785-3d5bc43325c4"
+    security.kubeapt.io/displayName: "Automounts Its Token Into Every Pod"
     security.kubeapt.io/description: "A ServiceAccount that automounts by default puts its API token into every pod that references it, so any one compromised container yields a credential usable against the API server."
     security.kubeapt.io/resource: "ServiceAccounts"
-    security.kubeapt.io/severity: "Low"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Set automountServiceAccountToken to false on the ServiceAccount and opt individual pods back in only where API access is required. Field: automountServiceAccountToken."
     security.kubeapt.io/product: "Kubernetes"
 spec:

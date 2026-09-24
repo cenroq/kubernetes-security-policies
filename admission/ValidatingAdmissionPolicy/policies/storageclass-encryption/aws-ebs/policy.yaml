@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: storageclass-encryption-aws-ebs
   annotations:
-    security.kubeapt.io/displayName: "StorageClass Encryption (AWS EBS)"
+    kubeapt.io/uuid: "737e971e-9b80-4467-b548-42c688e4071e"
+    security.kubeapt.io/displayName: "Provisions Unencrypted AWS EBS Volumes"
     security.kubeapt.io/description: "Volumes provisioned from this class land on unencrypted EBS disks, so anyone able to read the raw block storage or a snapshot copied to another account recovers the data without any Kubernetes access."
     security.kubeapt.io/resource: "StorageClasses"
     security.kubeapt.io/severity: "Low"

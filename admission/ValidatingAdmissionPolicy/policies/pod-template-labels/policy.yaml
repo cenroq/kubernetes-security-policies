@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: pod-template-labels
   annotations:
-    security.kubeapt.io/displayName: "Pod Template Labels"
+    kubeapt.io/uuid: "7dc91776-2f31-44d1-bb85-f9a18ed08618"
+    security.kubeapt.io/displayName: "Has No Labels Set"
     security.kubeapt.io/description: "A pod with no labels cannot be selected by label, so NetworkPolicies and other selector-driven controls written for it never apply, and the workload runs unisolated and unattributable to any owner."
     security.kubeapt.io/resource: "Pods"
     security.kubeapt.io/severity: "Low"

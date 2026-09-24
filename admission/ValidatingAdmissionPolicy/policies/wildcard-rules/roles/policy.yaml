@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: role-wildcard-rules
   annotations:
-    security.kubeapt.io/displayName: "Wildcard Rules"
+    kubeapt.io/uuid: "104d53d3-4e2d-4c44-b14a-4a95b7dba910"
+    security.kubeapt.io/displayName: "Uses Wildcard apiGroups, Resources or Verbs"
     security.kubeapt.io/description: "A wildcard in apiGroups, resources or verbs hands over an entire API group, every resource type or every operation on them within the namespace, and silently widens to each CRD installed later."
     security.kubeapt.io/resource: "Roles"
     security.kubeapt.io/severity: "Critical"

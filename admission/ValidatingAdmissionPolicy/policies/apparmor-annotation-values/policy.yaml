@@ -1,9 +1,10 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: apparmor-annotation-values
+  name: pod-apparmor-annotation-values
   annotations:
-    security.kubeapt.io/displayName: "Apparmor Annotation Values"
+    kubeapt.io/uuid: "79f6f10f-1013-45a8-bd05-cd509c20383a"
+    security.kubeapt.io/displayName: "Sets a Non-Standard AppArmor Annotation"
     security.kubeapt.io/description: "A legacy AppArmor annotation set to unconfined leaves the named container with no mandatory access control profile, so its file, capability and mount operations run unrestricted against the host kernel."
     security.kubeapt.io/resource: "Pods"
     security.kubeapt.io/severity: "Moderate"

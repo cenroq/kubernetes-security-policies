@@ -1,9 +1,10 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: allowed-capabilities-add-containers
+  name: container-capabilities-add
   annotations:
-    security.kubeapt.io/displayName: "Capabilities Add"
+    kubeapt.io/uuid: "57487b22-099b-46ad-b669-844e1e392a65"
+    security.kubeapt.io/displayName: "Adds a Capability Outside the Baseline Set"
     security.kubeapt.io/description: "Linux capabilities beyond the baseline set, such as SYS_ADMIN, SYS_MODULE, SYS_PTRACE or NET_RAW, hand a container kernel level privileges it can use to mount filesystems, load modules and break out onto the node."
     security.kubeapt.io/resource: "Containers"
     security.kubeapt.io/severity: "Moderate"

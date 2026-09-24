@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: storageclass-encryption-ibm-vpc-block
   annotations:
-    security.kubeapt.io/displayName: "StorageClass Encryption (IBM VPC Block)"
+    kubeapt.io/uuid: "70aa28c5-3cfe-45d0-a52d-66d2ad804696"
+    security.kubeapt.io/displayName: "Provisions Unencrypted IBM VPC Block Volumes"
     security.kubeapt.io/description: "Volumes provisioned from this class rely on provider-held keys that you cannot rotate or revoke, so the data on the underlying block storage and its snapshots stays readable outside your control."
     security.kubeapt.io/resource: "StorageClasses"
     security.kubeapt.io/severity: "Low"

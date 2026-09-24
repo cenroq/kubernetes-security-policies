@@ -1,12 +1,13 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: windows-hostprocess-ephemeralcontainers
+  name: ephemeralcontainer-windows-hostprocess
   annotations:
-    security.kubeapt.io/displayName: "Windows Hostprocess"
+    kubeapt.io/uuid: "c89b27c2-91e3-4523-9e00-6b0e498f6b94"
+    security.kubeapt.io/displayName: "Runs as a Windows HostProcess"
     security.kubeapt.io/description: "A Windows HostProcess ephemeral container runs directly on the node in the host namespaces under a system account, exposing the host filesystem, registry and services and making node compromise trivial."
-    security.kubeapt.io/resource: "Ephemeralcontainers"
-    security.kubeapt.io/severity: "Critical"
+    security.kubeapt.io/resource: "EphemeralContainers"
+    security.kubeapt.io/severity: "High"
     security.kubeapt.io/remediation: "Remove windowsOptions.hostProcess from every ephemeral container security context or set it to false. Field: spec.ephemeralContainers[*].securityContext.windowsOptions.hostProcess."
     security.kubeapt.io/product: "Kubernetes"
 spec:

@@ -1,11 +1,12 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: image-digest-ephemeralcontainers
+  name: ephemeralcontainer-image-digest
   annotations:
-    security.kubeapt.io/displayName: "Image Digest"
+    kubeapt.io/uuid: "416403a0-7869-4716-8011-97d7f49b1a71"
+    security.kubeapt.io/displayName: "Runs an Image Not Pinned to a Digest"
     security.kubeapt.io/description: "An image reference without a digest resolves through a mutable tag, so registry content can be replaced between pulls and an ephemeral debug container attached with kubectl debug runs attacker-supplied code inside a live pod."
-    security.kubeapt.io/resource: "Ephemeralcontainers"
+    security.kubeapt.io/resource: "EphemeralContainers"
     security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Replace the mutable tag with an immutable digest reference of the form registry/image@sha256:<64-hex-digest>. Field: spec.ephemeralContainers[*].image."
     security.kubeapt.io/product: "Kubernetes"

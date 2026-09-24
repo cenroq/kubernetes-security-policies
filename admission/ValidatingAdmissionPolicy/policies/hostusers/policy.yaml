@@ -1,12 +1,13 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: hostusers
+  name: pod-hostusers
   annotations:
-    security.kubeapt.io/displayName: "Hostusers"
+    kubeapt.io/uuid: "1a5efbbe-2a1f-4840-a4fd-19fec7dab8bc"
+    security.kubeapt.io/displayName: "Shares the Host User Namespace"
     security.kubeapt.io/description: "Running in the host user namespace removes UID remapping, so container root is real root on the node and any escape or shared host resource is entered with full node privileges."
     security.kubeapt.io/resource: "Pods"
-    security.kubeapt.io/severity: "Critical"
+    security.kubeapt.io/severity: "High"
     security.kubeapt.io/remediation: "Set spec.hostUsers to false so the pod runs in its own user namespace with container UIDs remapped away from node root. Field: spec.hostUsers."
     security.kubeapt.io/product: "Kubernetes"
 spec:

@@ -1,12 +1,13 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: allow-privilege-escalation-containers
+  name: container-privilege-escalation
   annotations:
-    security.kubeapt.io/displayName: "Privilege Escalation"
+    kubeapt.io/uuid: "e7d47f8e-5007-45a8-b664-f21877f31e74"
+    security.kubeapt.io/displayName: "Permits Privilege Escalation"
     security.kubeapt.io/description: "Leaving privilege escalation enabled lets a process in the container gain more privileges than its parent through setuid binaries or file capabilities, turning a compromised unprivileged process into root inside the container."
     security.kubeapt.io/resource: "Containers"
-    security.kubeapt.io/severity: "Critical"
+    security.kubeapt.io/severity: "High"
     security.kubeapt.io/remediation: "Set allowPrivilegeEscalation to false in the security context of every container. The field must be present explicitly, since omitting it also fails. Field: spec.containers[*].securityContext.allowPrivilegeEscalation."
     security.kubeapt.io/product: "Kubernetes"
 spec:

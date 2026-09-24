@@ -3,10 +3,11 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: role-pvc-write
   annotations:
-    security.kubeapt.io/displayName: "Pvc Write"
+    kubeapt.io/uuid: "ae1a5db5-99a9-46bc-84b6-aa2d175767ef"
+    security.kubeapt.io/displayName: "Grants Write Access to PersistentVolumeClaims"
     security.kubeapt.io/description: "Creating PersistentVolumeClaims in the namespace can bind a volume that still holds data from another workload into an attacker-controlled pod, while delete destroys the backing data and unbounded provisioning exhausts the storage quota."
     security.kubeapt.io/resource: "Roles"
-    security.kubeapt.io/severity: "Low"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Remove create, update, patch and delete from every rule covering persistentvolumeclaims in the core API group, leaving get, list and watch where a workload only needs to inspect them. Fields: rules[*].apiGroups, rules[*].resources, rules[*].verbs."
     security.kubeapt.io/product: "Kubernetes"
 spec:

@@ -3,10 +3,11 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: rolebinding-default-serviceaccount
   annotations:
-    security.kubeapt.io/displayName: "Default Serviceaccount"
+    kubeapt.io/uuid: "f715428d-63e6-4690-8e54-8da84f12fa51"
+    security.kubeapt.io/displayName: "Binds a Privileged Role to the Default ServiceAccount"
     security.kubeapt.io/description: "Every pod that names no ServiceAccount runs as default, so a RoleBinding to it shares the granted namespace permissions across every unrelated workload there and one compromised container immediately gains them all."
     security.kubeapt.io/resource: "RoleBindings"
-    security.kubeapt.io/severity: "Low"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Create a dedicated ServiceAccount for the workload, bind the role to that name, and select it from the pods with spec.serviceAccountName. Fields: subjects[*].kind, subjects[*].name."
     security.kubeapt.io/product: "Kubernetes"
 spec:

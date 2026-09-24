@@ -3,10 +3,11 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: clusterrole-rbac-write
   annotations:
-    security.kubeapt.io/displayName: "Rbac Write"
+    kubeapt.io/uuid: "6024fa30-ba1d-4c34-adda-fa9fd967bb42"
+    security.kubeapt.io/displayName: "Grants Write Access to RBAC Resources"
     security.kubeapt.io/description: "Write, bind or escalate permission over RBAC objects lets the grantee author new roles and bindings for itself, turning a limited account into cluster-admin without stealing any other credential."
     security.kubeapt.io/resource: "ClusterRoles"
-    security.kubeapt.io/severity: "Critical"
+    security.kubeapt.io/severity: "High"
     security.kubeapt.io/remediation: "Drop create, update, patch, delete, bind and escalate from every rule covering roles, rolebindings, clusterroles or clusterrolebindings, leaving only the read verbs the workload needs. Fields: rules[*].apiGroups, rules[*].resources, rules[*].verbs."
     security.kubeapt.io/product: "Kubernetes"
 spec:

@@ -3,10 +3,11 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: clusterrole-nonresource-urls
   annotations:
-    security.kubeapt.io/displayName: "Nonresource Urls"
+    kubeapt.io/uuid: "38352a02-360d-47e3-91a5-1fa70e8ae41e"
+    security.kubeapt.io/displayName: "Grants Broad Non-Resource URL Access"
     security.kubeapt.io/description: "Wildcard or root non-resource paths grant every API server endpoint outside the resource model, so /logs serves node file contents and /debug/pprof heap dumps that carry in-flight credentials straight to the role holder."
     security.kubeapt.io/resource: "ClusterRoles"
-    security.kubeapt.io/severity: "Critical"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Replace the wildcard or root paths with the specific endpoints the caller needs, such as /healthz or /version, and limit the verbs to get. Fields: rules[*].nonResourceURLs, rules[*].verbs."
     security.kubeapt.io/product: "Kubernetes"
 spec:

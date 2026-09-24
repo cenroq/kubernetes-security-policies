@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: clusterrole-serviceaccount-tokens
   annotations:
-    security.kubeapt.io/displayName: "Serviceaccount Tokens"
+    kubeapt.io/uuid: "93c46b8d-106a-47f8-861b-a968aec95c05"
+    security.kubeapt.io/displayName: "Grants Creation of ServiceAccount Tokens"
     security.kubeapt.io/description: "Creating the token subresource mints a working bearer token for any service account in the cluster, letting the holder act as the most privileged one and reuse that token from outside the cluster."
     security.kubeapt.io/resource: "ClusterRoles"
     security.kubeapt.io/severity: "Critical"

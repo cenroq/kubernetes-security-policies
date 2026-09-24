@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: clusterrole-pod-exec-create
   annotations:
-    security.kubeapt.io/displayName: "Pod Exec Create"
+    kubeapt.io/uuid: "2c6c1af9-6e01-45bf-8d23-a17811b4dae0"
+    security.kubeapt.io/displayName: "Grants Pod Create and Exec Access"
     security.kubeapt.io/description: "Pod write lets the holder run arbitrary images with any service account token in the cluster mounted, while exec, attach, port-forward and ephemeral container access opens a shell into running workloads and their credentials."
     security.kubeapt.io/resource: "ClusterRoles"
     security.kubeapt.io/severity: "Critical"

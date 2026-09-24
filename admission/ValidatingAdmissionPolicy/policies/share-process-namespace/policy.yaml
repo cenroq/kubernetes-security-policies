@@ -1,12 +1,13 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: share-process-namespace
+  name: pod-share-process-namespace
   annotations:
-    security.kubeapt.io/displayName: "Share Process Namespace"
+    kubeapt.io/uuid: "a317749c-d7dc-4c9c-b549-ffad9806c111"
+    security.kubeapt.io/displayName: "Shares a Process Namespace Between Containers"
     security.kubeapt.io/description: "A shared process namespace lets every container in the pod inspect and signal the others, reading secrets from sibling command lines and /proc environment files, so compromising one sidecar reaches them all."
     security.kubeapt.io/resource: "Pods"
-    security.kubeapt.io/severity: "Low"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Remove spec.shareProcessNamespace or set it to false. Field: spec.shareProcessNamespace."
     security.kubeapt.io/product: "Kubernetes"
 spec:

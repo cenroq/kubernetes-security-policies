@@ -1,11 +1,12 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: selinux-type-ephemeralcontainers
+  name: ephemeralcontainer-selinux-type
   annotations:
-    security.kubeapt.io/displayName: "Selinux Type"
+    kubeapt.io/uuid: "0b3a7950-38d9-40c1-ae9f-cda237fded23"
+    security.kubeapt.io/displayName: "Sets a Non-Standard SELinux Type"
     security.kubeapt.io/description: "An SELinux type outside the container domains, such as spc_t or unconfined_t, drops the kernel confinement that stops an ephemeral container process from reading host files and reaching devices it does not own."
-    security.kubeapt.io/resource: "Ephemeralcontainers"
+    security.kubeapt.io/resource: "EphemeralContainers"
     security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Remove the seLinuxOptions.type setting from every ephemeral container, or replace it with one of container_t, container_init_t, container_kvm_t or container_engine_t. Field: spec.ephemeralContainers[*].securityContext.seLinuxOptions.type."
     security.kubeapt.io/product: "Kubernetes"

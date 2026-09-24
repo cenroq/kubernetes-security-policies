@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: storageclass-encryption-longhorn
   annotations:
-    security.kubeapt.io/displayName: "StorageClass Encryption (Longhorn)"
+    kubeapt.io/uuid: "e9a587e3-d5f8-48b3-b42c-22f35db3227e"
+    security.kubeapt.io/displayName: "Provisions Unencrypted Longhorn Volumes"
     security.kubeapt.io/description: "Volumes provisioned from this class keep their replicas in plaintext on node disks, so anyone who can read a replica directory, a backup target or a removed disk recovers the data without any Kubernetes access."
     security.kubeapt.io/resource: "StorageClasses"
     security.kubeapt.io/severity: "Low"

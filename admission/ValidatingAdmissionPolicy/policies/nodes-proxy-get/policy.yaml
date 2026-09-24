@@ -3,10 +3,11 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: clusterrole-nodes-proxy-get
   annotations:
-    security.kubeapt.io/displayName: "Nodes Proxy Get"
+    kubeapt.io/uuid: "83c49431-dc09-4340-9d03-fe99349e6d3a"
+    security.kubeapt.io/displayName: "Grants get on nodes/proxy (Kubelet API)"
     security.kubeapt.io/description: "Get on the node proxy subresource forwards requests straight to the kubelet API, exposing the pod inventory, container logs and runtime detail of every workload scheduled on that node."
     security.kubeapt.io/resource: "ClusterRoles"
-    security.kubeapt.io/severity: "Low"
+    security.kubeapt.io/severity: "High"
     security.kubeapt.io/remediation: "Remove the get verb for nodes/proxy in the core API group and read workload data through the pods and pods/log APIs instead. Fields: rules[*].apiGroups, rules[*].resources, rules[*].verbs."
     security.kubeapt.io/product: "Kubernetes"
 spec:

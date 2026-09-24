@@ -1,11 +1,12 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: read-only-root-filesystem-initcontainers
+  name: initcontainer-read-only-root-filesystem
   annotations:
-    security.kubeapt.io/displayName: "Read Only Root Filesystem"
+    kubeapt.io/uuid: "67aa9a32-8729-4511-b824-61f891c4e41b"
+    security.kubeapt.io/displayName: "Runs With a Writable Root Filesystem"
     security.kubeapt.io/description: "A writable init container root filesystem lets an intruder drop tooling, overwrite application binaries, and rewrite configuration in place, leaving a foothold in the running pod that nothing in the image would reveal."
-    security.kubeapt.io/resource: "Initcontainers"
+    security.kubeapt.io/resource: "InitContainers"
     security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Set readOnlyRootFilesystem to true on every init container and mount an emptyDir volume over each path the process genuinely needs to write. Field: spec.initContainers[*].securityContext.readOnlyRootFilesystem."
     security.kubeapt.io/product: "Kubernetes"

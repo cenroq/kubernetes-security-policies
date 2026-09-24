@@ -1,11 +1,12 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: startupprobe-httpget-host-initcontainers
+  name: initcontainer-startupprobe-httpget-host
   annotations:
-    security.kubeapt.io/displayName: "Startupprobe Httpget Host"
+    kubeapt.io/uuid: "f49ff543-8ed7-441b-9fb2-69dc4ed5338e"
+    security.kubeapt.io/displayName: "Startup Probe Targets an Arbitrary Host"
     security.kubeapt.io/description: "Redirecting the startup HTTP probe to another host makes the kubelet fetch an arbitrary URL from the node, reaching metadata and node-local endpoints closed to pods, and a hung init container passes its startup gate."
-    security.kubeapt.io/resource: "Initcontainers"
+    security.kubeapt.io/resource: "InitContainers"
     security.kubeapt.io/severity: "Low"
     security.kubeapt.io/remediation: "Remove the host field so the probe targets the pod IP, or set it to an empty string. Field: spec.initContainers[*].startupProbe.httpGet.host."
     security.kubeapt.io/product: "Kubernetes"

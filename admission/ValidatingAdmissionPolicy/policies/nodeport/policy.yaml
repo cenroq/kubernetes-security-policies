@@ -3,10 +3,11 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: service-nodeport
   annotations:
-    security.kubeapt.io/displayName: "Nodeport"
+    kubeapt.io/uuid: "3c5f4471-4c69-4659-8fe0-f4a7a5036ab3"
+    security.kubeapt.io/displayName: "Is Exposed on Every Node via NodePort"
     security.kubeapt.io/description: "A NodePort opens the same port on every node address, bypassing the ingress path with its TLS termination and authentication and leaving node-level firewalling as the only control between the workload and the wider network."
     security.kubeapt.io/resource: "Services"
-    security.kubeapt.io/severity: "High"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Set spec.type to ClusterIP and expose the workload through an Ingress, or use a LoadBalancer Service that the platform fronts with its own controls. Field: spec.type."
     security.kubeapt.io/product: "Kubernetes"
 spec:

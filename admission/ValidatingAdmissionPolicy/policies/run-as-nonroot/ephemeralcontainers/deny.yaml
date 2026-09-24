@@ -11,4 +11,4 @@ spec:
     - -c
     - sleep 3600
 ---
-# Command: kubectl debug -n policy-test run-as-nonroot-ephemeralcontainers -it --image=busybox:1.36 --custom=policies/run-as-nonroot/ephemeralcontainers/test-kubectl-debug-custom.yaml
+# Command: kubectl debug -n policy-test run-as-nonroot-ephemeralcontainers -it --image=busybox:1.36 --custom=policies/run-as-nonroot/ephemeralcontainers/deny-kubectl-debug-custom.yaml

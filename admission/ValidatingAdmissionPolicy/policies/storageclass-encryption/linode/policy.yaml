@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: storageclass-encryption-linode
   annotations:
-    security.kubeapt.io/displayName: "StorageClass Encryption (Linode)"
+    kubeapt.io/uuid: "525786c8-d1fa-4308-9d81-93dac98e1cc2"
+    security.kubeapt.io/displayName: "Provisions Unencrypted Linode Volumes"
     security.kubeapt.io/description: "Volumes provisioned from this class are stored without LUKS encryption, so data sits in plaintext on the Linode block storage backend and is readable from a detached volume, a clone or the underlying host."
     security.kubeapt.io/resource: "StorageClasses"
     security.kubeapt.io/severity: "Low"

@@ -1,9 +1,10 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: readinessprobe-tcpsocket-host-containers
+  name: container-readinessprobe-tcpsocket-host
   annotations:
-    security.kubeapt.io/displayName: "Readinessprobe Tcpsocket Host"
+    kubeapt.io/uuid: "15864541-e1ff-4369-b8c5-785ced7de8ce"
+    security.kubeapt.io/displayName: "Readiness TCP Probe Targets an Arbitrary Host"
     security.kubeapt.io/description: "Pointing the readiness TCP probe at another host makes the kubelet open connections from the node to an arbitrary address, probing endpoints closed to pods, while Service traffic keeps reaching an unchecked container."
     security.kubeapt.io/resource: "Containers"
     security.kubeapt.io/severity: "Low"

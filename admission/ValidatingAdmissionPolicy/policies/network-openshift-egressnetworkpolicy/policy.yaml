@@ -3,10 +3,11 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: egressnetworkpolicy-allow-all
   annotations:
-    security.kubeapt.io/displayName: "OpenShift EgressNetworkPolicy Allow-All"
+    kubeapt.io/uuid: "3da7d46e-f1bb-49aa-8257-8986598e88a9"
+    security.kubeapt.io/displayName: "Permits Egress to 0.0.0.0/0"
     security.kubeapt.io/description: "An Allow entry for 0.0.0.0/0 makes the namespace OpenShift SDN egress firewall permit every pod in it to reach any off-cluster address, so a compromised workload can stage tooling and exfiltrate data freely."
     security.kubeapt.io/resource: "EgressNetworkPolicies"
-    security.kubeapt.io/severity: "High"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Replace 0.0.0.0/0 with the specific destination CIDRs the namespace needs and keep a trailing Deny rule for everything else. Field: spec.egress[*].to.cidrSelector."
     security.kubeapt.io/product: "OpenShift"
 spec:

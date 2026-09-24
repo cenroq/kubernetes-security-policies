@@ -1,11 +1,12 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: seccomp-profile-ephemeralcontainers
+  name: ephemeralcontainer-seccomp-profile
   annotations:
-    security.kubeapt.io/displayName: "Seccomp Profile"
+    kubeapt.io/uuid: "a8381fc3-c338-4365-9a3f-1b28eb7e16f2"
+    security.kubeapt.io/displayName: "Runs With an Unconfined Seccomp Profile"
     security.kubeapt.io/description: "An Unconfined seccomp profile removes the syscall filter from the ephemeral container, typically attached with kubectl debug, exposing the full kernel syscall surface including the obscure calls that container escape and privilege-escalation exploits depend on."
-    security.kubeapt.io/resource: "Ephemeralcontainers"
+    security.kubeapt.io/resource: "EphemeralContainers"
     security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Replace Unconfined with RuntimeDefault, or with Localhost naming a profile loaded on the node. Field: spec.ephemeralContainers[*].securityContext.seccompProfile.type."
     security.kubeapt.io/product: "Kubernetes"

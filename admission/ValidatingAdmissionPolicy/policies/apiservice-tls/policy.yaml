@@ -3,10 +3,11 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: apiservice-tls
   annotations:
-    security.kubeapt.io/displayName: "APIService TLS"
+    kubeapt.io/uuid: "d97253ad-f3dd-4721-b40e-944d2ae07159"
+    security.kubeapt.io/displayName: "Skips TLS Verification to the Backing Service"
     security.kubeapt.io/description: "Skipping certificate verification lets the kube-apiserver proxy aggregated API calls to whatever answers the service endpoint, so anything able to spoof or intercept that connection reads forwarded user identity and returns forged API responses."
     security.kubeapt.io/resource: "APIServices"
-    security.kubeapt.io/severity: "High"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Set spec.insecureSkipTLSVerify to false and instead pin the CA that signed the extension API server certificate in spec.caBundle. Field: spec.insecureSkipTLSVerify."
     security.kubeapt.io/product: "Kubernetes"
 spec:

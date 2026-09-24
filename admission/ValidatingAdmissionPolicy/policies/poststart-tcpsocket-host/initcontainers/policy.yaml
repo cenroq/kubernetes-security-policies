@@ -1,11 +1,12 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: poststart-tcpsocket-host-initcontainers
+  name: initcontainer-poststart-tcpsocket-host
   annotations:
-    security.kubeapt.io/displayName: "Poststart Tcpsocket Host"
+    kubeapt.io/uuid: "ddff5010-e03c-4791-ae99-ae1f6f9cfe24"
+    security.kubeapt.io/displayName: "postStart TCP Hook Targets an Arbitrary Host"
     security.kubeapt.io/description: "Naming another host in a postStart TCP hook points init container start at an off-pod address through a handler the kubelet does not support, so the hook fails and the container is killed."
-    security.kubeapt.io/resource: "Initcontainers"
+    security.kubeapt.io/resource: "InitContainers"
     security.kubeapt.io/severity: "Low"
     security.kubeapt.io/remediation: "Remove the host field or set it to an empty string, and prefer an exec or httpGet handler since tcpSocket hooks are unsupported. Field: spec.initContainers[*].lifecycle.postStart.tcpSocket.host."
     security.kubeapt.io/product: "Kubernetes"

@@ -1,11 +1,12 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: seccomp-profile-initcontainers
+  name: initcontainer-seccomp-profile
   annotations:
-    security.kubeapt.io/displayName: "Seccomp Profile"
+    kubeapt.io/uuid: "1d1a7bed-e513-42e9-9089-0e9ac08c562c"
+    security.kubeapt.io/displayName: "Runs With an Unconfined Seccomp Profile"
     security.kubeapt.io/description: "An Unconfined seccomp profile removes the syscall filter from the init container, exposing the full kernel syscall surface including the obscure calls that container escape and privilege-escalation exploits depend on."
-    security.kubeapt.io/resource: "Initcontainers"
+    security.kubeapt.io/resource: "InitContainers"
     security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Replace Unconfined with RuntimeDefault, or with Localhost naming a profile loaded on the node. Field: spec.initContainers[*].securityContext.seccompProfile.type."
     security.kubeapt.io/product: "Kubernetes"

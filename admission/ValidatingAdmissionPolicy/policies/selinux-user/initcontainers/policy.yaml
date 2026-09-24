@@ -1,11 +1,12 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: selinux-user-initcontainers
+  name: initcontainer-selinux-user
   annotations:
-    security.kubeapt.io/displayName: "Selinux User"
+    kubeapt.io/uuid: "d5bee2cb-ed90-456c-979d-05406f316b90"
+    security.kubeapt.io/displayName: "Sets a Custom SELinux User"
     security.kubeapt.io/description: "A custom SELinux user label replaces the confined context the runtime assigns to the init container, granting a policy domain with transitions and file access the sandbox was never meant to allow."
-    security.kubeapt.io/resource: "Initcontainers"
+    security.kubeapt.io/resource: "InitContainers"
     security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Remove the seLinuxOptions.user setting from every init container or leave it as an empty string so the runtime assigns its default SELinux user. Field: spec.initContainers[*].securityContext.seLinuxOptions.user."
     security.kubeapt.io/product: "Kubernetes"

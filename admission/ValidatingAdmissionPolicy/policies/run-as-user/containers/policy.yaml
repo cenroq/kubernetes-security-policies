@@ -1,9 +1,10 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: run-as-user-containers
+  name: container-run-as-user
   annotations:
-    security.kubeapt.io/displayName: "Run As User"
+    kubeapt.io/uuid: "ba7e803d-7b0e-4505-8f47-4511091fe531"
+    security.kubeapt.io/displayName: "Runs as Root (UID 0)"
     security.kubeapt.io/description: "Running a container as UID 0 gives every process the in-container root identity, so writable host mounts, setuid binaries and isolation weaknesses become exploitable with root file ownership and the full capability set."
     security.kubeapt.io/resource: "Containers"
     security.kubeapt.io/severity: "Moderate"

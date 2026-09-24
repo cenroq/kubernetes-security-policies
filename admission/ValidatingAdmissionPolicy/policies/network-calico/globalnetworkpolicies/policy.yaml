@@ -1,12 +1,13 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: calico-globalnetworkpolicy-egress-cidr
+  name: globalnetworkpolicy-calico-egress-cidr
   annotations:
-    security.kubeapt.io/displayName: "Calico GlobalNetworkPolicy Allow-All Egress"
+    kubeapt.io/uuid: "7d2d7bb3-7250-4b09-9799-2b84f3d68f22"
+    security.kubeapt.io/displayName: "Permits Egress to Any Destination (Calico)"
     security.kubeapt.io/description: "A cluster-wide Allow to 0.0.0.0/0 or ::/0 gives every selected endpoint unrestricted outbound reach, the channel a compromised workload uses to contact command-and-control hosts, pull further tooling and exfiltrate data."
     security.kubeapt.io/resource: "GlobalNetworkPolicies"
-    security.kubeapt.io/severity: "High"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Replace 0.0.0.0/0 and ::/0 in Allow egress rules with the specific destination CIDRs the selected endpoints actually need. Field: spec.egress[*].destination.nets."
     security.kubeapt.io/product: "Calico"
 spec:

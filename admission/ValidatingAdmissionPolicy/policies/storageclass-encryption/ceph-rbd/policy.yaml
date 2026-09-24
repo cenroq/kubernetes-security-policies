@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: storageclass-encryption-ceph-rbd
   annotations:
-    security.kubeapt.io/displayName: "StorageClass Encryption (Ceph RBD)"
+    kubeapt.io/uuid: "f9881fc5-db3d-4cd5-9788-f6529f0f853e"
+    security.kubeapt.io/displayName: "Provisions Unencrypted Ceph RBD Volumes"
     security.kubeapt.io/description: "Volumes provisioned from this class land on unencrypted RBD images, so anyone with access to the Ceph pool, an image snapshot or the backing OSD disks reads the data without any Kubernetes access."
     security.kubeapt.io/resource: "StorageClasses"
     security.kubeapt.io/severity: "Low"

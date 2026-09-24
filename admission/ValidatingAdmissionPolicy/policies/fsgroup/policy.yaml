@@ -1,9 +1,10 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: fsgroup-pod
+  name: pod-fsgroup
   annotations:
-    security.kubeapt.io/displayName: "Fsgroup"
+    kubeapt.io/uuid: "c39ebbef-d72a-4b00-aebf-1ece6992ee7c"
+    security.kubeapt.io/displayName: "Sets Volume Ownership to the Root Group (GID 0)"
     security.kubeapt.io/description: "An fsGroup of 0 chowns every attached volume to the root group and gives pod processes root group membership, so volume contents and other root-group-owned files become writable by a compromised process."
     security.kubeapt.io/resource: "Pods"
     security.kubeapt.io/severity: "Low"

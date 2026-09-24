@@ -1,11 +1,12 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: prestop-tcpsocket-host-initcontainers
+  name: initcontainer-prestop-tcpsocket-host
   annotations:
-    security.kubeapt.io/displayName: "Prestop Tcpsocket Host"
+    kubeapt.io/uuid: "31b0e769-6283-4498-938f-f8d355d53586"
+    security.kubeapt.io/displayName: "preStop TCP Hook Targets an Arbitrary Host"
     security.kubeapt.io/description: "Naming another host in a preStop TCP hook points init container shutdown at an off-pod address through a handler the kubelet does not support, so the hook fails and cleanup never runs."
-    security.kubeapt.io/resource: "Initcontainers"
+    security.kubeapt.io/resource: "InitContainers"
     security.kubeapt.io/severity: "Low"
     security.kubeapt.io/remediation: "Remove the host field or set it to an empty string, and prefer an exec or httpGet handler since tcpSocket hooks are unsupported. Field: spec.initContainers[*].lifecycle.preStop.tcpSocket.host."
     security.kubeapt.io/product: "Kubernetes"

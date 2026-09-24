@@ -1,11 +1,12 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: prestop-httpget-host-initcontainers
+  name: initcontainer-prestop-httpget-host
   annotations:
-    security.kubeapt.io/displayName: "Prestop Httpget Host"
+    kubeapt.io/uuid: "7d575081-c91e-4b00-a7bb-755aa906d04b"
+    security.kubeapt.io/displayName: "preStop Hook Targets an Arbitrary Host"
     security.kubeapt.io/description: "A preStop HTTP hook aimed at another host makes the kubelet call an arbitrary URL from the node whenever an init container shuts down, reaching internal endpoints closed to pods and triggering side effects there."
-    security.kubeapt.io/resource: "Initcontainers"
+    security.kubeapt.io/resource: "InitContainers"
     security.kubeapt.io/severity: "Low"
     security.kubeapt.io/remediation: "Remove the host field so the hook targets the pod IP, or set it to an empty string. Field: spec.initContainers[*].lifecycle.preStop.httpGet.host."
     security.kubeapt.io/product: "Kubernetes"

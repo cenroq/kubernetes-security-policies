@@ -1,11 +1,12 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: readinessprobe-httpget-host-initcontainers
+  name: initcontainer-readinessprobe-httpget-host
   annotations:
-    security.kubeapt.io/displayName: "Readinessprobe Httpget Host"
+    kubeapt.io/uuid: "5dd76a70-9308-4635-94d2-d68e75ba1e24"
+    security.kubeapt.io/displayName: "Readiness Probe Targets an Arbitrary Host"
     security.kubeapt.io/description: "Redirecting the readiness HTTP probe to another host makes the kubelet fetch an arbitrary URL from the node, reaching metadata and node-local endpoints closed to pods, while pod readiness rests on an unchecked init container."
-    security.kubeapt.io/resource: "Initcontainers"
+    security.kubeapt.io/resource: "InitContainers"
     security.kubeapt.io/severity: "Low"
     security.kubeapt.io/remediation: "Remove the host field so the probe targets the pod IP, or set it to an empty string. Field: spec.initContainers[*].readinessProbe.httpGet.host."
     security.kubeapt.io/product: "Kubernetes"

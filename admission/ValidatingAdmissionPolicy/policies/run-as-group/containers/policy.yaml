@@ -1,9 +1,10 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: run-as-group-containers
+  name: container-run-as-group
   annotations:
-    security.kubeapt.io/displayName: "Run As Group"
+    kubeapt.io/uuid: "37bb1c69-4a89-4758-86cc-1d500f27a7a1"
+    security.kubeapt.io/displayName: "Runs With the Root Group (GID 0)"
     security.kubeapt.io/description: "A container running with GID 0 places its processes in the root group, which owns or can write many files in images and mounted host volumes, widening what a compromised process reaches."
     security.kubeapt.io/resource: "Containers"
     security.kubeapt.io/severity: "Moderate"

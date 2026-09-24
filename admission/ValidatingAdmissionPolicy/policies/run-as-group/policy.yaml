@@ -1,9 +1,10 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: run-as-group-pod
+  name: pod-run-as-group
   annotations:
-    security.kubeapt.io/displayName: "Run As Group"
+    kubeapt.io/uuid: "3b7b754a-0c21-4bf4-bbb4-aaed4b8a5e91"
+    security.kubeapt.io/displayName: "Runs With the Root Group (GID 0)"
     security.kubeapt.io/description: "A pod running with GID 0 places its processes in the root group, which owns or can write many files in images and mounted host volumes, widening what a compromised process reaches."
     security.kubeapt.io/resource: "Pods"
     security.kubeapt.io/severity: "Moderate"

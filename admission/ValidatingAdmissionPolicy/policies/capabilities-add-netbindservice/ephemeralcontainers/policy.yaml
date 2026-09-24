@@ -1,11 +1,12 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: capabilities-add-netbindservice-ephemeralcontainers
+  name: ephemeralcontainer-capabilities-add-netbindservice
   annotations:
-    security.kubeapt.io/displayName: "Capabilities Add Netbindservice"
+    kubeapt.io/uuid: "d8cfe5f0-c5f9-4bb8-87e0-327213d313ec"
+    security.kubeapt.io/displayName: "Adds a Capability Other Than NET_BIND_SERVICE"
     security.kubeapt.io/description: "Added capabilities other than NET_BIND_SERVICE give an ephemeral debug container kernel privileges such as raw socket access, process tracing and filesystem mounting, extending its reach past its namespace onto the node."
-    security.kubeapt.io/resource: "Ephemeralcontainers"
+    security.kubeapt.io/resource: "EphemeralContainers"
     security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Remove every entry from the added capability list except NET_BIND_SERVICE, or drop the list entirely. Field: spec.ephemeralContainers[*].securityContext.capabilities.add."
     security.kubeapt.io/product: "Kubernetes"

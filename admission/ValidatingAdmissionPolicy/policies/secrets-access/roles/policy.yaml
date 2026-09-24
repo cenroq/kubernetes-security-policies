@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: role-secrets-access
   annotations:
-    security.kubeapt.io/displayName: "Secrets Access"
+    kubeapt.io/uuid: "f2cdf998-1fbc-40e6-9602-1a721388f40f"
+    security.kubeapt.io/displayName: "Grants Access to Secrets"
     security.kubeapt.io/description: "Reading Secrets exposes the credentials they hold in the namespace, including service account tokens, TLS private keys and registry passwords, and the write verbs let those values be replaced with attacker-controlled ones."
     security.kubeapt.io/resource: "Roles"
     security.kubeapt.io/severity: "Critical"

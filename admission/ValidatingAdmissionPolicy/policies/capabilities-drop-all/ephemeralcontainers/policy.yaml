@@ -1,11 +1,12 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: capabilities-drop-all-ephemeralcontainers
+  name: ephemeralcontainer-capabilities-drop-all
   annotations:
-    security.kubeapt.io/displayName: "Capabilities Drop All"
+    kubeapt.io/uuid: "58ef5906-2525-4aaf-9945-d69b4c7f765f"
+    security.kubeapt.io/displayName: "Retains Default Linux Capabilities"
     security.kubeapt.io/description: "An ephemeral debug container that never drops ALL keeps the default runtime capability set, so code execution inside it inherits DAC_OVERRIDE, SETUID and NET_RAW for bypassing file permissions, regaining root and spoofing traffic."
-    security.kubeapt.io/resource: "Ephemeralcontainers"
+    security.kubeapt.io/resource: "EphemeralContainers"
     security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Add ALL to the dropped capability list and re-add only the specific capabilities the workload actually needs. Field: spec.ephemeralContainers[*].securityContext.capabilities.drop."
     security.kubeapt.io/product: "Kubernetes"

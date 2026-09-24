@@ -1,12 +1,13 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: service-no-admin-ports
+  name: service-admin-ports
   annotations:
-    security.kubeapt.io/displayName: "No Admin Ports"
+    kubeapt.io/uuid: "4bb23409-36e0-41b0-8511-c6511ac6b211"
+    security.kubeapt.io/displayName: "Exposes an Admin or Metrics Port Externally"
     security.kubeapt.io/description: "Admin, debug, metrics and management listeners are usually unauthenticated, so publishing them on a LoadBalancer or NodePort hands outside callers internal telemetry, profiling and heap dumps, and sometimes live control over the workload."
     security.kubeapt.io/resource: "Services"
-    security.kubeapt.io/severity: "Low"
+    security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Move the admin, debug, metrics and management ports to a separate ClusterIP Service and leave only application ports on the externally reachable one. Fields: spec.type, spec.ports[*].name."
     security.kubeapt.io/product: "Kubernetes"
 spec:

@@ -1,9 +1,10 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: dns-policy
+  name: pod-dns-policy
   annotations:
-    security.kubeapt.io/displayName: "Dns Policy"
+    kubeapt.io/uuid: "cfbd76cd-b41a-4146-a2dd-1d08e125f7a4"
+    security.kubeapt.io/displayName: "Uses ClusterFirstWithHostNet DNS Policy"
     security.kubeapt.io/description: "ClusterFirstWithHostNet pairs cluster DNS with host networking, so a workload that already bypasses pod network isolation can still resolve and reach every internal cluster service by name."
     security.kubeapt.io/resource: "Pods"
     security.kubeapt.io/severity: "Low"

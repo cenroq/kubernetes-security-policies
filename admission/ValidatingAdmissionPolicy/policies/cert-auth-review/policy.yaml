@@ -3,10 +3,11 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: clusterrole-cert-auth-review
   annotations:
-    security.kubeapt.io/displayName: "Cert Auth Review"
+    kubeapt.io/uuid: "09b595b5-1df6-4303-9adb-447f7183a174"
+    security.kubeapt.io/displayName: "Grants Approval of Certificate Signing Requests"
     security.kubeapt.io/description: "Write access to certificate signing requests and to the authorization and authentication review APIs lets the holder issue client certificates and use the API server to test which permissions a stolen credential carries."
     security.kubeapt.io/resource: "ClusterRoles"
-    security.kubeapt.io/severity: "Low"
+    security.kubeapt.io/severity: "Critical"
     security.kubeapt.io/remediation: "Drop create, update, patch and approve on certificatesigningrequests and its approval and status subresources, and on subjectaccessreviews, selfsubjectaccessreviews and tokenreviews. Fields: rules[*].apiGroups, rules[*].resources, rules[*].verbs."
     security.kubeapt.io/product: "Kubernetes"
 spec:

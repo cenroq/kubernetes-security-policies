@@ -1,11 +1,12 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: image-no-latest-initcontainers
+  name: initcontainer-image-tag
   annotations:
-    security.kubeapt.io/displayName: "Image No Latest"
+    kubeapt.io/uuid: "a52a6b23-ee6b-41cb-ab79-140ce371ed6d"
+    security.kubeapt.io/displayName: "Runs an Image Tagged latest"
     security.kubeapt.io/description: "Untagged and latest references float to whatever was pushed to the registry most recently, so a restart or reschedule can pull unreviewed or poisoned code into the init container without any spec change."
-    security.kubeapt.io/resource: "Initcontainers"
+    security.kubeapt.io/resource: "InitContainers"
     security.kubeapt.io/severity: "Moderate"
     security.kubeapt.io/remediation: "Pin the image to a specific released version tag or to an immutable @sha256 digest instead of latest or a bare repository name. Field: spec.initContainers[*].image."
     security.kubeapt.io/product: "Kubernetes"
