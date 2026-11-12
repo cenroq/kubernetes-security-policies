@@ -1,9 +1,8 @@
 {
     "name": "Pod Security Admission",
     "description": "Pod Security Standards implemented as Validating Admission Policies, with the same levels (baseline and restricted).",
-    "version": "v1.37.0",
-    "kubeapt-version-min": "2.0.0",
-    "deployment": "mkdir -p /tmp/cenroq && curl -L https://github.com/cenroq/kubernetes-security-policies/releases/download/vap_pod-security-admission%40v1.37.0/pod-security-admission_v1.37.0.tar.gz | tar -xz -C /tmp/cenroq && kubectl apply -f /tmp/cenroq/pod-security-admission/policies.yaml -f /tmp/cenroq/pod-security-admission/bindings.yaml",
+    "version": "v1.37.1",
+    "deployment": "mkdir -p /tmp/cenroq && curl -L https://github.com/cenroq/kubernetes-security-policies/releases/download/vap_pod-security-admission%40v1.37.1/pod-security-admission_v1.37.1.tar.gz | tar -xz -C /tmp/cenroq && kubectl apply -f /tmp/cenroq/pod-security-admission/policies.yaml -f /tmp/cenroq/pod-security-admission/bindings.yaml",
     "labels": {
         "warn": "pss.security.cenroq.io/warn",
         "audit": "pss.security.cenroq.io/audit",
@@ -96,7 +95,7 @@
         "container-selinux-type"
     ],
     "sources": [
-        "https://github.com/cenroq/kubernetes-security-policies/releases/download/vap_pod-security-admission%40v1.37.0/pod-security-admission_v1.37.0.tar.gz",
-        "https://github.com/cenroq/kubernetes-security-policies/releases/download/vap_pod-security-admission%40v1.37.0/pod-security-admission_v1.37.0.zip"
+        "https://github.com/cenroq/kubernetes-security-policies/releases/download/vap_pod-security-admission%40v1.37.1/pod-security-admission_v1.37.1.tar.gz",
+        "https://github.com/cenroq/kubernetes-security-policies/releases/download/vap_pod-security-admission%40v1.37.1/pod-security-admission_v1.37.1.zip"
     ]
 }

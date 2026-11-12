@@ -16,7 +16,7 @@ import yaml
 FINDING_ANNOTATION = "cenroq.io/finding"
 FINDING_ID = re.compile(r"^oq-[0-9]{4}$")
 
-# Compatibility bounds (COMPATIBILITY.md). Both ranges are inclusive, the minimum is
+# Kubernetes version bounds. The range is inclusive, the minimum is
 # required and a missing maximum means no upper bound.
 #
 # Per policy: the Kubernetes minors whose API has everything the policy reads, with
@@ -30,11 +30,6 @@ K8S_VERSION = re.compile(r"^[0-9]+\.[0-9]+$")
 # is served from 1.30 only, and the CEL must compile there (no two-variable
 # comprehensions, which arrive in 1.33).
 K8S_VERSION_FLOOR = (1, 27)
-
-# Per bundle version (bundle.json): the kubeapt releases that can handle the bundle.
-KUBEAPT_MIN_KEY = "kubeapt-version-min"
-KUBEAPT_MAX_KEY = "kubeapt-version-max"
-KUBEAPT_VERSION = re.compile(r"^[0-9]+\.[0-9]+\.[0-9]+$")
 
 
 def check_bounds(
@@ -101,7 +96,7 @@ def write_readme(bundle_dir: Path, name: str, description: str, bundle_slug: str
             "they ship as `probes/<policy>.yaml` (a compliant Pod) plus `probes/<policy>.debug.yaml`,",
             "reproduced with the `# Command:` line inside the Pod manifest.",
             "",
-            "`bundle.json` is the bundle's metadata (version, supported kubeapt releases), not a",
+            "`bundle.json` is the bundle's metadata (name, version, policy list), not a",
             "Kubernetes manifest. Each policy declares the Kubernetes releases it fits in its",
             "`cenroq.io/kubernetes-version-min` / `-max` annotations. Skip a policy whose range",
             "excludes your cluster.",
@@ -304,41 +299,7 @@ def read_bundle(bundle_dir: Path):
     policies = data.get("policies", [])
     if not isinstance(policies, list):
         raise SystemExit(f"bundle policies must be a list: {bundle_path}")
-    problems = check_bounds(data, KUBEAPT_MIN_KEY, KUBEAPT_MAX_KEY, KUBEAPT_VERSION)
-    if problems:
-        raise SystemExit(
-            f"invalid kubeapt version bounds in {bundle_path} (want a release like 2.0.0):\n"
-            + "\n".join(problems)
-        )
-    compatibility = {key: data[key] for key in (KUBEAPT_MIN_KEY, KUBEAPT_MAX_KEY) if key in data}
-    return bundle_dir.name, name, description, version, policies, compatibility
-
-
-def record_compatibility(bundles_dir: Path, bundle_slug: str, version: str, compatibility: dict):
-    """Write a bundle version's kubeapt bounds into bundles.json.
-
-    kubeapt chooses a version from the index before it downloads anything, so the
-    bounds have to be there as well as in bundle.json. They sit in a map beside
-    'versions', which stays a list of strings: kubeapt and the website decode it as
-    []string and would fail on any other shape. The deprecated duplicate of a slug is
-    skipped, the same entry kubeapt's findBundleIndexEntry prefers.
-    """
-    index_path = bundles_dir / "bundles.json"
-    raw = index_path.read_text()
-    index = json.loads(raw)
-    entries = [
-        entry
-        for entry in index
-        if isinstance(entry, dict) and entry.get("name") == bundle_slug and not entry.get("deprecated")
-    ]
-    if len(entries) != 1:
-        raise SystemExit(
-            f"{index_path}: want exactly one non-deprecated entry named {bundle_slug}, found {len(entries)}"
-        )
-    entries[0].setdefault("compatibility", {})[version] = compatibility
-    updated = json.dumps(index, indent=4) + "\n"
-    if updated != raw:
-        index_path.write_text(updated)
+    return bundle_dir.name, name, description, version, policies
 
 
 def collect_bundle_dirs(bundles_dir: Path) -> list[Path]:
@@ -350,7 +311,7 @@ def collect_bundle_dirs(bundles_dir: Path) -> list[Path]:
 
 
 def build_bundle(root: Path, bundle_dir: Path, policy_index: dict[str, Path]):
-    bundle_slug, name, description, version, policy_names, compatibility = read_bundle(bundle_dir)
+    bundle_slug, name, description, version, policy_names = read_bundle(bundle_dir)
     manifest_path = bundle_dir / "bundle.json"
 
     missing = [name for name in policy_names if name not in policy_index]
@@ -421,9 +382,9 @@ def build_bundle(root: Path, bundle_dir: Path, policy_index: dict[str, Path]):
 
         write_readme(bundle_dir, name, description, bundle_slug)
 
-        # Shipped inside the archive so the kubeapt bounds travel with it: kubeapt's
-        # offline 'bundles import' reads bundle.json from the archive and never sees the
-        # index. kubeapt installs only policies.yaml and bindings.yaml.
+        # kubeapt's offline 'bundles import' takes the bundle's name and version from the
+        # archive's own bundle.json and refuses an archive without one. kubeapt installs
+        # only policies.yaml and bindings.yaml.
         shutil.copyfile(manifest_path, bundle_dir / "bundle.json")
 
         out_dir = root / "bundles" / bundle_slug
@@ -439,8 +400,6 @@ def build_bundle(root: Path, bundle_dir: Path, policy_index: dict[str, Path]):
                 if file_path.is_file():
                     zf.write(file_path, file_path.relative_to(tmp_root))
         write_checksum(zip_path)
-
-    record_compatibility(root / "bundles", bundle_slug, version, compatibility)
 
 
 def main():
