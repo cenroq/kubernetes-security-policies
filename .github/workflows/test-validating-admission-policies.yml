@@ -12,8 +12,35 @@ on:
 
 jobs:
   test-vap:
-    name: Test ValidatingAdmissionPolicies
+    name: Test ValidatingAdmissionPolicies (Kubernetes ${{ matrix.kubernetes }})
     runs-on: ubuntu-latest
+
+    # Every Kubernetes minor a policy can declare in cenroq.io/kubernetes-version-min /
+    # -max gets its own cluster, so each policy's range is proven rather than assumed:
+    # the probe must be denied on every minor inside the range, and the test script
+    # skips the policy outside it. 1.30 is the floor (admissionregistration.k8s.io/v1).
+    # Add the new minor here when Kubernetes releases one.
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # Images pinned by digest, as the kind release notes recommend.
+          - kubernetes: "1.30"
+            node_image: kindest/node:v1.30.13@sha256:397209b3d947d154f6641f2d0ce8d473732bd91c87d9575ade99049aa33cd648
+          - kubernetes: "1.31"
+            node_image: kindest/node:v1.31.14@sha256:6f86cf509dbb42767b6e79debc3f2c32e4ee01386f0489b3b2be24b0a55aac2b
+          - kubernetes: "1.32"
+            node_image: kindest/node:v1.32.11@sha256:5fc52d52a7b9574015299724bd68f183702956aa4a2116ae75a63cb574b35af8
+          - kubernetes: "1.33"
+            node_image: kindest/node:v1.33.12@sha256:3f5c8443c620245e4d355cfe09e96a91ead32ceaa569d3f1ca9edf0cb2fe2ff4
+          - kubernetes: "1.34"
+            node_image: kindest/node:v1.34.11@sha256:44e222ee2132dab25ff87301682f89eb82c7880ea3a1bf543bfe9708fd08d67d
+          - kubernetes: "1.35"
+            node_image: kindest/node:v1.35.8@sha256:07b2536e30b803ed61d1677a79df6115f798ce64c80f9e22f6ed45afd09323c0
+          - kubernetes: "1.36"
+            node_image: kindest/node:v1.36.4@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed
+          - kubernetes: "1.37"
+            node_image: kindest/node:v1.37.0@sha256:a1ed56cfb0e7b93589bdf97c8cd566405a265939e3620fc4f5de89adff580ae5
 
     steps:
       - name: Checkout code
@@ -22,7 +49,8 @@ jobs:
       - name: Create k8s Kind Cluster
         uses: helm/kind-action@v1
         with:
-          version: v0.31.0
+          version: v0.33.0
+          node_image: ${{ matrix.node_image }}
 
       - name: Run ValidatingAdmissionPolicies Tests
         run: make test-vap
