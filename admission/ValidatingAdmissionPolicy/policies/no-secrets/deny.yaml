@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: violating-no-secrets
   annotations:
-    kubeapt.io/uuid: "21735678-f711-4b9f-a267-cbd09c7afbfc"
+    cenroq.io/finding: "oq-0297"
 immutable: true
 data:
   config: AWS_SECRET_KEY=abcd1234

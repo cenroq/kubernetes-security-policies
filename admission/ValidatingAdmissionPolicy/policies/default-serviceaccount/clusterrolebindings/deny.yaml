@@ -3,7 +3,7 @@ kind: ClusterRoleBinding
 metadata:
   name: violating-crb-default-sa
   annotations:
-    kubeapt.io/uuid: "e56cfce0-5f49-429b-b31e-06796251a1cd"
+    cenroq.io/finding: "oq-0292"
 subjects:
 - kind: ServiceAccount
   name: default

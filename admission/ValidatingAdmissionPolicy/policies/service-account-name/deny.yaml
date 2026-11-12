@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: violating-service-account-name
   annotations:
-    kubeapt.io/uuid: "1e4e5442-122f-4dd9-86ce-a6104971b13b"
+    cenroq.io/finding: "oq-0408"
   labels:
     app: good
 spec:

@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: read-only-root-filesystem-containers
   annotations:
-    kubeapt.io/uuid: "4ed91688-4092-4429-b68d-a29c21f1267e"
+    cenroq.io/finding: "oq-0314"
 spec:
   containers:
   - name: main

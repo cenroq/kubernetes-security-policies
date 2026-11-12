@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: capabilities-add-containers
   annotations:
-    kubeapt.io/uuid: "57487b22-099b-46ad-b669-844e1e392a65"
+    cenroq.io/finding: "oq-0299"
 spec:
   containers:
   - name: main

@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: violating-no-admin-ports
   annotations:
-    kubeapt.io/uuid: "4bb23409-36e0-41b0-8511-c6511ac6b211"
+    cenroq.io/finding: "oq-0429"
 spec:
   type: LoadBalancer
   selector:

@@ -3,7 +3,7 @@ kind: Role
 metadata:
   name: violating-role-wildcard
   annotations:
-    kubeapt.io/uuid: "104d53d3-4e2d-4c44-b14a-4a95b7dba910"
+    cenroq.io/finding: "oq-0422"
 rules:
 - apiGroups: [""]
   resources: ["pods"]

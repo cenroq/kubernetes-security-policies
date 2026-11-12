@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: initcontainer-selinux-role
   annotations:
-    kubeapt.io/uuid: "32ff7e30-616c-43a7-92ae-44022ecc0da3"
+    cenroq.io/finding: "oq-0377"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Sets a Custom SELinux Role"
     security.kubeapt.io/description: "A custom SELinux role label lets the init container transition into domains outside the confined container role, weakening the mandatory access control that keeps a compromised process away from host files and devices."
     security.kubeapt.io/resource: "InitContainers"

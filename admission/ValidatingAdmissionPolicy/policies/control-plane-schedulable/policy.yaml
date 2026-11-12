@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: node-control-plane-schedulable
   annotations:
-    kubeapt.io/uuid: "b0cfc6a8-e466-4436-b2a8-a7d94fbab61a"
+    cenroq.io/finding: "oq-0387"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Lacks a Control Plane NoSchedule Taint"
     security.kubeapt.io/description: "An untainted control-plane node accepts ordinary workloads alongside etcd and the API server, putting tenant containers on the one host where control-plane certificates and static pod manifests sit on disk."
     security.kubeapt.io/resource: "Nodes"

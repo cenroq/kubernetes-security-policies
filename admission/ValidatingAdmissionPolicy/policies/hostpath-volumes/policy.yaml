@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: pod-hostpath-volumes
   annotations:
-    kubeapt.io/uuid: "5612ded8-9174-42bf-80de-52468a236655"
+    cenroq.io/finding: "oq-0397"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Mounts a hostPath Volume From the Node"
     security.kubeapt.io/description: "A hostPath volume mounts node filesystem paths into the pod, exposing kubelet credentials, container runtime sockets and other workload data, and a writable mount lets an attacker alter node files to take over the node."
     security.kubeapt.io/resource: "Pods"

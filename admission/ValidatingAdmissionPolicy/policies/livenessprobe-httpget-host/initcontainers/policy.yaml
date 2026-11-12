@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: initcontainer-livenessprobe-httpget-host
   annotations:
-    kubeapt.io/uuid: "2fedfec0-bde4-4c12-ab33-7d9ff294b3fe"
+    cenroq.io/finding: "oq-0360"
+    cenroq.io/kubernetes-version-min: "1.29"
     security.kubeapt.io/displayName: "Liveness Probe Targets an Arbitrary Host"
     security.kubeapt.io/description: "Redirecting the liveness HTTP probe to another host makes the kubelet fetch an arbitrary URL from the node, reaching metadata and node-local endpoints closed to pods, while a hung init container is never restarted."
     security.kubeapt.io/resource: "InitContainers"

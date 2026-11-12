@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: capabilities-drop-all-ephemeralcontainers
   annotations:
-    kubeapt.io/uuid: "58ef5906-2525-4aaf-9945-d69b4c7f765f"
+    cenroq.io/finding: "oq-0333"
 spec:
   containers:
   - name: main

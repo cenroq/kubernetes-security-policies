@@ -3,7 +3,7 @@ kind: StorageClass
 metadata:
   name: violating-storageclass-encryption-ceph-rbd
   annotations:
-    kubeapt.io/uuid: "f9881fc5-db3d-4cd5-9788-f6529f0f853e"
+    cenroq.io/finding: "oq-0439"
 provisioner: rbd.csi.ceph.com
 parameters:
   pool: rbd

@@ -11,6 +11,61 @@ from pathlib import Path
 
 import yaml
 
+# Every policy carries its finding ID here, and every probe document carries its
+# policy's ID. The format matches what the cenroq catalog accepts.
+FINDING_ANNOTATION = "cenroq.io/finding"
+FINDING_ID = re.compile(r"^oq-[0-9]{4}$")
+
+# Kubernetes version bounds. The range is inclusive, the minimum is
+# required and a missing maximum means no upper bound.
+#
+# Per policy: the Kubernetes minors whose API has everything the policy reads, with
+# default feature gates. Scanners evaluate the CEL themselves, so this is about the
+# content, not about whether the API server can run the policy.
+K8S_MIN_ANNOTATION = "cenroq.io/kubernetes-version-min"
+K8S_MAX_ANNOTATION = "cenroq.io/kubernetes-version-max"
+K8S_VERSION = re.compile(r"^[0-9]+\.[0-9]+$")
+# The oldest Kubernetes minor the policies are scoped for. Installing them is a
+# separate, bundle-wide limit: admissionregistration.k8s.io/v1 ValidatingAdmissionPolicy
+# is served from 1.30 only, and the CEL must compile there (no two-variable
+# comprehensions, which arrive in 1.33).
+K8S_VERSION_FLOOR = (1, 27)
+
+
+def check_bounds(
+    values: dict,
+    min_key: str,
+    max_key: str,
+    pattern: re.Pattern,
+    floor: tuple[int, ...] | None = None,
+) -> list[str]:
+    """What is wrong with an inclusive version range: min required, max optional."""
+    problems: list[str] = []
+    bounds: list[tuple[int, ...] | None] = []
+    for key, required in ((min_key, True), (max_key, False)):
+        value = values.get(key)
+        if value is None:
+            if required:
+                problems.append(f"{key} is missing")
+            bounds.append(None)
+            continue
+        if isinstance(value, (int, float)) and not isinstance(value, bool):
+            # Unquoted in YAML, 1.30 is the number 1.3.
+            problems.append(f"{key} is the number {value!r}; quote it as a string")
+            bounds.append(None)
+            continue
+        if not isinstance(value, str) or not pattern.match(value):
+            problems.append(f"{key} is {value!r}, want a version like {pattern.pattern}")
+            bounds.append(None)
+            continue
+        bounds.append(tuple(int(part) for part in value.split(".")))
+    low, high = bounds
+    if floor and low and low < floor:
+        problems.append(f"{min_key} {values[min_key]} is below {'.'.join(map(str, floor))}")
+    if low and high and high < low:
+        problems.append(f"{max_key} {values[max_key]} is below {min_key} {values[min_key]}")
+    return problems
+
 
 def write_checksum(archive_path: Path):
     hasher = hashlib.sha256()
@@ -40,6 +95,11 @@ def write_readme(bundle_dir: Path, name: str, description: str, bundle_slug: str
             "Policies whose violation needs an ephemeral container cannot be a single manifest;",
             "they ship as `probes/<policy>.yaml` (a compliant Pod) plus `probes/<policy>.debug.yaml`,",
             "reproduced with the `# Command:` line inside the Pod manifest.",
+            "",
+            "`bundle.json` is the bundle's metadata (name, version, policy list), not a",
+            "Kubernetes manifest. Each policy declares the Kubernetes releases it fits in its",
+            "`cenroq.io/kubernetes-version-min` / `-max` annotations. Skip a policy whose range",
+            "excludes your cluster.",
             "",
             "View online:",
             f"https://cenroq.com/policies/bundles/{bundle_slug}",
@@ -88,11 +148,11 @@ def write_probes(bundle_dir: Path, policy_names: list[str], policy_index: dict[s
 
     for policy_name in policy_names:
         src_dir = policy_index[policy_name].parent
-        uuid = read_policy_uuid(policy_index[policy_name])
+        finding = read_policy_finding(policy_index[policy_name])
         deny = src_dir / "deny.yaml"
         if not deny.exists():
             continue
-        # The uuid now lives in each manifest's metadata.annotations, so the header
+        # The finding ID lives in each manifest's metadata.annotations, so the header
         # only carries the human-readable policy name.
         header = [f"# policy: {policy_name}"]
 
@@ -109,11 +169,11 @@ def write_probes(bundle_dir: Path, policy_names: list[str], policy_index: dict[s
                         f"deny.yaml document collision {key}: {seen[key]} and {policy_name}"
                     )
                 seen[key] = policy_name
-                stamped = doc.get("metadata", {}).get("annotations", {}).get("kubeapt.io/uuid")
-                if stamped != uuid:
+                stamped = doc.get("metadata", {}).get("annotations", {}).get(FINDING_ANNOTATION)
+                if stamped != finding:
                     raise SystemExit(
-                        f"{deny}: kubeapt.io/uuid is {stamped!r}, "
-                        f"policy {policy_name} is {uuid!r}"
+                        f"{deny}: {FINDING_ANNOTATION} is {stamped!r}, "
+                        f"policy {policy_name} is {finding!r}"
                     )
             merged.append("\n".join(header) + "\n" + body)
             continue
@@ -143,11 +203,11 @@ def write_probes(bundle_dir: Path, policy_names: list[str], policy_index: dict[s
     return written
 
 
-def read_policy_uuid(policy_path: Path) -> str | None:
+def read_policy_finding(policy_path: Path) -> str | None:
     doc = yaml.safe_load(policy_path.read_text())
     if not isinstance(doc, dict):
         return None
-    return doc.get("metadata", {}).get("annotations", {}).get("kubeapt.io/uuid")
+    return doc.get("metadata", {}).get("annotations", {}).get(FINDING_ANNOTATION)
 
 
 def rewrite_probe_commands(text: str, policy_name: str) -> str:
@@ -171,6 +231,9 @@ def rewrite_probe_commands(text: str, policy_name: str) -> str:
 def load_policy_index(root: Path) -> dict[str, Path]:
     policy_index: dict[str, Path] = {}
     duplicates: dict[str, list[Path]] = {}
+    findings: dict[str, list[Path]] = {}
+    bad_findings: list[str] = []
+    bad_ranges: list[str] = []
     for path in root.glob("policies/**/policy.yaml"):
         doc = yaml.safe_load(path.read_text())
         if not isinstance(doc, dict):
@@ -182,12 +245,44 @@ def load_policy_index(root: Path) -> dict[str, Path]:
             duplicates.setdefault(name, [policy_index[name]]).append(path)
         else:
             policy_index[name] = path
+        # Finding IDs are permanent and reported per policy downstream, so a missing,
+        # malformed or shared one is caught here rather than after release.
+        annotations = doc.get("metadata", {}).get("annotations") or {}
+        finding = annotations.get(FINDING_ANNOTATION)
+        if not isinstance(finding, str) or not FINDING_ID.match(finding):
+            bad_findings.append(f"{path}: {FINDING_ANNOTATION} is {finding!r}")
+        else:
+            findings.setdefault(finding, []).append(path)
+        bad_ranges.extend(
+            f"{path}: {problem}"
+            for problem in check_bounds(
+                annotations, K8S_MIN_ANNOTATION, K8S_MAX_ANNOTATION, K8S_VERSION, K8S_VERSION_FLOOR
+            )
+        )
     if duplicates:
         messages = []
         for name, paths in sorted(duplicates.items()):
             path_list = ", ".join(str(path) for path in paths)
             messages.append(f"{name}: {path_list}")
         raise SystemExit("duplicate policy names found:\n" + "\n".join(messages))
+    shared = [
+        f"{finding}: {', '.join(str(path) for path in paths)}"
+        for finding, paths in sorted(findings.items())
+        if len(paths) > 1
+    ]
+    sections = []
+    if bad_findings or shared:
+        sections.append(
+            "invalid policy finding IDs (want a unique oq-NNNN per policy):\n"
+            + "\n".join(sorted(bad_findings) + shared)
+        )
+    if bad_ranges:
+        sections.append(
+            "invalid policy Kubernetes version bounds (want a quoted major.minor such as \"1.30\"):\n"
+            + "\n".join(sorted(bad_ranges))
+        )
+    if sections:
+        raise SystemExit("\n\n".join(sections))
     return policy_index
 
 
@@ -217,6 +312,7 @@ def collect_bundle_dirs(bundles_dir: Path) -> list[Path]:
 
 def build_bundle(root: Path, bundle_dir: Path, policy_index: dict[str, Path]):
     bundle_slug, name, description, version, policy_names = read_bundle(bundle_dir)
+    manifest_path = bundle_dir / "bundle.json"
 
     missing = [name for name in policy_names if name not in policy_index]
     if missing:
@@ -285,6 +381,11 @@ def build_bundle(root: Path, bundle_dir: Path, policy_index: dict[str, Path]):
         write_probes(bundle_dir, deduped, policy_index)
 
         write_readme(bundle_dir, name, description, bundle_slug)
+
+        # kubeapt's offline 'bundles import' takes the bundle's name and version from the
+        # archive's own bundle.json and refuses an archive without one. kubeapt installs
+        # only policies.yaml and bindings.yaml.
+        shutil.copyfile(manifest_path, bundle_dir / "bundle.json")
 
         out_dir = root / "bundles" / bundle_slug
         out_dir.mkdir(parents=True, exist_ok=True)

@@ -3,7 +3,7 @@ kind: Role
 metadata:
   name: violating-role-secrets-access
   annotations:
-    kubeapt.io/uuid: "f2cdf998-1fbc-40e6-9602-1a721388f40f"
+    cenroq.io/finding: "oq-0419"
 rules:
 - apiGroups: [""]
   resources: ["secrets"]

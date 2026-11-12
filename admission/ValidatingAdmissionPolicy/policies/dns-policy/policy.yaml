@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: pod-dns-policy
   annotations:
-    kubeapt.io/uuid: "cfbd76cd-b41a-4146-a2dd-1d08e125f7a4"
+    cenroq.io/finding: "oq-0393"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Uses ClusterFirstWithHostNet DNS Policy"
     security.kubeapt.io/description: "ClusterFirstWithHostNet pairs cluster DNS with host networking, so a workload that already bypasses pod network isolation can still resolve and reach every internal cluster service by name."
     security.kubeapt.io/resource: "Pods"

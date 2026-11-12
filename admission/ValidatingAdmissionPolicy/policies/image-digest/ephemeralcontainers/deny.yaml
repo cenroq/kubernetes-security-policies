@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: image-digest-ephemeralcontainers
   annotations:
-    kubeapt.io/uuid: "416403a0-7869-4716-8011-97d7f49b1a71"
+    cenroq.io/finding: "oq-0335"
 spec:
   containers:
   - name: main

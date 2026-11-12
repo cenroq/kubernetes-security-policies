@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: pod-selinux-role
   annotations:
-    kubeapt.io/uuid: "7ee786ba-34bf-43d1-8873-cb16afbe89af"
+    cenroq.io/finding: "oq-0405"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Sets a Custom SELinux Role"
     security.kubeapt.io/description: "A custom SELinux role label applied pod-wide lets containers transition into domains outside the confined container role, weakening the mandatory access control that keeps a compromised process away from host files and devices."
     security.kubeapt.io/resource: "Pods"

@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: violating-share-process-namespace
   annotations:
-    kubeapt.io/uuid: "a317749c-d7dc-4c9c-b549-ffad9806c111"
+    cenroq.io/finding: "oq-0409"
 spec:
   shareProcessNamespace: true
   containers:

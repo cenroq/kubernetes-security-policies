@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: ephemeralcontainer-procmount
   annotations:
-    kubeapt.io/uuid: "eb9b7ab0-8488-46a7-83d6-7ad706ec9901"
+    cenroq.io/finding: "oq-0339"
+    cenroq.io/kubernetes-version-min: "1.33"
     security.kubeapt.io/displayName: "Uses an Unmasked /proc Mount"
     security.kubeapt.io/description: "An unmasked /proc strips the default masks and read-only paths the runtime applies, exposing kernel memory and tunables such as /proc/kcore and /proc/sys to the ephemeral container and easing container escape."
     security.kubeapt.io/resource: "EphemeralContainers"

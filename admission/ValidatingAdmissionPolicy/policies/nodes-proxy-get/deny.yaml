@@ -3,7 +3,7 @@ kind: ClusterRole
 metadata:
   name: violating-clusterrole-nodes-proxy-get
   annotations:
-    kubeapt.io/uuid: "83c49431-dc09-4340-9d03-fe99349e6d3a"
+    cenroq.io/finding: "oq-0280"
 rules:
 - apiGroups: [""]
   resources: ["nodes/proxy"]

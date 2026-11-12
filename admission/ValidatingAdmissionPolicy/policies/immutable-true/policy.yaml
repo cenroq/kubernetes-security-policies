@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: configmap-immutability
   annotations:
-    kubeapt.io/uuid: "347134fc-2e95-4b42-93bc-d9098b018a6b"
+    cenroq.io/finding: "oq-0296"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Is Mutable at Runtime"
     security.kubeapt.io/description: "A mutable ConfigMap can be rewritten by anyone with update access, silently changing application configuration, feature flags or trusted endpoints inside running pods with no new image and no deployment."
     security.kubeapt.io/resource: "ConfigMaps"

@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: container-startupprobe-tcpsocket-host
   annotations:
-    kubeapt.io/uuid: "1a8a155a-af40-4718-bf9e-0941fafe0da0"
+    cenroq.io/finding: "oq-0326"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Startup TCP Probe Targets an Arbitrary Host"
     security.kubeapt.io/description: "Pointing the startup TCP probe at another host makes the kubelet open connections from the node to an arbitrary address, probing endpoints closed to pods, and a hung container passes its startup gate."
     security.kubeapt.io/resource: "Containers"

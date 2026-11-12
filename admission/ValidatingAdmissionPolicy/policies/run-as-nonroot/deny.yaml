@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: run-as-nonroot-pod
   annotations:
-    kubeapt.io/uuid: "3e12a1ed-4cb4-4d04-9fc4-75c9ca5af6cc"
+    cenroq.io/finding: "oq-0401"
 spec:
   containers:
   - name: main

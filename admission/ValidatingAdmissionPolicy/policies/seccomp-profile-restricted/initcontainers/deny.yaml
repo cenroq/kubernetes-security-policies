@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: seccomp-profile-restricted-initcontainers
   annotations:
-    kubeapt.io/uuid: "e936441f-96f4-4bfa-a70a-97b1ca8b369d"
+    cenroq.io/finding: "oq-0376"
 spec:
   containers:
   - name: main

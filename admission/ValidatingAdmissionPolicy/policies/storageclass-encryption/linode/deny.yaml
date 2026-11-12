@@ -3,5 +3,5 @@ kind: StorageClass
 metadata:
   name: violating-storageclass-encryption-linode
   annotations:
-    kubeapt.io/uuid: "525786c8-d1fa-4308-9d81-93dac98e1cc2"
+    cenroq.io/finding: "oq-0441"
 provisioner: linodebs.csi.linode.com

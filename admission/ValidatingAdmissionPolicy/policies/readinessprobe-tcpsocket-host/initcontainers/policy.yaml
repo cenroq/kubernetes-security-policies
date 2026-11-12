@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: initcontainer-readinessprobe-tcpsocket-host
   annotations:
-    kubeapt.io/uuid: "965e99b1-6f57-4fb4-9550-eefd525a38dd"
+    cenroq.io/finding: "oq-0371"
+    cenroq.io/kubernetes-version-min: "1.29"
     security.kubeapt.io/displayName: "Readiness TCP Probe Targets an Arbitrary Host"
     security.kubeapt.io/description: "Pointing the readiness TCP probe at another host makes the kubelet open connections from the node to an arbitrary address, probing endpoints closed to pods, while pod readiness rests on an unchecked init container."
     security.kubeapt.io/resource: "InitContainers"

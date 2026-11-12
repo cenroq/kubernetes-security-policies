@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: globalnetworkpolicy-calico-egress-cidr
   annotations:
-    kubeapt.io/uuid: "7d2d7bb3-7250-4b09-9799-2b84f3d68f22"
+    cenroq.io/finding: "oq-0350"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Permits Egress to Any Destination (Calico)"
     security.kubeapt.io/description: "A cluster-wide Allow to 0.0.0.0/0 or ::/0 gives every selected endpoint unrestricted outbound reach, the channel a compromised workload uses to contact command-and-control hosts, pull further tooling and exfiltrate data."
     security.kubeapt.io/resource: "GlobalNetworkPolicies"

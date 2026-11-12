@@ -4,7 +4,7 @@ kind: GlobalNetworkPolicy
 metadata:
   name: violating-calico-globalnetworkpolicy-egress-cidr
   annotations:
-    kubeapt.io/uuid: "7d2d7bb3-7250-4b09-9799-2b84f3d68f22"
+    cenroq.io/finding: "oq-0350"
 spec:
   selector: all()
   egress:

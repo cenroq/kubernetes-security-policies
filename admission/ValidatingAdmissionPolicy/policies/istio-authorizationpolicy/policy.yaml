@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: authorizationpolicy-allow-all
   annotations:
-    kubeapt.io/uuid: "ccc05ad0-3f3d-4ea9-90aa-ce9f0529dc0d"
+    cenroq.io/finding: "oq-0271"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "ALLOW Rule Matches All Requests"
     security.kubeapt.io/description: "An ALLOW rule with no from, to or when matches every request, so the workload accepts any caller inside or outside the mesh while still appearing to be under authorization control."
     security.kubeapt.io/resource: "AuthorizationPolicies"

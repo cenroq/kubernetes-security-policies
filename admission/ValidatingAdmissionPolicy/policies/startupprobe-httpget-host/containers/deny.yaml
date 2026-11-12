@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: startupprobe-httpget-host-containers
   annotations:
-    kubeapt.io/uuid: "746eed3b-2e17-4742-9a68-71458f5b6e3b"
+    cenroq.io/finding: "oq-0325"
 spec:
   containers:
   - name: main

@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: hostpid-pod
   annotations:
-    kubeapt.io/uuid: "23ef68db-2409-43a1-854d-c46477a533a9"
+    cenroq.io/finding: "oq-0398"
 spec:
   containers:
   - name: main

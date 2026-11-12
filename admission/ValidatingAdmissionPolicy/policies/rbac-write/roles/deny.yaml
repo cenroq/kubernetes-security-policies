@@ -3,7 +3,7 @@ kind: Role
 metadata:
   name: violating-role-rbac-write
   annotations:
-    kubeapt.io/uuid: "2b67fb51-a58c-4a4e-8888-bb4eb1a00ef6"
+    cenroq.io/finding: "oq-0418"
 rules:
 - apiGroups: ["rbac.authorization.k8s.io"]
   resources: ["rolebindings"]

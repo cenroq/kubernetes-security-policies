@@ -3,7 +3,7 @@ kind: ClusterRoleBinding
 metadata:
   name: violating-crb-powerful-role
   annotations:
-    kubeapt.io/uuid: "0a1888ef-7dbe-4285-a112-610213251fb6"
+    cenroq.io/finding: "oq-0293"
 subjects:
 - kind: User
   name: alice

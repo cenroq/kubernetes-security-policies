@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: initcontainer-selinux-type
   annotations:
-    kubeapt.io/uuid: "f73f5ff5-358d-4f0f-a299-de4e05d26ba1"
+    cenroq.io/finding: "oq-0378"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Sets a Non-Standard SELinux Type"
     security.kubeapt.io/description: "An SELinux type outside the container domains, such as spc_t or unconfined_t, drops the kernel confinement that stops an init container process from reading host files and reaching devices it does not own."
     security.kubeapt.io/resource: "InitContainers"

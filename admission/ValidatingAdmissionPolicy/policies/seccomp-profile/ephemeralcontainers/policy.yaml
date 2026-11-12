@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: ephemeralcontainer-seccomp-profile
   annotations:
-    kubeapt.io/uuid: "a8381fc3-c338-4365-9a3f-1b28eb7e16f2"
+    cenroq.io/finding: "oq-0344"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Runs With an Unconfined Seccomp Profile"
     security.kubeapt.io/description: "An Unconfined seccomp profile removes the syscall filter from the ephemeral container, typically attached with kubectl debug, exposing the full kernel syscall surface including the obscure calls that container escape and privilege-escalation exploits depend on."
     security.kubeapt.io/resource: "EphemeralContainers"

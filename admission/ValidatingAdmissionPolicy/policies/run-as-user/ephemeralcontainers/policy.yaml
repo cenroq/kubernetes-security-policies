@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: ephemeralcontainer-run-as-user
   annotations:
-    kubeapt.io/uuid: "98905548-0495-45ef-9457-70a624f240eb"
+    cenroq.io/finding: "oq-0343"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Runs as Root (UID 0)"
     security.kubeapt.io/description: "Running an ephemeral debug container as UID 0 gives every process the in-container root identity, so writable host mounts, setuid binaries and isolation weaknesses become exploitable with root file ownership and the full capability set."
     security.kubeapt.io/resource: "EphemeralContainers"

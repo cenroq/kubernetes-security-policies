@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: ephemeralcontainer-hostports
   annotations:
-    kubeapt.io/uuid: "76388b3e-0254-4b2c-b68b-901f97a3c47b"
+    cenroq.io/finding: "oq-0334"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Binds a hostPort on the Node"
     security.kubeapt.io/description: "A hostPort binds the ephemeral container port onto the node network interfaces, exposing it to anything that can reach the node, bypassing Service and NetworkPolicy controls and squatting on node component ports."
     security.kubeapt.io/resource: "EphemeralContainers"

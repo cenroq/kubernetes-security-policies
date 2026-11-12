@@ -3,7 +3,7 @@ kind: ClusterRole
 metadata:
   name: violating-clusterrole-serviceaccounts-write
   annotations:
-    kubeapt.io/uuid: "c2ceea3b-e377-4be5-ba9d-0b86ffdb3030"
+    cenroq.io/finding: "oq-0288"
 rules:
 - apiGroups: [""]
   resources: ["serviceaccounts"]

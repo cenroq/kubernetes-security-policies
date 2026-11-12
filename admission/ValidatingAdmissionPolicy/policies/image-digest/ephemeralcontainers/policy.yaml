@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: ephemeralcontainer-image-digest
   annotations:
-    kubeapt.io/uuid: "416403a0-7869-4716-8011-97d7f49b1a71"
+    cenroq.io/finding: "oq-0335"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Runs an Image Not Pinned to a Digest"
     security.kubeapt.io/description: "An image reference without a digest resolves through a mutable tag, so registry content can be replaced between pulls and an ephemeral debug container attached with kubectl debug runs attacker-supplied code inside a live pod."
     security.kubeapt.io/resource: "EphemeralContainers"

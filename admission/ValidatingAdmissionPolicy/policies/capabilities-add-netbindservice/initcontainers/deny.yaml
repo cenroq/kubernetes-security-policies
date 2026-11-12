@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: capabilities-add-netbindservice-initcontainers
   annotations:
-    kubeapt.io/uuid: "f2e7ed11-9fd4-4f3a-aac3-176e884fd176"
+    cenroq.io/finding: "oq-0355"
 spec:
   containers:
   - name: main

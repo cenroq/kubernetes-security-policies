@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: clusterrolebinding-system-groups
   annotations:
-    kubeapt.io/uuid: "48b8600b-24d9-49f1-b74c-e2f6d9f55659"
+    cenroq.io/finding: "oq-0294"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Binds a Privileged Role to a System Group"
     security.kubeapt.io/description: "Binding a ClusterRole to a system group grants it cluster-wide to a whole population at once, and groups like system:authenticated or system:serviceaccounts cover every account in the cluster including ones an attacker controls."
     security.kubeapt.io/resource: "ClusterRoleBindings"

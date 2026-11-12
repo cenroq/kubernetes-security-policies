@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: livenessprobe-httpget-host-pod
   annotations:
-    kubeapt.io/uuid: "f871b54a-afc3-47b9-b25f-0dfac4e2924a"
+    cenroq.io/finding: "oq-0305"
 spec:
   containers:
   - name: main

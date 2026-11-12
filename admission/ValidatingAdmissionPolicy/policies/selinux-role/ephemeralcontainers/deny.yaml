@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: selinux-role-ephemeralcontainers
   annotations:
-    kubeapt.io/uuid: "ede1c961-2201-4529-854b-501f2c9c2493"
+    cenroq.io/finding: "oq-0346"
 spec:
   containers:
   - name: main

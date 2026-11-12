@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: run-as-user-initcontainers
   annotations:
-    kubeapt.io/uuid: "bcd6af72-fa71-4104-b7e1-343413d24dce"
+    cenroq.io/finding: "oq-0374"
 spec:
   containers:
   - name: main

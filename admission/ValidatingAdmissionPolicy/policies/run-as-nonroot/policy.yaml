@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: pod-run-as-nonroot
   annotations:
-    kubeapt.io/uuid: "3e12a1ed-4cb4-4d04-9fc4-75c9ca5af6cc"
+    cenroq.io/finding: "oq-0401"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "May Run as Root"
     security.kubeapt.io/description: "With runAsNonRoot unset, the kubelet never rejects an image whose user is UID 0, so the pod silently runs as root and any compromise gains root file ownership and the full capability set."
     security.kubeapt.io/resource: "Pods"

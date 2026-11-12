@@ -3,7 +3,7 @@ kind: ClusterRole
 metadata:
   name: violating-clusterrole-aggregation
   annotations:
-    kubeapt.io/uuid: "e8429efe-3c57-4656-8155-f2f3423f8a5f"
+    cenroq.io/finding: "oq-0277"
 aggregationRule:
   clusterRoleSelectors:
   - matchLabels:

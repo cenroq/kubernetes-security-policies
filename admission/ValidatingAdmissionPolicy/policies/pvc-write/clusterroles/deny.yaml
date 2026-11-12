@@ -3,7 +3,7 @@ kind: ClusterRole
 metadata:
   name: violating-clusterrole-pvc-write
   annotations:
-    kubeapt.io/uuid: "269e256d-3917-4e36-9de2-ea79619ab700"
+    cenroq.io/finding: "oq-0283"
 rules:
 - apiGroups: [""]
   resources: ["persistentvolumeclaims"]

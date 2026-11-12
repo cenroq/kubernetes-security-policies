@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: container-procmount
   annotations:
-    kubeapt.io/uuid: "0ceb2a31-3447-4a3c-9e67-ea7fbb65f581"
+    cenroq.io/finding: "oq-0313"
+    cenroq.io/kubernetes-version-min: "1.33"
     security.kubeapt.io/displayName: "Uses an Unmasked /proc Mount"
     security.kubeapt.io/description: "An unmasked /proc strips the default masks and read-only paths the runtime applies, exposing kernel memory and tunables such as /proc/kcore and /proc/sys to the container and easing container escape."
     security.kubeapt.io/resource: "Containers"

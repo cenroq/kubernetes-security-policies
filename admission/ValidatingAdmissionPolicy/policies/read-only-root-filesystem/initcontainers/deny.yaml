@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: violating-read-only-root-filesystem-initcontainers
   annotations:
-    kubeapt.io/uuid: "67aa9a32-8729-4511-b824-61f891c4e41b"
+    cenroq.io/finding: "oq-0369"
 spec:
   securityContext:
     seccompProfile:

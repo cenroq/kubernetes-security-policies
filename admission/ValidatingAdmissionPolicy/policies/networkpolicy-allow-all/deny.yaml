@@ -3,7 +3,7 @@ kind: NetworkPolicy
 metadata:
   name: networkpolicy-allow-all
   annotations:
-    kubeapt.io/uuid: "ff83ae61-3d8a-48b6-9ab0-fd11fd740c33"
+    cenroq.io/finding: "oq-0385"
 spec:
   podSelector: {}
   policyTypes:

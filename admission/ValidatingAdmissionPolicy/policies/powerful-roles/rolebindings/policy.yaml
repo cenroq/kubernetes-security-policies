@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: rolebinding-powerful-roles
   annotations:
-    kubeapt.io/uuid: "c0fb63ca-f7fc-4f04-b552-83c54f503fef"
+    cenroq.io/finding: "oq-0426"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Binds a Privileged Role Such as cluster-admin"
     security.kubeapt.io/description: "Roles like cluster-admin, admin and edit carry sweeping verbs across nearly every API resource, so one compromised subject in the binding gains full control of the namespace and its secrets."
     security.kubeapt.io/resource: "RoleBindings"

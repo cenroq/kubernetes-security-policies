@@ -3,5 +3,5 @@ kind: ServiceAccount
 metadata:
   name: violating-automount-token
   annotations:
-    kubeapt.io/uuid: "8076b964-2115-4b03-8785-3d5bc43325c4"
+    cenroq.io/finding: "oq-0433"
 automountServiceAccountToken: true

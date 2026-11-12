@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: ephemeralcontainer-seccomp-profile-restricted
   annotations:
-    kubeapt.io/uuid: "ae109ba1-7514-400c-bf0c-8f854a867722"
+    cenroq.io/finding: "oq-0345"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Has No Seccomp Profile Set"
     security.kubeapt.io/description: "An ephemeral container with no seccomp profile enforced at pod or ephemeral container level runs with no syscall filter, leaving the full kernel syscall surface reachable for container escape and privilege escalation."
     security.kubeapt.io/resource: "EphemeralContainers"

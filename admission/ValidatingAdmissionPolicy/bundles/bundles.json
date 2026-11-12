@@ -1,8 +1,9 @@
 [
     {
         "name": "cenroq-best-practices",
-        "latest-version": "v0.3.0",
+        "latest-version": "v0.4.0",
         "versions": [
+            "v0.4.0",
             "v0.3.0",
             "v0.2.0",
             "v0.1.1"
@@ -10,16 +11,18 @@
     },
     {
         "name": "pod-security-admission",
-        "latest-version": "v1.37.0",
+        "latest-version": "v1.37.1",
         "versions": [
+            "v1.37.1",
             "v1.37.0",
             "v1.36.0-cenroq"
         ]
     },
     {
         "name": "owasp-kubernetes-top-ten",
-        "latest-version": "v2025.0.0",
+        "latest-version": "v2025.1.0",
         "versions": [
+            "v2025.1.0",
             "v2025.0.0"
         ]
     },

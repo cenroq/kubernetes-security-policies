@@ -3,7 +3,7 @@ kind: ClusterRole
 metadata:
   name: violating-clusterrole-nonresource
   annotations:
-    kubeapt.io/uuid: "38352a02-360d-47e3-91a5-1fa70e8ae41e"
+    cenroq.io/finding: "oq-0281"
 rules:
 - nonResourceURLs: ["/metrics"]
   verbs: ["get"]

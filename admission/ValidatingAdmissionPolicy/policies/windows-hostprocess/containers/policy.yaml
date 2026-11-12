@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: container-windows-hostprocess
   annotations:
-    kubeapt.io/uuid: "6dd987f5-a988-40f2-bce8-d6eef4c6eb4d"
+    cenroq.io/finding: "oq-0327"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Runs as a Windows HostProcess"
     security.kubeapt.io/description: "A Windows HostProcess container runs directly on the node in the host namespaces under a system account, exposing the host filesystem, registry and services and making node compromise trivial."
     security.kubeapt.io/resource: "Containers"

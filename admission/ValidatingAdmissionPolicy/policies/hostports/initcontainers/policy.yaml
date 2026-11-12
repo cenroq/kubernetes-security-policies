@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: initcontainer-hostports
   annotations:
-    kubeapt.io/uuid: "ac16a8ff-1089-4e1d-a470-89958cc479ae"
+    cenroq.io/finding: "oq-0357"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Binds a hostPort on the Node"
     security.kubeapt.io/description: "A hostPort binds the init container port onto the node network interfaces, exposing it to anything that can reach the node, bypassing Service and NetworkPolicy controls and squatting on node component ports."
     security.kubeapt.io/resource: "InitContainers"

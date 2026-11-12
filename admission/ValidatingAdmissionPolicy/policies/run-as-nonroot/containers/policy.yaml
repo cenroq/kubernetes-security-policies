@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: container-run-as-nonroot
   annotations:
-    kubeapt.io/uuid: "fddcc7f4-e923-4268-b4f7-dc947b46d9bb"
+    cenroq.io/finding: "oq-0318"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "May Run as Root"
     security.kubeapt.io/description: "With runAsNonRoot unset, the kubelet never rejects an image whose user is UID 0, so the container silently runs as root and any compromise gains root file ownership and the full capability set."
     security.kubeapt.io/resource: "Containers"

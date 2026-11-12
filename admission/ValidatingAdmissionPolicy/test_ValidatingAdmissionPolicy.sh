@@ -81,7 +81,36 @@ for rule in rules:
         break
 
 scope = "cluster" if is_cluster_scoped else "namespaced"
-print(f"{name}\t{scope}")
+annotations = doc.get("metadata", {}).get("annotations") or {}
+k8s_min = annotations.get("cenroq.io/kubernetes-version-min", "")
+k8s_max = annotations.get("cenroq.io/kubernetes-version-max", "")
+# '|' rather than a tab: bash collapses runs of whitespace separators, which would
+# shift a max into the min slot whenever the min is empty.
+print("|".join([name, scope, k8s_min, k8s_max]))
+PY
+}
+
+# The cluster's Kubernetes minor as "major.minor". Managed offerings report the
+# minor with a suffix (GKE/EKS: "30+"), so keep the digits only.
+get_cluster_version() {
+  kubectl version -o json | python -c '
+import json, re, sys
+server = json.load(sys.stdin)["serverVersion"]
+print(re.sub(r"\D", "", server["major"]) + "." + re.sub(r"\D", "", server["minor"]))
+'
+}
+
+# Succeeds when version $1 lies in the inclusive range [$2, $3]; an empty bound is no bound.
+version_in_range() {
+  python - "$1" "$2" "$3" <<'PY'
+import sys
+
+def parse(value):
+    return tuple(int(part) for part in value.split("."))
+
+version, low, high = sys.argv[1:4]
+ok = (not low or parse(version) >= parse(low)) and (not high or parse(version) <= parse(high))
+sys.exit(0 if ok else 1)
 PY
 }
 
@@ -156,14 +185,15 @@ delete_resource() {
 
 load_cluster_resources
 apply_test_namespace
+CLUSTER_VERSION="$(get_cluster_version)"
+echo "Cluster Kubernetes version: ${CLUSTER_VERSION}"
 
 while IFS= read -r policy; do
   policy_dir="$(dirname "$policy")"
   policy_id="${policy_dir#${POLICY_ROOT}/}"
   example="${policy_dir}/deny.yaml"
   policy_info="$(get_policy_info "$policy")"
-  policy_name="${policy_info%%$'\t'*}"
-  policy_scope="${policy_info##*$'\t'}"
+  IFS='|' read -r policy_name policy_scope policy_k8s_min policy_k8s_max <<<"${policy_info}"
 
   if [[ -f "$example" ]]; then
     use_example="$example"
@@ -176,6 +206,15 @@ while IFS= read -r policy; do
   echo "---- ${policy_id} ----"
   echo "Policy:  ${policy}"
   echo "Example: ${use_example}"
+
+  # A policy only applies to the Kubernetes minors in its cenroq.io/kubernetes-version-min
+  # / -max range (inclusive, a missing bound is no bound); outside it a field it reads
+  # does not exist, so the probe proves nothing.
+  if ! version_in_range "${CLUSTER_VERSION}" "${policy_k8s_min}" "${policy_k8s_max}"; then
+    echo "⏭️  Skipped (Kubernetes ${CLUSTER_VERSION} outside ${policy_k8s_min:-any}–${policy_k8s_max})"
+    SKIPPED=$((SKIPPED + 1))
+    continue
+  fi
 
   # Skip CRD-targeted policies when their CRD is not installed (e.g. vanilla CI
   # cluster). Tests declare requirements via a "# RequiresCRD: <name>[,<name>...]"

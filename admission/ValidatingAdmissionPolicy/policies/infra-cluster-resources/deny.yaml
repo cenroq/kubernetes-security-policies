@@ -3,7 +3,7 @@ kind: ClusterRole
 metadata:
   name: violating-clusterrole-infra
   annotations:
-    kubeapt.io/uuid: "de80e01b-df84-4253-b44c-6cd8dfad2e7d"
+    cenroq.io/finding: "oq-0279"
 rules:
 - apiGroups: [""]
   resources: ["nodes"]

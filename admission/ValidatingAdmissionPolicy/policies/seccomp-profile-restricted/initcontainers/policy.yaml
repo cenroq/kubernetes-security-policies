@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: initcontainer-seccomp-profile-restricted
   annotations:
-    kubeapt.io/uuid: "e936441f-96f4-4bfa-a70a-97b1ca8b369d"
+    cenroq.io/finding: "oq-0376"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Has No Seccomp Profile Set"
     security.kubeapt.io/description: "An init container with no seccomp profile enforced at pod or init container level runs with no syscall filter, leaving the full kernel syscall surface reachable for container escape and privilege escalation."
     security.kubeapt.io/resource: "InitContainers"

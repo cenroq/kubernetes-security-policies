@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: apiservice-tls
   annotations:
-    kubeapt.io/uuid: "d97253ad-f3dd-4721-b40e-944d2ae07159"
+    cenroq.io/finding: "oq-0270"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Skips TLS Verification to the Backing Service"
     security.kubeapt.io/description: "Skipping certificate verification lets the kube-apiserver proxy aggregated API calls to whatever answers the service endpoint, so anything able to spoof or intercept that connection reads forwarded user identity and returns forged API responses."
     security.kubeapt.io/resource: "APIServices"

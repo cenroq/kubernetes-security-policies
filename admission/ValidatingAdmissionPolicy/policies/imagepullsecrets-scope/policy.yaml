@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: serviceaccount-imagepullsecrets-scope
   annotations:
-    kubeapt.io/uuid: "352c743b-54a7-479c-9cf2-71d049ba7fc7"
+    cenroq.io/finding: "oq-0432"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Attaches More Than One Image Pull Secret"
     security.kubeapt.io/description: "Attaching several registry credentials to one ServiceAccount hands all of them to every pod that uses it, so one compromised workload exposes registry logins it never needed to pull its own image."
     security.kubeapt.io/resource: "ServiceAccounts"

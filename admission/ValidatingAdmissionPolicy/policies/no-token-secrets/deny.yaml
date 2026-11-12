@@ -3,7 +3,7 @@ kind: ServiceAccount
 metadata:
   name: violating-no-token-secrets
   annotations:
-    kubeapt.io/uuid: "4274c4b5-6f75-45aa-837b-b0641f9a7660"
+    cenroq.io/finding: "oq-0434"
 automountServiceAccountToken: false
 secrets:
 - name: legacy-token

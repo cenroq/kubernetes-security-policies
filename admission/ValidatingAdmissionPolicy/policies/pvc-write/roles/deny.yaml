@@ -3,7 +3,7 @@ kind: Role
 metadata:
   name: violating-role-pvc-write
   annotations:
-    kubeapt.io/uuid: "ae1a5db5-99a9-46bc-84b6-aa2d175767ef"
+    cenroq.io/finding: "oq-0416"
 rules:
 - apiGroups: [""]
   resources: ["persistentvolumeclaims"]

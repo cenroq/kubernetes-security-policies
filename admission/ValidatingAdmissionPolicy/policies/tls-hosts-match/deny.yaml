@@ -8,7 +8,7 @@ kind: Ingress
 metadata:
   name: violating-tls-hosts
   annotations:
-    kubeapt.io/uuid: "9e07fcea-9c2c-40dc-9807-5d10c98b1a40"
+    cenroq.io/finding: "oq-0352"
 spec:
   tls:
   - hosts:
@@ -31,7 +31,7 @@ kind: Ingress
 metadata:
   name: violating-tls-hosts-wildcard-depth
   annotations:
-    kubeapt.io/uuid: "9e07fcea-9c2c-40dc-9807-5d10c98b1a40"
+    cenroq.io/finding: "oq-0352"
 spec:
   tls:
   - hosts:

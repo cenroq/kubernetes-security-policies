@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: initcontainer-run-as-group
   annotations:
-    kubeapt.io/uuid: "14da0518-3885-4dcc-b859-a23056ea44d6"
+    cenroq.io/finding: "oq-0372"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Runs With the Root Group (GID 0)"
     security.kubeapt.io/description: "An init container running with GID 0 places its processes in the root group, which owns or can write many files in images and mounted host volumes, widening what a compromised process reaches."
     security.kubeapt.io/resource: "InitContainers"

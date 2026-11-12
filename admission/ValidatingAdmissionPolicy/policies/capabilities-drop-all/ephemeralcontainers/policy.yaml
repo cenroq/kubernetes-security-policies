@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: ephemeralcontainer-capabilities-drop-all
   annotations:
-    kubeapt.io/uuid: "58ef5906-2525-4aaf-9945-d69b4c7f765f"
+    cenroq.io/finding: "oq-0333"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Retains Default Linux Capabilities"
     security.kubeapt.io/description: "An ephemeral debug container that never drops ALL keeps the default runtime capability set, so code execution inside it inherits DAC_OVERRIDE, SETUID and NET_RAW for bypassing file permissions, regaining root and spoofing traffic."
     security.kubeapt.io/resource: "EphemeralContainers"

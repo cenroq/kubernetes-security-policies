@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: clusterrole-rbac-write
   annotations:
-    kubeapt.io/uuid: "6024fa30-ba1d-4c34-adda-fa9fd967bb42"
+    cenroq.io/finding: "oq-0285"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Grants Write Access to RBAC Resources"
     security.kubeapt.io/description: "Write, bind or escalate permission over RBAC objects lets the grantee author new roles and bindings for itself, turning a limited account into cluster-admin without stealing any other credential."
     security.kubeapt.io/resource: "ClusterRoles"

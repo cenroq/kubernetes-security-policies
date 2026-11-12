@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: container-run-as-group
   annotations:
-    kubeapt.io/uuid: "37bb1c69-4a89-4758-86cc-1d500f27a7a1"
+    cenroq.io/finding: "oq-0317"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Runs With the Root Group (GID 0)"
     security.kubeapt.io/description: "A container running with GID 0 places its processes in the root group, which owns or can write many files in images and mounted host volumes, widening what a compromised process reaches."
     security.kubeapt.io/resource: "Containers"

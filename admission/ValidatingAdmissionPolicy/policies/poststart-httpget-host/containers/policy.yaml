@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: container-poststart-httpget-host
   annotations:
-    kubeapt.io/uuid: "8aac94da-b019-408f-909d-edc75587c2f9"
+    cenroq.io/finding: "oq-0307"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "postStart Hook Targets an Arbitrary Host"
     security.kubeapt.io/description: "A postStart HTTP hook aimed at another host makes the kubelet call an arbitrary URL from the node each time a container starts, reaching internal endpoints closed to pods and triggering side effects there."
     security.kubeapt.io/resource: "Containers"

@@ -3,7 +3,7 @@ kind: Role
 metadata:
   name: violating-role-pod-exec
   annotations:
-    kubeapt.io/uuid: "f9f2c306-ceb8-455e-92a7-c511d3e1f5cb"
+    cenroq.io/finding: "oq-0415"
 rules:
 - apiGroups: [""]
   resources: ["pods/exec"]

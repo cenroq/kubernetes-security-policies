@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: pod-run-as-group
   annotations:
-    kubeapt.io/uuid: "3b7b754a-0c21-4bf4-bbb4-aaed4b8a5e91"
+    cenroq.io/finding: "oq-0400"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Runs With the Root Group (GID 0)"
     security.kubeapt.io/description: "A pod running with GID 0 places its processes in the root group, which owns or can write many files in images and mounted host volumes, widening what a compromised process reaches."
     security.kubeapt.io/resource: "Pods"

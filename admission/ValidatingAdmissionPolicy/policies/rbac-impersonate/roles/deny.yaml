@@ -3,7 +3,7 @@ kind: Role
 metadata:
   name: violating-role-rbac-impersonate
   annotations:
-    kubeapt.io/uuid: "1cf87d15-93d3-4aaa-8540-c86b819b3e67"
+    cenroq.io/finding: "oq-0417"
 rules:
 - apiGroups: [""]
   resources: ["users"]

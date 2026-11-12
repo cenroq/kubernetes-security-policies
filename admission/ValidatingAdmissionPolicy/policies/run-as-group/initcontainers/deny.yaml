@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: violating-run-as-group-initcontainers
   annotations:
-    kubeapt.io/uuid: "14da0518-3885-4dcc-b859-a23056ea44d6"
+    cenroq.io/finding: "oq-0372"
 spec:
   securityContext:
     seccompProfile:

@@ -3,7 +3,7 @@ kind: Role
 metadata:
   name: violating-role-workloads-write
   annotations:
-    kubeapt.io/uuid: "badd6afe-218a-4a3c-a102-737afb5a5fa9"
+    cenroq.io/finding: "oq-0423"
 rules:
 - apiGroups: ["apps"]
   resources: ["deployments"]

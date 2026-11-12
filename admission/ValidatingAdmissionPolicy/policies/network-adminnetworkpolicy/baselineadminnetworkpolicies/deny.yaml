@@ -4,7 +4,7 @@ kind: BaselineAdminNetworkPolicy
 metadata:
   name: default
   annotations:
-    kubeapt.io/uuid: "6226d56c-42b0-412c-a8b0-39a131744b9a"
+    cenroq.io/finding: "oq-0272"
 spec:
   subject:
     namespaces: {}

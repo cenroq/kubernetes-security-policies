@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: rolebinding-system-groups
   annotations:
-    kubeapt.io/uuid: "d92ff4b2-9bd9-417b-af8b-dffedcc93e43"
+    cenroq.io/finding: "oq-0427"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Binds a Privileged Role to a System Group"
     security.kubeapt.io/description: "Naming system:authenticated, system:unauthenticated or system:serviceaccounts as a subject grants the role to every account in the cluster at once, so the namespace permissions extend to anyone who can reach the API server."
     security.kubeapt.io/resource: "RoleBindings"

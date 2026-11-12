@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: violating-hostusers
   annotations:
-    kubeapt.io/uuid: "1a5efbbe-2a1f-4840-a4fd-19fec7dab8bc"
+    cenroq.io/finding: "oq-0399"
 spec:
   hostUsers: true
   containers:

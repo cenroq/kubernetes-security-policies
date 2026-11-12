@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: violating-fsgroup-pod
   annotations:
-    kubeapt.io/uuid: "c39ebbef-d72a-4b00-aebf-1ece6992ee7c"
+    cenroq.io/finding: "oq-0394"
 spec:
   securityContext:
     fsGroup: 0
