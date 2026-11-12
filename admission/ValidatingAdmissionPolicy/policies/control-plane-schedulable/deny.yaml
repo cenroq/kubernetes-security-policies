@@ -3,7 +3,7 @@ kind: Node
 metadata:
   name: violating-control-plane
   annotations:
-    kubeapt.io/uuid: "b0cfc6a8-e466-4436-b2a8-a7d94fbab61a"
+    cenroq.io/finding: "oq-0387"
   labels:
     node-role.kubernetes.io/control-plane: ""
 spec:

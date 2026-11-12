@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: serviceaccount-token-automount
   annotations:
-    kubeapt.io/uuid: "8076b964-2115-4b03-8785-3d5bc43325c4"
+    cenroq.io/finding: "oq-0433"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Automounts Its Token Into Every Pod"
     security.kubeapt.io/description: "A ServiceAccount that automounts by default puts its API token into every pod that references it, so any one compromised container yields a credential usable against the API server."
     security.kubeapt.io/resource: "ServiceAccounts"

@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: pod-serviceaccount-name
   annotations:
-    kubeapt.io/uuid: "1e4e5442-122f-4dd9-86ce-a6104971b13b"
+    cenroq.io/finding: "oq-0408"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Uses the Default ServiceAccount"
     security.kubeapt.io/description: "Running under the namespace default ServiceAccount makes every workload share one identity, so any permission granted to it reaches all of them and API audit records cannot be traced back to a single pod."
     security.kubeapt.io/resource: "Pods"

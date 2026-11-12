@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: hostipc-pod
   annotations:
-    kubeapt.io/uuid: "29c502b6-a8aa-4cd7-a309-482332dd9a52"
+    cenroq.io/finding: "oq-0395"
 spec:
   containers:
   - name: main

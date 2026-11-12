@@ -3,7 +3,7 @@ kind: RoleBinding
 metadata:
   name: violating-rolebinding-powerful-role
   annotations:
-    kubeapt.io/uuid: "c0fb63ca-f7fc-4f04-b552-83c54f503fef"
+    cenroq.io/finding: "oq-0426"
 subjects:
 - kind: User
   name: alice

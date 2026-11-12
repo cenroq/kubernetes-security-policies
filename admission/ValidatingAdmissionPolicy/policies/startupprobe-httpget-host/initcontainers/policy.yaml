@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: initcontainer-startupprobe-httpget-host
   annotations:
-    kubeapt.io/uuid: "f49ff543-8ed7-441b-9fb2-69dc4ed5338e"
+    cenroq.io/finding: "oq-0380"
+    cenroq.io/kubernetes-version-min: "1.29"
     security.kubeapt.io/displayName: "Startup Probe Targets an Arbitrary Host"
     security.kubeapt.io/description: "Redirecting the startup HTTP probe to another host makes the kubelet fetch an arbitrary URL from the node, reaching metadata and node-local endpoints closed to pods, and a hung init container passes its startup gate."
     security.kubeapt.io/resource: "InitContainers"

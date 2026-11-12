@@ -3,7 +3,7 @@ kind: ClusterRoleBinding
 metadata:
   name: violating-crb-system-group
   annotations:
-    kubeapt.io/uuid: "48b8600b-24d9-49f1-b74c-e2f6d9f55659"
+    cenroq.io/finding: "oq-0294"
 subjects:
 - kind: Group
   name: system:authenticated

@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: pod-share-process-namespace
   annotations:
-    kubeapt.io/uuid: "a317749c-d7dc-4c9c-b549-ffad9806c111"
+    cenroq.io/finding: "oq-0409"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Shares a Process Namespace Between Containers"
     security.kubeapt.io/description: "A shared process namespace lets every container in the pod inspect and signal the others, reading secrets from sibling command lines and /proc environment files, so compromising one sidecar reaches them all."
     security.kubeapt.io/resource: "Pods"

@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: pod-apparmor-profile
   annotations:
-    kubeapt.io/uuid: "b71879ea-3051-4076-9040-e60c9606f4e5"
+    cenroq.io/finding: "oq-0391"
+    cenroq.io/kubernetes-version-min: "1.30"
     security.kubeapt.io/displayName: "Runs With an Unconfined AppArmor Profile"
     security.kubeapt.io/description: "An Unconfined AppArmor profile at pod level strips the mandatory access controls over file, capability and mount operations from every container that inherits it, widening what a compromised process can reach on the host."
     security.kubeapt.io/resource: "Pods"

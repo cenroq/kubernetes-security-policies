@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: procmount-ephemeralcontainers
   annotations:
-    kubeapt.io/uuid: "eb9b7ab0-8488-46a7-83d6-7ad706ec9901"
+    cenroq.io/finding: "oq-0339"
 spec:
   hostUsers: false
   containers:

@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: prestop-httpget-host-initcontainers
   annotations:
-    kubeapt.io/uuid: "7d575081-c91e-4b00-a7bb-755aa906d04b"
+    cenroq.io/finding: "oq-0364"
 spec:
   containers:
   - name: main

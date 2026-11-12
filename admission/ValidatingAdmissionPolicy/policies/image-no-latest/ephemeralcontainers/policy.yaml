@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: ephemeralcontainer-image-tag
   annotations:
-    kubeapt.io/uuid: "c0e761a5-a977-4da6-89df-27b8b782e5ea"
+    cenroq.io/finding: "oq-0336"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Runs an Image Tagged latest"
     security.kubeapt.io/description: "Untagged and latest references float to whatever was pushed to the registry most recently, so an ephemeral debug container attached with kubectl debug can pull unreviewed or poisoned code into a live pod."
     security.kubeapt.io/resource: "EphemeralContainers"

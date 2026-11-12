@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: initcontainer-prestop-tcpsocket-host
   annotations:
-    kubeapt.io/uuid: "31b0e769-6283-4498-938f-f8d355d53586"
+    cenroq.io/finding: "oq-0365"
+    cenroq.io/kubernetes-version-min: "1.29"
     security.kubeapt.io/displayName: "preStop TCP Hook Targets an Arbitrary Host"
     security.kubeapt.io/description: "Naming another host in a preStop TCP hook points init container shutdown at an off-pod address through a handler the kubelet does not support, so the hook fails and cleanup never runs."
     security.kubeapt.io/resource: "InitContainers"

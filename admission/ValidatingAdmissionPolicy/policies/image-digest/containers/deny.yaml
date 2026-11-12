@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: violating-image-digest-containers
   annotations:
-    kubeapt.io/uuid: "97adc456-4552-4280-a0bc-91769cfce7f6"
+    cenroq.io/finding: "oq-0303"
 spec:
   containers:
   - name: main

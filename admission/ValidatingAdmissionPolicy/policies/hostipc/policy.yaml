@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: pod-hostipc
   annotations:
-    kubeapt.io/uuid: "29c502b6-a8aa-4cd7-a309-482332dd9a52"
+    cenroq.io/finding: "oq-0395"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Shares the Host IPC Namespace"
     security.kubeapt.io/description: "Sharing the host IPC namespace exposes the node shared memory segments, semaphores and message queues to the container, letting it read in-memory data and tamper with host processes and other pods that share it."
     security.kubeapt.io/resource: "Pods"

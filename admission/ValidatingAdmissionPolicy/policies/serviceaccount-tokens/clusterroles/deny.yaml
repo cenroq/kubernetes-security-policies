@@ -3,7 +3,7 @@ kind: ClusterRole
 metadata:
   name: violating-clusterrole-serviceaccount-tokens
   annotations:
-    kubeapt.io/uuid: "93c46b8d-106a-47f8-861b-a968aec95c05"
+    cenroq.io/finding: "oq-0287"
 rules:
 - apiGroups: [""]
   resources: ["serviceaccounts/token"]

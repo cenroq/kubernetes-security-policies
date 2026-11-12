@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: poststart-httpget-host-initcontainers
   annotations:
-    kubeapt.io/uuid: "fbef4cf3-cf91-4c11-af0b-ab80b64edff8"
+    cenroq.io/finding: "oq-0362"
 spec:
   containers:
   - name: main

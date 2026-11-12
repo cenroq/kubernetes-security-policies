@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: image-no-latest-ephemeralcontainers
   annotations:
-    kubeapt.io/uuid: "c0e761a5-a977-4da6-89df-27b8b782e5ea"
+    cenroq.io/finding: "oq-0336"
 spec:
   containers:
   - name: main

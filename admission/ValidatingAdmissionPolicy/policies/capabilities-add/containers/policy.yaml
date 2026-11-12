@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: container-capabilities-add
   annotations:
-    kubeapt.io/uuid: "57487b22-099b-46ad-b669-844e1e392a65"
+    cenroq.io/finding: "oq-0299"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Adds a Capability Outside the Baseline Set"
     security.kubeapt.io/description: "Linux capabilities beyond the baseline set, such as SYS_ADMIN, SYS_MODULE, SYS_PTRACE or NET_RAW, hand a container kernel level privileges it can use to mount filesystems, load modules and break out onto the node."
     security.kubeapt.io/resource: "Containers"

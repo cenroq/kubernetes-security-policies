@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: violating-image-no-latest-initcontainers
   annotations:
-    kubeapt.io/uuid: "a52a6b23-ee6b-41cb-ab79-140ce371ed6d"
+    cenroq.io/finding: "oq-0359"
 spec:
   initContainers:
   - name: init

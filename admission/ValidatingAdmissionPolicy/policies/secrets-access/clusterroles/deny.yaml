@@ -3,7 +3,7 @@ kind: ClusterRole
 metadata:
   name: violating-clusterrole-secrets-access
   annotations:
-    kubeapt.io/uuid: "8c614113-78ad-4b17-9d7c-c046baa2be90"
+    cenroq.io/finding: "oq-0286"
 rules:
 - apiGroups: [""]
   resources: ["secrets"]

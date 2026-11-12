@@ -3,7 +3,7 @@ kind: StorageClass
 metadata:
   name: violating-storageclass-encryption-portworx
   annotations:
-    kubeapt.io/uuid: "11683afb-8433-40e5-9f2f-9e1c52d7865a"
+    cenroq.io/finding: "oq-0443"
 provisioner: pxd.portworx.com
 parameters:
   repl: "3"

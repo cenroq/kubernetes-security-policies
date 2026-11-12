@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: privilege-escalation-ephemeralcontainers
   annotations:
-    kubeapt.io/uuid: "5a3050eb-06b6-4eff-88db-e9bcd5ab38f7"
+    cenroq.io/finding: "oq-0337"
 spec:
   containers:
   - name: main

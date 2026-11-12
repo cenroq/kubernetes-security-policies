@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: pod-run-as-user
   annotations:
-    kubeapt.io/uuid: "d950f1c9-b31f-47b1-bc31-86901ff9dda8"
+    cenroq.io/finding: "oq-0402"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Runs as Root (UID 0)"
     security.kubeapt.io/description: "Running a pod as UID 0 gives every process the in-container root identity, so writable host mounts, setuid binaries and isolation weaknesses become exploitable with root file ownership and the full capability set."
     security.kubeapt.io/resource: "Pods"

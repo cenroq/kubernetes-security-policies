@@ -4,7 +4,7 @@ kind: ClusterPolicy
 metadata:
   name: violating-kyverno-clusterpolicy-not-enforcing
   annotations:
-    kubeapt.io/uuid: "5a1658e9-655f-44ce-a2d3-7d4fb70857e2"
+    cenroq.io/finding: "oq-0275"
 spec:
   validationFailureAction: Audit
   rules:

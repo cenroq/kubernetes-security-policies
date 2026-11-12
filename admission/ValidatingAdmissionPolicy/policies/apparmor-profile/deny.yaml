@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: apparmor-profile-pod
   annotations:
-    kubeapt.io/uuid: "b71879ea-3051-4076-9040-e60c9606f4e5"
+    cenroq.io/finding: "oq-0391"
 spec:
   containers:
   - name: main

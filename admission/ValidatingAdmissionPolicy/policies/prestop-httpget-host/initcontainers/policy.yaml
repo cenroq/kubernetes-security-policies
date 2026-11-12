@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: initcontainer-prestop-httpget-host
   annotations:
-    kubeapt.io/uuid: "7d575081-c91e-4b00-a7bb-755aa906d04b"
+    cenroq.io/finding: "oq-0364"
+    cenroq.io/kubernetes-version-min: "1.29"
     security.kubeapt.io/displayName: "preStop Hook Targets an Arbitrary Host"
     security.kubeapt.io/description: "A preStop HTTP hook aimed at another host makes the kubelet call an arbitrary URL from the node whenever an init container shuts down, reaching internal endpoints closed to pods and triggering side effects there."
     security.kubeapt.io/resource: "InitContainers"

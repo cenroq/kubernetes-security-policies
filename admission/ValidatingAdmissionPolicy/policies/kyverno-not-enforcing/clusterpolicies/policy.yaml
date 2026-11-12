@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: clusterpolicy-kyverno-not-enforcing
   annotations:
-    kubeapt.io/uuid: "5a1658e9-655f-44ce-a2d3-7d4fb70857e2"
+    cenroq.io/finding: "oq-0275"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Audits Instead of Enforcing Violations"
     security.kubeapt.io/description: "A ClusterPolicy left on Audit only records violations in a report, so the workloads it was written to block are admitted cluster-wide anyway and the protection exists only as a log entry."
     security.kubeapt.io/resource: "ClusterPolicies"

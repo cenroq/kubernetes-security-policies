@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: baselineadminnetworkpolicy-allow-all
   annotations:
-    kubeapt.io/uuid: "6226d56c-42b0-412c-a8b0-39a131744b9a"
+    cenroq.io/finding: "oq-0272"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Allows Traffic Across All Namespaces"
     security.kubeapt.io/description: "An Allow rule with an empty namespaces selector matches every namespace in the cluster, so any traffic that no NetworkPolicy or AdminNetworkPolicy decides falls back to being permitted rather than dropped."
     security.kubeapt.io/resource: "BaselineAdminNetworkPolicies"

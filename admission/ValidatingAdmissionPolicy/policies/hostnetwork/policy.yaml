@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: pod-hostnetwork
   annotations:
-    kubeapt.io/uuid: "0905d194-7177-43ee-a9cd-49a5d3e10e79"
+    cenroq.io/finding: "oq-0396"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Shares the Host Network Namespace"
     security.kubeapt.io/description: "Host networking removes network namespace isolation, letting the workload sniff all node traffic, bind directly to node ports and reach loopback-bound node services such as the kubelet and local metadata proxies."
     security.kubeapt.io/resource: "Pods"

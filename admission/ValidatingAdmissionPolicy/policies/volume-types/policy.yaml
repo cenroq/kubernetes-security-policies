@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: pod-volume-types
   annotations:
-    kubeapt.io/uuid: "d727820a-72b4-4c75-bf4c-17da0e3e4c81"
+    cenroq.io/finding: "oq-0412"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Uses a Volume Type Outside the Allowed Set"
     security.kubeapt.io/description: "Volume sources outside the allowed set, such as hostPath, gitRepo or flexVolume, mount node filesystem paths or run driver code on the node, opening a route to kubelet credentials and the container runtime socket."
     security.kubeapt.io/resource: "Pods"

@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: clusterrole-cert-auth-review
   annotations:
-    kubeapt.io/uuid: "09b595b5-1df6-4303-9adb-447f7183a174"
+    cenroq.io/finding: "oq-0278"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Grants Approval of Certificate Signing Requests"
     security.kubeapt.io/description: "Write access to certificate signing requests and to the authorization and authentication review APIs lets the holder issue client certificates and use the API server to test which permissions a stolen credential carries."
     security.kubeapt.io/resource: "ClusterRoles"

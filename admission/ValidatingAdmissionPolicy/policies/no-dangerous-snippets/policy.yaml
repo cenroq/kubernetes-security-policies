@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: ingress-configuration-snippets
   annotations:
-    kubeapt.io/uuid: "458979ee-7792-497e-9c29-df31eb75f147"
+    cenroq.io/finding: "oq-0351"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Uses a Raw Controller Snippet Annotation"
     security.kubeapt.io/description: "Snippet and router-override annotations are folded straight into the shared ingress controller configuration, so anyone able to create an Ingress can hijack hosts from other namespaces, strip authentication, or run code inside the controller."
     security.kubeapt.io/resource: "Ingresses"
@@ -26,7 +27,7 @@ spec:
   validations:
   - expression: |
       !has(object.metadata.annotations) || (
-        !object.metadata.annotations.exists(k, v, k in [
+        !object.metadata.annotations.exists(k, k in [
           "nginx.ingress.kubernetes.io/configuration-snippet",
           "nginx.ingress.kubernetes.io/server-snippet",
           "nginx.ingress.kubernetes.io/location-snippet",

@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: container-privileged
   annotations:
-    kubeapt.io/uuid: "2873ca8e-c322-4e60-8bb2-aebf881490f9"
+    cenroq.io/finding: "oq-0312"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Runs in Privileged Mode"
     security.kubeapt.io/description: "A privileged container disables almost all container isolation and gets full root access to the node devices, kernel interfaces and filesystem, which is a direct path to node and cluster takeover."
     security.kubeapt.io/resource: "Containers"

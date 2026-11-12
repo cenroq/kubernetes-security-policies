@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: clusterrolebinding-anonymous-subjects
   annotations:
-    kubeapt.io/uuid: "2cf111fd-543c-4375-aca7-a3ffd4e6f700"
+    cenroq.io/finding: "oq-0291"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Binds a Role to an Anonymous Identity"
     security.kubeapt.io/description: "Binding a ClusterRole to system:anonymous grants it cluster-wide to every unauthenticated caller that reaches the API server, and catch-all names like everyone or all-users leave nobody accountable for who exercises it."
     security.kubeapt.io/resource: "ClusterRoleBindings"

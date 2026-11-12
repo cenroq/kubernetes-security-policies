@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: initcontainer-privileged
   annotations:
-    kubeapt.io/uuid: "18974089-389e-468b-9e97-2bf549958687"
+    cenroq.io/finding: "oq-0367"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Runs in Privileged Mode"
     security.kubeapt.io/description: "A privileged init container disables almost all container isolation and gets full root access to the node devices, kernel interfaces and filesystem, which is a direct path to node and cluster takeover."
     security.kubeapt.io/resource: "InitContainers"

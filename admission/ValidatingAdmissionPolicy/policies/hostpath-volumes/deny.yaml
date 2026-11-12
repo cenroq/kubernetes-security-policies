@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: hostpath-volumes-pod
   annotations:
-    kubeapt.io/uuid: "5612ded8-9174-42bf-80de-52468a236655"
+    cenroq.io/finding: "oq-0397"
 spec:
   containers:
   - name: main

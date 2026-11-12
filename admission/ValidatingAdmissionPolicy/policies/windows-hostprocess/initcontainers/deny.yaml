@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: windows-hostprocess-initcontainers
   annotations:
-    kubeapt.io/uuid: "40d17131-f0d2-4bde-804d-dff8036e221c"
+    cenroq.io/finding: "oq-0382"
 spec:
   hostNetwork: true
   containers:

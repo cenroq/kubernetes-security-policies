@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: violating-automount-service-account-token
   annotations:
-    kubeapt.io/uuid: "75834e82-5933-4ed1-a99c-0c7cf1b6dd23"
+    cenroq.io/finding: "oq-0392"
 spec:
   automountServiceAccountToken: true
   containers:

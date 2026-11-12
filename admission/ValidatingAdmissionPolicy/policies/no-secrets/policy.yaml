@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: configmap-secrets
   annotations:
-    kubeapt.io/uuid: "21735678-f711-4b9f-a267-cbd09c7afbfc"
+    cenroq.io/finding: "oq-0297"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Stores Credentials, Tokens or Private Keys"
     security.kubeapt.io/description: "Credentials in a ConfigMap are stored unencrypted and readable by anyone holding the broad ConfigMap read permission most roles grant, and they leak further through logs, backups and manifests in source control."
     security.kubeapt.io/resource: "ConfigMaps"
@@ -27,19 +28,17 @@ spec:
   - expression: |
       (!has(object.data) || !object.data.exists(
         k,
-        v,
         (
           k.lowerAscii().matches(".*(secret|password|passwd|token|apikey|api_key|credential|private|key).*") ||
-          v.matches("(?s).*-----BEGIN (RSA|DSA|EC|PGP) PRIVATE KEY-----.*") ||
-          v.matches("(?i)aws(.{0,10})?(secret|access)[^\\w]?key") ||
-          v.matches("(?i)AWS_?(SECRET|ACCESS)_KEY") ||
-          v.matches("(?i)GOOGLE_APPLICATION_CREDENTIALS") ||
-          v.matches("(?i)AZURE_CLIENT_SECRET")
+          object.data[k].matches("(?s).*-----BEGIN (RSA|DSA|EC|PGP) PRIVATE KEY-----.*") ||
+          object.data[k].matches("(?i)aws(.{0,10})?(secret|access)[^\\w]?key") ||
+          object.data[k].matches("(?i)AWS_?(SECRET|ACCESS)_KEY") ||
+          object.data[k].matches("(?i)GOOGLE_APPLICATION_CREDENTIALS") ||
+          object.data[k].matches("(?i)AZURE_CLIENT_SECRET")
         )
       )) &&
       (!has(object.binaryData) || !object.binaryData.exists(
         k,
-        v,
         k.lowerAscii().matches(".*(secret|password|passwd|token|apikey|api_key|credential|private|key).*")
       ))
     message: |

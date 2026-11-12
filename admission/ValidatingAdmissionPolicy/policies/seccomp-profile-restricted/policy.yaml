@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: pod-seccomp-profile-restricted
   annotations:
-    kubeapt.io/uuid: "9612c6ac-4f88-4f18-a415-b85286cf6c8f"
+    cenroq.io/finding: "oq-0404"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Has No Seccomp Profile Set"
     security.kubeapt.io/description: "A pod with no seccomp profile enforced at pod level, and containers that set none either, runs with no syscall filter, leaving the full kernel syscall surface reachable for container escape and privilege escalation."
     security.kubeapt.io/resource: "Pods"

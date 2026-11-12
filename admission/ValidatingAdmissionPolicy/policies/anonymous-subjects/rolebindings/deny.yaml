@@ -3,7 +3,7 @@ kind: RoleBinding
 metadata:
   name: violating-rolebinding-anonymous
   annotations:
-    kubeapt.io/uuid: "369f4d61-481b-4213-89c7-4d0dbeaa3121"
+    cenroq.io/finding: "oq-0424"
 subjects:
 - kind: User
   name: system:anonymous

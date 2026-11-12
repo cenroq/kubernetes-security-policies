@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: selinux-user-pod
   annotations:
-    kubeapt.io/uuid: "2d1a986b-a524-422b-83b0-aafe9cd95f55"
+    cenroq.io/finding: "oq-0407"
 spec:
   containers:
   - name: main

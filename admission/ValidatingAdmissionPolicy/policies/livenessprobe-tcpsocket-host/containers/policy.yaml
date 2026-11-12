@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: container-livenessprobe-tcpsocket-host
   annotations:
-    kubeapt.io/uuid: "407ba943-2a0f-471c-8bf7-5088e408d4d7"
+    cenroq.io/finding: "oq-0306"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Liveness TCP Probe Targets an Arbitrary Host"
     security.kubeapt.io/description: "Pointing the liveness TCP probe at another host makes the kubelet open connections from the node to an arbitrary address, probing endpoints closed to pods, while a hung container is never restarted."
     security.kubeapt.io/resource: "Containers"

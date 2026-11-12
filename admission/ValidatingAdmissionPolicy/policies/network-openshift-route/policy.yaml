@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: route-tls
   annotations:
-    kubeapt.io/uuid: "b3c3431f-6cfd-4459-944c-82d2085bc5b6"
+    cenroq.io/finding: "oq-0428"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Defines No TLS Termination"
     security.kubeapt.io/description: "A Route without a TLS section is published over plain HTTP at the router, so session cookies and credentials cross the network in cleartext and can be read or rewritten in transit."
     security.kubeapt.io/resource: "Routes"

@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: ephemeralcontainer-privileged
   annotations:
-    kubeapt.io/uuid: "20926aaa-68eb-4741-9d2c-98bfe86a3650"
+    cenroq.io/finding: "oq-0338"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Runs in Privileged Mode"
     security.kubeapt.io/description: "A privileged ephemeral container disables almost all container isolation and gets full root access to the node devices, kernel interfaces and filesystem, which is a direct path to node and cluster takeover."
     security.kubeapt.io/resource: "EphemeralContainers"

@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: pod-sysctls
   annotations:
-    kubeapt.io/uuid: "ef3af6c4-dc03-46bd-9f3c-7f9ac329edf2"
+    cenroq.io/finding: "oq-0410"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Sets a Sysctl Outside the Approved List"
     security.kubeapt.io/description: "A sysctl outside the approved list reaches kernel tunables shared with the node, letting a pod weaken host network and memory protections for every workload on that node and destabilise the kubelet itself."
     security.kubeapt.io/resource: "Pods"

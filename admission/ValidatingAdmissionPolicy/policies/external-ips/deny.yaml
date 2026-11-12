@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: violating-external-ips
   annotations:
-    kubeapt.io/uuid: "67c6d14c-e374-4cfc-87aa-94f214f1e104"
+    cenroq.io/finding: "oq-0430"
 spec:
   type: ClusterIP
   selector:

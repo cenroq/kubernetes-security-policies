@@ -3,7 +3,7 @@ kind: StorageClass
 metadata:
   name: violating-storageclass-cmek-gcp-pd
   annotations:
-    kubeapt.io/uuid: "b6471576-2bd6-4115-bbc2-07510127f17b"
+    cenroq.io/finding: "oq-0436"
 provisioner: pd.csi.storage.gke.io
 parameters:
   type: pd-balanced

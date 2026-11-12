@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: poststart-tcpsocket-host-initcontainers
   annotations:
-    kubeapt.io/uuid: "ddff5010-e03c-4791-ae99-ae1f6f9cfe24"
+    cenroq.io/finding: "oq-0363"
 spec:
   containers:
   - name: main

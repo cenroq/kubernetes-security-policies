@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: egressfirewall-allow-all
   annotations:
-    kubeapt.io/uuid: "c4eec6b4-7132-4295-9672-ca1573bd0189"
+    cenroq.io/finding: "oq-0328"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Permits Egress to 0.0.0.0/0"
     security.kubeapt.io/description: "An Allow entry for 0.0.0.0/0 leaves the OVN-Kubernetes egress firewall with no restriction at all, so any pod in the namespace can open connections to arbitrary internet hosts for command-and-control and data theft."
     security.kubeapt.io/resource: "EgressFirewalls"

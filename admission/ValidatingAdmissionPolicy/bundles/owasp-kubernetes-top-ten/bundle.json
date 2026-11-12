@@ -2,6 +2,7 @@
     "name": "OWASP Kubernetes Top 10",
     "description": "The controls named in the OWASP Kubernetes Top 10 (2025 edition), expressed as ValidatingAdmissionPolicies. Covers the specific settings the project calls out under K01 Insecure Workload Configurations, K02 Overly Permissive Authorization Configurations, K03 Secrets Management Failures, K04 Lack Of Cluster Level Policy Enforcement, K05 Missing Network Segmentation Controls and K09 Broken Authentication Mechanisms. K06, K07, K08 and K10 concern control-plane exposure, component patching, cloud IAM and audit logging, which admission control cannot assert.",
     "version": "v2025.0.0",
+    "kubeapt-version-min": "2.0.0",
     "deployment": "mkdir -p /tmp/cenroq && curl -L https://github.com/cenroq/kubernetes-security-policies/releases/download/vap_owasp-kubernetes-top-ten%40v2025.0.0/owasp-kubernetes-top-ten_v2025.0.0.tar.gz | tar -xz -C /tmp/cenroq && kubectl apply -f /tmp/cenroq/owasp-kubernetes-top-ten/policies.yaml -f /tmp/cenroq/owasp-kubernetes-top-ten/bindings.yaml",
     "labels": {
         "warn": "owasp.org/warn",

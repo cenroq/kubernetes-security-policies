@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: serviceaccount-token-secrets
   annotations:
-    kubeapt.io/uuid: "4274c4b5-6f75-45aa-837b-b0641f9a7660"
+    cenroq.io/finding: "oq-0434"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "References a Long-Lived Token Secret"
     security.kubeapt.io/description: "A long-lived token Secret bound to a ServiceAccount never expires and is tied to no pod lifetime, so a single leaked value grants that identity permanent API access until someone notices and rotates it."
     security.kubeapt.io/resource: "ServiceAccounts"

@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: role-workloads-write
   annotations:
-    kubeapt.io/uuid: "badd6afe-218a-4a3c-a102-737afb5a5fa9"
+    cenroq.io/finding: "oq-0423"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Grants Write Access to Workload Controllers"
     security.kubeapt.io/description: "Write access to workload controllers becomes arbitrary pod creation through the controller, letting the holder run any image under any service account in the namespace and, with DaemonSets, land that container on every node."
     security.kubeapt.io/resource: "Roles"

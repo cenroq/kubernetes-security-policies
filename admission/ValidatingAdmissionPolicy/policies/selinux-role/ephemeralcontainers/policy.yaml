@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: ephemeralcontainer-selinux-role
   annotations:
-    kubeapt.io/uuid: "ede1c961-2201-4529-854b-501f2c9c2493"
+    cenroq.io/finding: "oq-0346"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Sets a Custom SELinux Role"
     security.kubeapt.io/description: "A custom SELinux role label lets the ephemeral container transition into domains outside the confined container role, weakening the mandatory access control that keeps a compromised process away from host files and devices."
     security.kubeapt.io/resource: "EphemeralContainers"

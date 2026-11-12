@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: violating-no-executable-code
   annotations:
-    kubeapt.io/uuid: "2d9872e4-6538-497b-b9f1-64479e562fcd"
+    cenroq.io/finding: "oq-0295"
 immutable: true
 data:
   run.sh: |

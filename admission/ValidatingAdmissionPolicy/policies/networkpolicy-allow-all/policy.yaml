@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: networkpolicy-allow-all
   annotations:
-    kubeapt.io/uuid: "ff83ae61-3d8a-48b6-9ab0-fd11fd740c33"
+    cenroq.io/finding: "oq-0385"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Allows All Ingress and Egress for All Pods"
     security.kubeapt.io/description: "Selecting every pod with rules that name no peers and no ports unions an allow-all permission across the namespace, which cancels the effect of tighter policies and leaves lateral movement and outbound traffic unconstrained."
     security.kubeapt.io/resource: "NetworkPolicies"

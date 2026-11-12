@@ -3,7 +3,7 @@ kind: StorageClass
 metadata:
   name: violating-storageclass-encryption-aws-ebs
   annotations:
-    kubeapt.io/uuid: "737e971e-9b80-4467-b548-42c688e4071e"
+    cenroq.io/finding: "oq-0438"
 provisioner: ebs.csi.aws.com
 parameters:
   type: gp3

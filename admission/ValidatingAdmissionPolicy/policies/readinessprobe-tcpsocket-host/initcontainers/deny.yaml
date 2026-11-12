@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: readinessprobe-tcpsocket-host-initcontainers
   annotations:
-    kubeapt.io/uuid: "965e99b1-6f57-4fb4-9550-eefd525a38dd"
+    cenroq.io/finding: "oq-0371"
 spec:
   containers:
   - name: main

@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: pod-hostusers
   annotations:
-    kubeapt.io/uuid: "1a5efbbe-2a1f-4840-a4fd-19fec7dab8bc"
+    cenroq.io/finding: "oq-0399"
+    cenroq.io/kubernetes-version-min: "1.33"
     security.kubeapt.io/displayName: "Shares the Host User Namespace"
     security.kubeapt.io/description: "Running in the host user namespace removes UID remapping, so container root is real root on the node and any escape or shared host resource is entered with full node privileges."
     security.kubeapt.io/resource: "Pods"

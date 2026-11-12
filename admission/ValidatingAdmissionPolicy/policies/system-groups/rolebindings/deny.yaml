@@ -3,7 +3,7 @@ kind: RoleBinding
 metadata:
   name: violating-rolebinding-system-group
   annotations:
-    kubeapt.io/uuid: "d92ff4b2-9bd9-417b-af8b-dffedcc93e43"
+    cenroq.io/finding: "oq-0427"
 subjects:
 - kind: Group
   name: system:authenticated

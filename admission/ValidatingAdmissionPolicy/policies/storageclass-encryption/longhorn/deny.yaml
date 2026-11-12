@@ -3,7 +3,7 @@ kind: StorageClass
 metadata:
   name: violating-storageclass-encryption-longhorn
   annotations:
-    kubeapt.io/uuid: "e9a587e3-d5f8-48b3-b42c-22f35db3227e"
+    cenroq.io/finding: "oq-0442"
 provisioner: driver.longhorn.io
 parameters:
   numberOfReplicas: "3"

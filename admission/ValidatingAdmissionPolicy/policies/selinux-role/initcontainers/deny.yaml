@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: selinux-role-initcontainers
   annotations:
-    kubeapt.io/uuid: "32ff7e30-616c-43a7-92ae-44022ecc0da3"
+    cenroq.io/finding: "oq-0377"
 spec:
   containers:
   - name: main

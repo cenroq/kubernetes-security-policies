@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: clusterrole-serviceaccounts-write
   annotations:
-    kubeapt.io/uuid: "c2ceea3b-e377-4be5-ba9d-0b86ffdb3030"
+    cenroq.io/finding: "oq-0288"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Grants Write Access to ServiceAccounts"
     security.kubeapt.io/description: "Creating or replacing ServiceAccounts anywhere in the cluster lets an attacker re-create an identity that existing bindings already point at and take over its tokens, inheriting every permission bound to that name."
     security.kubeapt.io/resource: "ClusterRoles"

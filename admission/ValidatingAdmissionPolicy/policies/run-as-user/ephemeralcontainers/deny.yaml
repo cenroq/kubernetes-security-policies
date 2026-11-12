@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: run-as-user-ephemeralcontainers
   annotations:
-    kubeapt.io/uuid: "98905548-0495-45ef-9457-70a624f240eb"
+    cenroq.io/finding: "oq-0343"
 spec:
   containers:
   - name: main

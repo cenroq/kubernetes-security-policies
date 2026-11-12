@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: violating-immutable
   annotations:
-    kubeapt.io/uuid: "347134fc-2e95-4b42-93bc-d9098b018a6b"
+    cenroq.io/finding: "oq-0296"
 immutable: false
 data:
   key: value

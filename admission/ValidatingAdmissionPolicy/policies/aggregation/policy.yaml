@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: clusterrole-aggregation
   annotations:
-    kubeapt.io/uuid: "e8429efe-3c57-4656-8155-f2f3423f8a5f"
+    cenroq.io/finding: "oq-0277"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Uses an Aggregation Rule to Inherit Permissions"
     security.kubeapt.io/description: "An aggregated ClusterRole silently absorbs the rules of every ClusterRole carrying a matching label, so anyone able to create a labeled role grows its permissions with no review of the binding."
     security.kubeapt.io/resource: "ClusterRoles"

@@ -3,7 +3,7 @@ kind: ServiceAccount
 metadata:
   name: violating-imagepullsecrets-scope
   annotations:
-    kubeapt.io/uuid: "352c743b-54a7-479c-9cf2-71d049ba7fc7"
+    cenroq.io/finding: "oq-0432"
 automountServiceAccountToken: false
 imagePullSecrets:
 - name: registry-cred-1

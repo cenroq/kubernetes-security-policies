@@ -3,13 +3,13 @@ kind: Namespace
 metadata:
   name: violating-pod-security-standards
   annotations:
-    kubeapt.io/uuid: "00728e67-856f-45a1-9b84-7e34c2c8cf9e"
+    cenroq.io/finding: "oq-0384"
 ---
 apiVersion: v1
 kind: Namespace
 metadata:
   name: violating-pod-security-standards-other-labels
   annotations:
-    kubeapt.io/uuid: "00728e67-856f-45a1-9b84-7e34c2c8cf9e"
+    cenroq.io/finding: "oq-0384"
   labels:
     team: platform

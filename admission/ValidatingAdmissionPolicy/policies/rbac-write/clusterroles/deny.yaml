@@ -3,7 +3,7 @@ kind: ClusterRole
 metadata:
   name: violating-clusterrole-rbac-write
   annotations:
-    kubeapt.io/uuid: "6024fa30-ba1d-4c34-adda-fa9fd967bb42"
+    cenroq.io/finding: "oq-0285"
 rules:
 - apiGroups: ["rbac.authorization.k8s.io"]
   resources: ["clusterrolebindings"]

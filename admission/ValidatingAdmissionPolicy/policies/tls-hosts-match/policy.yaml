@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: ingress-tls-hosts
   annotations:
-    kubeapt.io/uuid: "9e07fcea-9c2c-40dc-9807-5d10c98b1a40"
+    cenroq.io/finding: "oq-0352"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Has Hosts Not Covered by Its TLS Configuration"
     security.kubeapt.io/description: "A routed host missing from every TLS block is served over cleartext HTTP or with a default certificate that does not match it, exposing session cookies and credentials to anyone on the network path."
     security.kubeapt.io/resource: "Ingresses"

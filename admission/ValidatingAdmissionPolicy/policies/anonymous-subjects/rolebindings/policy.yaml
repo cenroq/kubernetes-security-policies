@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: rolebinding-anonymous-subjects
   annotations:
-    kubeapt.io/uuid: "369f4d61-481b-4213-89c7-4d0dbeaa3121"
+    cenroq.io/finding: "oq-0424"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Binds a Role to an Anonymous Identity"
     security.kubeapt.io/description: "Binding a role to system:anonymous hands its namespace permissions to every unauthenticated caller that reaches the API server, and catch-all names like everyone or all-users leave nobody accountable for who exercises them."
     security.kubeapt.io/resource: "RoleBindings"

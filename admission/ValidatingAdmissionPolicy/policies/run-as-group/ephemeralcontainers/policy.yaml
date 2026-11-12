@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: ephemeralcontainer-run-as-group
   annotations:
-    kubeapt.io/uuid: "fb6e2c02-8653-4d6a-8f60-38512cc54daf"
+    cenroq.io/finding: "oq-0341"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Runs With the Root Group (GID 0)"
     security.kubeapt.io/description: "An ephemeral debug container running with GID 0 places its processes in the root group, which owns or can write many files in images and mounted host volumes, widening what a compromised process reaches."
     security.kubeapt.io/resource: "EphemeralContainers"

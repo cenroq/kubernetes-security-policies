@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: ephemeralcontainer-run-as-nonroot
   annotations:
-    kubeapt.io/uuid: "d2ea2b6d-4d47-4d65-9581-2db116e96f7b"
+    cenroq.io/finding: "oq-0342"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "May Run as Root"
     security.kubeapt.io/description: "With runAsNonRoot unset, the kubelet never rejects an image whose user is UID 0, so the ephemeral debug container silently runs as root and any compromise gains root file ownership and the full capability set."
     security.kubeapt.io/resource: "EphemeralContainers"

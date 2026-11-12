@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: initcontainer-windows-hostprocess
   annotations:
-    kubeapt.io/uuid: "40d17131-f0d2-4bde-804d-dff8036e221c"
+    cenroq.io/finding: "oq-0382"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Runs as a Windows HostProcess"
     security.kubeapt.io/description: "A Windows HostProcess init container runs directly on the node in the host namespaces under a system account, exposing the host filesystem, registry and services and making node compromise trivial."
     security.kubeapt.io/resource: "InitContainers"

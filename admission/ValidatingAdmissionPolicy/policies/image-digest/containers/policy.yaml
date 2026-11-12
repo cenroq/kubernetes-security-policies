@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: container-image-digest
   annotations:
-    kubeapt.io/uuid: "97adc456-4552-4280-a0bc-91769cfce7f6"
+    cenroq.io/finding: "oq-0303"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Runs an Image Not Pinned to a Digest"
     security.kubeapt.io/description: "An image reference without a digest resolves through a mutable tag, so registry content can be replaced between pulls and the container silently starts running attacker-supplied code on the next restart or reschedule."
     security.kubeapt.io/resource: "Containers"

@@ -6,7 +6,12 @@
             "v0.3.0",
             "v0.2.0",
             "v0.1.1"
-        ]
+        ],
+        "compatibility": {
+            "v0.3.0": {
+                "kubeapt-version-min": "2.0.0"
+            }
+        }
     },
     {
         "name": "pod-security-admission",
@@ -14,14 +19,24 @@
         "versions": [
             "v1.37.0",
             "v1.36.0-cenroq"
-        ]
+        ],
+        "compatibility": {
+            "v1.37.0": {
+                "kubeapt-version-min": "2.0.0"
+            }
+        }
     },
     {
         "name": "owasp-kubernetes-top-ten",
         "latest-version": "v2025.0.0",
         "versions": [
             "v2025.0.0"
-        ]
+        ],
+        "compatibility": {
+            "v2025.0.0": {
+                "kubeapt-version-min": "2.0.0"
+            }
+        }
     },
     {
         "name": "kolteq-best-practices",

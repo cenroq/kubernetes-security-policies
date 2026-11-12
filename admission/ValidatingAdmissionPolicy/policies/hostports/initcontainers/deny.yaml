@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: hostports-initcontainers
   annotations:
-    kubeapt.io/uuid: "ac16a8ff-1089-4e1d-a470-89958cc479ae"
+    cenroq.io/finding: "oq-0357"
 spec:
   containers:
   - name: main

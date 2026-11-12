@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: initcontainer-capabilities-drop-all
   annotations:
-    kubeapt.io/uuid: "53066e98-fe0f-4f71-8011-f14d6bf2aefe"
+    cenroq.io/finding: "oq-0356"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Retains Default Linux Capabilities"
     security.kubeapt.io/description: "An init container that never drops ALL keeps the default runtime capability set, so code execution inside it inherits DAC_OVERRIDE, SETUID and NET_RAW for bypassing file permissions, regaining root and spoofing traffic."
     security.kubeapt.io/resource: "InitContainers"

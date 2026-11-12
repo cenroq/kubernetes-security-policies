@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: container-run-as-user
   annotations:
-    kubeapt.io/uuid: "ba7e803d-7b0e-4505-8f47-4511091fe531"
+    cenroq.io/finding: "oq-0319"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Runs as Root (UID 0)"
     security.kubeapt.io/description: "Running a container as UID 0 gives every process the in-container root identity, so writable host mounts, setuid binaries and isolation weaknesses become exploitable with root file ownership and the full capability set."
     security.kubeapt.io/resource: "Containers"

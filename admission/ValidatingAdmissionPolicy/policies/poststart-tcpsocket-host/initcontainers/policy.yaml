@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: initcontainer-poststart-tcpsocket-host
   annotations:
-    kubeapt.io/uuid: "ddff5010-e03c-4791-ae99-ae1f6f9cfe24"
+    cenroq.io/finding: "oq-0363"
+    cenroq.io/kubernetes-version-min: "1.29"
     security.kubeapt.io/displayName: "postStart TCP Hook Targets an Arbitrary Host"
     security.kubeapt.io/description: "Naming another host in a postStart TCP hook points init container start at an off-pod address through a handler the kubelet does not support, so the hook fails and the container is killed."
     security.kubeapt.io/resource: "InitContainers"

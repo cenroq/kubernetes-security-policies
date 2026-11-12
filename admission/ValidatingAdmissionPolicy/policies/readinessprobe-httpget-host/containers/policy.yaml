@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: container-readinessprobe-httpget-host
   annotations:
-    kubeapt.io/uuid: "c897bc90-9389-46c2-a431-78fe5037fe21"
+    cenroq.io/finding: "oq-0315"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Readiness Probe Targets an Arbitrary Host"
     security.kubeapt.io/description: "Redirecting the readiness HTTP probe to another host makes the kubelet fetch an arbitrary URL from the node, reaching metadata and node-local endpoints closed to pods, while Service traffic keeps reaching an unchecked container."
     security.kubeapt.io/resource: "Containers"

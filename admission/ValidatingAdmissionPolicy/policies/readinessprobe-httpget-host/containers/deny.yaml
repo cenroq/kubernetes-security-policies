@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: readinessprobe-httpget-host-containers
   annotations:
-    kubeapt.io/uuid: "c897bc90-9389-46c2-a431-78fe5037fe21"
+    cenroq.io/finding: "oq-0315"
 spec:
   containers:
   - name: main

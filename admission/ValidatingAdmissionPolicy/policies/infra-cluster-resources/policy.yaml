@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: clusterrole-infra-cluster-resources
   annotations:
-    kubeapt.io/uuid: "de80e01b-df84-4253-b44c-6cd8dfad2e7d"
+    cenroq.io/finding: "oq-0279"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Grants Broad Access to Nodes and Cluster Storage"
     security.kubeapt.io/description: "Reading or proxying nodes exposes kubelet endpoints and every workload placed on them, while write access to persistent volumes, storage classes and namespaces lets a caller mount host paths and stage pods outside guarded namespaces."
     security.kubeapt.io/resource: "ClusterRoles"

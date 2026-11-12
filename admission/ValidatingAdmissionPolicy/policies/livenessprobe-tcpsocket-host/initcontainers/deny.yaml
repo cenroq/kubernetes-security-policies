@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: livenessprobe-tcpsocket-host-initcontainers
   annotations:
-    kubeapt.io/uuid: "98973c28-244a-4a62-9c09-3b4740309963"
+    cenroq.io/finding: "oq-0361"
 spec:
   containers:
   - name: main

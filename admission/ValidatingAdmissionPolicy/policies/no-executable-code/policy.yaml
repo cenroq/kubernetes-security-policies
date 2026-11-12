@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: configmap-executable-code
   annotations:
-    kubeapt.io/uuid: "2d9872e4-6538-497b-b9f1-64479e562fcd"
+    cenroq.io/finding: "oq-0295"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Stores Executable Code or Scripts"
     security.kubeapt.io/description: "Scripts stored in a ConfigMap and executed by a pod turn ConfigMap write access into code execution inside the container, bypassing image scanning, image signing and any review of what actually runs."
     security.kubeapt.io/resource: "ConfigMaps"
@@ -27,10 +28,9 @@ spec:
   - expression: |
       !has(object.data) || !object.data.exists(
         k,
-        v,
         k.lowerAscii().matches(".*\\.(sh|bash|py|lua|js|ts|rb|pl|php|groovy|tmpl)$") ||
-        v.matches("(?s).*#!/\\S+") ||
-        v.matches("(?i).*\\b(function|import|require|process|exec)\\b.*")
+        object.data[k].matches("(?s).*#!/\\S+") ||
+        object.data[k].matches("(?i).*\\b(function|import|require|process|exec)\\b.*")
       )
     message: |
       Do not store executable code or scripts in ConfigMaps that applications run.

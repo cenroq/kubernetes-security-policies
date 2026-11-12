@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: clusterrolebinding-default-serviceaccount
   annotations:
-    kubeapt.io/uuid: "e56cfce0-5f49-429b-b31e-06796251a1cd"
+    cenroq.io/finding: "oq-0292"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Binds a Privileged Role to the Default ServiceAccount"
     security.kubeapt.io/description: "Every pod that names no ServiceAccount runs as default, so a ClusterRoleBinding to it spreads cluster-wide permissions across unrelated workloads in that namespace and any single compromised container inherits them immediately."
     security.kubeapt.io/resource: "ClusterRoleBindings"

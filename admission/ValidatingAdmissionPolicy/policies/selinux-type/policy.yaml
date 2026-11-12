@@ -3,7 +3,8 @@ kind: ValidatingAdmissionPolicy
 metadata:
   name: pod-selinux-type
   annotations:
-    kubeapt.io/uuid: "0af728c2-2db1-4db5-ac43-78070367e4a1"
+    cenroq.io/finding: "oq-0406"
+    cenroq.io/kubernetes-version-min: "1.27"
     security.kubeapt.io/displayName: "Sets a Non-Standard SELinux Type"
     security.kubeapt.io/description: "An SELinux type outside the container domains, such as spc_t or unconfined_t, drops the kernel confinement that stops pod containers from reading host files and reaching devices they do not own."
     security.kubeapt.io/resource: "Pods"
